@@ -1,0 +1,43 @@
+{
+  "name": "vue-theme",
+  "version": "0.1.0",
+  "description": "The design system for Vue.js.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vue-theme.git"
+  },
+  "keywords": [
+    "vue",
+    "design-system"
+  ],
+  "author": "Evan You",
+  "license": "MIT",
+  "homepage": "https://theme.vuejs.org",
+  "bugs": {
+    "url": "https://github.com/vuejs/vue-theme/issues"
+  },
+  "scripts": {
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "type": "tsc --noEmit",
+    "jest": "jest",
+    "test": "yarn lint && yarn type && yarn jest",
+    "docs": "vitepress dev docs",
+    "docs-build": "vitepress build docs",
+    "docs-serve": "yarn docs-build && vitepress serve docs"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@vueuse/core": "^4.1.1",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.1",
+    "typescript": "^4.1.5",
+    "vitepress": "^0.12.2",
+    "vue": "^3.0.5"
+  }
+}

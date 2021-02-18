@@ -1,0 +1,151 @@
+/**
+ * Colors Base
+ *
+ * These are the pure base color presets. Most of the time, you should not be
+ * using these colors directly in the theme but rather use "Colors Theme"
+ * instead because those are "Theme (light or dark)" dependant.
+ */
+:root {
+  --c-white: #ffffff;
+  --c-white-soft: #f8f8f8;
+  --c-white-mute: #f2f2f2;
+
+  --c-black: #181818;
+  --c-black-pure: #000000;
+  --c-black-soft: #202020;
+  --c-black-mute: #282828;
+
+  --c-gray: #8e8e8e;
+  --c-gray-light-1: #aeaeae;
+  --c-gray-light-2: #c7c7c7;
+  --c-gray-light-3: #d1d1d1;
+  --c-gray-light-4: #e5e5e5;
+  --c-gray-light-5: #f2f2f2;
+  --c-gray-dark-1: #636363;
+  --c-gray-dark-2: #484848;
+  --c-gray-dark-3: #3a3a3a;
+  --c-gray-dark-4: #282828;
+  --c-gray-dark-5: #202020;
+
+  --c-divider-light-1: rgba(60, 60, 60, .29);
+  --c-divider-light-2: rgba(60, 60, 60, .12);
+  --c-divider-dark-1: rgba(84, 84, 84, .65);
+  --c-divider-dark-2: rgba(84, 84, 84, .48);
+
+  --c-text-light-1: var(--c-black);
+  --c-text-light-2: rgba(60, 60, 60, .60);
+  --c-text-light-3: rgba(60, 60, 60, .30);
+  --c-text-light-4: rgba(60, 60, 60, .18);
+  --c-text-dark-1: var(--c-white);
+  --c-text-dark-2: rgba(235, 235, 235, .60);
+  --c-text-dark-3: rgba(235, 235, 235, .30);
+  --c-text-dark-4: rgba(235, 235, 235, .18);
+
+  --c-green: #42b883;
+  --c-green-light: #42d392;
+  --c-green-lighter: #35eb9a;
+  --c-green-dark: #33a06f;
+  --c-green-darker: #155f3e;
+
+  --c-blue: #3b8eed;
+  --c-blue-light: #549ced;
+  --c-blue-lighter: #50a2ff;
+  --c-blue-dark: #3468a3;
+  --c-blue-darker: #255489;
+
+  --c-yellow: #ffc517;
+  --c-yellow-light: #ffe417;
+  --c-yellow-lighter: #ffff17;
+  --c-yellow-dark: #e0ad15;
+  --c-yellow-darker: #bc9112;
+
+  --c-red: #ed3c50;
+  --c-red-light: #f43771;
+  --c-red-lighter: #fd1d7c;
+  --c-red-dark: #cd2d3f;
+  --c-red-darker: #ab2131;
+
+  --c-purple: #de41e0;
+  --c-purple-light: #e936eb;
+  --c-purple-lighter: #f616f8;
+  --c-purple-dark: #823c83;
+  --c-purple-darker: #602960;
+}
+
+/**
+ * Colors Theme: Light
+ */
+:root {
+  --c-bg: var(--c-white);
+  --c-bg-soft: var(--c-white-soft);
+  --c-bg-mute: var(--c-white-mute);
+
+  --c-divider: var(--c-divider-light-1);
+  --c-divider-light: var(--c-divider-light-2);
+
+  --c-divider-inverse: var(--c-divider-dark-1);
+  --c-divider-inverse-light: var(--c-divider-dark-2);
+
+  --c-text-1: var(--c-text-light-1);
+  --c-text-2: var(--c-text-light-2);
+  --c-text-3: var(--c-text-light-3);
+  --c-text-4: var(--c-text-light-4);
+
+  --c-text-inverse-1: var(--c-text-dark-1);
+  --c-text-inverse-2: var(--c-text-dark-2);
+  --c-text-inverse-3: var(--c-text-dark-3);
+  --c-text-inverse-4: var(--c-text-dark-4);
+
+  --c-brand: var(--c-green);
+  --c-brand-dark: var(--c-green-dark);
+}
+
+/**
+ * Theme Colors: Dark
+ */
+.dark {
+  --c-bg: var(--c-black);
+  --c-bg-soft: var(--c-black-soft);
+  --c-bg-mute: var(--c-black-mute);
+
+  --c-divider: var(--c-divider-dark-1);
+  --c-divider-light: var(--c-divider-dark-2);
+
+  --c-divider-inverse: var(--c-divider-light-1);
+  --c-divider-inverse-light: var(--c-divider-light-2);
+
+  --c-text-1: var(--c-text-dark-1);
+  --c-text-2: var(--c-text-dark-2);
+  --c-text-3: var(--c-text-dark-3);
+  --c-text-4: var(--c-text-dark-4);
+
+  --c-text-inverse-1: var(--c-text-light-1);
+  --c-text-inverse-2: var(--c-text-light-2);
+  --c-text-inverse-3: var(--c-text-light-3);
+  --c-text-inverse-4: var(--c-text-light-4);
+
+  --c-brand: var(--c-green);
+  --c-brand-dark: var(--c-green-dark);
+
+  --c-brand: var(--c-green);
+  --c-brand-dark: var(--c-green-dark);
+}
+
+/**
+ * Typography
+ */
+:root {
+  --font-family-base: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-mono: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/**
+ * Shadows
+ */
+:root {
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
+  --shadow-2: 0 3px 12px rgba(0, 0, 0, .07), 0 1px 4px rgba(0, 0, 0, .07);
+  --shadow-3: 0 12px 32px rgba(0, 0, 0, .1), 0 2px 6px rgba(0, 0, 0, .08);
+  --shadow-4: 0 14px 44px rgba(0, 0, 0, .12), 0 3px 9px rgba(0, 0, 0, .12);
+  --shadow-5: 0 18px 56px rgba(0, 0, 0, .16), 0 4px 12px rgba(0, 0, 0, .16);
+}
