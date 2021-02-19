@@ -1,11 +1,16 @@
 <template>
   <div class="VPLayout">
-    <VTSwitchAppearance />
+    <VPNav />
+
+    <div class="switch">
+      <VTSwitchAppearance />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { VTSwitchAppearance, useAppearance } from 'vue-theme'
+import VPNav from './VPNav.vue'
 
 useAppearance()
 </script>
@@ -14,10 +19,15 @@ useAppearance()
 .VPLayout {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background-color: var(--c-bg);
   transition: background-color .5s;
+}
+
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 </style>

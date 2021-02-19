@@ -7,5 +7,9 @@ module.exports = {
 
   alias: {
     'vue-theme': path.join(__dirname, '../../src')
+  },
+
+  themeConfig: {
+    logo: '/img/logo-vue.svg'
   }
 }
