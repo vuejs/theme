@@ -4,7 +4,8 @@
  * These are the pure base color presets. Most of the time, you should not be
  * using these colors directly in the theme but rather use "Colors Theme"
  * instead because those are "Theme (light or dark)" dependant.
- */
+ * -------------------------------------------------------------------------- */
+
 :root {
   --c-white: #ffffff;
   --c-white-soft: #f8f8f8;
@@ -73,8 +74,9 @@
 }
 
 /**
- * Colors Theme: Light
- */
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
 :root {
   --c-bg: var(--c-white);
   --c-bg-soft: var(--c-white-soft);
@@ -100,9 +102,6 @@
   --c-brand-dark: var(--c-green-dark);
 }
 
-/**
- * Theme Colors: Dark
- */
 .dark {
   --c-bg: var(--c-black);
   --c-bg-soft: var(--c-black-soft);
@@ -133,7 +132,8 @@
 
 /**
  * Typography
- */
+ * -------------------------------------------------------------------------- */
+
 :root {
   --font-family-base: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-family-mono: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -141,7 +141,8 @@
 
 /**
  * Shadows
- */
+ * -------------------------------------------------------------------------- */
+
 :root {
   --shadow-1: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
   --shadow-2: 0 3px 12px rgba(0, 0, 0, .07), 0 1px 4px rgba(0, 0, 0, .07);
