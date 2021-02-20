@@ -58,6 +58,10 @@ defineProps<{
   padding: 0 0 12px;
 }
 
+.VTMenu :deep(.group > .group:last-child) {
+  padding: 11px 0 0;
+}
+
 .VTMenu :deep(.group + .group) {
   border-top: 1px solid var(--c-divider-light);
   padding: 11px 0 12px;

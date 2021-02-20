@@ -1,6 +1,6 @@
 <template>
   <div class="VTMenuGroup">
-    <p class="title item">{{ text }}</p>
+    <p v-if="text" class="title item">{{ text }}</p>
 
     <template v-for="item in items">
       <VTMenuLink
@@ -20,7 +20,7 @@ import type { MenuItemWithChildren } from '../composables/menu'
 import VTMenuLink from './VTMenuLink.vue'
 
 defineProps<{
-  text: string
+  text?: string
   items: MenuItemWithChildren[]
 }>()
 </script>

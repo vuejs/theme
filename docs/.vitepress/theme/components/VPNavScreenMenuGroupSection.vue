@@ -1,6 +1,6 @@
 <template>
   <div class="VPNavScreenMenuGroupSection">
-    <p class="title">{{ text }}</p>
+    <p v-if="text" class="title">{{ text }}</p>
 
     <VPNavScreenMenuGroupLink
       v-for="item in items"
@@ -18,7 +18,7 @@ import type { NavItemChildWithChildren } from '../config'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 
 defineProps<{
-  text: string
+  text?: string
   items: NavItemChildWithChildren[]
 }>()
 </script>
