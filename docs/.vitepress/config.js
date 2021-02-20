@@ -29,16 +29,89 @@ module.exports = {
     ],
 
     nav: [
-      { text: 'Guide', link: '/guide/introduction' },
-      { text: 'Styles', link: '/guide/styles' },
-      { text: 'Components', link: '/guide/components' },
+      {
+        text: 'Docs',
+        items: [
+          {
+            items: [
+              { text: 'Guide', link: '/guide/introduction' },
+              { text: 'API Reference', link: '/api/' }
+            ]
+          },
+          {
+            items: [
+              { text: 'Style Guide', link: '/style-guide/' },
+              { text: 'Cookbook', link: '/cookbook/' },
+              { text: 'Examples', link: '/examples/markdown' }
+            ]
+          },
+          {
+            items: [
+              { text: 'Contribute', link: '/guide/contributing/writing-guide' },
+              { text: 'Migration from Vue 2', link: '/guide/migration/introduction' }
+            ]
+          }
+        ]
+      },
+      {
+        text: 'Ecosystem',
+        items: [
+          {
+            text: 'Help',
+            items: [
+              { text: 'Forum', link: 'https://forum.vuejs.org/' },
+              { text: 'Chat', link: 'https://discord.com/invite/HBherRA' }
+            ]
+          },
+          {
+            text: 'Official Projects',
+            items: [
+              { text: 'Vue Router', link: 'https://next.router.vuejs.org/' },
+              { text: 'Vuex', link: 'https://next.vuex.vuejs.org/' },
+              { text: 'Vue CLI', link: 'https://cli.vuejs.org/' },
+              { text: 'Vue Test Utils', link: 'https://next.vue-test-utils.vuejs.org/v2/guide/introduction.html' },
+              { text: 'Devtools', link: 'https://github.com/vuejs/vue-devtools' }
+            ]
+          },
+          {
+            text: 'Templates',
+            items: [
+              { text: 'Themes', link: '/community/themes/' }
+            ]
+          }
+        ]
+      },
+      {
+        text: 'Community',
+        items: [
+          {
+            items: [
+              { text: 'Team', link: '/community/team/' },
+              { text: 'Partners', link: '/community/partners' },
+              { text: 'Join', link: '/community/join/' },
+            ]
+          },
+          {
+            items: [
+              { text: 'Events', link: 'https://events.vuejs.org/' },
+              { text: 'DEV Community', link: 'https://dev.to/t/vue' }
+            ]
+          }
+        ]
+      },
+      {
+        text: 'News',
+        items: [
+          { text: 'Weekly News', link: 'https://news.vuejs.org/' },
+          { text: 'Blog', link: 'https://blog.vuejs.org/' },
+          { text: 'Roadmap', link: 'https://github.com/vuejs/vue/projects/6' },
+          { text: 'Twitter', link: 'https://twitter.com/vuejs' },
+          { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' }
+        ]
+      },
       {
         text: 'Support Vue',
-        items: [
-          { text: 'One-time Donations', link: 'https://vuejs.org/support-vuejs/#One-time-Donations' },
-          { text: 'Recurring Pledges', link: 'https://vuejs.org/support-vuejs/#Recurring-Pledges' },
-          { text: 'T-shirts Shop', link: 'https://vue.threadless.com/' }
-        ]
+        link: '/support-vuejs/'
       }
     ]
   }
