@@ -6,6 +6,7 @@
   >
     <div v-if="open" class="VPNavScreen" ref="screen">
       <div class="container">
+        <VPNavScreenMenu class="menu" @jump="$emit('jump')" />
         <VPNavScreenAppearance class="appearance" />
         <VPNavScreenSocialLinks class="social-links" />
       </div>
@@ -16,6 +17,7 @@
 <script lang="ts" setup>
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import { defineProps, ref, useContext } from 'vue'
+import VPNavScreenMenu from './VPNavScreenMenu.vue'
 import VPNavScreenAppearance from './VPNavScreenAppearance.vue'
 import VPNavScreenSocialLinks from './VPNavScreenSocialLinks.vue'
 
@@ -43,11 +45,10 @@ function unlockBodyScroll() {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 0 24px;
+  padding: 0 32px;
   width: 100%;
   background-color: var(--c-bg);
   transition: background-color .5s;
-  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -79,19 +80,19 @@ function unlockBodyScroll() {
 
 .container {
   margin: 0 auto;
-  padding: 16px 0 96px;
+  padding: 24px 0 96px;
   max-width: 288px;
 }
 
-.appearance {
-  margin-top: 8px;
+.menu + .appearance {
+  margin-top: 24px;
+}
+
+.menu + .social-links {
+  margin-top: 16px;
 }
 
 .appearance + .social-links {
   margin-top: 12px;
-}
-
-.social-links {
-  margin-top: 8px;
 }
 </style>

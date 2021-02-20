@@ -29,6 +29,7 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
+    "@types/webfontloader": "^1.6.32",
     "@vueuse/core": "^4.1.1",
     "body-scroll-lock": "^3.1.5",
     "normalize.css": "^8.0.1",

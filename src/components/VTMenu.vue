@@ -8,7 +8,7 @@
 
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .VTMenu {
   border-radius: 8px;
   min-width: 192px;
@@ -22,7 +22,7 @@
   box-shadow: var(--shadow-1);
 }
 
-.VTMenu >>> .group {
+.VTMenu :deep(.group) {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,12 +30,12 @@
   transition: border-color .5s;
 }
 
-.VTMenu >>> .group + .group {
+.VTMenu :deep(.group + .group) {
   border-top: 1px solid var(--c-divider-light);
   padding: 12px 16px 11px;
 }
 
-.VTMenu >>> .label {
+.VTMenu :deep(.label) {
   line-height: 28px;
   font-size: 12px;
   font-weight: 500;
@@ -43,7 +43,7 @@
   transition: color .5s;
 }
 
-.VTMenu >>> .action {
+.VTMenu :deep(.action) {
   padding-left: 24px;
 }
 </style>

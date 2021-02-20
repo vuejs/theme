@@ -1,7 +1,7 @@
 <template>
   <header class="VPNav">
     <VPNavBar :is-screen-open="isScreenOpen" @toggle-screen="toggleScreen" />
-    <VPNavScreen :open="isScreenOpen" @close="closeScreen" />
+    <VPNavScreen :open="isScreenOpen" @jump="closeScreen" />
   </header>
 </template>
 

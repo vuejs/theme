@@ -42,6 +42,11 @@ export interface Config {
    * placing links to social services such as GitHub, Twitter, Facebook, etc.
    */
   socialLinks?: SocialLink[]
+
+  /**
+   * The nav items.
+   */
+  nav?: NavItem[]
 }
 
 /**
@@ -56,4 +61,24 @@ export interface AlgoliaSearchOptions {
   searchParameters?: any
   disableUserPersonalization?: boolean
   initialQuery?: string
+}
+
+export type NavItem = NavItemWithLink | NavItemWithChildren
+
+export interface NavItemBase {
+  text: string
+}
+
+export interface NavItemWithLink extends NavItemBase {
+  link: string
+}
+
+export interface NavItemWithChildren extends NavItemBase {
+  items: NavItemChild[]
+}
+
+export type NavItemChild = NavItemWithLink | NavItemChildWithChildren
+
+export interface NavItemChildWithChildren {
+  items: NavItemWithLink[]
 }
