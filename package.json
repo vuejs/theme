@@ -31,7 +31,8 @@
   "dependencies": {
     "@vueuse/core": "^4.1.1",
     "body-scroll-lock": "^3.1.5",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "jest": "^26.6.3",

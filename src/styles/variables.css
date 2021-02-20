@@ -122,12 +122,6 @@
   --c-text-inverse-2: var(--c-text-light-2);
   --c-text-inverse-3: var(--c-text-light-3);
   --c-text-inverse-4: var(--c-text-light-4);
-
-  --c-brand: var(--c-green);
-  --c-brand-dark: var(--c-green-dark);
-
-  --c-brand: var(--c-green);
-  --c-brand-dark: var(--c-green-dark);
 }
 
 /**
@@ -135,7 +129,7 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --font-family-base: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-base: Inter, "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-family-mono: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 

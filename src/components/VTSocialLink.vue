@@ -1,12 +1,18 @@
 <template>
-  <a class="VPSocialLink" :href="link" target="_blank" rel="noopener noreferrer">
+  <a
+    class="VPSocialLink"
+    :class="[size]"
+    :href="link"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <component :is="icon" class="icon" />
   </a>
 </template>
 
 <script lang="ts" setup>
 import { defineProps, computed } from 'vue'
-import type { SocialLinkIcon } from '../composables/socialLink'
+import type { SocialLinkSize, SocialLinkIcon } from '../composables/socialLink'
 import VTIconDiscord from './icons/VTIconDiscord.vue'
 import VTIconFacebook from './icons/VTIconFacebook.vue'
 import VTIconGitHub from './icons/VTIconGitHub.vue'
@@ -15,9 +21,12 @@ import VTIconSlack from './icons/VTIconSlack.vue'
 import VTIconTwitter from './icons/VTIconTwitter.vue'
 
 const props = defineProps<{
+  size?: SocialLinkSize
   icon: SocialLinkIcon
   link: string
 }>()
+
+const size = computed(() => props.size ?? 'medium')
 
 const icon = computed(() => {
   switch (props.icon) {
@@ -42,10 +51,28 @@ const icon = computed(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
-  height: 48px;
   color: var(--c-text-2);
   transition: color .5s;
+}
+
+.VPSocialLink.small {
+  width: 40px;
+  height: 40px;
+}
+
+.VPSocialLink.small .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.VPSocialLink.medium {
+  width: 48px;
+  height: 48px;
+}
+
+.VPSocialLink.medium .icon {
+  width: 24px;
+  height: 24px;
 }
 
 .link:hover {
@@ -54,8 +81,6 @@ const icon = computed(() => {
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
   fill: currentColor;
 }
 </style>

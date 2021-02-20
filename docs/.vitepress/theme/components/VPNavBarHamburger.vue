@@ -14,7 +14,7 @@ defineProps<{
 const { config } = useConfig()
 
 const hasContent = computed(() => {
-  return config.value.appearance
+  return config.value.appearance || config.value.socialLinks
 })
 </script>
 
@@ -22,5 +22,11 @@ const hasContent = computed(() => {
 .VPNavBarHamburger {
   width: 40px;
   height: 55px;
+}
+
+@media (min-width: 768px) {
+  .VPNavBarHamburger {
+    display: none;
+  }
 }
 </style>

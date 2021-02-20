@@ -1,28 +1,16 @@
 <template>
   <header class="VPNav">
     <VPNavBar :is-screen-open="isScreenOpen" @toggle-screen="toggleScreen" />
-    <VPNavScreen :open="isScreenOpen" />
+    <VPNavScreen :open="isScreenOpen" @close="closeScreen" />
   </header>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { useNav } from '../composables/nav'
 import VPNavBar from './VPNavBar.vue'
 import VPNavScreen from './VPNavScreen.vue'
 
-const isScreenOpen = ref(false)
-
-function openScreen() {
-  isScreenOpen.value = true
-}
-
-function closeScreen() {
-  isScreenOpen.value = false
-}
-
-function toggleScreen() {
-  isScreenOpen.value = !isScreenOpen.value
-}
+const { isScreenOpen, closeScreen, toggleScreen } = useNav()
 </script>
 
 <style scoped>

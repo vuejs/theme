@@ -4,6 +4,9 @@
 
     <div class="content">
       <VPNavBarSearch />
+
+      <VPNavBarExtra />
+
       <VPNavBarHamburger :active="isScreenOpen" @click="$emit('toggle-screen')" />
     </div>
   </div>
@@ -13,6 +16,7 @@
 import { defineProps } from 'vue'
 import VPNavBarTitle from './VPNavBarTitle.vue'
 import VPNavBarSearch from './VPNavBarSearch.vue'
+import VPNavBarExtra from './VPNavBarExtra.vue'
 import VPNavBarHamburger from './VPNavBarHamburger.vue'
 
 defineProps<{
@@ -32,10 +36,21 @@ defineProps<{
   transition: border-color .5s, background-color .5s;
 }
 
+@media (min-width: 768px) {
+  .VPNavBar {
+    padding: 0 12px 0 32px;
+  }
+}
+
 .content {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
-  padding-left: 24px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-top: 2px;
+  }
 }
 </style>

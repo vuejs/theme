@@ -2,6 +2,7 @@
   <VTSocialLinks
     v-if="config.socialLinks"
     class="VPNavScreenSocialLinks"
+    size="medium"
     :links="config.socialLinks"
   />
 </template>

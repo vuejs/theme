@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, useContext } from 'vue'
 import VPNavScreenAppearance from './VPNavScreenAppearance.vue'
 import VPNavScreenSocialLinks from './VPNavScreenSocialLinks.vue'
 
@@ -23,12 +23,12 @@ const props = defineProps<{
   open: boolean
 }>()
 
+const { emit } = useContext()
+
 const screen = ref<HTMLElement | null>(null)
 
 function lockBodyScroll() {
-  disableBodyScroll(screen.value, {
-    reserveScrollBarGap: true
-  })
+  disableBodyScroll(screen.value, { reserveScrollBarGap: true })
 }
 
 function unlockBodyScroll() {
@@ -69,6 +69,12 @@ function unlockBodyScroll() {
 .VPNavScreen.fade-enter-from .container,
 .VPNavScreen.fade-leave-to .container {
   transform: translateY(-8px);
+}
+
+@media (min-width: 768px) {
+  .VPNavScreen {
+    display: none;
+  }
 }
 
 .container {

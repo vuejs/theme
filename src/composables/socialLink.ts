@@ -3,6 +3,8 @@ export interface SocialLink {
   link: string
 }
 
+export type SocialLinkSize = 'small' | 'medium'
+
 export type SocialLinkIcon =
   | 'discord'
   | 'facebook'
