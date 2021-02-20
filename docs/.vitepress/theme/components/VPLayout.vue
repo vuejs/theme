@@ -5,11 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-import { useFont } from '../composables/font'
 import { useAppearance } from '../composables/appearance'
 import VPNav from './VPNav.vue'
 
-useFont()
 useAppearance()
 </script>
 

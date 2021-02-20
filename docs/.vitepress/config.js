@@ -1,13 +1,18 @@
 const path = require('path')
 
 module.exports = {
-  lang: 'en-US',
-  title: 'Vue Theme',
-  description: 'The design system for Vue.js.',
-
   alias: {
     'vue-theme': path.join(__dirname, '../../src')
   },
+
+  lang: 'en-US',
+  title: 'Vue.js',
+  description: 'Vue.js - The Progressive JavaScript Framework',
+
+  head: [
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Source+Code+Pro&display=swap' }]
+  ],
 
   themeConfig: {
     logo: '/img/logo-vue.svg',
