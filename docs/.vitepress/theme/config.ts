@@ -1,3 +1,5 @@
+import type { SocialLink } from 'vue-theme'
+
 export interface Config {
   /**
    * The appearance option to enable/disable light/dark mode.
@@ -55,16 +57,3 @@ export interface AlgoliaSearchOptions {
   disableUserPersonalization?: boolean
   initialQuery?: string
 }
-
-export interface SocialLink {
-  icon: SocialLinkIcon
-  link: string
-}
-
-export type SocialLinkIcon =
-  | 'discord'
-  | 'facebook'
-  | 'github'
-  | 'linkedin'
-  | 'slack'
-  | 'twitter'

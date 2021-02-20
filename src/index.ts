@@ -3,6 +3,7 @@ import './styles/variables.css'
 import './styles/base.css'
 
 export * from './composables/appearance'
+export * from './composables/socialLink'
 
 export { default as VTIconDiscord } from './components/icons/VTIconDiscord.vue'
 export { default as VTIconFacebook } from './components/icons/VTIconFacebook.vue'
@@ -15,4 +16,6 @@ export { default as VTIconSun } from './components/icons/VTIconSun.vue'
 export { default as VTIconTwitter } from './components/icons/VTIconTwitter.vue'
 
 export { default as VTHamburger } from './components/VTHamburger.vue'
+export { default as VTSocialLink } from './components/VTSocialLink.vue'
+export { default as VTSocialLinks } from './components/VTSocialLinks.vue'
 export { default as VTSwitchAppearance } from './components/VTSwitchAppearance.vue'

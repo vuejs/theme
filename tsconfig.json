@@ -9,9 +9,14 @@
     "lib": ["ESNext", "DOM"],
     "types": ["node", "jest", "vite/client"],
     "paths": {
-      "vue-theme/*": ["src/*"]
+      "vue-theme": ["src/index.ts"]
     }
   },
+  "include": [
+    "src",
+    "types",
+    "__tests__"
+  ],
   "exclude": [
     "node_modules"
   ]
