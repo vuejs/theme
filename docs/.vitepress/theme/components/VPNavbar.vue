@@ -22,6 +22,7 @@ defineProps<{
 
 <style scoped>
 .VPNavBar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--c-divider-light);

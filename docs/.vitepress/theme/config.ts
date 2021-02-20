@@ -34,9 +34,18 @@ export interface Config {
    * Algolia configuration for the site search.
    */
   algolia?: AlgoliaSearchOptions
+
+  /**
+   * The social links to be displayed at the end of the nav bar. Perfect for
+   * placing links to social services such as GitHub, Twitter, Facebook, etc.
+   */
+  socialLinks?: SocialLink[]
 }
 
-// partially copied from @docsearch/react/dist/esm/DocSearch.d.ts
+/**
+ * The Algolia search options. Partially copied from
+ * @docsearch/react/dist/esm/DocSearch.d.ts
+ */
 export interface AlgoliaSearchOptions {
   appId?: string
   apiKey: string
@@ -46,3 +55,16 @@ export interface AlgoliaSearchOptions {
   disableUserPersonalization?: boolean
   initialQuery?: string
 }
+
+export interface SocialLink {
+  icon: SocialLinkIcon
+  link: string
+}
+
+export type SocialLinkIcon =
+  | 'discord'
+  | 'facebook'
+  | 'github'
+  | 'linkedin'
+  | 'slack'
+  | 'twitter'

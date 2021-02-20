@@ -6,13 +6,8 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue'
 import { VTSwitchAppearance } from 'vue-theme'
 import { useConfig } from '../composables/config'
-
-defineProps<{
-  open: boolean
-}>()
 
 const { config } = useConfig()
 </script>
@@ -21,7 +16,6 @@ const { config } = useConfig()
 .VPNavScreenAppearance {
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
   border-radius: 8px;
   padding: 12px 14px 12px 16px;
   background-color: var(--c-bg-soft);

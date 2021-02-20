@@ -1,12 +1,13 @@
 <template>
   <transition
     name="fade"
-    @after-enter="lockBodyScroll"
+    @enter="lockBodyScroll"
     @after-leave="unlockBodyScroll"
   >
     <div v-if="open" class="VPNavScreen" ref="screen">
       <div class="container">
-        <VPNavScreenAppearance />
+        <VPNavScreenAppearance class="appearance" />
+        <VPNavScreenSocialLinks class="social-links" />
       </div>
     </div>
   </transition>
@@ -16,6 +17,7 @@
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import { defineProps, ref } from 'vue'
 import VPNavScreenAppearance from './VPNavScreenAppearance.vue'
+import VPNavScreenSocialLinks from './VPNavScreenSocialLinks.vue'
 
 const props = defineProps<{
   open: boolean
@@ -24,7 +26,9 @@ const props = defineProps<{
 const screen = ref<HTMLElement | null>(null)
 
 function lockBodyScroll() {
-  disableBodyScroll(container.value)
+  disableBodyScroll(screen.value, {
+    reserveScrollBarGap: true
+  })
 }
 
 function unlockBodyScroll() {
@@ -43,7 +47,7 @@ function unlockBodyScroll() {
   width: 100%;
   background-color: var(--c-bg);
   transition: background-color .5s;
-  overflow: hidden;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -71,5 +75,17 @@ function unlockBodyScroll() {
   margin: 0 auto;
   padding: 16px 0 96px;
   max-width: 288px;
+}
+
+.appearance {
+  margin-top: 8px;
+}
+
+.appearance + .social-links {
+  margin-top: 12px;
+}
+
+.social-links {
+  margin-top: 8px;
 }
 </style>
