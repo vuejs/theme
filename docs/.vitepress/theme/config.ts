@@ -1,5 +1,12 @@
 export interface Config {
   /**
+   * The appearance option to enable/disable light/dark mode.
+   *
+   * @default true
+   */
+  appearance?: boolean
+
+  /**
    * The path to the logo file.
    *
    * @example `'/img/logo.svg'`
@@ -22,4 +29,20 @@ export interface Config {
    * @default 'VitePress Site'
    */
   title?: string | null
+
+  /**
+   * Algolia configuration for the site search.
+   */
+  algolia?: AlgoliaSearchOptions
+}
+
+// partially copied from @docsearch/react/dist/esm/DocSearch.d.ts
+export interface AlgoliaSearchOptions {
+  appId?: string
+  apiKey: string
+  indexName: string
+  placeholder?: string
+  searchParameters?: any
+  disableUserPersonalization?: boolean
+  initialQuery?: string
 }

@@ -5,5 +5,8 @@ import './styles/base.css'
 export * from './composables/appearance'
 
 export { default as VTIconMoon } from './components/icons/VTIconMoon.vue'
+export { default as VTIconSearch } from './components/icons/VTIconSearch.vue'
 export { default as VTIconSun } from './components/icons/VTIconSun.vue'
+
+export { default as VTHamburger } from './components/VTHamburger.vue'
 export { default as VTSwitchAppearance } from './components/VTSwitchAppearance.vue'

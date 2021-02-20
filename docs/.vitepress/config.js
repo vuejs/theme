@@ -10,6 +10,11 @@ module.exports = {
   },
 
   themeConfig: {
-    logo: '/img/logo-vue.svg'
+    logo: '/img/logo-vue.svg',
+
+    algolia: {
+      apiKey: 'c57105e511faa5558547599f120ceeba',
+      indexName: 'vitepress'
+    }
   }
 }

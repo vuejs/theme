@@ -1,5 +1,5 @@
 <template>
-  <a v-if="hasTitle" class="VPNavbarTitle" :href="$withBase($localePath)">
+  <a v-if="hasTitle" class="VPNavBarTitle" :href="$withBase($localePath)">
     <div v-if="logo" class="logo">
       <img class="logo-img" :class="{ 'has-dark': logoDark }" :src="logo" alt="Logo">
       <img v-if="logoDark" class="logo-img inverse" :src="logoDark" alt="Logo for dark mode">
@@ -32,14 +32,14 @@ const hasTitle = computed(() => {
 </script>
 
 <style scoped>
-.VPNavbarTitle {
+.VPNavBarTitle {
   display: flex;
   align-items: center;
   height: 55px;
   transition: opacity .25s;
 }
 
-.VPNavbarTitle:hover {
+.VPNavBarTitle:hover {
   opacity: .6;
 }
 

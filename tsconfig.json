@@ -12,12 +12,6 @@
       "vue-theme/*": ["src/*"]
     }
   },
-  "include": [
-    "src",
-    "types",
-    "docs/.vitepress/theme",
-    "__tests__"
-  ],
   "exclude": [
     "node_modules"
   ]
