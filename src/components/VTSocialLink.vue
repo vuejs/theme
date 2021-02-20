@@ -56,8 +56,8 @@ const icon = computed(() => {
 }
 
 .VPSocialLink.small {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 
 .VPSocialLink.small .icon {
@@ -75,7 +75,7 @@ const icon = computed(() => {
   height: 24px;
 }
 
-.link:hover {
+.VPSocialLink:hover {
   color: var(--c-text-1);
   transition: color .25s;
 }

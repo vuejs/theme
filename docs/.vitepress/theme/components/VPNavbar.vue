@@ -3,11 +3,11 @@
     <VPNavBarTitle />
 
     <div class="content">
-      <VPNavBarSearch />
-
-      <VPNavBarExtra />
-
-      <VPNavBarHamburger :active="isScreenOpen" @click="$emit('toggle-screen')" />
+      <VPNavBarSearch class="search" />
+      <VPNavBarAppearance class="appearance" />
+      <VPNavBarSocialLinks class="social-links" />
+      <VPNavBarExtra class="extra" />
+      <VPNavBarHamburger class="hamburger" :active="isScreenOpen" @click="$emit('toggle-screen')" />
     </div>
   </div>
 </template>
@@ -16,6 +16,8 @@
 import { defineProps } from 'vue'
 import VPNavBarTitle from './VPNavBarTitle.vue'
 import VPNavBarSearch from './VPNavBarSearch.vue'
+import VPNavBarAppearance from './VPNavBarAppearance.vue'
+import VPNavBarSocialLinks from './VPNavBarSocialLinks.vue'
 import VPNavBarExtra from './VPNavBarExtra.vue'
 import VPNavBarHamburger from './VPNavBarHamburger.vue'
 
@@ -37,20 +39,25 @@ defineProps<{
 }
 
 @media (min-width: 768px) {
-  .VPNavBar {
-    padding: 0 12px 0 32px;
-  }
+  .VPNavBar { padding: 0 12px 0 32px; }
+}
+
+@media (min-width: 1280px) {
+  .VPNavBar { padding: 0 32px; }
 }
 
 .content {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex-grow: 1;
 }
 
 @media (min-width: 768px) {
-  .content {
-    padding-top: 2px;
-  }
+  .content { padding-top: 2px; }
+}
+
+.appearance + .social-links {
+  margin-left: 12px;
 }
 </style>

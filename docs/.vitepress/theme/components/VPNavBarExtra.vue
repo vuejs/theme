@@ -43,6 +43,6 @@ const hasContent = computed(() => {
 }
 
 .social-links {
-  margin: -6px -8px;
+  margin: -4px -8px;
 }
 </style>
