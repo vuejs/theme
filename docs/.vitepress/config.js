@@ -27,11 +27,10 @@ module.exports = {
       { text: 'Guide', link: '/guide/introduction' },
       { text: 'Styles', link: '/guide/styles' },
       { text: 'Components', link: '/guide/components' },
-      { text: 'Composables', link: '/guide/composables' },
       {
         text: 'Support Vue',
         items: [
-          { text: 'On-time Donations', link: 'https://vuejs.org/support-vuejs/#One-time-Donations' },
+          { text: 'One-time Donations', link: 'https://vuejs.org/support-vuejs/#One-time-Donations' },
           { text: 'Recurring Pledges', link: 'https://vuejs.org/support-vuejs/#Recurring-Pledges' },
           { text: 'T-shirts Shop', link: 'https://vue.threadless.com/' }
         ]

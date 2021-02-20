@@ -80,5 +80,6 @@ export interface NavItemWithChildren extends NavItemBase {
 export type NavItemChild = NavItemWithLink | NavItemChildWithChildren
 
 export interface NavItemChildWithChildren {
+  text?: string
   items: NavItemWithLink[]
 }

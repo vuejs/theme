@@ -1,18 +1,22 @@
 <template>
   <VTFlyout v-if="hasContent" class="VPNavBarExtra">
     <div v-if="config.appearance" class="group">
-      <p class="label">Appearance</p>
-      <div class="action">
-        <VTSwitchAppearance />
+      <div class="item">
+        <p class="label">Appearance</p>
+        <div class="action">
+          <VTSwitchAppearance />
+        </div>
       </div>
     </div>
 
     <div v-if="config.socialLinks" class="group">
-      <VTSocialLinks
-        class="social-links"
-        size="small"
-        :links="config.socialLinks"
-      />
+      <div class="item">
+        <VTSocialLinks
+          class="social-links"
+          size="small"
+          :links="config.socialLinks"
+        />
+      </div>
     </div>
   </VTFlyout>
 </template>
@@ -40,6 +44,15 @@ const hasContent = computed(() => {
 
 @media (min-width: 1280px) {
   .VPNavBarExtra { display: none; }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.action {
+  margin-right: -2px;
 }
 
 .social-links {

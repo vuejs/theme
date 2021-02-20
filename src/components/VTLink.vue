@@ -38,6 +38,6 @@ const showIcon = computed(() => isExternal.value && !props.noIcon)
   width: 14px;
   height: 14px;
   fill: var(--c-text-2);
-  transition: fill .5s;
+  transition: fill .25s;
 }
 </style>

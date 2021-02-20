@@ -45,7 +45,7 @@ const hasTitle = computed(() => {
 
 .logo {
   position: relative;
-  height: 28px;
+  height: 24px;
 }
 
 .logo + .title {

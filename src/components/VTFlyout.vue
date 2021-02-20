@@ -1,12 +1,16 @@
 <template>
   <div class="VTFlyout">
     <button class="button">
-      <span v-if="props.button" class="button-text">{{ props.button }}</span>
+      <span v-if="props.button" class="button-text">
+        {{ props.button }}
+        <VTIconChevronDown class="button-text-icon" />
+      </span>
+
       <VTIconMoreHorizontal v-else class="button-icon" />
     </button>
 
     <div class="menu">
-      <VTMenu>
+      <VTMenu :items="items">
         <slot />
       </VTMenu>
     </div>
@@ -15,11 +19,14 @@
 
 <script lang="ts" setup>
 import { defineProps, computed } from 'vue'
+import type { MenuItem } from '../composables/menu'
+import VTIconChevronDown from './icons/VTIconChevronDown.vue'
 import VTIconMoreHorizontal from './icons/VTIconMoreHorizontal.vue'
 import VTMenu from './VTMenu.vue'
 
 const props = defineProps<{
   button?: string
+  items?: MenuItem[]
 }>()
 </script>
 
@@ -31,6 +38,10 @@ const props = defineProps<{
 .VTFlyout:hover {
   color: var(--c-bland);
   transition: color .25s;
+}
+
+.VTFlyout:hover .button-text {
+  color: var(--c-text-2);
 }
 
 .VTFlyout:hover .button-icon {
@@ -50,6 +61,23 @@ const props = defineProps<{
   height: 55px;
   color: var(--c-text-1);
   transition: color .5s;
+}
+
+.button-text {
+  display: flex;
+  align-items: center;
+  line-height: 55px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--c-text-1);
+  transition: color .25s;
+}
+
+.button-text-icon {
+  margin-left: 4px;
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 
 .button-icon {

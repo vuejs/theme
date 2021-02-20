@@ -4,6 +4,7 @@
 
     <div class="content">
       <VPNavBarSearch class="search" />
+      <VPNavBarMenu class="menu" />
       <VPNavBarAppearance class="appearance" />
       <VPNavBarSocialLinks class="social-links" />
       <VPNavBarExtra class="extra" />
@@ -16,6 +17,7 @@
 import { defineProps } from 'vue'
 import VPNavBarTitle from './VPNavBarTitle.vue'
 import VPNavBarSearch from './VPNavBarSearch.vue'
+import VPNavBarMenu from './VPNavBarMenu.vue'
 import VPNavBarAppearance from './VPNavBarAppearance.vue'
 import VPNavBarSocialLinks from './VPNavBarSocialLinks.vue'
 import VPNavBarExtra from './VPNavBarExtra.vue'
@@ -57,7 +59,7 @@ defineProps<{
   .content { padding-top: 2px; }
 }
 
-.appearance + .social-links {
-  margin-left: 12px;
-}
+.menu + .appearance         { margin-left: 8px;  }
+.menu + .social-links       { margin-left: 12px;  }
+.appearance + .social-links { margin-left: 12px; }
 </style>
