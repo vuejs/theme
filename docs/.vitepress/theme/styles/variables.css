@@ -4,4 +4,6 @@
 
 :root {
   --z-index-nav: 10;
+  --z-index-backdrop: 20;
+  --z-index-sidebar: 30;
 }

@@ -47,6 +47,11 @@ export interface Config {
    * The nav items.
    */
   nav?: NavItem[]
+
+  /**
+   * The sidebar items.
+   */
+  sidebar?: SidebarConfig
 }
 
 /**
@@ -82,4 +87,20 @@ export type NavItemChild = NavItemWithLink | NavItemChildWithChildren
 export interface NavItemChildWithChildren {
   text?: string
   items: NavItemWithLink[]
+}
+
+export type SidebarConfig = SidebarGroup[] | MultiSidebarConfig
+
+export interface MultiSidebarConfig {
+  [path: string]: SidebarGroup[]
+}
+
+export interface SidebarGroup {
+  text: string
+  items: SidebarLink[]
+}
+
+export interface SidebarLink {
+  text: string
+  link: string
 }

@@ -1,14 +1,26 @@
 <template>
   <div class="VPLayout">
+    <VPBackdrop :show="showBackdrop" @click="closeSidebar" />
     <VPNav />
+    <VPLocalNav @open-menu="openSidebar" />
+    <VPSidebar :open="isSidebarOpen" @close="closeSidebar" />
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref, computed } from 'vue'
 import { useAppearance } from '../composables/appearance'
+import { useSidebar } from '../composables/sidebar'
+import VPBackdrop from './VPBackdrop.vue'
 import VPNav from './VPNav.vue'
+import VPLocalNav from './VPLocalNav.vue'
+import VPSidebar from './VPSidebar.vue'
 
 useAppearance()
+
+const { isSidebarOpen, openSidebar, closeSidebar } = useSidebar()
+
+const showBackdrop = computed(() => isSidebarOpen.value)
 </script>
 
 <style scoped>

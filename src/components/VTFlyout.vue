@@ -89,7 +89,7 @@ const props = defineProps<{
 
 .menu {
   position: absolute;
-  top: 43px;
+  top: 42px;
   right: 0;
   opacity: 0;
   visibility: hidden;
