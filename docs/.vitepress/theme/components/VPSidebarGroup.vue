@@ -30,6 +30,12 @@ defineProps<{
   padding: 6px 0;
 }
 
+@media (min-width: 960px) {
+  .title {
+    padding: 4px 0;
+  }
+}
+
 .title-text {
   line-height: 20px;
   font-size: 13px;

@@ -5,7 +5,7 @@
       <span class="menu-text">Menu</span>
     </button>
 
-    <a class="top-link" href="#">Return to top</a>
+    <a class="top-link" href="#" @click="scrollToTop">Return to top</a>
   </div>
 </template>
 
@@ -14,13 +14,24 @@ import { VTIconAlignLeft } from 'vue-theme'
 import { useSidebar } from '../composables/sidebar'
 
 const { hasSidebar } = useSidebar()
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+}
 </script>
 
 <style scoped>
 .VPLocalNav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-local-nav);
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--c-divider-light);
+  background-color: var(--c-bg);
+  transition: border-color .5s, background-color .5s;
 }
 
 @media (min-width: 960px) {
@@ -31,7 +42,7 @@ const { hasSidebar } = useSidebar()
   display: flex;
   align-items: center;
   padding: 0 24px;
-  line-height: 39px;
+  line-height: 47px;
   font-size: 12px;
   font-weight: 500;
   color: var(--c-text-2);
@@ -56,7 +67,7 @@ const { hasSidebar } = useSidebar()
 
 .top-link {
   padding: 0 24px;
-  line-height: 39px;
+  line-height: 47px;
   font-size: 12px;
   font-weight: 500;
   color: var(--c-text-2);

@@ -3,7 +3,8 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --z-index-nav: 10;
-  --z-index-backdrop: 20;
-  --z-index-sidebar: 30;
+  --z-index-local-nav: 10;
+  --z-index-nav: 20;
+  --z-index-backdrop: 40;
+  --z-index-sidebar: 50;
 }

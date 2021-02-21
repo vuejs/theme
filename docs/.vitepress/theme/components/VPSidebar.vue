@@ -29,7 +29,7 @@ defineProps<{
   bottom: 0;
   left: 0;
   z-index: var(--z-index-sidebar);
-  padding: 62px 24px 96px;
+  padding: 40px 24px 96px;
   width: calc(100vw - 64px);
   max-width: 320px;
   opacity: 0;
@@ -42,12 +42,13 @@ defineProps<{
 }
 
 @media (min-width: 768px) {
-  .VPSidebar { padding: 62px 32px 96px; }
+  .VPSidebar { padding: 40px 32px 96px; }
 }
 
 @media (min-width: 960px) {
   .VPSidebar {
     top: 56px;
+    z-index: 1;
     border-right: 1px solid var(--c-divider-light);
     padding: 24px 32px 96px;
     width: 248px;

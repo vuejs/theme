@@ -11,8 +11,12 @@ module.exports = {
 
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Source+Code+Pro&display=swap' }]
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Source+Code+Pro:wght@400;700&display=swap' }]
   ],
+
+  markdown: {
+    lineNumbers: true
+  },
 
   themeConfig: {
     logo: '/img/logo-vue.svg',

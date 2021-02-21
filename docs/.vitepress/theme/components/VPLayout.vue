@@ -4,6 +4,7 @@
     <VPNav />
     <VPLocalNav @open-menu="openSidebar" />
     <VPSidebar :open="isSidebarOpen" @close="closeSidebar" />
+    <VPPage />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import VPBackdrop from './VPBackdrop.vue'
 import VPNav from './VPNav.vue'
 import VPLocalNav from './VPLocalNav.vue'
 import VPSidebar from './VPSidebar.vue'
+import VPPage from './VPPage.vue'
 
 useAppearance()
 

@@ -19,6 +19,12 @@ defineProps<{
   padding: 6px 0;
 }
 
+@media (min-width: 960px) {
+  .link {
+    padding: 4px 0;
+  }
+}
+
 .link:hover .link-text {
   color: var(--c-brand);
   transition: color .25s;
