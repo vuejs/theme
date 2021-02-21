@@ -23,7 +23,7 @@ module.exports = {
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vue-theme' },
+      { icon: 'github', link: 'https://github.com/vuejs/vue' },
       { icon: 'twitter', link: 'https://twitter.com/vuejs' },
       { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
     ],
