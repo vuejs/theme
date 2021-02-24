@@ -8,3 +8,16 @@
   --z-index-backdrop: 40;
   --z-index-sidebar: 50;
 }
+
+/**
+ * Global Layouts
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --screen-max-width: 1376px;
+
+  --sidebar-width-mobile: 320px;
+  --sidebar-width-small: 240px;
+  --sidebar-width-medium: 272px;
+  --sidebar-width-large: 304px;
+}

@@ -1,14 +1,16 @@
 <template>
   <div class="VPNavBar">
-    <VPNavBarTitle />
+    <div class="container">
+      <VPNavBarTitle />
 
-    <div class="content">
-      <VPNavBarSearch class="search" />
-      <VPNavBarMenu class="menu" />
-      <VPNavBarAppearance class="appearance" />
-      <VPNavBarSocialLinks class="social-links" />
-      <VPNavBarExtra class="extra" />
-      <VPNavBarHamburger class="hamburger" :active="isScreenOpen" @click="$emit('toggle-screen')" />
+      <div class="content">
+        <VPNavBarSearch class="search" />
+        <VPNavBarMenu class="menu" />
+        <VPNavBarAppearance class="appearance" />
+        <VPNavBarSocialLinks class="social-links" />
+        <VPNavBarExtra class="extra" />
+        <VPNavBarHamburger class="hamburger" :active="isScreenOpen" @click="$emit('toggle-screen')" />
+      </div>
     </div>
   </div>
 </template>
@@ -31,8 +33,6 @@ defineProps<{
 <style scoped>
 .VPNavBar {
   position: relative;
-  display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid var(--c-divider-light);
   padding: 0 12px 0 24px;
   height: 56px;
@@ -46,6 +46,13 @@ defineProps<{
 
 @media (min-width: 1280px) {
   .VPNavBar { padding: 0 32px; }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--screen-max-width);
 }
 
 .content {

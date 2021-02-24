@@ -31,7 +31,7 @@ defineProps<{
   z-index: var(--z-index-sidebar);
   padding: 40px 24px 96px;
   width: calc(100vw - 64px);
-  max-width: 320px;
+  max-width: var(--sidebar-width-mobile);
   opacity: 0;
   background-color: var(--c-bg);
   box-shadow: var(--c-shadow-3);
@@ -51,12 +51,25 @@ defineProps<{
     z-index: 1;
     border-right: 1px solid var(--c-divider-light);
     padding: 24px 32px 96px;
-    width: 248px;
+    width: var(--sidebar-width-small);
     max-width: 100%;
     opacity: 1;
     box-shadow: none;
     transform: translateX(0);
     transition: border-color .5s, background-color .5s;
+  }
+}
+
+@media (min-width: 1280px) {
+  .VPSidebar {
+    width: var(--sidebar-width-medium);
+  }
+}
+
+@media (min-width: 1440px) {
+  .VPSidebar {
+    padding: 24px 32px 96px calc((100% - var(--screen-max-width)) / 2);
+    width: calc((100% - var(--screen-max-width)) / 2 + var(--sidebar-width-large));
   }
 }
 

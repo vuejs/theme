@@ -1,4 +1,4 @@
-.vp-content h1 {
+.vp-doc h1 {
   position: relative;
   margin: 0 0 14px;
   line-height: 32px;
@@ -6,18 +6,18 @@
   font-weight: 500;
 }
 
-.vp-content h1 + p {
+.vp-doc h1 + p {
   margin-top: 14px;
 }
 
 @media (min-width: 768px) {
-  .vp-content h1 {
+  .vp-doc h1 {
     line-height: 40px;
     font-size: 32px;
   }
 }
 
-.vp-content h2 {
+.vp-doc h2 {
   position: relative;
   margin: 64px 0 14px;
   border-top: 1px solid var(--c-divider-light);
@@ -29,13 +29,13 @@
 }
 
 @media (min-width: 768px) {
-  .vp-content h2 {
+  .vp-doc h2 {
     line-height: 32px;
     font-size: 24px;
   }
 }
 
-.vp-content .header-anchor {
+.vp-doc .header-anchor {
   float: left;
   margin-left: -.87em;
   padding-right: .23em;
@@ -46,41 +46,41 @@
 }
 
 @media (min-width: 640px) {
-  .vp-content .header-anchor {
+  .vp-doc .header-anchor {
     font-size: 20px;
   }
 }
 
 @media (min-width: 768px) {
-  .vp-content .header-anchor {
+  .vp-doc .header-anchor {
     font-size: 24px;
   }
 }
 
-.vp-content h1:hover .header-anchor,
-.vp-content h1:focus .header-anchor,
-.vp-content h2:hover .header-anchor,
-.vp-content h2:focus .header-anchor {
+.vp-doc h1:hover .header-anchor,
+.vp-doc h1:focus .header-anchor,
+.vp-doc h2:hover .header-anchor,
+.vp-doc h2:focus .header-anchor {
   opacity: 1;
 }
 
-.vp-content p {
+.vp-doc p {
   margin: 18px 0;
   line-height: 28px;
   font-size: 16px;
   font-weight: 400;
 }
 
-.vp-content a {
+.vp-doc a {
   font-weight: 500;
   color: var(--c-brand);
   transition: color .25s;
 }
 
-.vp-content a:hover {
+.vp-doc a:hover {
   color: var(--c-brand-dark);
 }
 
-.vp-content strong {
+.vp-doc strong {
   font-weight: 700;
 }
