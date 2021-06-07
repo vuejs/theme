@@ -1,5 +1,5 @@
 <template>
-  <div class="VPLayout">
+  <div class="VPApp">
     <VPBackdrop :show="showBackdrop" @click="closeSidebar" />
     <VPNav />
     <VPLocalNav @open-menu="openSidebar" />
@@ -26,7 +26,7 @@ const showBackdrop = computed(() => isSidebarOpen.value)
 </script>
 
 <style scoped>
-.VPLayout {
+.VPApp {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
