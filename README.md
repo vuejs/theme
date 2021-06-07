@@ -8,7 +8,7 @@ Not only it contains essential design kits to build product docs, but it covers 
 
 ## Current Status
 
-[Major refactoring for Vue docs is in progress](https://github.com/vuejs/team-discussions/discussions/22). This repo is meant to be the sharable theme. We must create **wrapper theme builder** at the end to create a central CLI, but while we are in the early stage of development. See "Development Setup" to learn more about the current directory structure.
+[Major refactoring for Vue docs is in progress](https://github.com/vuejs/team-discussions/discussions/22). This repo is currently the development environment to create this whole ecosystem. See "Development Setup" to learn more about the current directory structure.
 
 ## Design Mockups
 
@@ -16,12 +16,19 @@ You can currently find the design mockups at [InVision](https://projects.invisio
 
 ## Development Setup
 
-It uses VitePress to test the design components visually. Well, the best way to see the design works is to use it! Here is the description of the directory structure.
+We must create several components following the architecture described at [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion. The basic idea of the architecture at the moment is as follows.
 
-- `src` - Contains all "Vue Theme" components and styles.
-- `docs/.vitepress/theme` - Contains theme configuration for VitePress.
+- `Vue Theme` – Vue Design System. The sharable global Vue theme related codes, such as base css, color scheme, global components such as "Alert", etc.
+- `Vitepress` – It uses `Vue Theme` to create VitePress docs theme, such as docs page, navbar, sidebar, and such.
+- `Vue Web Theme` – The central repo (the "theme") in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion. At discussion it's called `vue-docs-theme`. It uses `Vue Theme` and `Vitepress` to create Vue website theme, such as Home, Team, Partners page. Naming it `vue-web` at the moment since it might make more sense to call it `website` rather than docs.
+- `Docs` – The content (markdown). It uses `Vue Web Theme` to build final Vue website. This is the "source repo" mentioned in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion.
 
-Once the Vue Theme is published, `docs/.vitepress/theme` should be moved to VitePress, but while we are in the early stage of development, we're directly building the "theme" for VitePress here.
+In the end, each component should live in their dedicated repo, but while we are in the early stage of development, we're directly building everything in this single repo. Here is the corresponding directory structure.
+
+- `src-theme` – Code for `Vue Theme`. Add sharable global stuff here. Accessible via `vue-theme` alias.
+- `src-vp` – Code for new `Vitepress`. Add Vitepress related code here. Accessible via `vitepress-next` alias.
+- `src-web` – Code for "Vue Web Theme". Add any Vue website related code here. Accessible via `vue-web-theme` alias.
+- `docs` – Contents for `Docs`. Currently, we're placing `.vitepress` folder to boot up VitePress, by importing code from `src-web` (see `docs/.vitepress` and you'll see what we mean).
 
 ### Booting The Local Dev Server
 

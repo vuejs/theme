@@ -9,11 +9,15 @@
     "lib": ["ESNext", "DOM"],
     "types": ["node", "jest", "vite/client"],
     "paths": {
-      "vue-theme": ["src/index.ts"]
+      "vue-theme": ["src-theme/index.ts"],
+      "vitepress-next": ["src-vp/index.ts"],
+      "vue-web-theme": ["src-web/index.ts"]
     }
   },
   "include": [
-    "src",
+    "src-theme",
+    "src-vp",
+    "src-web",
     "types",
     "__tests__"
   ],

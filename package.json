@@ -17,7 +17,7 @@
     "url": "https://github.com/vuejs/vue-theme/issues"
   },
   "scripts": {
-    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src-theme,src-vp,src-web,types}/**/*.ts\"",
     "type": "tsc --noEmit",
     "jest": "jest",
     "test": "yarn lint && yarn type && yarn jest",

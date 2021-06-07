@@ -1,8 +1,13 @@
+// config for the docs. we should make able to place this file right under the
+// docs folder at the end.
+
 const path = require('path')
 
 module.exports = {
   alias: {
-    'vue-theme': path.join(__dirname, '../../src')
+    'vue-theme': path.join(__dirname, '../../src-theme'),
+    'vitepress-next': path.join(__dirname, '../../src-vp'),
+    'vue-web-theme': path.join(__dirname, '../../src-web')
   },
 
   lang: 'en-US',
