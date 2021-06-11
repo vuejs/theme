@@ -92,7 +92,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: var(--font-family-mono);
+  font-family: var(--vt-font-family-mono);
 }
 
 img,
