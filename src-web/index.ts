@@ -1,4 +1,4 @@
-import { VPApp } from 'vitepress-next'
+import { VPApp } from 'vue-theme'
 
 const VWApp = {
   Layout: VPApp,

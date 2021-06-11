@@ -1,0 +1,86 @@
+.vt-doc h1 {
+  position: relative;
+  margin: 0 0 14px;
+  line-height: 32px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.vt-doc h1 + p {
+  margin-top: 14px;
+}
+
+@media (min-width: 768px) {
+  .vt-doc h1 {
+    line-height: 40px;
+    font-size: 32px;
+  }
+}
+
+.vt-doc h2 {
+  position: relative;
+  margin: 64px 0 14px;
+  border-top: 1px solid var(--vt-c-divider-light);
+  padding-top: 20px;
+  line-height: 28px;
+  font-size: 20px;
+  font-weight: 500;
+  transition: border-color .5s;
+}
+
+@media (min-width: 768px) {
+  .vt-doc h2 {
+    line-height: 32px;
+    font-size: 24px;
+  }
+}
+
+.vt-doc .header-anchor {
+  float: left;
+  margin-left: -.87em;
+  padding-right: .23em;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0;
+  transition: color .25s, opacity .25s;
+}
+
+@media (min-width: 640px) {
+  .vt-doc .header-anchor {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .vt-doc .header-anchor {
+    font-size: 24px;
+  }
+}
+
+.vt-doc h1:hover .header-anchor,
+.vt-doc h1:focus .header-anchor,
+.vt-doc h2:hover .header-anchor,
+.vt-doc h2:focus .header-anchor {
+  opacity: 1;
+}
+
+.vt-doc p {
+  margin: 18px 0;
+  line-height: 28px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.vt-doc a {
+  font-weight: 500;
+  color: var(--vt-c-brand);
+  transition: color .25s;
+}
+
+.vt-doc a:hover {
+  color: var(--vt-c-brand-dark);
+}
+
+.vt-doc strong {
+  font-weight: 700;
+}

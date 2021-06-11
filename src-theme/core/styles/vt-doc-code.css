@@ -1,0 +1,352 @@
+.vt-doc div[class*='language-'] {
+  position: relative;
+  margin: 28px -24px;
+  background-color: var(--vt-c-bg-soft);
+  overflow-x: auto;
+  transition: background-color .5s;
+}
+
+@media (min-width: 640px) {
+  .vt-doc div[class*='language-'] {
+    margin: 28px 0;
+    border-radius: 8px;
+  }
+}
+
+.vt-doc div[class*='language-'] + div[class*='language-'] {
+  margin-top: -16px;
+}
+
+.vt-doc [class*='language-'] pre,
+.vt-doc [class*='language-'] code {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.vt-doc [class*='language-'] pre {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 12px 24px 12px 16px;
+  background: transparent;
+  overflow-x: auto;
+}
+
+.vt-doc [class*='language-'] code {
+  display: inline-block;
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  color: #3a385d;
+  transition: color .5s;
+}
+
+.dark .vt-doc [class*='language-'] code {
+  color: #d1d1d1;
+}
+
+.vt-doc .highlight-lines {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 13px 0 11px;
+  width: 100%;
+  line-height: 24px;
+  font-family: var(--font-family-mono);
+  font-size: 14px;
+  user-select: none;
+  overflow: hidden;
+}
+
+.vt-doc .highlight-lines .highlighted {
+  background-color: var(--vt-c-gray-light-4);
+}
+
+.dark .vt-doc .highlight-lines .highlighted {
+  background-color: #1c1c1c;
+}
+
+.vt-doc div[class*='language-'].line-numbers-mode {
+  padding-left: 32px;
+}
+
+.vt-doc .line-numbers-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  border-right: 1px solid var(--vt-c-divider-light);
+  padding: 13px 0 11px;
+  width: 32px;
+  text-align: center;
+  line-height: 24px;
+  font-family: var(--font-family-mono);
+  font-size: 14px;
+  color: var(--vt-c-text-3);
+  transition: border-color .5s, color .5s;
+}
+
+.vt-doc [class*='language-']:before {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 2;
+  line-height: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vt-c-text-2);
+  transition: color .5s;
+}
+
+.vt-doc [class~='language-html']:before,
+.vt-doc [class~='language-markup']:before {
+  content: 'html';
+}
+
+.vt-doc [class~='language-md']:before,
+.vt-doc [class~='language-markdown']:before {
+  content: 'md';
+}
+
+.vt-doc [class~='language-css']:before {
+  content: 'css';
+}
+
+.vt-doc [class~='language-sass']:before {
+  content: 'sass';
+}
+
+.vt-doc [class~='language-scss']:before {
+  content: 'scss';
+}
+
+.vt-doc [class~='language-less']:before {
+  content: 'less';
+}
+
+.vt-doc [class~='language-stylus']:before {
+  content: 'styl';
+}
+
+.vt-doc [class~='language-js']:before,
+.vt-doc [class~='language-typescript']:before {
+  content: 'js';
+}
+
+.vt-doc [class~='language-ts']:before,
+.vt-doc [class~='language-typescript']:before {
+  content: 'ts';
+}
+
+.vt-doc [class~='language-json']:before {
+  content: 'json';
+}
+
+.vt-doc [class~='language-rb']:before,
+.vt-doc [class~='language-ruby']:before {
+  content: 'rb';
+}
+
+.vt-doc [class~='language-py']:before,
+.vt-doc [class~='language-python']:before {
+  content: 'py';
+}
+
+.vt-doc [class~='language-sh']:before,
+.vt-doc [class~='language-bash']:before {
+  content: 'sh';
+}
+
+.vt-doc [class~='language-php']:before {
+  content: 'php';
+}
+
+.vt-doc [class~='language-go']:before {
+  content: 'go';
+}
+
+.vt-doc [class~='language-rust']:before {
+  content: 'rust';
+}
+
+.vt-doc [class~='language-java']:before {
+  content: 'java';
+}
+
+.vt-doc [class~='language-c']:before {
+  content: 'c';
+}
+
+.vt-doc [class~='language-yaml']:before {
+  content: 'yaml';
+}
+
+.vt-doc [class~='language-dockerfile']:before {
+  content: 'dockerfile';
+}
+
+.vt-doc .token {
+  transition: color .5s;
+}
+
+.vt-doc .token.comment,
+.vt-doc .token.block-comment,
+.vt-doc .token.prolog,
+.vt-doc .token.doctype,
+.vt-doc .token.cdata {
+  color: #848486;
+}
+
+.vt-doc .token.punctuation {
+  color: #a8a9cc;
+}
+
+.vt-doc .token.tag,
+.vt-doc .token.attr-name,
+.vt-doc .token.namespace,
+.vt-doc .token.deleted {
+  color: #b2085f;
+}
+
+.vt-doc .token.function-name {
+  color: #6196cc;
+}
+
+.vt-doc .token.boolean,
+.vt-doc .token.number,
+.vt-doc .token.function {
+  color: #c25205;
+}
+
+.vt-doc .token.property,
+.vt-doc .token.class-name,
+.vt-doc .token.constant,
+.vt-doc .token.symbol {
+  color: #717c11;
+}
+
+.vt-doc .token.selector,
+.vt-doc .token.important,
+.vt-doc .token.atrule,
+.vt-doc .token.keyword,
+.vt-doc .token.builtin {
+  color: #b92dbc;
+}
+
+.vt-doc .token.string,
+.vt-doc .token.char,
+.vt-doc .token.attr-value,
+.vt-doc .token.regex,
+.vt-doc .token.variable {
+  color: #33a06f;
+}
+
+.vt-doc .token.operator,
+.vt-doc .token.entity,
+.vt-doc .token.url {
+  color: #33a06f;
+}
+
+.vt-doc .token.inserted {
+  color: #42b883;
+}
+
+.vt-doc .token.important,
+.vt-doc .token.bold {
+  font-weight: 700;
+}
+
+.vt-doc .token.italic {
+  font-style: italic;
+}
+
+.vt-doc .token.entity {
+  cursor: help;
+}
+
+.dark .vt-doc .token.comment,
+.dark .vt-doc .token.block-comment,
+.dark .vt-doc .token.prolog,
+.dark .vt-doc .token.doctype,
+.dark .vt-doc .token.cdata {
+  color: rgba(235, 235, 235, .30);
+}
+
+.dark .vt-doc .token.punctuation {
+  color: rgba(235, 235, 235, .60);
+}
+
+.dark .vt-doc .token.tag,
+.dark .vt-doc .token.attr-name,
+.dark .vt-doc .token.namespace,
+.dark .vt-doc .token.deleted {
+  color: #d84152;
+}
+
+.dark .vt-doc .token.function-name {
+  color: #6196cc;
+}
+
+.dark .vt-doc .token.boolean,
+.dark .vt-doc .token.number,
+.dark .vt-doc .token.function {
+  color: #f08d49;
+}
+
+.dark .vt-doc .token.property,
+.dark .vt-doc .token.class-name,
+.dark .vt-doc .token.constant,
+.dark .vt-doc .token.symbol {
+  color: #f8c555;
+}
+
+.dark .vt-doc .token.selector,
+.dark .vt-doc .token.important,
+.dark .vt-doc .token.atrule,
+.dark .vt-doc .token.keyword,
+.dark .vt-doc .token.builtin {
+  color: #cd5cce;
+}
+
+.dark .vt-doc .token.string,
+.dark .vt-doc .token.char,
+.dark .vt-doc .token.attr-value,
+.dark .vt-doc .token.regex,
+.dark .vt-doc .token.variable {
+  color: #42b883;
+}
+
+.dark .vt-doc .token.operator,
+.dark .vt-doc .token.entity,
+.dark .vt-doc .token.url {
+  color: #42b883;
+}
+
+.dark .vt-doc .token.inserted {
+  color: #42b883;
+}
+
+.dark .vt-doc .token.important,
+.dark .vt-doc .token.bold {
+  font-weight: 700;
+}
+
+.dark .vt-doc .token.italic {
+  font-style: italic;
+}
+
+.dark .vt-doc .token.entity {
+  cursor: help;
+}

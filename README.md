@@ -18,16 +18,16 @@ You can currently find the design mockups at [InVision](https://projects.invisio
 
 We must create several components following the architecture described at [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion. The basic idea of the architecture at the moment is as follows.
 
-- `Vue Theme` – Vue Design System. The sharable global Vue theme related codes, such as base css, color scheme, global components such as "Alert", etc.
-- `Vitepress` – It uses `Vue Theme` to create VitePress docs theme, such as docs page, navbar, sidebar, and such.
-- `Vue Web Theme` – The central repo (the "theme") in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion. At discussion it's called `vue-docs-theme`. It uses `Vue Theme` and `Vitepress` to create Vue website theme, such as Home, Team, Partners page. Naming it `vue-web` at the moment since it might make more sense to call it `website` rather than docs.
+- `Vue Theme` – Vue Design System. It also contains the default theme for the VitePress.
+- `Vue Website` – The central repo (the "theme") in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion. At discussion it's called `vue-docs-theme`. It uses `Vue Theme` and `Vitepress` to create Vue website theme, such as Home, Team, Partners page. These code should be moved to [vuejs/website](https://github.com/vuejs/website) in the future.
 - `Docs` – The content (markdown). It uses `Vue Web Theme` to build final Vue website. This is the "source repo" mentioned in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion.
 
 In the end, each component should live in their dedicated repo, but while we are in the early stage of development, we're directly building everything in this single repo. Here is the corresponding directory structure.
 
 - `src-theme` – Code for `Vue Theme`. Add sharable global stuff here. Accessible via `vue-theme` alias.
-- `src-vp` – Code for new `Vitepress`. Add Vitepress related code here. Accessible via `vitepress-next` alias.
-- `src-web` – Code for "Vue Web Theme". Add any Vue website related code here. Accessible via `vue-web-theme` alias.
+  - `src-theme/core` – Contains global Vue Design System codes, such as global styles, color scheme, common components, etc. All components are exposed to public to be used in any app require to use Vue Design System.
+  - `src-theme/vitepress` – Contains VitePress theme. Only `VPApp` (the root layout) is exposed. This component will be used as default theme for the VitePress.
+- `src-web` – Code for "Vue Website". Add any Vue website related code here. Accessible via `vue-website` alias.
 - `docs` – Contents for `Docs`. Currently, we're placing `.vitepress` folder to boot up VitePress, by importing code from `src-web` (see `docs/.vitepress` and you'll see what we mean).
 
 ### Booting The Local Dev Server
