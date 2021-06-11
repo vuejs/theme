@@ -1,4 +1,4 @@
-import type { SocialLink } from '../../core'
+import type { SocialLink } from '../core'
 
 export interface Config {
   /**
