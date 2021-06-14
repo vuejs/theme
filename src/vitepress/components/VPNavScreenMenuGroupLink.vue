@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import { VTLink } from 'vue-theme'
+import { VTLink } from '../../core'
 
 defineProps<{
   text: string

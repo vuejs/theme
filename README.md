@@ -18,25 +18,19 @@ You can currently find the design mockups at [InVision](https://projects.invisio
 
 We must create several components following the architecture described at [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion. The basic idea of the architecture at the moment is as follows.
 
-- `Vue Theme` – Vue Design System. It also contains the default theme for the VitePress.
-- `Vue Website` – The central repo (the "theme") in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion. At discussion it's called `vue-docs-theme`. It uses `Vue Theme` and `Vitepress` to create Vue website theme, such as Home, Team, Partners page. These code should be moved to [vuejs/website](https://github.com/vuejs/website) in the future.
-- `Docs` – The content (markdown). It uses `Vue Web Theme` to build final Vue website. This is the "source repo" mentioned in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion.
+- `@vue/theme` (this repo) – Vue Design System. It contains both the base components and a theme for VitePress.
 
-In the end, each component should live in their dedicated repo, but while we are in the early stage of development, we're directly building everything in this single repo. Here is the corresponding directory structure.
+- [`@vue/website`](https://github.com/vuejs/website) – The central repo (the "theme") in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion. It extends `@vue/theme` with `vuejs.org` specific components and pages, such as Home, Team, Sponsors and Partners page.
 
-- `src-theme` – Code for `Vue Theme`. Add sharable global stuff here. Accessible via `vue-theme` alias.
-  - `src-theme/core` – Contains global Vue Design System codes, such as global styles, color scheme, common components, etc. All components are exposed to public to be used in any app require to use Vue Design System.
-  - `src-theme/vitepress` – Contains VitePress theme. Only `VPApp` (the root layout) is exposed. This component will be used as default theme for the VitePress.
-- `src-web` – Code for "Vue Website". Add any Vue website related code here. Accessible via `vue-website` alias.
-- `docs` – Contents for `Docs`. Currently, we're placing `.vitepress` folder to boot up VitePress, by importing code from `src-web` (see `docs/.vitepress` and you'll see what we mean).
+- `vuejs/docs` – The actual docs content (markdown). It uses `@vue/website` to build the final Vue website. This is the "source repo" mentioned in [New Docs Deployment](https://github.com/vuejs/team-discussions/discussions/22) discussion.
 
 ### Booting The Local Dev Server
 
-Just install NPM packages and boot the server with `yarn docs`.
+This repo can be developed on its own since it is a self-contained VitePress theme. A demo app is available in `/demo` and can be run with `yarn dev`. Just install NPM packages and boot the server with `yarn dev`.
 
 ```bash
 $ yarn install
-$ yarn docs
+$ yarn dev
 ```
 
 ### Available Scripts
@@ -45,23 +39,17 @@ Here is the list of available scripts that can be used during the development.
 
 ```bash
 # Boot local dev server.
-$ yarn docs
+$ yarn dev
 
-# Build docs, then serve locally. This is for testing
+# Build demo, then serve locally. This is for testing
 # production build in the local environment.
-$ yarn docs-serve
+$ yarn demo-serve
 
 # Run lint via Prettier.
 $ yarn lint
 
 # Run type check via tsc.
 $ yarn type
-
-# Run unit test via Jest.
-$ yarn jest
-
-# Run lint, type check, and jest.
-$ yarn test
 ```
 
 ## License

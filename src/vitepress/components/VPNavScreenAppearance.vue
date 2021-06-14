@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { VTSwitchAppearance } from 'vue-theme'
+import { VTSwitchAppearance } from '../../core'
 import { useConfig } from '../composables/config'
 
 const { config } = useConfig()

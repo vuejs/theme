@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import type { NavItemChildWithChildren } from '../config'
+import type { NavItemWithLink } from '../config'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 
 defineProps<{
   text?: string
-  items: NavItemChildWithChildren[]
+  items: NavItemWithLink[]
 }>()
 </script>
 
