@@ -1,9 +1,3 @@
-<template>
-  <VTLink class="VPNavScreenMenuLink" :href="link" @click="$emit('jump')">
-    {{ text }}
-  </VTLink>
-</template>
-
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import { VTLink } from 'vue-theme'
@@ -14,6 +8,12 @@ defineProps<{
 }>()
 </script>
 
+<template>
+  <VTLink class="VPNavScreenMenuLink" :href="link" @click="$emit('jump')">
+    {{ text }}
+  </VTLink>
+</template>
+
 <style scoped>
 .VPNavScreenMenuLink {
   display: block;
@@ -23,7 +23,7 @@ defineProps<{
   font-size: 14px;
   font-weight: 500;
   color: var(--vt-c-text-1);
-  transition: border-color .5s, color .25s;
+  transition: border-color 0.5s, color 0.25s;
 }
 
 .VPNavScreenMenuLink:hover {

@@ -1,5 +1,12 @@
+<script lang="ts" setup>
+import { VTIconSearch, VTIconCommand } from '../../core'
+import { useData } from 'vitepress'
+
+const { theme } = useData()
+</script>
+
 <template>
-  <div v-if="$siteByRoute.themeConfig.algolia" class="VPNavBarSearch">
+  <div v-if="theme.algolia" class="VPNavBarSearch">
     <button class="input">
       <VTIconSearch class="icon" />
 
@@ -13,10 +20,6 @@
     </button>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { VTIconSearch, VTIconCommand } from '../../core'
-</script>
 
 <style scoped>
 .VPNavBarSearch {
@@ -38,12 +41,12 @@ import { VTIconSearch, VTIconCommand } from '../../core'
   width: 40px;
   height: 55px;
   color: var(--vt-c-text-2);
-  transition: color .5s;
+  transition: color 0.5s;
 }
 
 .input:hover {
   color: var(--vt-c-text-1);
-  transition: color .25s;
+  transition: color 0.25s;
 }
 
 @media (min-width: 768px) {
@@ -73,12 +76,18 @@ import { VTIconSearch, VTIconCommand } from '../../core'
 }
 
 @media (min-width: 768px) {
-  .placeholder.small { display: block; }
+  .placeholder.small {
+    display: block;
+  }
 }
 
 @media (min-width: 960px) {
-  .placeholder.small { display: none; }
-  .placeholder.large { display: block; }
+  .placeholder.small {
+    display: none;
+  }
+  .placeholder.large {
+    display: block;
+  }
 }
 
 .shortcut {
@@ -91,11 +100,13 @@ import { VTIconSearch, VTIconCommand } from '../../core'
   padding: 4px;
   height: 20px;
   color: var(--vt-c-text-3);
-  transition: color .5s;
+  transition: color 0.5s;
 }
 
 @media (min-width: 960px) {
-  .shortcut { display: flex; }
+  .shortcut {
+    display: flex;
+  }
 }
 
 .shortcut-icon {

@@ -1,16 +1,16 @@
-<template>
-  <div v-if="config.appearance" class="VPNavScreenAppearance">
-    <p class="text">Appearance</p>
-    <VTSwitchAppearance />
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { VTSwitchAppearance } from 'vue-theme'
 import { useConfig } from '../composables/config'
 
 const { config } = useConfig()
 </script>
+
+<template>
+  <div v-if="config.appearance" class="VPNavScreenAppearance">
+    <p class="text">Appearance</p>
+    <VTSwitchAppearance />
+  </div>
+</template>
 
 <style scoped>
 .VPNavScreenAppearance {
@@ -20,7 +20,7 @@ const { config } = useConfig()
   border-radius: 8px;
   padding: 12px 14px 12px 16px;
   background-color: var(--vt-c-bg-soft);
-  transition: background-color .5s;
+  transition: background-color 0.5s;
 }
 
 .text {
@@ -28,6 +28,6 @@ const { config } = useConfig()
   font-size: 12px;
   font-weight: 500;
   color: var(--vt-c-text-2);
-  transition: color .5s;
+  transition: color 0.5s;
 }
 </style>

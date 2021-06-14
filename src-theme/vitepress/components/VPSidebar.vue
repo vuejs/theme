@@ -1,15 +1,3 @@
-<template>
-  <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
-    <div v-for="group in sidebar" :key="group.text" class="group">
-      <VPSidebarGroup
-        :text="group.text"
-        :items="group.items"
-        @jump="$emit('close')"
-      />
-    </div>
-  </aside>
-</template>
-
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import { useSidebar } from '../composables/sidebar'
@@ -21,6 +9,18 @@ defineProps<{
   open: boolean
 }>()
 </script>
+
+<template>
+  <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
+    <div v-for="group in sidebar" :key="group.text" class="group">
+      <VPSidebarGroup
+        :text="group.text"
+        :items="group.items"
+        @jump="$emit('close')"
+      />
+    </div>
+  </aside>
+</template>
 
 <style scoped>
 .VPSidebar {
@@ -38,11 +38,13 @@ defineProps<{
   overflow-x: hidden;
   overflow-y: auto;
   transform: translateX(-100%);
-  transition: background-color .5s, opacity .5s, transform .75s ease;
+  transition: background-color 0.5s, opacity 0.5s, transform 0.75s ease;
 }
 
 @media (min-width: 768px) {
-  .VPSidebar { padding: 40px 32px 96px; }
+  .VPSidebar {
+    padding: 40px 32px 96px;
+  }
 }
 
 @media (min-width: 960px) {
@@ -56,7 +58,7 @@ defineProps<{
     opacity: 1;
     box-shadow: none;
     transform: translateX(0);
-    transition: border-color .5s, background-color .5s;
+    transition: border-color 0.5s, background-color 0.5s;
   }
 }
 
@@ -69,14 +71,17 @@ defineProps<{
 @media (min-width: 1440px) {
   .VPSidebar {
     padding: 24px 32px 96px calc((100% - var(--vp-screen-max-width)) / 2);
-    width: calc((100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-large));
+    width: calc(
+      (100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-large)
+    );
   }
 }
 
 .VPSidebar.open {
   opacity: 1;
   transform: translateX(0);
-  transition: background-color .5s, opacity .25s, transform .5s cubic-bezier(.19, 1, .22, 1);
+  transition: background-color 0.5s, opacity 0.25s,
+    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .dark .VPSidebar {

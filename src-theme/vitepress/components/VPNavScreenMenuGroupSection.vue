@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+import { defineProps } from 'vue'
+import type { NavItemChildWithChildren } from '../config'
+import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
+
+defineProps<{
+  text?: string
+  items: NavItemChildWithChildren[]
+}>()
+</script>
+
 <template>
   <div class="VPNavScreenMenuGroupSection">
     <p v-if="text" class="title">{{ text }}</p>
@@ -12,17 +23,6 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { defineProps } from 'vue'
-import type { NavItemChildWithChildren } from '../config'
-import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
-
-defineProps<{
-  text?: string
-  items: NavItemChildWithChildren[]
-}>()
-</script>
-
 <style scoped>
 .VPNavScreenMenuGroupSection {
   display: block;
@@ -33,6 +33,6 @@ defineProps<{
   font-size: 13px;
   font-weight: 700;
   color: var(--vt-c-text-2);
-  transition: color .25s;
+  transition: color 0.25s;
 }
 </style>

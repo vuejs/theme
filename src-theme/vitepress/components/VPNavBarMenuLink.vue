@@ -1,9 +1,3 @@
-<template>
-  <VTLink class="VPNavBarMenuLink" :href="link">
-    {{ text }}
-  </VTLink>
-</template>
-
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import { VTLink } from '../../core'
@@ -14,6 +8,12 @@ defineProps<{
 }>()
 </script>
 
+<template>
+  <VTLink class="VPNavBarMenuLink" :href="link">
+    {{ text }}
+  </VTLink>
+</template>
+
 <style scoped>
 .VPNavBarMenuLink {
   display: block;
@@ -22,7 +22,7 @@ defineProps<{
   font-size: 13px;
   font-weight: 500;
   color: var(--vt-c-text-1);
-  transition: color .25s;
+  transition: color 0.25s;
 }
 
 .VPNavBarMenuLink:hover {

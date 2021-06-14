@@ -1,15 +1,3 @@
-<template>
-  <a
-    class="vt-social-link"
-    :class="classes"
-    :href="link"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <component :is="icon" class="vt-social-link-icon" />
-  </a>
-</template>
-
 <script lang="ts" setup>
 import { defineProps, computed } from 'vue'
 import type { SocialLinkSize, SocialLinkIcon } from '../composables/socialLink'
@@ -25,11 +13,6 @@ const props = defineProps<{
   icon: SocialLinkIcon
   link: string
 }>()
-
-const classes = computed(() => ({
-  'is-small': props.size === 'small',
-  'is-medium': props.size === 'medium'
-}))
 
 const icon = computed(() => {
   switch (props.icon) {
@@ -48,3 +31,18 @@ const icon = computed(() => {
   }
 })
 </script>
+
+<template>
+  <a
+    class="vt-social-link"
+    :class="{
+      'is-small': size === 'small',
+      'is-medium': size === 'medium'
+    }"
+    :href="link"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <component :is="icon" class="vt-social-link-icon" />
+  </a>
+</template>

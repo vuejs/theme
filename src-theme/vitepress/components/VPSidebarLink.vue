@@ -1,17 +1,18 @@
-<template>
-  <a class="link" :href="$withBase(link)" @click="$emit('jump')">
-    <p class="link-text">{{ text }}</p>
-  </a>
-</template>
-
 <script lang="ts" setup>
 import { defineProps } from 'vue'
+import { withBase } from 'vitepress'
 
 defineProps<{
   text: string
   link: string
 }>()
 </script>
+
+<template>
+  <a class="link" :href="withBase(link)" @click="$emit('jump')">
+    <p class="link-text">{{ text }}</p>
+  </a>
+</template>
 
 <style scoped>
 .link {
@@ -27,7 +28,7 @@ defineProps<{
 
 .link:hover .link-text {
   color: var(--vt-c-brand);
-  transition: color .25s;
+  transition: color 0.25s;
 }
 
 .link-text {
@@ -35,6 +36,6 @@ defineProps<{
   font-size: 13px;
   font-weight: 500;
   color: var(--vt-c-text-2);
-  transition: color .5s;
+  transition: color 0.5s;
 }
 </style>

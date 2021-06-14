@@ -1,11 +1,3 @@
-<template>
-  <VTFlyout
-    class="VPNavBarMenuGroup"
-    :button="text"
-    :items="items"
-  />
-</template>
-
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import { VTFlyout } from '../../core'
@@ -16,3 +8,7 @@ defineProps<{
   items: NavItemChild[]
 }>()
 </script>
+
+<template>
+  <VTFlyout class="VPNavBarMenuGroup" :button="text" :items="items" />
+</template>

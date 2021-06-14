@@ -1,3 +1,12 @@
 import './styles/variables.css'
+import VPApp from './components/VPApp.vue'
+import type { Theme } from 'vitepress'
+import { withConfigProvider } from './composables/config'
 
-export { default as VPApp } from './components/VPApp.vue'
+const VPTheme: Theme = {
+  Layout: withConfigProvider(VPApp),
+  // TODO: implement not found page
+  NotFound: () => {}
+}
+
+export { VPTheme }

@@ -1,3 +1,10 @@
+<script lang="ts" setup>
+import { VTSocialLinks } from '../../core'
+import { useConfig } from '../composables/config'
+
+const { config } = useConfig()
+</script>
+
 <template>
   <VTSocialLinks
     v-if="config.socialLinks"
@@ -7,13 +14,6 @@
   />
 </template>
 
-<script lang="ts" setup>
-import { VTSocialLinks } from '../../core'
-import { useConfig } from '../composables/config'
-
-const { config } = useConfig()
-</script>
-
 <style scoped>
 .VPNavBarSocialLinks {
   display: none;
@@ -21,6 +21,8 @@ const { config } = useConfig()
 }
 
 @media (min-width: 1280px) {
-  .VPNavBarSocialLinks { display: flex; }
+  .VPNavBarSocialLinks {
+    display: flex;
+  }
 }
 </style>

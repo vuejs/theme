@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+import { useAppearance } from '../composables/appearance'
+import VTIconSun from './icons/VTIconSun.vue'
+import VTIconMoon from './icons/VTIconMoon.vue'
+
+const { toggle } = useAppearance()
+</script>
+
 <template>
   <div class="vt-switch-appearance" role="button" @click="toggle">
     <div class="vt-switch-appearance-check">
@@ -8,11 +16,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { useAppearance } from '../composables/appearance'
-import VTIconSun from './icons/VTIconSun.vue'
-import VTIconMoon from './icons/VTIconMoon.vue'
-
-const { toggle } = useAppearance()
-</script>

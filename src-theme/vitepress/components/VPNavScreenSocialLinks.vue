@@ -1,3 +1,10 @@
+<script lang="ts" setup>
+import { VTSocialLinks } from '../../core'
+import { useConfig } from '../composables/config'
+
+const { config } = useConfig()
+</script>
+
 <template>
   <VTSocialLinks
     v-if="config.socialLinks"
@@ -6,10 +13,3 @@
     :links="config.socialLinks"
   />
 </template>
-
-<script lang="ts" setup>
-import { VTSocialLinks } from '../../core'
-import { useConfig } from '../composables/config'
-
-const { config } = useConfig()
-</script>

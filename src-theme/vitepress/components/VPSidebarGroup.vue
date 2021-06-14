@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+import { defineProps } from 'vue'
+import type { SidebarLink } from '../config'
+import VPSidebarLink from './VPSidebarLink.vue'
+
+defineProps<{
+  text: string
+  items: SidebarLink[]
+}>()
+</script>
+
 <template>
   <section class="VPSidebarGroup">
     <div class="title">
@@ -13,17 +24,6 @@
     </template>
   </section>
 </template>
-
-<script lang="ts" setup>
-import { defineProps } from 'vue'
-import type { SidebarLink } from '../config'
-import VPSidebarLink from './VPSidebarLink.vue'
-
-defineProps<{
-  text: string
-  items: SidebarLink[]
-}>()
-</script>
 
 <style scoped>
 .title {
@@ -41,6 +41,6 @@ defineProps<{
   font-size: 13px;
   font-weight: 700;
   color: var(--vt-c-text-1);
-  transition: color .5s;
+  transition: color 0.5s;
 }
 </style>

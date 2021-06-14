@@ -1,24 +1,19 @@
-<template>
-  <div class="VPContent" :class="{ 'has-sidebar': hasSidebar }">
-    <VPContentPage v-if="isPage" />
-    <VPContentDoc v-else />
-  </div>
-</template>
-
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
-import { useFrontmatter } from 'vitepress'
+import { useData } from 'vitepress'
 import { useSidebar } from '../composables/sidebar'
 import VPContentPage from './VPContentPage.vue'
 import VPContentDoc from './VPContentDoc.vue'
 
-const frontmatter = useFrontmatter()
+const { frontmatter } = useData()
 const { hasSidebar } = useSidebar()
-
-const isPage = computed(() => {
-  return !!frontmatter.value.page
-})
 </script>
+
+<template>
+  <div class="VPContent" :class="{ 'has-sidebar': hasSidebar }">
+    <VPContentPage v-if="!!frontmatter.page" />
+    <VPContentDoc v-else />
+  </div>
+</template>
 
 <style scoped>
 @media (min-width: 960px) {
@@ -35,7 +30,9 @@ const isPage = computed(() => {
 
 @media (min-width: 1440px) {
   .VPContent.has-sidebar {
-    padding-left: calc((100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-large));
+    padding-left: calc(
+      (100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-large)
+    );
     padding-right: calc((100% - var(--vp-screen-max-width)) / 2);
   }
 }

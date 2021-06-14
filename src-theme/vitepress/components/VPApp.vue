@@ -1,15 +1,4 @@
-<template>
-  <div class="VPApp">
-    <VTBackdrop class="backdrop" :show="showBackdrop" @click="closeSidebar" />
-    <VPNav />
-    <VPLocalNav @open-menu="openSidebar" />
-    <VPSidebar :open="isSidebarOpen" @close="closeSidebar" />
-    <VPContent />
-  </div>
-</template>
-
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
 import { useAppearance, VTBackdrop } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import VPNav from './VPNav.vue'
@@ -24,9 +13,17 @@ const {
   open: openSidebar,
   close: closeSidebar
 } = useSidebar()
-
-const showBackdrop = computed(() => isSidebarOpen.value)
 </script>
+
+<template>
+  <div class="VPApp">
+    <VTBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
+    <VPNav />
+    <VPLocalNav @open-menu="openSidebar" />
+    <VPSidebar :open="isSidebarOpen" @close="closeSidebar" />
+    <VPContent />
+  </div>
+</template>
 
 <style scoped>
 .VPApp {
@@ -34,7 +31,7 @@ const showBackdrop = computed(() => isSidebarOpen.value)
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--vt-c-bg);
-  transition: background-color .5s;
+  transition: background-color 0.5s;
 }
 
 .backdrop {

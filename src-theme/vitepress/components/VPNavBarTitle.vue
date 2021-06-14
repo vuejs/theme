@@ -1,19 +1,8 @@
-<template>
-  <a v-if="hasTitle" class="VPNavBarTitle" :href="$withBase($localePath)">
-    <div v-if="logo" class="logo">
-      <img class="logo-img" :class="{ 'has-dark': logoDark }" :src="logo" alt="Logo">
-      <img v-if="logoDark" class="logo-img inverse" :src="logoDark" alt="Logo">
-    </div>
-
-    <p v-if="title" class="text">{{ title }}</p>
-  </a>
-</template>
-
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useSiteDataByRoute } from 'vitepress'
+import { useData } from 'vitepress'
 
-const site = useSiteDataByRoute()
+const { site, localePath } = useData()
 
 const logo = computed(() => site.value.themeConfig.logo)
 const logoDark = computed(() => site.value.themeConfig.logoDark)
@@ -31,17 +20,38 @@ const hasTitle = computed(() => {
 })
 </script>
 
+<template>
+  <a v-if="hasTitle" class="VPNavBarTitle" :href="localePath">
+    <div v-if="logo" class="logo">
+      <img
+        class="logo-img"
+        :class="{ 'has-dark': logoDark }"
+        :src="logo"
+        alt="Logo"
+      />
+      <img
+        v-if="logoDark"
+        class="logo-img inverse"
+        :src="logoDark"
+        alt="Logo"
+      />
+    </div>
+
+    <p v-if="title" class="text">{{ title }}</p>
+  </a>
+</template>
+
 <style scoped>
 .VPNavBarTitle {
   display: flex;
   align-items: center;
   padding-top: 1px;
   height: 55px;
-  transition: opacity .25s;
+  transition: opacity 0.25s;
 }
 
 .VPNavBarTitle:hover {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .logo {
@@ -55,7 +65,7 @@ const hasTitle = computed(() => {
 
 .logo-img {
   height: 100%;
-  transition: opacity .5s, transform .5s ease;
+  transition: opacity 0.5s, transform 0.5s ease;
 }
 
 .logo-img.inverse {

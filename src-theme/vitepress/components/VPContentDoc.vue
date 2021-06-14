@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import VPContentDocAside from './VPContentDocAside.vue'
+</script>
+
 <template>
   <div class="VPContentDoc">
     <div class="container">
@@ -12,29 +16,33 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import VPContentDocAside from './VPContentDocAside.vue'
-</script>
-
 <style scoped>
 .VPContentDoc {
   padding: 32px 24px 96px;
 }
 
 @media (min-width: 768px) {
-  .VPContentDoc { padding: 48px 32px 96px; }
+  .VPContentDoc {
+    padding: 48px 32px 96px;
+  }
 }
 
 @media (min-width: 960px) {
-  .VPContentDoc { padding: 64px 64px 96px; }
+  .VPContentDoc {
+    padding: 64px 64px 96px;
+  }
 }
 
 @media (min-width: 1280px) {
-  .VPContentDoc { padding: 64px 64px 96px; }
+  .VPContentDoc {
+    padding: 64px 64px 96px;
+  }
 }
 
 @media (min-width: 1440px) {
-  .VPContentDoc { padding: 64px 96px 96px; }
+  .VPContentDoc {
+    padding: 64px 96px 96px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -51,7 +59,9 @@ import VPContentDocAside from './VPContentDocAside.vue'
 }
 
 @media (min-width: 1280px) {
-  .content { margin: 0; }
+  .content {
+    margin: 0;
+  }
 }
 
 .aside {
@@ -63,6 +73,8 @@ import VPContentDocAside from './VPContentDocAside.vue'
 }
 
 @media (min-width: 1280px) {
-  .aside { display: block; }
+  .aside {
+    display: block;
+  }
 }
 </style>

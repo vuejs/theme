@@ -1,15 +1,3 @@
-<template>
-  <div class="vt-social-links">
-    <VTSocialLink
-      v-for="link in links"
-      :key="link.link"
-      :size="size"
-      :icon="link.icon"
-      :link="link.link"
-    />
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import type { SocialLinkSize, SocialLink } from '../composables/socialLink'
@@ -20,3 +8,15 @@ defineProps<{
   links: SocialLink[]
 }>()
 </script>
+
+<template>
+  <div class="vt-social-links">
+    <VTSocialLink
+      v-for="{ link, icon } in links"
+      :key="link"
+      :size="size"
+      :icon="icon"
+      :link="link"
+    />
+  </div>
+</template>

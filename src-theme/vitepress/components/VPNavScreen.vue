@@ -1,3 +1,25 @@
+<script lang="ts" setup>
+import { defineProps, ref } from 'vue'
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+import VPNavScreenMenu from './VPNavScreenMenu.vue'
+import VPNavScreenAppearance from './VPNavScreenAppearance.vue'
+import VPNavScreenSocialLinks from './VPNavScreenSocialLinks.vue'
+
+defineProps<{
+  open: boolean
+}>()
+
+const screen = ref<HTMLElement | null>(null)
+
+function lockBodyScroll() {
+  disableBodyScroll(screen.value!, { reserveScrollBarGap: true })
+}
+
+function unlockBodyScroll() {
+  clearAllBodyScrollLocks()
+}
+</script>
+
 <template>
   <transition
     name="fade"
@@ -14,30 +36,6 @@
   </transition>
 </template>
 
-<script lang="ts" setup>
-import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-import { defineProps, ref, useContext } from 'vue'
-import VPNavScreenMenu from './VPNavScreenMenu.vue'
-import VPNavScreenAppearance from './VPNavScreenAppearance.vue'
-import VPNavScreenSocialLinks from './VPNavScreenSocialLinks.vue'
-
-const props = defineProps<{
-  open: boolean
-}>()
-
-const { emit } = useContext()
-
-const screen = ref<HTMLElement | null>(null)
-
-function lockBodyScroll() {
-  disableBodyScroll(screen.value, { reserveScrollBarGap: true })
-}
-
-function unlockBodyScroll() {
-  clearAllBodyScrollLocks()
-}
-</script>
-
 <style scoped>
 .VPNavScreen {
   position: fixed;
@@ -48,18 +46,18 @@ function unlockBodyScroll() {
   padding: 0 32px;
   width: 100%;
   background-color: var(--vt-c-bg);
-  transition: background-color .5s;
+  transition: background-color 0.5s;
   overflow-y: auto;
 }
 
 .VPNavScreen.fade-enter-active,
 .VPNavScreen.fade-leave-active {
-  transition: opacity .25s;
+  transition: opacity 0.25s;
 }
 
 .VPNavScreen.fade-enter-active .container,
 .VPNavScreen.fade-leave-active .container {
-  transition: transform .25s ease;
+  transition: transform 0.25s ease;
 }
 
 .VPNavScreen.fade-enter-from,

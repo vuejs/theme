@@ -1,9 +1,7 @@
-import { VPApp } from 'vue-theme'
+import { VPTheme } from 'vue-theme'
 
-const VWApp = {
-  Layout: VPApp,
-  // TODO: implement not found page
-  NotFound: () => {}
+const VWTheme = {
+  ...VPTheme
 }
 
-export { VWApp }
+export { VWTheme }

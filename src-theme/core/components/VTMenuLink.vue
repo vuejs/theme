@@ -1,11 +1,5 @@
-<template>
-  <VTLink class="vt-menu-link" :href="link">
-    {{ text }}
-  </VTLink>
-</template>
-
 <script lang="ts" setup>
-import { defineProps, computed } from 'vue'
+import { defineProps } from 'vue'
 import VTLink from './VTLink.vue'
 
 defineProps<{
@@ -13,3 +7,9 @@ defineProps<{
   link: string
 }>()
 </script>
+
+<template>
+  <VTLink class="vt-menu-link" :href="link">
+    {{ text }}
+  </VTLink>
+</template>
