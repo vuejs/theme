@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import type { NavItemWithLink } from '../config'
+import type { MenuItemWithLink } from '../../core'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 
 defineProps<{
   text?: string
-  items: NavItemWithLink[]
+  items: MenuItemWithLink[]
 }>()
 </script>
 
@@ -30,7 +30,7 @@ defineProps<{
 
 .title {
   line-height: 32px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--vt-c-text-2);
   transition: color 0.25s;

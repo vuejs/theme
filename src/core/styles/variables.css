@@ -16,6 +16,10 @@
   --vt-c-black-soft: #202020;
   --vt-c-black-mute: #282828;
 
+  --vt-c-indigo: #2c3e50;
+  --vt-c-indigo-soft: #476582;
+  --vt-c-indigo-light: #aac8e4;
+
   --vt-c-gray: #8e8e8e;
   --vt-c-gray-light-1: #aeaeae;
   --vt-c-gray-light-2: #c7c7c7;
@@ -28,19 +32,22 @@
   --vt-c-gray-dark-4: #282828;
   --vt-c-gray-dark-5: #202020;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, .29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, .12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, .65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, .48);
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
 
-  --vt-c-text-light-1: var(--vt-c-black);
-  --vt-c-text-light-2: rgba(60, 60, 60, .60);
-  --vt-c-text-light-3: rgba(60, 60, 60, .30);
-  --vt-c-text-light-4: rgba(60, 60, 60, .18);
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.6);
+  --vt-c-text-light-3: rgba(60, 60, 60, 0.3);
+  --vt-c-text-light-4: rgba(60, 60, 60, 0.18);
+  --vt-c-text-light-code: var(--vt-c-indigo-soft);
+
   --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, .60);
-  --vt-c-text-dark-3: rgba(235, 235, 235, .30);
-  --vt-c-text-dark-4: rgba(235, 235, 235, .18);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.6);
+  --vt-c-text-dark-3: rgba(235, 235, 235, 0.3);
+  --vt-c-text-dark-4: rgba(235, 235, 235, 0.18);
+  --vt-c-text-dark-code: var(--vt-c-indigo-light);
 
   --vt-c-green: #42b883;
   --vt-c-green-light: #42d392;
@@ -92,6 +99,7 @@
   --vt-c-text-2: var(--vt-c-text-light-2);
   --vt-c-text-3: var(--vt-c-text-light-3);
   --vt-c-text-4: var(--vt-c-text-light-4);
+  --vt-c-text-code: var(--vt-c-text-light-code);
 
   --vt-c-text-inverse-1: var(--vt-c-text-dark-1);
   --vt-c-text-inverse-2: var(--vt-c-text-dark-2);
@@ -117,6 +125,7 @@
   --vt-c-text-2: var(--vt-c-text-dark-2);
   --vt-c-text-3: var(--vt-c-text-dark-3);
   --vt-c-text-4: var(--vt-c-text-dark-4);
+  --vt-c-text-code: var(--vt-c-text-dark-code);
 
   --vt-c-text-inverse-1: var(--vt-c-text-light-1);
   --vt-c-text-inverse-2: var(--vt-c-text-light-2);
@@ -129,8 +138,10 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vt-font-family-base: Inter, "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --vt-font-family-mono: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+  --vt-font-family-base: Inter, 'Noto Sans JP', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --vt-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 /**
@@ -138,9 +149,9 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vt-shadow-1: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
-  --vt-shadow-2: 0 3px 12px rgba(0, 0, 0, .07), 0 1px 4px rgba(0, 0, 0, .07);
-  --vt-shadow-3: 0 12px 32px rgba(0, 0, 0, .1), 0 2px 6px rgba(0, 0, 0, .08);
-  --vt-shadow-4: 0 14px 44px rgba(0, 0, 0, .12), 0 3px 9px rgba(0, 0, 0, .12);
-  --vt-shadow-5: 0 18px 56px rgba(0, 0, 0, .16), 0 4px 12px rgba(0, 0, 0, .16);
+  --vt-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --vt-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
+  --vt-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --vt-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12);
+  --vt-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16);
 }

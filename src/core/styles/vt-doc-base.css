@@ -25,7 +25,7 @@
   line-height: 28px;
   font-size: 20px;
   font-weight: 500;
-  transition: border-color .5s;
+  transition: border-color 0.5s;
 }
 
 @media (min-width: 768px) {
@@ -37,12 +37,12 @@
 
 .vt-doc .header-anchor {
   float: left;
-  margin-left: -.87em;
-  padding-right: .23em;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
   font-size: 16px;
   font-weight: 500;
   opacity: 0;
-  transition: color .25s, opacity .25s;
+  transition: color 0.25s, opacity 0.25s;
 }
 
 @media (min-width: 640px) {
@@ -74,7 +74,7 @@
 .vt-doc a {
   font-weight: 500;
   color: var(--vt-c-brand);
-  transition: color .25s;
+  transition: color 0.25s;
 }
 
 .vt-doc a:hover {
@@ -82,5 +82,14 @@
 }
 
 .vt-doc strong {
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.vt-doc p code {
+  font-size: 14px;
+  background-color: var(--vt-c-bg-soft);
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: var(--vt-c-text-code);
+  transition: color 0.5s, background-color 0.5s;
 }

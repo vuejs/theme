@@ -1,9 +1,14 @@
+.vt-doc {
+  --vt-doc-font-size: 14px;
+  --vt-doc-line-height: 22px;
+}
+
 .vt-doc div[class*='language-'] {
   position: relative;
   margin: 28px -24px;
   background-color: var(--vt-c-bg-soft);
   overflow-x: auto;
-  transition: background-color .5s;
+  transition: background-color 0.5s;
 }
 
 @media (min-width: 640px) {
@@ -45,10 +50,10 @@
 .vt-doc [class*='language-'] code {
   display: inline-block;
   padding: 0;
-  line-height: 24px;
-  font-size: 14px;
+  line-height: var(--vt-doc-line-height);
+  font-size: var(--vt-doc-font-size);
   color: #3a385d;
-  transition: color .5s;
+  transition: color 0.5s;
 }
 
 .dark .vt-doc [class*='language-'] code {
@@ -62,9 +67,9 @@
   left: 0;
   padding: 13px 0 11px;
   width: 100%;
-  line-height: 24px;
   font-family: var(--vt-font-family-mono);
-  font-size: 14px;
+  line-height: var(--vt-doc-line-height);
+  font-size: var(--vt-doc-font-size);
   user-select: none;
   overflow: hidden;
 }
@@ -91,11 +96,11 @@
   padding: 13px 0 11px;
   width: 32px;
   text-align: center;
-  line-height: 24px;
   font-family: var(--vt-font-family-mono);
-  font-size: 14px;
+  line-height: var(--vt-doc-line-height);
+  font-size: var(--vt-doc-font-size);
   color: var(--vt-c-text-3);
-  transition: border-color .5s, color .5s;
+  transition: border-color 0.5s, color 0.5s;
 }
 
 .vt-doc [class*='language-']:before {
@@ -107,7 +112,7 @@
   font-size: 12px;
   font-weight: 500;
   color: var(--vt-c-text-2);
-  transition: color .5s;
+  transition: color 0.5s;
 }
 
 .vt-doc [class~='language-html']:before,
@@ -198,7 +203,7 @@
 }
 
 .vt-doc .token {
-  transition: color .5s;
+  transition: color 0.5s;
 }
 
 .vt-doc .token.comment,
@@ -281,11 +286,11 @@
 .dark .vt-doc .token.prolog,
 .dark .vt-doc .token.doctype,
 .dark .vt-doc .token.cdata {
-  color: rgba(235, 235, 235, .30);
+  color: rgba(235, 235, 235, 0.3);
 }
 
 .dark .vt-doc .token.punctuation {
-  color: rgba(235, 235, 235, .60);
+  color: rgba(235, 235, 235, 0.6);
 }
 
 .dark .vt-doc .token.tag,

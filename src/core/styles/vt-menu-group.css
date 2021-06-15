@@ -1,7 +1,7 @@
 .vt-menu-group-title {
   padding: 0 16px;
   line-height: 28px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--vt-c-text-2);
   transition: color .25s;
