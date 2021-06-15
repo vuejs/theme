@@ -9,7 +9,7 @@ const { hasSidebar } = useSidebar()
 </script>
 
 <template>
-  <header class="VPNav" :class="{ stick: !hasSidebar }">
+  <header class="VPNav nav-bar" :class="{ stick: !hasSidebar }">
     <VPNavBar :is-screen-open="isScreenOpen" @toggle-screen="toggleScreen" />
     <VPNavScreen :open="isScreenOpen" @jump="closeScreen" />
   </header>
