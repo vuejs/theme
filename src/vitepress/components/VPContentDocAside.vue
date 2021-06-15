@@ -36,7 +36,7 @@ function mapHeaders(headers: HeaderWithChildren[]): DefaultTheme.SideBarItem[] {
 
 <template>
   <div class="VPContentDocAside">
-    <ul>
+    <ul v-if="page.headers">
       <li v-for="{ text, link } in resolveHeaders(page.headers)">
         <a :href="link">{{ text }}</a>
       </li>

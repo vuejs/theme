@@ -21,7 +21,7 @@ const hasContent = computed(() => {
 <style scoped>
 .VPNavBarHamburger {
   width: 40px;
-  height: 55px;
+  height: var(--vt-nav-height);
 }
 
 @media (min-width: 768px) {

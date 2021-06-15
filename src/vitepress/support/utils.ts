@@ -25,15 +25,22 @@ export function normalizeLink(url: string): string {
   )
 }
 
-export function isActive(route: Route, path?: string): boolean {
+export function isActive(
+  route: Route,
+  path?: string,
+  asRegex = false
+): boolean {
   if (path === undefined) {
     return false
   }
 
   const routePath = normalize(`/${route.data.relativePath}`)
-  const pagePath = normalize(path)
-
-  return routePath === pagePath
+  if (asRegex) {
+    return new RegExp(path).test(routePath)
+  } else {
+    const pagePath = normalize(path)
+    return routePath === pagePath
+  }
 }
 
 export function normalize(path: string): string {

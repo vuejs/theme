@@ -51,6 +51,7 @@ module.exports = {
     nav: [
       {
         text: 'Docs',
+        activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
         items: [
           {
             items: [
@@ -110,11 +111,12 @@ module.exports = {
       },
       {
         text: 'Community',
+        activeMatch: `^/community/`,
         items: [
           {
             items: [
               { text: 'Team', link: '/community/team/' },
-              { text: 'Partners', link: '/community/partners' },
+              { text: 'Partners', link: '/community/partners/' },
               { text: 'Join', link: '/community/join/' }
             ]
           },
@@ -138,7 +140,7 @@ module.exports = {
       },
       {
         text: 'Support Vue',
-        link: '/support-vuejs/'
+        link: '/support-vue/'
       }
     ],
 

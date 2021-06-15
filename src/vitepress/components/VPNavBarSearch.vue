@@ -39,7 +39,7 @@ const { theme } = useData()
   justify-content: center;
   align-items: center;
   width: 40px;
-  height: 55px;
+  height: var(--vt-nav-height);
   color: var(--vt-c-text-2);
   transition: color 0.5s;
 }

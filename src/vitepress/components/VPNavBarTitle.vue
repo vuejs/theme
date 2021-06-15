@@ -46,7 +46,7 @@ const hasTitle = computed(() => {
   display: flex;
   align-items: center;
   padding-top: 1px;
-  height: 55px;
+  height: var(--vt-nav-height);
   transition: opacity 0.25s;
 }
 

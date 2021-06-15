@@ -5,5 +5,5 @@
   width: 14px;
   height: 14px;
   fill: var(--vt-c-text-2);
-  transition: fill .25s;
+  transition: fill 0.25s;
 }

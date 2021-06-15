@@ -13,8 +13,7 @@ const route = useRoute()
 
 <template>
   <a
-    class="link"
-    :class="{ active: isActive(route, link) }"
+    :class="{ link: true, active: isActive(route, link) }"
     :href="link"
     @click="$emit('jump')"
   >

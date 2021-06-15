@@ -8,20 +8,9 @@ const { config } = useConfig()
 
 <template>
   <nav v-if="config.nav" class="VPNavBarMenu">
-    <template v-for="item in config.nav">
-      <VPNavBarMenuLink
-        v-if="'link' in item"
-        :key="item.text"
-        :text="item.text"
-        :link="item.link"
-      />
-
-      <VPNavBarMenuGroup
-        v-else
-        :key="item.text"
-        :text="item.text"
-        :items="item.items"
-      />
+    <template v-for="item in config.nav" :key="item.text">
+      <VPNavBarMenuLink v-if="'link' in item" :item="item" />
+      <VPNavBarMenuGroup v-else :item="item" />
     </template>
   </nav>
 </template>

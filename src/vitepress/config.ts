@@ -1,4 +1,8 @@
-import type { MenuItem, MenuItemWithLink, SocialLink } from '../core'
+import type {
+  MenuItemChildWithChildren,
+  MenuItemWithLink,
+  SocialLink
+} from '../core'
 
 export interface Config {
   /**
@@ -46,7 +50,7 @@ export interface Config {
   /**
    * The nav items.
    */
-  nav?: MenuItem[]
+  nav?: NavItem[]
 
   /**
    * The sidebar items.
@@ -66,6 +70,20 @@ export interface AlgoliaSearchOptions {
   searchParameters?: any
   disableUserPersonalization?: boolean
   initialQuery?: string
+}
+
+export type NavItem = NavItemWithLink | NavItemWithChildren
+
+export type NavItemWithLink = MenuItemWithLink & {
+  /**
+   * activeMatch is expected to be a regex string
+   * We can't use actual RegExp object here because it isn't serializable
+   */
+  activeMatch?: string
+}
+
+export type NavItemWithChildren = MenuItemChildWithChildren & {
+  activeMatch?: string
 }
 
 export type SidebarConfig = SidebarGroup[] | MultiSidebarConfig
