@@ -1,14 +1,12 @@
 export type MenuItem = MenuItemWithLink | MenuItemWithChildren
 
-export interface MenuItemBase {
+export interface MenuItemWithLink {
   text: string
-}
-
-export interface MenuItemWithLink extends MenuItemBase {
   link: string
 }
 
-export interface MenuItemWithChildren extends MenuItemBase {
+export interface MenuItemWithChildren {
+  text: string
   items: MenuItemChild[]
 }
 

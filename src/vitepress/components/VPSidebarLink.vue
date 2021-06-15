@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import { withBase } from 'vitepress'
 
 defineProps<{
   text: string
@@ -9,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <a class="link" :href="withBase(link)" @click="$emit('jump')">
+  <a class="link" :href="link" @click="$emit('jump')">
     <p class="link-text">{{ text }}</p>
   </a>
 </template>

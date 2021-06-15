@@ -1,4 +1,4 @@
-import type { SocialLink } from '../core'
+import type { MenuItem, MenuItemWithLink, SocialLink } from '../core'
 
 export interface Config {
   /**
@@ -46,7 +46,7 @@ export interface Config {
   /**
    * The nav items.
    */
-  nav?: NavItem[]
+  nav?: MenuItem[]
 
   /**
    * The sidebar items.
@@ -68,27 +68,6 @@ export interface AlgoliaSearchOptions {
   initialQuery?: string
 }
 
-export type NavItem = NavItemWithLink | NavItemWithChildren
-
-export interface NavItemBase {
-  text: string
-}
-
-export interface NavItemWithLink extends NavItemBase {
-  link: string
-}
-
-export interface NavItemWithChildren extends NavItemBase {
-  items: NavItemChild[]
-}
-
-export type NavItemChild = NavItemWithLink | NavItemChildWithChildren
-
-export interface NavItemChildWithChildren {
-  text?: string
-  items: NavItemWithLink[]
-}
-
 export type SidebarConfig = SidebarGroup[] | MultiSidebarConfig
 
 export interface MultiSidebarConfig {
@@ -97,10 +76,5 @@ export interface MultiSidebarConfig {
 
 export interface SidebarGroup {
   text: string
-  items: SidebarLink[]
-}
-
-export interface SidebarLink {
-  text: string
-  link: string
+  items: MenuItemWithLink[]
 }

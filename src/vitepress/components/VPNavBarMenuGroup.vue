@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import { VTFlyout } from '../../core'
-import type { NavItemChild } from '../config'
+import type { MenuItemChild } from '../../core'
 
 defineProps<{
   text: string
-  items: NavItemChild[]
+  items: MenuItemChild[]
 }>()
 </script>
 

@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import type { MenuItem } from '../composables/menu'
+import type { MenuItem, MenuItemChild } from '../composables/menu'
 import VTMenuLink from './VTMenuLink.vue'
 import VTMenuGroup from './VTMenuGroup.vue'
 
 defineProps<{
-  items?: MenuItem[]
+  items?: (MenuItem | MenuItemChild)[]
 }>()
 </script>
 
