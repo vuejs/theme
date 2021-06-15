@@ -1,0 +1,80 @@
+.vt-doc .custom-block {
+  margin: 24px 0;
+  padding: 0 16px 0 42px;
+  border-radius: 8px;
+  overflow-x: auto;
+  transition: background-color 0.5s;
+  position: relative;
+}
+
+.vt-doc .custom-block:before {
+  content: 'ⓘ';
+  position: absolute;
+  font-weight: 600;
+  font-size: 15px;
+  top: 17px;
+  left: 17px;
+  transition: color 0.5s;
+}
+
+.vt-doc .custom-block p {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--vt-c-text-2);
+  transition: color 0.5s;
+}
+
+.vt-doc .custom-block .custom-block-title {
+  margin-bottom: -10px;
+  font-weight: 600;
+  color: var(--vt-c-text-1);
+}
+
+.vt-doc .custom-block.tip {
+  background-color: var(--vt-c-bg-soft);
+}
+
+.vt-doc .custom-block.warning {
+  background-color: rgba(255, 229, 100, 0.3);
+}
+
+.vt-doc .custom-block.warning .custom-block-title,
+.vt-doc .custom-block.warning:before {
+  color: #b29400;
+}
+
+.vt-doc .custom-block.warning a {
+  color: var(--vt-c-text-1);
+}
+
+.vt-doc .custom-block.danger {
+  background-color: #ffe6e6;
+}
+
+.vt-doc .custom-block.danger .custom-block-title,
+.vt-doc .custom-block.danger:before {
+  color: #ff3333;
+}
+
+.vt-doc .custom-block.danger a {
+  color: var(--vt-c-text-1);
+}
+
+.dark .vt-doc .custom-block.warning {
+  background-color: rgba(152, 137, 60, 0.15);
+}
+
+.dark .vt-doc .custom-block.warning .custom-block-title,
+.dark .vt-doc .custom-block.warning:before {
+  color: #ffbc00;
+}
+
+.dark .vt-doc .custom-block.danger {
+  background-color: rgba(255, 123, 123, 0.12);
+}
+
+.dark .vt-doc .custom-block.danger .custom-block-title,
+.dark .vt-doc .custom-block.danger:before {
+  color: #ff5656;
+}
