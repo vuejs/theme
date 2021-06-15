@@ -1,5 +1,5 @@
 .vt-doc {
-  --vt-doc-font-size: 14px;
+  --vt-doc-font-size: 13px;
   --vt-doc-line-height: 22px;
 }
 
@@ -76,6 +76,7 @@
 
 .vt-doc .highlight-lines .highlighted {
   background-color: var(--vt-c-gray-light-4);
+  transition: background-color 0.5s;
 }
 
 .dark .vt-doc .highlight-lines .highlighted {
