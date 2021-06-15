@@ -11,7 +11,7 @@ module.exports = {
       }
     },
     optimizeDeps: {
-      include: ['@vueuse/core', 'body-scroll-lock']
+      exclude: ['@vueuse/core', 'body-scroll-lock']
     }
   },
 
