@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import { useRoute } from 'vitepress'
+import { isActive } from '../support/utils'
 
 defineProps<{
   text: string
@@ -13,7 +14,7 @@ const route = useRoute()
 <template>
   <a
     class="link"
-    :class="{ active: route.path.startsWith(link) }"
+    :class="{ active: isActive(route, link) }"
     :href="link"
     @click="$emit('jump')"
   >
@@ -33,7 +34,8 @@ const route = useRoute()
   }
 }
 
-.link:hover .link-text, .link.active .link-text {
+.link:hover .link-text,
+.link.active .link-text {
   color: var(--vt-c-brand);
   transition: color 0.25s;
 }

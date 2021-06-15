@@ -1,11 +1,5 @@
 import type { SidebarConfig, SidebarGroup } from '../config'
-import { isArray, ensureStartingSlash } from './utils'
-
-export function isSidebarGroup(
-  sidebar: SidebarConfig
-): sidebar is SidebarGroup[] {
-  return isArray(sidebar)
-}
+import { ensureStartingSlash } from './utils'
 
 /**
  * Get the `SidebarConfig` from sidebar option. This method will ensure to get
@@ -17,7 +11,7 @@ export function getSidebar(
   sidebar: SidebarConfig,
   path: string
 ): SidebarGroup[] {
-  if (isSidebarGroup(sidebar)) {
+  if (Array.isArray(sidebar)) {
     return sidebar
   }
 
