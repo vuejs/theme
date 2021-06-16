@@ -7,14 +7,14 @@ const { page, frontmatter } = useData()
 
 <template>
   <div class="VPContentDoc">
-    <div class="container">
+    <div :class="{ container: true, 'has-aside': frontmatter.aside !== false }">
       <div class="content">
         <slot name="content-top" />
         <Content class="vt-doc" />
         <slot name="content-bottom" />
       </div>
 
-      <div class="aside">
+      <div class="aside" v-if="frontmatter.aside !== false">
         <div class="aside-container">
           <slot name="aside-top" />
           <VPContentDocOutline
@@ -44,12 +44,6 @@ const { page, frontmatter } = useData()
   }
 }
 
-@media (min-width: 1280px) {
-  .VPContentDoc {
-    padding: 64px 64px 96px;
-  }
-}
-
 @media (min-width: 1440px) {
   .VPContentDoc {
     padding: 64px 96px 96px;
@@ -60,6 +54,9 @@ const { page, frontmatter } = useData()
   .container {
     display: flex;
     margin: 0 auto;
+    max-width: 592px;
+  }
+  .container.has-aside {
     max-width: 880px;
   }
 }
