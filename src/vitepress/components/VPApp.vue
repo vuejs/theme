@@ -29,6 +29,12 @@ const {
       </template>
     </VPSidebar>
     <VPContent>
+      <template #content-top>
+        <slot name="content-top" />
+      </template>
+      <template #content-bottom>
+        <slot name="content-bottom" />
+      </template>
       <template #aside-top>
         <slot name="outline-top" />
       </template>

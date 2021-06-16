@@ -9,6 +9,8 @@ export default {
 
       // 'sidebar-top': () => h('div', 'hello top'),
       // 'sidebar-bottom': () => h('div', 'hello bottom'),
+      // 'content-top': () => h('h1', 'Announcement!'),
+      // 'content-bottom': () => h('div', 'Some ads'),
       // 'outline-top': () => h('div', 'this could be huge'),
       // 'outline-bottom': () => h('h3', 'Sponsors')
     })

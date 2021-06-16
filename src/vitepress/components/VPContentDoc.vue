@@ -9,7 +9,9 @@ const { page } = useData()
   <div class="VPContentDoc">
     <div class="container">
       <div class="content">
+        <slot name="content-top" />
         <Content class="vt-doc" />
+        <slot name="content-bottom" />
       </div>
 
       <div class="aside">
