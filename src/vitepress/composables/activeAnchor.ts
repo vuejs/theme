@@ -11,7 +11,7 @@ export function useActiveAnchor(el: Ref<HTMLElement>, linkSelector: string) {
     ) as HTMLAnchorElement[]
 
     const anchors = [].slice
-      .call(document.querySelectorAll('.header-anchor'))
+      .call(document.querySelectorAll('.content .header-anchor'))
       .filter((anchor: HTMLAnchorElement) =>
         links.some((link) => link.hash === anchor.hash)
       ) as HTMLAnchorElement[]
@@ -39,7 +39,7 @@ export function useActiveAnchor(el: Ref<HTMLElement>, linkSelector: string) {
   }
 
   onMounted(() => {
-    setActiveLink()
+    requestAnimationFrame(setActiveLink)
     window.addEventListener('scroll', onScroll)
   })
 
@@ -53,9 +53,10 @@ export function useActiveAnchor(el: Ref<HTMLElement>, linkSelector: string) {
   })
 }
 
+// magic number to avoid repeated retrieval
+const pageOffset = 56
+
 function getAnchorTop(anchor: HTMLAnchorElement): number {
-  const pageOffset = (document.querySelector('.nav-bar') as HTMLElement)
-    .offsetHeight
   return anchor.parentElement!.offsetTop - pageOffset - 15
 }
 
