@@ -107,8 +107,9 @@
   --vt-c-text-inverse-4: var(--vt-c-text-dark-4);
 
   --vt-c-brand: var(--vt-c-green);
+  --vt-c-brand-light: var(--vt-c-green-light);
   --vt-c-brand-dark: var(--vt-c-green-dark);
-  --vt-c-brand-highlight: var(--vt-c-green-dark);
+  --vt-c-brand-highlight: var(--vt-c-brand-dark);
 }
 
 .dark {
@@ -133,7 +134,7 @@
   --vt-c-text-inverse-3: var(--vt-c-text-light-3);
   --vt-c-text-inverse-4: var(--vt-c-text-light-4);
 
-  --vt-c-brand-highlight: var(--vt-c-green-light);
+  --vt-c-brand-highlight: var(--vt-c-brand-light);
 }
 
 /**

@@ -1,6 +1,9 @@
 import { VPTheme } from '@vue/theme'
 import { h } from 'vue'
 
+// uncomment to test CSS variables override
+// import './override.css'
+
 export default {
   ...VPTheme,
   Layout() {

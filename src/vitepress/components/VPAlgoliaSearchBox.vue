@@ -192,10 +192,14 @@ function getRelativePath(absoluteUrl: string) {
   height: 20px;
   justify-content: center;
   align-items: center;
+  transition: border-color 0.5s;
 }
 
 .DocSearch-Button:hover .DocSearch-Button-Keys {
   border-color: var(--vt-c-brand-light);
+}
+.DocSearch-Button:hover .DocSearch-Button-Key {
+  color: var(--vt-c-brand-light);
 }
 
 @media (min-width: 768px) {
