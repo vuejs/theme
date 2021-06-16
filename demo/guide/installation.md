@@ -4,9 +4,10 @@ This page just checks styling of common content
 
 ## Ordered List
 
-1. One
-2. Two
-3. Three
+1. Automatically apply classes for CSS transitions and animations
+2. Integrate 3rd-party CSS animation libraries, such as Animate.css(opens new window)
+3. Use JavaScript to directly manipulate the DOM during transition hooks
+4. Integrate 3rd-party JavaScript animation libraries
 
 ## Quickstart
 
@@ -39,17 +40,17 @@ Quick ways to start playing with a Vue project
 ## Custom Blocks
 
 :::tip Requires intermediate knowledge
-The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
+The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
 :::
 
 The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
 
 :::warning Warning
-The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
+The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
 :::
 
 :::danger Danger Zone
-The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
+The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
 :::
 
 ## Tables

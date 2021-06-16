@@ -39,6 +39,10 @@ const route = useRoute()
   transition: color 0.25s;
 }
 
+.link.active .link-text {
+  font-weight: 600;
+}
+
 .link-text {
   line-height: 20px;
   font-size: 13px;

@@ -1,6 +1,6 @@
 .vt-doc .custom-block {
-  margin: 24px 0;
-  padding: 0 16px 0 42px;
+  margin: 28px 0;
+  padding: 0 24px 0 42px;
   border-radius: 8px;
   overflow-x: auto;
   transition: background-color 0.5s;
@@ -11,8 +11,8 @@
   content: 'ⓘ';
   position: absolute;
   font-weight: 600;
-  font-size: 15px;
-  top: 17px;
+  font-size: 14px;
+  top: 15px;
   left: 17px;
   transition: color 0.5s;
 }
@@ -44,10 +44,6 @@
   color: #b29400;
 }
 
-.vt-doc .custom-block.warning a {
-  color: var(--vt-c-text-1);
-}
-
 .vt-doc .custom-block.danger {
   background-color: #ffe6e6;
 }
@@ -57,8 +53,9 @@
   color: #ff3333;
 }
 
-.vt-doc .custom-block.danger a {
-  color: var(--vt-c-text-1);
+.vt-doc .custom-block.danger a,
+.vt-doc .custom-block.warning a {
+  color: var(--vt-c-text-code);
 }
 
 .dark .vt-doc .custom-block.warning {

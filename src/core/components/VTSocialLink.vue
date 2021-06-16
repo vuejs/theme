@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, computed } from 'vue'
+import { defineProps } from 'vue'
 import type { SocialLinkSize, SocialLinkIcon } from '../composables/socialLink'
 import VTIconDiscord from './icons/VTIconDiscord.vue'
 import VTIconFacebook from './icons/VTIconFacebook.vue'
@@ -8,28 +8,20 @@ import VTIconLinkedIn from './icons/VTIconLinkedIn.vue'
 import VTIconSlack from './icons/VTIconSlack.vue'
 import VTIconTwitter from './icons/VTIconTwitter.vue'
 
-const props = defineProps<{
+defineProps<{
   size?: SocialLinkSize
   icon: SocialLinkIcon
   link: string
 }>()
 
-const icon = computed(() => {
-  switch (props.icon) {
-    case 'discord':
-      return VTIconDiscord
-    case 'facebook':
-      return VTIconFacebook
-    case 'github':
-      return VTIconGitHub
-    case 'linkedin':
-      return VTIconLinkedIn
-    case 'slack':
-      return VTIconSlack
-    case 'twitter':
-      return VTIconTwitter
-  }
-})
+const icons = {
+  discord: VTIconDiscord,
+  facebook: VTIconFacebook,
+  github: VTIconGitHub,
+  linkedin: VTIconLinkedIn,
+  slack: VTIconSlack,
+  twitter: VTIconTwitter
+}
 </script>
 
 <template>
@@ -40,9 +32,10 @@ const icon = computed(() => {
       'is-medium': size === 'medium'
     }"
     :href="link"
+    :title="icon"
     target="_blank"
     rel="noopener noreferrer"
   >
-    <component :is="icon" class="vt-social-link-icon" />
+    <component :is="icons[icon]" class="vt-social-link-icon" />
   </a>
 </template>

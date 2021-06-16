@@ -56,6 +56,7 @@ import VPContentDocAside from './VPContentDocAside.vue'
 .content {
   margin: 0 auto;
   max-width: 592px;
+  min-width: 592px;
 }
 
 @media (min-width: 1280px) {
@@ -75,6 +76,13 @@ import VPContentDocAside from './VPContentDocAside.vue'
 @media (min-width: 1280px) {
   .aside {
     display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .aside {
+    padding-left: 96px;
+    width: 320px;
   }
 }
 </style>

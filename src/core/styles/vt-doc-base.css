@@ -1,3 +1,8 @@
+.vt-doc {
+  font-size: 15px;
+  line-height: 28px;
+}
+
 .vt-doc h1 {
   position: relative;
   margin: 0 0 14px;
@@ -66,8 +71,6 @@
 
 .vt-doc p {
   margin: 18px 0;
-  line-height: 28px;
-  font-size: 16px;
   font-weight: 400;
 }
 
@@ -140,25 +143,43 @@
 
 .vt-doc ul,
 .vt-doc ol {
-  padding-left: 1.5rem;
   margin: 18px 0;
+  line-height: 28px;
 }
 
 .vt-doc ol {
-  list-style-type: number;
+  counter-reset: item;
+}
+
+.vt-doc ol > li {
+  counter-increment: item;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.vt-doc ol > li:before {
+  position: absolute;
+  left: 2px;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--vt-c-text-3);
+  content: counter(item) '.';
 }
 
 .vt-doc li {
-  margin-bottom: 0.4rem;
   position: relative;
+  margin: 0.25rem 0;
+}
+
+.vt-doc ul {
+  padding-left: 1.25rem;
 }
 
 .vt-doc ul li:before {
   content: '-';
   color: var(--vt-c-text-3);
   position: absolute;
-  top: 2px;
-  margin-left: -1.25rem;
+  margin-left: -1.1rem;
 }
 
 .vt-doc ul p,

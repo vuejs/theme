@@ -1,1 +1,5 @@
+---
+page: true
+---
+
 # Support Vue
