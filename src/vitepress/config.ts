@@ -37,11 +37,6 @@ export interface Config {
   title?: string | null
 
   /**
-   * Algolia configuration for the site search.
-   */
-  algolia?: AlgoliaSearchOptions
-
-  /**
    * The social links to be displayed at the end of the nav bar. Perfect for
    * placing links to social services such as GitHub, Twitter, Facebook, etc.
    */
@@ -56,6 +51,19 @@ export interface Config {
    * The sidebar items.
    */
   sidebar?: SidebarConfig
+
+  /**
+   * Algolia configuration for the site search.
+   */
+  algolia?: AlgoliaSearchOptions
+
+  /**
+   * CarbonAds configuration
+   */
+  carbonAds?: {
+    code: string
+    placement: string
+  }
 }
 
 /**

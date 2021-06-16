@@ -43,6 +43,11 @@ module.exports = {
       apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
     },
 
+    carbonAds: {
+      code: 'CEBDT27Y',
+      placement: 'vuejsorg'
+    },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vue' },
       { icon: 'twitter', link: 'https://twitter.com/vuejs' },

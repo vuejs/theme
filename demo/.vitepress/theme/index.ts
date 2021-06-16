@@ -14,8 +14,9 @@ export default {
       // 'sidebar-bottom': () => h('div', 'hello bottom'),
       // 'content-top': () => h('h1', 'Announcement!'),
       // 'content-bottom': () => h('div', 'Some ads'),
-      // 'outline-top': () => h('div', 'this could be huge'),
-      // 'outline-bottom': () => h('h3', 'Sponsors')
+      // 'aside-top': () => h('div', 'this could be huge'),
+      // 'aside-mid': () => h('div', { style: { height: '300px' }}, 'Sponsors'),
+      // 'aside-bottom': () => h('div', { style: { height: '300px' }}, 'Sponsors'),
     })
   }
 }

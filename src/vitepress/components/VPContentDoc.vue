@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
+import VPCarbonAds from './VPCarbonAds.vue'
 
 const { page, frontmatter } = useData()
 </script>
@@ -22,6 +23,8 @@ const { page, frontmatter } = useData()
           <VPContentDocOutline
             v-if="page.headers && frontmatter.outline !== false"
           />
+          <slot name="aside-mid" />
+          <VPCarbonAds v-if="frontmatter.ads !== false" />
           <slot name="aside-bottom" />
         </div>
       </div>
@@ -89,7 +92,14 @@ const { page, frontmatter } = useData()
 }
 
 .aside-container {
-  position: fixed;
+  position: sticky;
+  width: 224px;
+  top: calc(var(--vt-nav-height) + 24px);
+  bottom: 0;
+}
+
+.aside-container::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 1280px) {

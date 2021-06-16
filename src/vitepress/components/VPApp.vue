@@ -36,10 +36,13 @@ const {
         <slot name="content-bottom" />
       </template>
       <template #aside-top>
-        <slot name="outline-top" />
+        <slot name="aside-top" />
+      </template>
+      <template #aside-mid>
+        <slot name="aside-mid" />
       </template>
       <template #aside-bottom>
-        <slot name="outline-bottom" />
+        <slot name="aside-bottom" />
       </template>
     </VPContent>
   </div>
