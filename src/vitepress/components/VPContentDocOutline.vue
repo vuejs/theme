@@ -40,6 +40,12 @@ useActiveAnchor(container, bg)
   display: block;
 }
 
+.outline-link:hover,
+.outline-link.active {
+  color: var(--vt-c-text-1);
+  transition: color 0.25s;
+}
+
 .outline-bg {
   --padding: 8px;
 
@@ -52,7 +58,8 @@ useActiveAnchor(container, bg)
   top: 28px;
   left: calc(0px - var(--padding));
   z-index: 0;
-  transition: top 0.15s ease-out, opacity 0.15s, background-color 0.5s;
+  transition: top 0.25s cubic-bezier(0, 1, 0.5, 1), opacity 0.25s,
+    background-color 0.5s;
 }
 
 ul {

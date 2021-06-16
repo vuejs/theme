@@ -1,6 +1,7 @@
 import { onMounted, onUnmounted, onUpdated, Ref } from 'vue'
-import type { Header, DefaultTheme } from 'vitepress'
+import type { Header } from 'vitepress'
 import { useMediaQuery } from '@vueuse/core'
+import type { MenuItemChild } from '../../core'
 
 interface HeaderWithChildren extends Header {
   children?: Header[]
@@ -23,7 +24,7 @@ function groupHeaders(headers: Header[]): HeaderWithChildren[] {
   return headers.filter((h) => h.level === 2)
 }
 
-function mapHeaders(headers: HeaderWithChildren[]): DefaultTheme.SideBarItem[] {
+function mapHeaders(headers: HeaderWithChildren[]): MenuItemChild[] {
   return headers.map((header) => ({
     text: header.title,
     link: `#${header.slug}`,
@@ -76,13 +77,21 @@ export function useActiveAnchor(
     }
   }
 
+  let prevActiveLink: HTMLAnchorElement | null = null
+
   function activateLink(hash: string | null): void {
-    const activeLink =
-      hash &&
-      (container.value.querySelector(
-        `a[href="${decodeURIComponent(hash)}"]`
-      ) as HTMLElement)
+    if (prevActiveLink) {
+      prevActiveLink.classList.remove('active')
+    }
+
+    const activeLink = (prevActiveLink =
+      hash == null
+        ? null
+        : (container.value.querySelector(
+            `a[href="${decodeURIComponent(hash)}"]`
+          ) as HTMLAnchorElement))
     if (activeLink) {
+      activeLink.classList.add('active')
       bg.value.style.opacity = '1'
       bg.value.style.top = activeLink.offsetTop + 28 + 'px'
     } else {

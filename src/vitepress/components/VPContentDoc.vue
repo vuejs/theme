@@ -70,6 +70,7 @@ const { page, frontmatter } = useData()
 .content {
   margin: 0 auto;
   max-width: 592px;
+  position: relative;
 }
 
 @media (min-width: 1280px) {
