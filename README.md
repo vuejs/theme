@@ -35,7 +35,7 @@ $ yarn dev
 
 # Build demo, then serve locally. This is for testing
 # production build in the local environment.
-$ yarn demo-serve
+$ yarn serve
 
 # Run lint via Prettier.
 $ yarn lint
