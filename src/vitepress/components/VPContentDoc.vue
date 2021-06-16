@@ -2,7 +2,7 @@
 import { useData } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
 
-const { page } = useData()
+const { page, frontmatter } = useData()
 </script>
 
 <template>
@@ -17,7 +17,9 @@ const { page } = useData()
       <div class="aside">
         <div class="aside-container">
           <slot name="aside-top" />
-          <VPContentDocOutline v-if="page.headers" />
+          <VPContentDocOutline
+            v-if="page.headers && frontmatter.outline !== false"
+          />
           <slot name="aside-bottom" />
         </div>
       </div>
