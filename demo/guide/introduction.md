@@ -1,18 +1,14 @@
 # Introduction
 
 ::: tip For Vue 2 Users
-Already know Vue 2 and just want to learn about what's new in Vue 3? Check out the [Migration Guide](/guide/migration/introduction.html)!
+Already know Vue 2 and just want to learn about what's new in Vue 3? Check out the [Migration Guide](/)!
 :::
 
 ## What is Vue.js?
 
-Vue (pronounced /vjuː/, like **view**) is a **progressive framework** for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with [modern tooling](../guide/single-file-component.html) and [supporting libraries](https://github.com/vuejs/awesome-vue#components--libraries).
+Vue (pronounced /vjuː/, like **view**) is a **progressive framework** for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with [modern tooling](/) and [supporting libraries](https://github.com/vuejs/awesome-vue#components--libraries).
 
 If you’d like to learn more about Vue before diving in, we <a id="modal-player" class="vuemastery-trigger"  href="#">created a video</a> walking through the core principles and a sample project.
-
-<VideoLesson href="https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3" title="Watch a free video course on Vue Mastery">Watch a free video course on Vue Mastery</VideoLesson>
-
-<common-vuemastery-video-modal/>
 
 ## Getting Started
 
@@ -65,8 +61,6 @@ const Counter = {
 }
 ```
 
-<FirstExample />
-
 In addition to text interpolation, we can also bind element attributes like this:
 
 ```html
@@ -89,8 +83,6 @@ const AttributeBinding = {
 
 Vue.createApp(AttributeBinding).mount('#bind-attribute')
 ```
-
-<common-codepen-snippet title="Attribute dynamic binding" slug="KKpRVvJ" />
 
 Here we're encountering something new. The `v-bind` attribute you're seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here we are basically saying "_keep this element's `title` attribute up-to-date with the `message` property on the current active instance._"
 
@@ -125,8 +117,6 @@ const EventHandling = {
 Vue.createApp(EventHandling).mount('#event-handling')
 ```
 
-<common-codepen-snippet title="Event handling" slug="dyoeGjW" />
-
 Note that in this method we update the state of our app without touching the DOM - all DOM manipulations are handled by Vue, and the code you write is focused on the underlying logic.
 
 Vue also provides the `v-model` directive that makes two-way binding between form input and app state a breeze:
@@ -150,8 +140,6 @@ const TwoWayBinding = {
 Vue.createApp(TwoWayBinding).mount('#two-way-binding')
 ```
 
-<common-codepen-snippet title="Two-way binding" slug="poJVgZm" />
-
 ## Conditionals and Loops
 
 It's easy to toggle the presence of an element, too:
@@ -174,11 +162,9 @@ const ConditionalRendering = {
 Vue.createApp(ConditionalRendering).mount('#conditional-rendering')
 ```
 
-This example demonstrates that we can bind data to not only text and attributes, but also the **structure** of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply [transition effects](transitions-enterleave.md) when elements are inserted/updated/removed by Vue.
+This example demonstrates that we can bind data to not only text and attributes, but also the **structure** of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply [transition effects](/) when elements are inserted/updated/removed by Vue.
 
 You can change `seen` from `true` to `false` in the sandbox below to check the effect:
-
-<common-codepen-snippet title="Conditional rendering" slug="oNXdbpB" tab="js,result" />
 
 There are quite a few other directives, each with its own special functionality. For example, the `v-for` directive can be used to display a list of items using the data from an array:
 
@@ -207,14 +193,11 @@ const ListRendering = {
 
 Vue.createApp(ListRendering).mount('#list-rendering')
 ```
-
-<common-codepen-snippet title="List rendering" slug="mdJLVXq" />
-
 ## Composing with Components
 
 The component system is another important concept in Vue, because it's an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components:
 
-![Component Tree](/images/components.png)
+![Component Tree](/img/components.png)
 
 In Vue, a component is essentially an instance with pre-defined options. Registering a component in Vue is straightforward: we create a component object as we did with `App` objects and we define it in parent's `components` option:
 
@@ -240,7 +223,7 @@ Now you can compose it in another component's template:
 </ol>
 ```
 
-But this would render the same text for every todo, which is not super interesting. We should be able to pass data from the parent scope into child components. Let's modify the component definition to make it accept a [prop](component-basics.html#passing-data-to-child-components-with-props):
+But this would render the same text for every todo, which is not super interesting. We should be able to pass data from the parent scope into child components. Let's modify the component definition to make it accept a [prop](/):
 
 ```js
 app.component('todo-item', {
@@ -292,11 +275,9 @@ app.component('todo-item', {
 app.mount('#todo-list-app')
 ```
 
-<common-codepen-snippet title="Intro-Components-1" slug="VwLxeEz" />
-
 This is a contrived example, but we have managed to separate our app into two smaller units, and the child is reasonably well-decoupled from the parent via the props interface. We can now further improve our `<todo-item>` component with more complex template and logic without affecting the parent app.
 
-In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components [later in the guide](component-basics.md), but here's an (imaginary) example of what an app's template might look like with components:
+In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components [later in the guide](/), but here's an (imaginary) example of what an app's template might look like with components:
 
 ```html
 <div id="app">
