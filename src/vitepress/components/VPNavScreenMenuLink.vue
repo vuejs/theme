@@ -27,6 +27,6 @@ defineProps<{
 }
 
 .VPNavScreenMenuLink:hover {
-  color: var(--vt-c-brand);
+  color: var(--vp-c-brand);
 }
 </style>

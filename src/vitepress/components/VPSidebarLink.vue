@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import { useRoute } from 'vitepress'
+import { useData } from 'vitepress'
 import { isActive } from '../support/utils'
 
 defineProps<{
@@ -8,12 +8,12 @@ defineProps<{
   link: string
 }>()
 
-const route = useRoute()
+const { page } = useData()
 </script>
 
 <template>
   <a
-    :class="{ link: true, active: isActive(route, link) }"
+    :class="{ link: true, active: isActive(page.relativePath, link) }"
     :href="link"
     @click="$emit('jump')"
   >
@@ -35,7 +35,7 @@ const route = useRoute()
 
 .link:hover .link-text,
 .link.active .link-text {
-  color: var(--vt-c-brand);
+  color: var(--vp-c-brand);
   transition: color 0.25s;
 }
 

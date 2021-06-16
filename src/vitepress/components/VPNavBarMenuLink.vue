@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 import { VTLink } from '../../core'
-import { useRoute } from 'vitepress'
+import { useData } from 'vitepress'
 import { isActive } from '../support/utils'
 import type { NavItemWithLink } from '../config'
 
@@ -9,14 +9,18 @@ defineProps<{
   item: NavItemWithLink
 }>()
 
-const route = useRoute()
+const { page } = useData()
 </script>
 
 <template>
   <VTLink
     :class="{
       VPNavBarMenuLink: true,
-      active: isActive(route, item.activeMatch || item.link, !!item.activeMatch)
+      active: isActive(
+        page.relativePath,
+        item.activeMatch || item.link,
+        !!item.activeMatch
+      )
     }"
     :href="item.link"
   >
@@ -36,10 +40,10 @@ const route = useRoute()
 }
 
 .VPNavBarMenuLink.active {
-  border-bottom: 1px solid var(--vt-c-green);
+  border-bottom: 1px solid var(--vp-c-brand);
 }
 
 .VPNavBarMenuLink:hover {
-  color: var(--vt-c-brand);
+  color: var(--vp-c-brand);
 }
 </style>

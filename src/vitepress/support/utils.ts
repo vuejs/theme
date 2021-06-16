@@ -1,5 +1,4 @@
 import { withBase } from 'vitepress'
-import type { Route } from 'vitepress'
 
 export const hashRE = /#.*$/
 export const extRE = /(index)?\.(md|html)$/
@@ -26,20 +25,18 @@ export function normalizeLink(url: string): string {
 }
 
 export function isActive(
-  route: Route,
-  path?: string,
+  currentPath: string,
+  matchPath?: string,
   asRegex = false
 ): boolean {
-  if (path === undefined) {
+  if (matchPath === undefined) {
     return false
   }
-
-  const routePath = normalize(`/${route.data.relativePath}`)
+  currentPath = normalize(`/${currentPath}`)
   if (asRegex) {
-    return new RegExp(path).test(routePath)
+    return new RegExp(matchPath).test(currentPath)
   } else {
-    const pagePath = normalize(path)
-    return routePath === pagePath
+    return normalize(matchPath) === currentPath
   }
 }
 

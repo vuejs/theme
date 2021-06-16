@@ -2,23 +2,21 @@
 import { defineProps } from 'vue'
 import { VTFlyout } from '../../core'
 import { isActive } from '../support/utils'
-import { useRoute } from 'vitepress'
+import { useData } from 'vitepress'
 import type { NavItemWithChildren } from '../config'
 
-const props = defineProps<{
+defineProps<{
   item: NavItemWithChildren
 }>()
 
-const route = useRoute()
-
-isActive(route, props.item.activeMatch)
+const { page } = useData()
 </script>
 
 <template>
   <VTFlyout
     :class="{
       VPNavBarMenuGroup: true,
-      active: isActive(route, item.activeMatch, true)
+      active: isActive(page.relativePath, item.activeMatch, true)
     }"
     :button="item.text"
     :items="item.items"
@@ -27,7 +25,7 @@ isActive(route, props.item.activeMatch)
 
 <style scoped>
 .VPNavBarMenuGroup.active {
-  border-bottom: 1px solid var(--vt-c-green);
+  border-bottom: 1px solid var(--vp-c-brand);
   height: var(--vt-nav-height);
 }
 </style>

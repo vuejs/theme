@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useData } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
+import VPContentDocFooter from './VPContentDocFooter.vue'
 
 const { page, frontmatter } = useData()
 </script>
@@ -12,6 +13,7 @@ const { page, frontmatter } = useData()
         <slot name="content-top" />
         <Content class="vt-doc" />
         <slot name="content-bottom" />
+        <VPContentDocFooter />
       </div>
 
       <div class="aside" v-if="frontmatter.aside !== false">
@@ -30,6 +32,10 @@ const { page, frontmatter } = useData()
 <style scoped>
 .VPContentDoc {
   padding: 32px 24px 96px;
+}
+
+.vt-doc {
+  margin-bottom: 96px;
 }
 
 @media (min-width: 768px) {
