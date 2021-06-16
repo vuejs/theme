@@ -28,11 +28,11 @@ const configSymbol: InjectionKey<Ref<Config>> = Symbol('config')
 export function withConfigProvider(App: Component) {
   return defineComponent({
     name: 'VPConfigProvider',
-    setup() {
+    setup(_, { slots }) {
       const { theme } = useData()
       const config = computed(() => resolveConfig(theme.value))
       provide(configSymbol, config)
-      return () => h(App)
+      return () => h(App, null, slots)
     }
   })
 }

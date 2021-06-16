@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-import VPContentDocAside from './VPContentDocAside.vue'
+import { useData } from 'vitepress'
+import VPContentDocOutline from './VPContentDocOutline.vue'
+
+const { page } = useData()
 </script>
 
 <template>
@@ -10,7 +13,11 @@ import VPContentDocAside from './VPContentDocAside.vue'
       </div>
 
       <div class="aside">
-        <VPContentDocAside />
+        <div class="aside-container">
+          <slot name="aside-top" />
+          <VPContentDocOutline v-if="page.headers" />
+          <slot name="aside-bottom" />
+        </div>
       </div>
     </div>
   </div>
@@ -71,6 +78,10 @@ import VPContentDocAside from './VPContentDocAside.vue'
   flex-shrink: 0;
   padding-left: 64px;
   width: 288px;
+}
+
+.aside-container {
+  position: fixed;
 }
 
 @media (min-width: 1280px) {

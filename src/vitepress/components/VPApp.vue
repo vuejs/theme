@@ -20,8 +20,22 @@ const {
     <VTBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
     <VPNav />
     <VPLocalNav @open-menu="openSidebar" />
-    <VPSidebar :open="isSidebarOpen" @close="closeSidebar" />
-    <VPContent />
+    <VPSidebar :open="isSidebarOpen" @close="closeSidebar">
+      <template #top>
+        <slot name="sidebar-top" />
+      </template>
+      <template #bottom>
+        <slot name="sidebar-bottom" />
+      </template>
+    </VPSidebar>
+    <VPContent>
+      <template #aside-top>
+        <slot name="outline-top" />
+      </template>
+      <template #aside-bottom>
+        <slot name="outline-bottom" />
+      </template>
+    </VPContent>
   </div>
 </template>
 

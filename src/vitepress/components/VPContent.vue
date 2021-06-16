@@ -11,7 +11,10 @@ const { hasSidebar } = useSidebar()
 <template>
   <div class="VPContent" :class="{ 'has-sidebar': hasSidebar }">
     <VPContentPage v-if="!!frontmatter.page" />
-    <VPContentDoc v-else />
+    <VPContentDoc v-else>
+      <template #aside-top><slot name="aside-top" /></template>
+      <template #aside-bottom><slot name="aside-bottom" /></template>
+    </VPContentDoc>
   </div>
 </template>
 

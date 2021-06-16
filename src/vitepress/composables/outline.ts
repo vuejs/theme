@@ -1,13 +1,50 @@
 import { onMounted, onUnmounted, onUpdated, Ref } from 'vue'
+import type { Header, DefaultTheme } from 'vitepress'
+import { useMediaQuery } from '@vueuse/core'
 
-export function useActiveAnchor(el: Ref<HTMLElement>, linkSelector: string) {
-  let activeLink: HTMLAnchorElement | null = null
+interface HeaderWithChildren extends Header {
+  children?: Header[]
+}
 
+export function resolveHeaders(headers: Header[]) {
+  return mapHeaders(groupHeaders(headers))
+}
+
+function groupHeaders(headers: Header[]): HeaderWithChildren[] {
+  headers = headers.map((h) => Object.assign({}, h))
+  let lastH2: HeaderWithChildren
+  headers.forEach((h) => {
+    if (h.level === 2) {
+      lastH2 = h
+    } else if (lastH2) {
+      ;(lastH2.children || (lastH2.children = [])).push(h)
+    }
+  })
+  return headers.filter((h) => h.level === 2)
+}
+
+function mapHeaders(headers: HeaderWithChildren[]): DefaultTheme.SideBarItem[] {
+  return headers.map((header) => ({
+    text: header.title,
+    link: `#${header.slug}`,
+    children: header.children ? mapHeaders(header.children) : undefined
+  }))
+}
+
+export function useActiveAnchor(
+  container: Ref<HTMLElement>,
+  bg: Ref<HTMLElement>
+) {
+  const isOutlineEnabled = useMediaQuery('(min-width: 1280px)')
   const onScroll = throttleAndDebounce(setActiveLink, 100)
 
   function setActiveLink(): void {
+    if (!isOutlineEnabled.value) {
+      return
+    }
+
     const links = [].slice.call(
-      el.value.querySelectorAll(linkSelector)
+      container.value.querySelectorAll('.outline-link')
     ) as HTMLAnchorElement[]
 
     const anchors = [].slice
@@ -15,6 +52,15 @@ export function useActiveAnchor(el: Ref<HTMLElement>, linkSelector: string) {
       .filter((anchor: HTMLAnchorElement) =>
         links.some((link) => link.hash === anchor.hash)
       ) as HTMLAnchorElement[]
+
+    // page bottom - highlight last one
+    if (
+      anchors.length &&
+      window.scrollY + window.innerHeight === document.body.offsetHeight
+    ) {
+      activateLink(anchors[anchors.length - 1].hash)
+      return
+    }
 
     for (let i = 0; i < anchors.length; i++) {
       const anchor = anchors[i]
@@ -31,10 +77,17 @@ export function useActiveAnchor(el: Ref<HTMLElement>, linkSelector: string) {
   }
 
   function activateLink(hash: string | null): void {
-    activeLink && activeLink.classList.remove('active')
-    activeLink = el.value.querySelector(`a[href="${hash}"]`)
+    const activeLink =
+      hash &&
+      (container.value.querySelector(
+        `a[href="${decodeURIComponent(hash)}"]`
+      ) as HTMLElement)
     if (activeLink) {
-      activeLink.classList.add('active')
+      bg.value.style.opacity = '1'
+      bg.value.style.top = activeLink.offsetTop + 28 + 'px'
+    } else {
+      bg.value.style.opacity = '0'
+      bg.value.style.top = '28px'
     }
   }
 
@@ -45,7 +98,7 @@ export function useActiveAnchor(el: Ref<HTMLElement>, linkSelector: string) {
 
   onUpdated(() => {
     // sidebar update means a route change
-    activateLink(decodeURIComponent(location.hash))
+    activateLink(location.hash)
   })
 
   onUnmounted(() => {
@@ -63,7 +116,7 @@ function getAnchorTop(anchor: HTMLAnchorElement): number {
 function isAnchorActive(
   index: number,
   anchor: HTMLAnchorElement,
-  nextAnchor: HTMLAnchorElement
+  nextAnchor: HTMLAnchorElement | undefined
 ): [boolean, string | null] {
   const scrollTop = window.scrollY
 
@@ -76,7 +129,7 @@ function isAnchorActive(
   }
 
   if (!nextAnchor || scrollTop < getAnchorTop(nextAnchor)) {
-    return [true, decodeURIComponent(anchor.hash)]
+    return [true, anchor.hash]
   }
 
   return [false, null]

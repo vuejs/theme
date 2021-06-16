@@ -1,46 +1,18 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import type { Header, DefaultTheme } from 'vitepress'
-import { useActiveAnchor } from '../composables/activeAnchor'
+import { resolveHeaders, useActiveAnchor } from '../composables/outline'
 import { ref } from 'vue'
 
 const { page } = useData()
 const container = ref()
-useActiveAnchor(container, '.outline-link')
-
-interface HeaderWithChildren extends Header {
-  children?: Header[]
-}
-
-function resolveHeaders(headers: Header[]) {
-  return mapHeaders(groupHeaders(headers))
-}
-
-function groupHeaders(headers: Header[]): HeaderWithChildren[] {
-  headers = headers.map((h) => Object.assign({}, h))
-  let lastH2: HeaderWithChildren
-  headers.forEach((h) => {
-    if (h.level === 2) {
-      lastH2 = h
-    } else if (lastH2) {
-      ;(lastH2.children || (lastH2.children = [])).push(h)
-    }
-  })
-  return headers.filter((h) => h.level === 2)
-}
-
-function mapHeaders(headers: HeaderWithChildren[]): DefaultTheme.SideBarItem[] {
-  return headers.map((header) => ({
-    text: header.title,
-    link: `#${header.slug}`,
-    children: header.children ? mapHeaders(header.children) : undefined
-  }))
-}
+const bg = ref()
+useActiveAnchor(container, bg)
 </script>
 
 <template>
-  <div class="VPContentDocOutline" ref="container" v-if="page.headers">
-    <div class="outline-title">On this page</div>
+  <div class="VPContentDocOutline" ref="container">
+    <div class="outline-bg" ref="bg" />
+    <div class="outline-title">Contents</div>
     <ul>
       <li v-for="{ text, link } in resolveHeaders(page.headers)">
         <a class="outline-link" :href="link">{{ text }}</a>
@@ -51,16 +23,14 @@ function mapHeaders(headers: HeaderWithChildren[]): DefaultTheme.SideBarItem[] {
 
 <style scoped>
 .VPContentDocOutline {
-  position: fixed;
   font-size: 13px;
   font-weight: 500;
+  position: relative;
 }
 
 .outline-title {
   font-weight: 600;
   margin-bottom: 4px;
-  text-transform: uppercase;
-  font-size: 12px;
 }
 
 .outline-link {
@@ -70,7 +40,23 @@ function mapHeaders(headers: HeaderWithChildren[]): DefaultTheme.SideBarItem[] {
   display: block;
 }
 
-.outline-link.active {
-  color: var(--vt-c-green);
+.outline-bg {
+  --padding: 8px;
+
+  opacity: 0;
+  position: absolute;
+  background-color: var(--vt-c-bg-soft);
+  border-radius: 4px;
+  width: calc(100% + var(--padding) * 2);
+  height: 28px;
+  top: 28px;
+  left: calc(0px - var(--padding));
+  z-index: 0;
+  transition: top 0.15s ease-out, opacity 0.15s, background-color 0.5s;
+}
+
+ul {
+  z-index: 1;
+  position: relative;
 }
 </style>
