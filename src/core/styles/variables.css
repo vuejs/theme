@@ -108,6 +108,7 @@
 
   --vt-c-brand: var(--vt-c-green);
   --vt-c-brand-dark: var(--vt-c-green-dark);
+  --vt-c-brand-highlight: var(--vt-c-green-dark);
 }
 
 .dark {
@@ -131,6 +132,8 @@
   --vt-c-text-inverse-2: var(--vt-c-text-light-2);
   --vt-c-text-inverse-3: var(--vt-c-text-light-3);
   --vt-c-text-inverse-4: var(--vt-c-text-light-4);
+
+  --vt-c-brand-highlight: var(--vt-c-green-light);
 }
 
 /**

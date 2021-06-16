@@ -64,7 +64,7 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
 .prev-link,
 .next-link {
   display: inline-block;
-  color: var(--vp-c-brand);
+  color: var(--vt-c-brand);
   font-weight: 500;
   font-size: 14px;
   transition: color 0.25s;
@@ -72,7 +72,7 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
 
 .prev-link:hover,
 .next-link:hover {
-  color: var(--vp-c-brand-dark);
+  color: var(--vt-c-brand-highlight);
 }
 
 .next-link {

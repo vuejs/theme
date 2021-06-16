@@ -33,14 +33,15 @@ const { page } = useData()
   }
 }
 
-.link:hover .link-text,
-.link.active .link-text {
-  color: var(--vp-c-brand);
+.link:hover .link-text {
+  color: var(--vt-c-brand-highlight);
   transition: color 0.25s;
 }
 
 .link.active .link-text {
   font-weight: 600;
+  color: var(--vt-c-brand);
+  transition: color 0.25s;
 }
 
 .link-text {

@@ -40,10 +40,10 @@ const { page } = useData()
 }
 
 .VPNavBarMenuLink.active {
-  border-bottom: 1px solid var(--vp-c-brand);
+  border-bottom: 1px solid var(--vt-c-brand);
 }
 
 .VPNavBarMenuLink:hover {
-  color: var(--vp-c-brand);
+  color: var(--vt-c-brand);
 }
 </style>

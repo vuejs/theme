@@ -25,7 +25,7 @@ const { page } = useData()
 
 <style scoped>
 .VPNavBarMenuGroup.active {
-  border-bottom: 1px solid var(--vp-c-brand);
+  border-bottom: 1px solid var(--vt-c-brand);
   height: var(--vt-nav-height);
 }
 </style>

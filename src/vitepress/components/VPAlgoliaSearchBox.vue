@@ -150,6 +150,7 @@ function getRelativePath(absoluteUrl: string) {
   width: 18px;
   height: 18px;
   position: relative;
+  margin-right: 10px;
 }
 
 @media (min-width: 768px) {
@@ -167,9 +168,16 @@ function getRelativePath(absoluteUrl: string) {
 .DocSearch-Button-Placeholder {
   transition: color 0.5s;
   font-size: 13px;
-  padding: 0 8px;
   font-weight: 500;
   color: var(--vt-c-text-2);
+  display: none;
+  padding: 0 10px 0 0;
+}
+
+@media (min-width: 960px) {
+  .DocSearch-Button-Placeholder {
+    display: inline-block;
+  }
 }
 
 .DocSearch-Button:hover .DocSearch-Button-Placeholder {
@@ -184,6 +192,10 @@ function getRelativePath(absoluteUrl: string) {
   height: 20px;
   justify-content: center;
   align-items: center;
+}
+
+.DocSearch-Button:hover .DocSearch-Button-Keys {
+  border-color: var(--vt-c-brand-light);
 }
 
 @media (min-width: 768px) {

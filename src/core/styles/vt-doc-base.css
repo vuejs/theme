@@ -78,10 +78,11 @@
   font-weight: 500;
   color: var(--vt-c-brand);
   transition: color 0.25s;
+  text-decoration-style: dotted;
 }
 
 .vt-doc a:hover {
-  color: var(--vt-c-brand-dark);
+  color: var(--vt-c-brand-highlight);
 }
 
 .vt-doc strong {
