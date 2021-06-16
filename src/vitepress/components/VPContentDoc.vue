@@ -56,12 +56,12 @@ import VPContentDocAside from './VPContentDocAside.vue'
 .content {
   margin: 0 auto;
   max-width: 592px;
-  min-width: 592px;
 }
 
 @media (min-width: 1280px) {
   .content {
     margin: 0;
+    min-width: 592px;
   }
 }
 

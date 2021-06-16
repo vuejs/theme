@@ -38,8 +38,9 @@ module.exports = {
     logo: '/img/logo-vue.svg',
 
     algolia: {
-      apiKey: 'c57105e511faa5558547599f120ceeba',
-      indexName: 'vitepress'
+      indexName: 'vuejs-v3',
+      appId: 'BH4D9OD16A',
+      apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
     },
 
     socialLinks: [
