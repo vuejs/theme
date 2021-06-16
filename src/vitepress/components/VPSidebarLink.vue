@@ -34,7 +34,7 @@ const { page } = useData()
 }
 
 .link:hover .link-text {
-  color: var(--vt-c-brand-highlight);
+  color: var(--vt-c-brand-text-1);
   transition: color 0.25s;
 }
 
