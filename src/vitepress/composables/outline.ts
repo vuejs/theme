@@ -1,7 +1,7 @@
 import { onMounted, onUnmounted, onUpdated, Ref } from 'vue'
 import type { Header } from 'vitepress'
 import { useMediaQuery } from '@vueuse/core'
-import type { MenuItemChild } from '../../core'
+import type { MenuItemWithLink } from '../../core'
 
 interface HeaderWithChildren extends Header {
   children?: Header[]
@@ -24,7 +24,7 @@ function groupHeaders(headers: Header[]): HeaderWithChildren[] {
   return headers.filter((h) => h.level === 2)
 }
 
-function mapHeaders(headers: HeaderWithChildren[]): MenuItemChild[] {
+function mapHeaders(headers: HeaderWithChildren[]): MenuItemWithLink[] {
   return headers.map((header) => ({
     text: header.title,
     link: `#${header.slug}`,

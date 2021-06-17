@@ -12,7 +12,7 @@ useActiveAnchor(container, bg)
 <template>
   <div class="VPContentDocOutline" ref="container">
     <div class="outline-bg" ref="bg" />
-    <div class="outline-title">Contents</div>
+    <div class="outline-title">On this page</div>
     <ul>
       <li v-for="{ text, link } in resolveHeaders(page.headers)">
         <a class="outline-link" :href="link">{{ text }}</a>
@@ -31,6 +31,8 @@ useActiveAnchor(container, bg)
 .outline-title {
   font-weight: 600;
   margin-bottom: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
 }
 
 .outline-link {

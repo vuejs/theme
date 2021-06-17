@@ -62,19 +62,9 @@ module.exports = {
           {
             items: [
               { text: 'Guide', link: '/guide/introduction' },
-              { text: 'API Reference', link: '/api/' }
-            ]
-          },
-          {
-            items: [
+              { text: 'Examples', link: '/examples/markdown' },
               { text: 'Style Guide', link: '/style-guide/' },
               { text: 'Cookbook', link: '/cookbook/' },
-              { text: 'Examples', link: '/examples/markdown' }
-            ]
-          },
-          {
-            items: [
-              { text: 'Contribute', link: '/guide/contributing/writing-guide' },
               {
                 text: 'Migration from Vue 2',
                 link: '/guide/migration/introduction'
@@ -84,13 +74,18 @@ module.exports = {
         ]
       },
       {
+        text: 'API Reference',
+        activeMatch: `^/api/`,
+        link: '/api/'
+      },
+      {
         text: 'Ecosystem',
         items: [
           {
-            text: 'Help',
             items: [
-              { text: 'Forum', link: 'https://forum.vuejs.org/' },
-              { text: 'Chat', link: 'https://discord.com/invite/HBherRA' }
+              { text: 'Partners', link: '/community/partners/' },
+              { text: 'Themes', link: '/community/themes/' },
+              { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' }
             ]
           },
           {
@@ -108,10 +103,6 @@ module.exports = {
                 link: 'https://github.com/vuejs/vue-devtools'
               }
             ]
-          },
-          {
-            text: 'Templates',
-            items: [{ text: 'Themes', link: '/community/themes/' }]
           }
         ]
       },
@@ -121,32 +112,35 @@ module.exports = {
         items: [
           {
             items: [
-              { text: 'Team', link: '/community/team/' },
-              { text: 'Partners', link: '/community/partners/' },
-              { text: 'Join', link: '/community/join/' }
+              { text: 'Team', link: '/community/team' },
+              {
+                text: 'Contribution Guide',
+                link: '/community/contribution-guide'
+              },
+              { text: 'Events', link: 'https://events.vuejs.org/' }
             ]
           },
           {
+            text: 'News',
             items: [
-              { text: 'Events', link: 'https://events.vuejs.org/' },
+              { text: 'Twitter', link: 'https://twitter.com/vuejs' },
+              { text: 'Newsletter', link: 'https://news.vuejs.org/' },
+              { text: 'Blog', link: 'https://blog.vuejs.org/' }
+            ]
+          },
+          {
+            text: 'Help',
+            items: [
+              { text: 'Forum', link: 'https://forum.vuejs.org/' },
+              { text: 'Chat', link: 'https://discord.com/invite/HBherRA' },
               { text: 'DEV Community', link: 'https://dev.to/t/vue' }
             ]
           }
         ]
       },
       {
-        text: 'News',
-        items: [
-          { text: 'Weekly News', link: 'https://news.vuejs.org/' },
-          { text: 'Blog', link: 'https://blog.vuejs.org/' },
-          { text: 'Roadmap', link: 'https://github.com/vuejs/vue/projects/6' },
-          { text: 'Twitter', link: 'https://twitter.com/vuejs' },
-          { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' }
-        ]
-      },
-      {
-        text: 'Support Vue',
-        link: '/support-vue/'
+        text: 'Sponsor',
+        link: '/sponsor/'
       }
     ],
 
@@ -220,7 +214,7 @@ module.exports = {
           text: 'Reusability',
           items: [
             { text: 'Mixins', link: '/guide/mixins' },
-            { text: 'Mixins', link: '/guide/custom-directive' }
+            { text: 'Custom Directives', link: '/guide/custom-directive' }
           ]
         },
         {
@@ -249,7 +243,7 @@ module.exports = {
           text: 'Advanced',
           items: [
             { text: 'Teleport', link: '/guide/teleport' },
-            { text: 'Render Functions', link: '/guide/render-function' },
+            { text: 'Render Function', link: '/guide/render-function' },
             { text: 'Plugins', link: '/guide/plugins' }
           ]
         },
@@ -299,6 +293,62 @@ module.exports = {
             { text: 'Semantics', link: '/guide/a11y-semantics' },
             { text: 'Standards', link: '/guide/a11y-standards' },
             { text: 'Resources', link: '/guide/a11y-resources' }
+          ]
+        }
+      ],
+      '/api/': [
+        {
+          text: 'Global API',
+          items: [
+            { text: 'Application', link: '/api/application' },
+            { text: 'Utilities', link: '/api/utilities' }
+          ]
+        },
+        {
+          text: 'Component',
+          items: [
+            { text: 'Component Options', link: '/api/options' },
+            {
+              text: 'Component Instance',
+              link: '/api/component-instance'
+            }
+          ]
+        },
+        {
+          text: 'Composition API',
+          items: [
+            { text: 'setup()', link: '/api/composition-setup' },
+            { text: 'Reactivity', link: '/api/composition-reactivity' },
+            { text: 'Lifecycle', link: '/api/composition-lifecycle' }
+          ]
+        },
+        {
+          text: 'Built-ins',
+          items: [
+            { text: 'Directives', link: '/api/built-in-directives' },
+            { text: 'Components', link: '/api/built-in-components' },
+            { text: 'Special Attributes', link: '/api/special-attributes' }
+          ]
+        },
+        {
+          text: 'Single File Component',
+          items: [
+            { text: 'Specification', link: '/api/sfc-spec' },
+            { text: '<script setup>', link: '/api/sfc-script-setup' },
+            { text: '<style> Features', link: '/api/sfc-style' }
+          ]
+        },
+        {
+          text: 'TypeScript',
+          items: [{ text: 'Utility Types', link: '/api/types-utility' }]
+        },
+        {
+          text: 'Advanced',
+          items: [
+            { text: 'Render Function', link: '/api/render-function' },
+            { text: 'Server-Side Rendering', link: '/api/ssr' },
+            { text: 'Compiler Transforms', link: '/api/compiler' },
+            { text: 'Custom Renderer', link: '/api/custom-renderer' }
           ]
         }
       ]

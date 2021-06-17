@@ -1,5 +1,3 @@
 # API Reference
 
-## Foo
-
-## Bar
+- [Application](./application)
