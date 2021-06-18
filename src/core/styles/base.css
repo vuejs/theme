@@ -9,7 +9,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: var(--vt-font-family-base);
-  letter-spacing: .4px;
+  letter-spacing: .3px;
   line-height: 24px;
   font-size: 16px;
   font-weight: 400;

@@ -3,6 +3,22 @@
   --vt-doc-line-height: 21px;
 }
 
+/* inline code */
+.vt-doc :not(pre) > code {
+  font-size: 13px;
+  background-color: var(--vt-c-bg-soft);
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: var(--vt-c-text-code);
+  transition: color 0.5s, background-color 0.5s;
+}
+
+@media (min-width: 768px) {
+  .vt-doc :not(pre) > code {
+    white-space: nowrap;
+  }
+}
+
 .vt-doc div[class*='language-'] {
   position: relative;
   margin: 28px -24px;
@@ -106,13 +122,14 @@
 
 .vt-doc [class*='language-']:before {
   position: absolute;
-  top: 12px;
-  right: 16px;
+  top: 4px;
+  right: 4px;
   z-index: 2;
   line-height: 24px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--vt-c-text-2);
+  color: var(--vt-c-text-3);
+  padding: 0 8px;
   transition: color 0.5s;
 }
 

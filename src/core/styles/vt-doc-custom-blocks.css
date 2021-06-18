@@ -1,6 +1,6 @@
 .vt-doc .custom-block {
   margin: 28px 0;
-  padding: 0 24px 0 42px;
+  padding: 20px 24px 4px 42px;
   border-radius: 8px;
   overflow-x: auto;
   transition: background-color 0.5s;
@@ -12,7 +12,7 @@
   position: absolute;
   font-weight: 600;
   font-size: 14px;
-  top: 15px;
+  top: 18px;
   left: 17px;
 }
 
@@ -25,7 +25,8 @@
 }
 
 .vt-doc .custom-block .custom-block-title {
-  margin-bottom: -10px;
+  margin-bottom: 8px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--vt-c-text-1);
 }
@@ -73,4 +74,16 @@
 .dark .vt-doc .custom-block.danger .custom-block-title,
 .dark .vt-doc .custom-block.danger:before {
   color: #ff5656;
+}
+
+.vt-doc .custom-block li:before {
+  top: 0.6rem;
+}
+
+.vt-doc .custom-block :not(pre) > code {
+  background-color: rgba(27, 31, 35, 0.05);
+}
+
+.dark .vt-doc .custom-block :not(pre) > code {
+  background-color: rgba(0, 0, 0, 0.2);
 }
