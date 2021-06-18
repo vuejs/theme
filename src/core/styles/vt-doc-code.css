@@ -220,6 +220,7 @@
   content: 'dockerfile';
 }
 
+/* Color scheme */
 .vt-doc .token {
   transition: color 0.5s;
 }
@@ -229,7 +230,7 @@
 .vt-doc .token.prolog,
 .vt-doc .token.doctype,
 .vt-doc .token.cdata {
-  color: #848486;
+  color: #9aafc3;
 }
 
 .vt-doc .token.punctuation {
@@ -240,7 +241,7 @@
 .vt-doc .token.attr-name,
 .vt-doc .token.namespace,
 .vt-doc .token.deleted {
-  color: #b2085f;
+  color: #d84152;
 }
 
 .vt-doc .token.function-name {
@@ -248,9 +249,12 @@
 }
 
 .vt-doc .token.boolean,
-.vt-doc .token.number,
-.vt-doc .token.function {
+.vt-doc .token.number {
   color: #c25205;
+}
+
+.vt-doc .token.function {
+  color: #336ec3;
 }
 
 .vt-doc .token.property,
@@ -265,7 +269,7 @@
 .vt-doc .token.atrule,
 .vt-doc .token.keyword,
 .vt-doc .token.builtin {
-  color: #b92dbc;
+  color: #af4ab1;
 }
 
 .vt-doc .token.string,
@@ -273,7 +277,7 @@
 .vt-doc .token.attr-value,
 .vt-doc .token.regex,
 .vt-doc .token.variable {
-  color: #33a06f;
+  color: #2ba46d;
 }
 
 .vt-doc .token.operator,
@@ -323,9 +327,12 @@
 }
 
 .dark .vt-doc .token.boolean,
-.dark .vt-doc .token.number,
-.dark .vt-doc .token.function {
+.dark .vt-doc .token.number {
   color: #f08d49;
+}
+
+.dark .vt-doc .token.function {
+  color: #6ba7de;
 }
 
 .dark .vt-doc .token.property,
@@ -340,7 +347,7 @@
 .dark .vt-doc .token.atrule,
 .dark .vt-doc .token.keyword,
 .dark .vt-doc .token.builtin {
-  color: #cd5cce;
+  color: #d9a6ff;
 }
 
 .dark .vt-doc .token.string,
@@ -363,7 +370,7 @@
 
 .dark .vt-doc .token.important,
 .dark .vt-doc .token.bold {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .dark .vt-doc .token.italic {

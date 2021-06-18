@@ -1,6 +1,6 @@
 .vt-doc {
   font-size: 15px;
-  line-height: 26px;
+  line-height: 28px;
 }
 
 .vt-doc h1,
@@ -9,14 +9,14 @@
 .vt-doc h4,
 .vt-doc h5,
 .vt-doc h6 {
-  font-weight: 600;
+  font-weight: 500;
   position: relative;
 }
 
 .vt-doc h1 {
   margin: 0 0 14px;
-  line-height: 32px;
-  font-size: 24px;
+  line-height: 36px;
+  font-size: 28px;
   letter-spacing: 0.1px;
 }
 
@@ -26,8 +26,8 @@
 
 @media (min-width: 768px) {
   .vt-doc h1 {
-    line-height: 40px;
-    font-size: 32px;
+    line-height: 48px;
+    font-size: 36px;
   }
 }
 
