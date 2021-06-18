@@ -12,7 +12,6 @@ let hasInitalized = false
 
 function init() {
   if (!hasInitalized) {
-    console.log('init carbon')
     hasInitalized = true
     const s = document.createElement('script')
     s.id = '_carbonads_js'
