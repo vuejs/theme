@@ -45,7 +45,7 @@ app.component('my-component', {
 const MyComponent = app.component('my-component')
 ```
 
-**See also:** [Components](../guide/component-basics.html)
+**See also:** [Components](/)
 ## app.config
 
 - **Usage:**
@@ -61,7 +61,7 @@ const app = createApp({})
 app.config = {...}
 ```
 
-- **See also:** [Application Config](./application-config.html)
+- **See also:** [Application Config](/)
 ## app.directive
 
 - **Arguments:**
@@ -156,10 +156,10 @@ A blueprint of the real DOM element received as el argument above.
 The previous virtual node, only available in the `beforeUpdate` and `updated` hooks.
 
 :::tip Note
-Apart from `el`, you should treat these arguments as read-only and never modify them. If you need to share information across hooks, it is recommended to do so through element's [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset).
+Apart from `el`, you should treat these arguments as read-only and never modify them. If you need to share information across hooks, it is recommended to do so through element's [dataset](/).
 :::
 
-- **See also:** [Custom Directives](../guide/custom-directive.html)
+- **See also:** [Custom Directives](/)
 ## app.mixin
 
 - **Arguments:**
@@ -174,7 +174,7 @@ Apart from `el`, you should treat these arguments as read-only and never modify 
 
   Apply a mixin in the whole application scope. Once registered they can be used in the template of any component within the current application. This can be used by plugin authors to inject custom behavior into components. **Not recommended in application code**.
 
-- **See also:** [Global Mixin](../guide/mixins.html#global-mixin)
+- **See also:** [Global Mixin](/)
 ## app.mount
 
 - **Arguments:**
@@ -207,7 +207,7 @@ app.mount('#my-app')
 ```
 
 - **See also:**
-  - [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+  - [Lifecycle Diagram](/)
 ## app.provide
 
 - **Arguments:**
@@ -225,9 +225,9 @@ app.mount('#my-app')
 
   From a `provide`/`inject` perspective, the application can be thought of as the root-level ancestor, with the root component as its only child.
 
-  This method should not be confused with the [provide component option](options-composition.html#provide-inject) or the [provide function](composition-api.html#provide-inject) in the composition API. While those are also part of the same `provide`/`inject` mechanism, they are used to configure values provided by a component rather than an application.
+  This method should not be confused with the [provide component option](/) or the [provide function](/) in the composition API. While those are also part of the same `provide`/`inject` mechanism, they are used to configure values provided by a component rather than an application.
 
-  Providing values via the application is especially useful when writing plugins, as plugins typically wouldn't be able to provide values using components. It is an alternative to using [globalProperties](application-config.html#globalproperties).
+  Providing values via the application is especially useful when writing plugins, as plugins typically wouldn't be able to provide values using components. It is an alternative to using [globalProperties](/).
 
   :::tip Note
   The `provide` and `inject` bindings are NOT reactive. This is intentional. However, if you pass down an observed object, properties on that object do remain reactive.
@@ -253,7 +253,7 @@ app.provide('user', 'administrator')
 ```
 
 - **See also:**
-  - [Provide / Inject](../guide/component-provide-inject.md)
+  - [Provide / Inject](/)
 ## app.unmount
 
 - **Usage:**
@@ -309,12 +309,12 @@ setTimeout(() => app.unmount(), 5000)
   app.mount('#app')
   ```
 
-- **See also:** [Plugins](../guide/plugins.html)
+- **See also:** [Plugins](/)
 ## app.version
 
 - **Usage:**
 
-  Provides the installed version of Vue as a string. This is especially useful for community [plugins](/guide/plugins.html), where you might use different strategies for different versions.
+  Provides the installed version of Vue as a string. This is especially useful for community [plugins](/), where you might use different strategies for different versions.
 
 - **Example:**
 
@@ -332,7 +332,7 @@ setTimeout(() => app.unmount(), 5000)
   }
   ```
 
-- **See also**: [Global API - version](/api/global-api.html#version)
+- **See also**: [Global API - version](/)
 
 ## app.config
 
@@ -364,7 +364,7 @@ app.config.errorHandler = (err, vm, info) => {
 
 Assign a handler for uncaught errors during component render function and watchers. The handler gets called with the error and the application instance.
 
-> Error tracking services [Sentry](https://sentry.io/for/vue/) and [Bugsnag](https://docs.bugsnag.com/platforms/browsers/vue/) provide official integrations using this option.
+> Error tracking services [Sentry](/) and [Bugsnag](/) provide official integrations using this option.
 
 ## app.config.warnHandler
 
@@ -443,7 +443,7 @@ Define merging strategies for custom options.
 
 The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively.
 
-- **See also:** [Custom Option Merging Strategies](../guide/mixins.html#custom-option-merge-strategies)
+- **See also:** [Custom Option Merging Strategies](/)
 
 ## app.config.performance
 
@@ -453,20 +453,20 @@ The merge strategy receives the value of that option defined on the parent and c
 
 - **Usage**:
 
-Set this to `true` to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. Only works in development mode and in browsers that support the [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark) API.
+Set this to `true` to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. Only works in development mode and in browsers that support the [performance.mark](/) API.
 
-## app.config.compilerOptions <Badge text="3.1+" />
+## app.config.compilerOptions
 
 - **Type:** `Object`
 
-Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the [`compilerOptions` option](/api/options-misc.html#compileroptions).
+Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the [`compilerOptions` option](/).
 
 ::: warning Important
 This config option is only respected when using the full build (i.e. the standalone `vue.js` that can compile templates in the browser). If you are using the runtime-only build with a build setup, compiler options must be passed to `@vue/compiler-dom` via build tool configurations instead.
 
-- For `vue-loader`: [pass via the `compilerOptions` loader option](https://vue-loader.vuejs.org/options.html#compileroptions). Also see [how to configure it in `vue-cli`](https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-loader).
+- For `vue-loader`: [pass via the `compilerOptions` loader option](/). Also see [how to configure it in `vue-cli`](/).
 
-- For `vite`: [pass via `@vitejs/plugin-vue` options](https://github.com/vitejs/vite/tree/main/packages/plugin-vue#example-for-passing-options-to-vuecompiler-dom).
+- For `vite`: [pass via `@vitejs/plugin-vue` options](/).
   :::
 
 ### compilerOptions.isCustomElement

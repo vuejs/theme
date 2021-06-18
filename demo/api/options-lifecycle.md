@@ -12,7 +12,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Called synchronously immediately after the instance has been initialized, before data observation and event/watcher setup.
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **See also:** [Lifecycle Diagram](/)
 
 ## created
 
@@ -22,7 +22,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the `$el` property will not be available yet.
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **See also:** [Lifecycle Diagram](/)
 
 ## beforeMount
 
@@ -34,7 +34,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **See also:** [Lifecycle Diagram](/)
 
 ## mounted
 
@@ -42,9 +42,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **Details:**
 
-  Called after the instance has been mounted, where element, passed to [`app.mount`](/api/application-api.html#mount) is replaced by the newly created `vm.$el`. If the root instance is mounted to an in-document element, `vm.$el` will also be in-document when `mounted` is called.
+  Called after the instance has been mounted, where element, passed to [`app.mount`](/) is replaced by the newly created `vm.$el`. If the root instance is mounted to an in-document element, `vm.$el` will also be in-document when `mounted` is called.
 
-  Note that `mounted` does **not** guarantee that all child components have also been mounted. If you want to wait until the entire view has been rendered, you can use [vm.$nextTick](../api/instance-methods.html#nexttick) inside of `mounted`:
+  Note that `mounted` does **not** guarantee that all child components have also been mounted. If you want to wait until the entire view has been rendered, you can use [vm.$nextTick](/) inside of `mounted`:
 
   ```js
   mounted() {
@@ -57,7 +57,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **See also:** [Lifecycle Diagram](/)
 
 ## beforeUpdate
 
@@ -69,7 +69,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering, because only the initial render is performed server-side.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **See also:** [Lifecycle Diagram](/)
 
 ## updated
 
@@ -79,9 +79,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Called after a data change causes the virtual DOM to be re-rendered and patched.
 
-  The component's DOM will have been updated when this hook is called, so you can perform DOM-dependent operations here. However, in most cases you should avoid changing state inside the hook. To react to state changes, it's usually better to use a [computed property](./options-data.html#computed) or [watcher](./options-data.html#watch) instead.
+  The component's DOM will have been updated when this hook is called, so you can perform DOM-dependent operations here. However, in most cases you should avoid changing state inside the hook. To react to state changes, it's usually better to use a [computed property](/) or [watcher](/) instead.
 
-  Note that `updated` does **not** guarantee that all child components have also been re-rendered. If you want to wait until the entire view has been re-rendered, you can use [vm.$nextTick](../api/instance-methods.html#nexttick) inside of `updated`:
+  Note that `updated` does **not** guarantee that all child components have also been re-rendered. If you want to wait until the entire view has been re-rendered, you can use [vm.$nextTick](/) inside of `updated`:
 
   ```js
   updated() {
@@ -94,7 +94,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **See also:** [Lifecycle Diagram](/)
 
 ## activated
 
@@ -107,7 +107,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
 
 - **See also:**
-  - [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#dynamic-components-with-keep-alive)
+  - [Dynamic Components - keep-alive](/)
 
 ## deactivated
 
@@ -120,7 +120,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
 
 - **See also:**
-  - [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#dynamic-components-with-keep-alive)
+  - [Dynamic Components - keep-alive](/)
 
 ## beforeUnmount
 
@@ -132,7 +132,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **See also:** [Lifecycle Diagram](/)
 
 ## unmounted
 
@@ -144,7 +144,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   **This hook is not called during server-side rendering.**
 
-- **See also:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **See also:** [Lifecycle Diagram](/)
 
 ## errorCaptured
 
@@ -220,7 +220,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **Details:**
 
-  Called when virtual DOM re-render is triggered. Similarly to [`renderTracked`](#rendertracked), receives a `debugger event` as an argument. This event tells you what operation triggered the re-rendering and the target object and key of that operation.
+  Called when virtual DOM re-render is triggered. Similarly to [`renderTracked`](/), receives a `debugger event` as an argument. This event tells you what operation triggered the re-rendering and the target object and key of that operation.
 
 - **Usage:**
 

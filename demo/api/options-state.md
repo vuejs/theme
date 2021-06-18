@@ -36,7 +36,7 @@
   data: vm => ({ a: vm.myProp })
   ```
 
-- **See also:** [Reactivity in Depth](../guide/reactivity.html)
+- **See also:** [Reactivity in Depth](/)
 
 ## props
 
@@ -48,13 +48,13 @@
 
   With Object-based syntax, you can use following options:
 
-  - `type`: can be one of the following native constructors: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, any custom constructor function or an array of those. Will check if a prop has a given type, and will throw a warning if it doesn't. [More information](../guide/component-props.html#prop-types) on prop types.
+  - `type`: can be one of the following native constructors: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, any custom constructor function or an array of those. Will check if a prop has a given type, and will throw a warning if it doesn't. [More information](/) on prop types.
   - `default`: `any`
     Specifies a default value for the prop. If the prop is not passed, this value will be used instead. Object or array defaults must be returned from a factory function.
   - `required`: `Boolean`
     Defines if the prop is required. In a non-production environment, a console warning will be thrown if this value is truthy and the prop is not passed.
   - `validator`: `Function`
-    Custom validator function that takes the prop value as the sole argument. In a non-production environment, a console warning will be thrown if this function returns a falsy value (i.e. the validation fails). You can read more about prop validation [here](../guide/component-props.html#prop-validation).
+    Custom validator function that takes the prop value as the sole argument. In a non-production environment, a console warning will be thrown if this function returns a falsy value (i.e. the validation fails). You can read more about prop validation [here](/).
 
 - **Example:**
 
@@ -84,7 +84,7 @@
   })
   ```
 
-- **See also:** [Props](../guide/component-props.html)
+- **See also:** [Props](/)
 
 ## computed
 
@@ -135,7 +135,7 @@
   console.log(vm.aDouble) // => 4
   ```
 
-- **See also:** [Computed Properties](../guide/computed.html)
+- **See also:** [Computed Properties](/)
 
 ## methods
 
@@ -169,7 +169,7 @@
   console.log(vm.a) // => 2
   ```
 
-- **See also:** [Event Handling](../guide/events.html)
+- **See also:** [Event Handling](/)
 
 ## watch
 
@@ -177,7 +177,7 @@
 
 - **Details:**
 
-  An object where keys are reactive properties to watch — examples include [data](/api/options-data.html#data-2) or [computed](/api/options-data.html#computed) properties — and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The component instance will call `$watch()` for each entry in the object at instantiation. See [$watch](instance-methods.html#watch) for more information about the `deep`, `immediate` and `flush` options.
+  An object where keys are reactive properties to watch — examples include [data](/) or [computed](/) properties — and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The component instance will call `$watch()` for each entry in the object at instantiation. See [$watch](/) for more information about the `deep`, `immediate` and `flush` options.
 
 - **Example:**
 
@@ -252,7 +252,7 @@
   Note that _you should not use an arrow function to define a watcher_ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the component instance as you expect and `this.updateAutocomplete` will be undefined.
   :::
 
-- **See also:** [Watchers](../guide/computed.html#watchers)
+- **See also:** [Watchers](/)
 
 ## emits
 
@@ -300,4 +300,4 @@
   Events listed in the `emits` option **will not** be inherited by the root element of the component and also will be excluded from the `$attrs` property.
   :::
 
-* **See also:** [Attribute Inheritance](../guide/component-attrs.html#attribute-inheritance)
+* **See also:** [Attribute Inheritance](/)

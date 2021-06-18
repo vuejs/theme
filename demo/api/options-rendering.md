@@ -19,8 +19,8 @@
   :::
 
 - **See also:**
-  - [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
-  - [Content Distribution with Slots](../guide/component-basics.html#content-distribution-with-slots)
+  - [Lifecycle Diagram](/)
+  - [Content Distribution with Slots](/)
 
 ## render
 
@@ -64,4 +64,4 @@
   The `render` function has priority over the render function compiled from `template` option or in-DOM HTML template of the mounting element
   :::
 
-- **See also:** [Render Functions](../guide/render-function.html)
+- **See also:** [Render Functions](/)
