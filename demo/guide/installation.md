@@ -40,17 +40,17 @@ Quick ways to start playing with a Vue project
 ## Custom Blocks
 
 :::tip Requires intermediate knowledge
-The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
 :::
 
 The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
 
 :::warning Warning
-The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
 :::
 
 :::danger Danger Zone
-The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
 :::
 
 ## Tables

@@ -307,9 +307,13 @@ module.exports = {
         {
           text: 'Component',
           items: [
-            { text: 'Component Options', link: '/api/options' },
+            { text: 'Options: State', link: '/api/options-state' },
+            { text: 'Options: Rendering', link: '/api/options-rendering' },
+            { text: 'Options: Lifecycle Hooks', link: '/api/options-lifecycle' },
+            { text: 'Options: Composition', link: '/api/options-composition' },
+            { text: 'Options: Misc', link: '/api/options-misc' },
             {
-              text: 'Component Instance',
+              text: 'Instance',
               link: '/api/component-instance'
             }
           ]
@@ -345,9 +349,9 @@ module.exports = {
         {
           text: 'Advanced',
           items: [
-            { text: 'Render Function', link: '/api/render-function' },
-            { text: 'Server-Side Rendering', link: '/api/ssr' },
+            { text: 'Render Function Helpers', link: '/api/render-function' },
             { text: 'Compiler Transforms', link: '/api/compiler' },
+            { text: 'Server-Side Rendering', link: '/api/ssr' },
             { text: 'Custom Renderer', link: '/api/custom-renderer' }
           ]
         }
