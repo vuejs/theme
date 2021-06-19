@@ -23,7 +23,7 @@ $ yarn install
 $ yarn dev
 ```
 
-To work on this theme in the context of the `vuejs.org` website, see [vuejs/website](https://github.com/vuejs/website) for instructions.
+To work on this theme in the context of the `vuejs.org` website, see [vuejs/docs#next](https://github.com/vuejs/docs/tree/next) for instructions.
 
 ### Available Scripts
 
