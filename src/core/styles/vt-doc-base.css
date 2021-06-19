@@ -22,7 +22,7 @@
 
 .vt-doc h1 {
   margin: 0 0 18px;
-  font-size: 30px;
+  font-size: 32px;
   letter-spacing: 0.1px;
 }
 
@@ -36,7 +36,7 @@
   margin: 64px 0 26px;
   border-top: 1px solid var(--vt-c-divider-light);
   padding-top: 26px;
-  font-size: 22px;
+  font-size: 23px;
   letter-spacing: 0;
 }
 

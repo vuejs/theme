@@ -58,7 +58,7 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: 12px 24px 12px 16px;
+  padding: 12px 24px;
   background: transparent;
   overflow-x: auto;
 }

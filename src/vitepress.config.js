@@ -14,9 +14,5 @@ module.exports = {
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'
       }
     ]
-  ],
-
-  markdown: {
-    lineNumbers: true
-  }
+  ]
 }
