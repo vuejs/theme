@@ -40,6 +40,9 @@ useActiveAnchor(container, bg)
   transition: color 0.5s;
   line-height: 28px;
   display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .outline-link:hover,
