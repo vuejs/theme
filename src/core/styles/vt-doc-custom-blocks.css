@@ -77,7 +77,7 @@
 }
 
 .vt-doc .custom-block li:before {
-  top: 0.6rem;
+  top: 0.55rem;
 }
 
 .vt-doc .custom-block :not(pre) > code {
