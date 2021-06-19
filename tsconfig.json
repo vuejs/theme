@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "lib": ["ESNext", "DOM"],
-    "types": ["node", "vite/client"],
+    "types": ["vite/client"],
     "paths": {
       "@vue/theme": ["src/index.ts"]
     }
