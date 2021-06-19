@@ -1,38 +1,21 @@
-// config for the docs. we should make able to place this file right under the
-// docs folder in the end.
-
+const base = require('../../src/vitepress.config')
 const path = require('path')
 
 module.exports = {
+  ...base,
+
   vite: {
+    ...base.vite,
     resolve: {
       alias: {
         '@vue/theme': path.join(__dirname, '../../src')
       }
-    },
-    optimizeDeps: {
-      exclude: ['@vueuse/core', 'body-scroll-lock']
     }
   },
 
   lang: 'en-US',
   title: 'Vue.js',
   description: 'Vue.js - The Progressive JavaScript Framework',
-
-  head: [
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'
-      }
-    ]
-  ],
-
-  markdown: {
-    lineNumbers: true
-  },
 
   themeConfig: {
     logo: '/img/logo-vue.svg',
@@ -309,7 +292,10 @@ module.exports = {
           items: [
             { text: 'Options: State', link: '/api/options-state' },
             { text: 'Options: Rendering', link: '/api/options-rendering' },
-            { text: 'Options: Lifecycle Hooks', link: '/api/options-lifecycle' },
+            {
+              text: 'Options: Lifecycle Hooks',
+              link: '/api/options-lifecycle'
+            },
             { text: 'Options: Composition', link: '/api/options-composition' },
             { text: 'Options: Misc', link: '/api/options-misc' },
             {
