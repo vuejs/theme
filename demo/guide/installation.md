@@ -1,6 +1,6 @@
 # Installation
 
-This page just checks styling of common content
+> This page is just for checking styling of common markdown contents
 
 ## Ordered List
 
@@ -9,7 +9,17 @@ This page just checks styling of common content
 3. Use JavaScript to directly manipulate the DOM during transition hooks
 4. Integrate 3rd-party JavaScript animation libraries
 
-## Quickstart
+## Content Inside List
+
+1. Here's some `<inline-code>`
+
+2. Here's some nested code
+
+    ```js
+    const foo = 'hello'
+    ```
+
+## Unordered List
 
 Quick ways to start playing with a Vue project
 
@@ -33,24 +43,28 @@ Quick ways to start playing with a Vue project
   # select vue 3 preset
   ```
 
-## Pull Quotes
-
-> Some great things said by a wise person
-
 ## Custom Blocks
 
 :::tip Requires intermediate knowledge
 The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+
+- List inside block
+- List inside block with [link](/) and `code`.
 :::
 
 The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
 
 :::warning Warning
 The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+
+- List inside block with [link](/) and `code`.
 :::
 
 :::danger Danger Zone
 The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+
+1. List inside block with [link](/)
+2. List inside block with [link](/) and `code`.
 :::
 
 ## Tables

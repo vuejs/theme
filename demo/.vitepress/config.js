@@ -40,18 +40,12 @@ module.exports = {
     nav: [
       {
         text: 'Docs',
-        activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
+        activeMatch: `^/(guide|examples)/`,
         items: [
           {
             items: [
               { text: 'Guide', link: '/guide/introduction' },
-              { text: 'Examples', link: '/examples/markdown' },
-              { text: 'Style Guide', link: '/style-guide/' },
-              { text: 'Cookbook', link: '/cookbook/' },
-              {
-                text: 'Migration from Vue 2',
-                link: '/guide/migration/introduction'
-              }
+              { text: 'Installtion', link: '/guide/installation' }
             ]
           }
         ]
@@ -65,11 +59,7 @@ module.exports = {
         text: 'Ecosystem',
         items: [
           {
-            items: [
-              { text: 'Partners', link: '/community/partners/' },
-              { text: 'Themes', link: '/community/themes/' },
-              { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' }
-            ]
+            items: [{ text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' }]
           },
           {
             text: 'Official Projects',
