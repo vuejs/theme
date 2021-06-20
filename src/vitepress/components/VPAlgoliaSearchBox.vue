@@ -125,13 +125,20 @@ function getRelativePath(absoluteUrl: string) {
 
 <style>
 .DocSearch {
-  --docsearch-primary-color: var(--vt-c-text-light-2);
+  --docsearch-primary-color: var(--vt-c-brand);
   --docsearch-highlight-color: var(--docsearch-primary-color);
   --docsearch-text-color: var(--vt-c-text-light-1);
   --docsearch-muted-color: var(--vt-c-text-light-2);
   --docsearch-searchbox-shadow: none;
+  --docsearch-searchbox-focus-background: transparent;
   --docsearch-key-gradient: transparent;
   --docsearch-key-shadow: none;
+  --docsearch-hit-shadow: none;
+}
+
+.DocSearch-Form {
+  background-color: white;
+  border: 1px solid var(--vt-c-brand);
 }
 
 .DocSearch-Button {
