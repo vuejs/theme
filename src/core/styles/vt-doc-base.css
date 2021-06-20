@@ -3,9 +3,9 @@
   line-height: 1.8;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .vt-doc {
-    /* font-size: 16px; */
+    font-size: 16px;
   }
 }
 
@@ -196,6 +196,12 @@
   content: counter(item) '.';
 }
 
+@media (min-width: 768px) {
+  .vt-doc ol > li:before {
+    top: 2px;
+  }
+}
+
 .vt-doc li {
   position: relative;
   margin: 1px 0;
@@ -205,7 +211,7 @@
   padding-left: 1.25rem;
 }
 
-.vt-doc ul li:before {
+.vt-doc ul > li:before {
   content: '';
   position: absolute;
   width: 5px;
