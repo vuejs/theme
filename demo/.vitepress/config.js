@@ -1,4 +1,4 @@
-const base = require('../../src/vitepress.config')
+const base = require('../../src/vitepress/config/baseConfig')
 const path = require('path')
 
 module.exports = {

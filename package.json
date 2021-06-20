@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./config": "./src/vitepress.config.js"
+    "./config": "./src/vitepress/config/baseConfig.js"
   },
   "repository": {
     "type": "git",
