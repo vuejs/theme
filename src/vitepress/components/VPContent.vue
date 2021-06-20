@@ -22,6 +22,10 @@ const { hasSidebar } = useSidebar()
 </template>
 
 <style scoped>
+.VPContent {
+  overflow-x: hidden;
+}
+
 @media (min-width: 960px) {
   .VPContent.has-sidebar {
     padding-left: var(--vp-sidebar-width-small);
