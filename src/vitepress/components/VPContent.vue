@@ -22,8 +22,10 @@ const { hasSidebar } = useSidebar()
 </template>
 
 <style scoped>
-.VPContent {
-  overflow-x: hidden;
+@media (max-width: 768px) {
+  .VPContent {
+    overflow-x: hidden;
+  }
 }
 
 @media (min-width: 960px) {

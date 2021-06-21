@@ -1,16 +1,19 @@
 .vt-doc {
   --vt-doc-code-font-size: 14px;
-  --vt-doc-code-line-height: 1.6;
+  --vt-doc-code-line-height: 1.5;
 }
 
 /* inline code */
 .vt-doc :not(pre) > code {
-  font-size: 13px;
   background-color: var(--vt-c-bg-soft);
-  padding: 3px 6px;
+  padding: 0.15em 0.5em;
   border-radius: 4px;
   color: var(--vt-c-text-code);
   transition: color 0.5s, background-color 0.5s;
+}
+
+.vt-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+  font-size: 13px;
 }
 
 @media (min-width: 768px) {
