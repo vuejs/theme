@@ -39,16 +39,18 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
       class="prev-link"
       :href="normalizeLink(links.prev.link)"
     >
-      <VTIconChevronLeft class="vt-link-icon" />
-      {{ links.prev.text }}
+      <span class="desc"
+        ><VTIconChevronLeft class="vt-link-icon" /> Previous</span
+      >
+      <span class="title">{{ links.prev.text }} </span>
     </a>
     <a
       v-if="links.next"
       class="next-link"
       :href="normalizeLink(links.next.link)"
     >
-      {{ links.next.text }}
-      <VTIconChevronRight class="vt-link-icon" />
+      <span class="desc">Next <VTIconChevronRight class="vt-link-icon" /></span>
+      <span class="title">{{ links.next.text }}</span>
     </a>
   </footer>
 </template>
@@ -61,25 +63,35 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
   justify-content: space-between;
 }
 
-.prev-link,
-.next-link {
+a {
   display: inline-block;
-  color: var(--vt-c-brand);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
+  max-width: 48%;
+}
+
+.desc {
+  font-size: 11px;
+  color: var(--vt-c-text-2);
+  display: block;
+}
+
+.title {
+  color: var(--vt-c-brand);
   transition: color 0.25s;
 }
 
-.prev-link:hover,
-.next-link:hover {
+a:hover .title {
   color: var(--vt-c-brand-highlight);
 }
 
 .next-link {
   margin-left: auto;
+  text-align: right;
 }
 
 .vt-link-icon {
-  margin-left: 0;
+  margin: -2px 0 0;
+  vertical-align: middle;
 }
 </style>

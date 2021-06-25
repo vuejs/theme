@@ -90,6 +90,7 @@
 }
 
 .vt-doc .custom-block :not(pre) > code {
+  font-size: 13px;
   background-color: rgba(27, 31, 35, 0.05);
 }
 
