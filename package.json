@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue-theme.git"
+    "url": "git+https://github.com/vuejs/theme.git"
   },
   "keywords": [
     "vue",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "homepage": "https://theme.vuejs.org",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-theme/issues"
+    "url": "https://github.com/vuejs/theme/issues"
   },
   "scripts": {
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src-theme,src-vp,src-web,types}/**/*.ts\"",
