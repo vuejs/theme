@@ -87,8 +87,8 @@ const { page, frontmatter } = useData()
   position: relative;
   display: none;
   flex-shrink: 0;
-  padding-left: 64px;
-  width: 288px;
+  padding-left: 96px;
+  width: 320px;
 }
 
 .aside-container {
@@ -105,13 +105,6 @@ const { page, frontmatter } = useData()
 @media (min-width: 1280px) {
   .aside {
     display: block;
-  }
-}
-
-@media (min-width: 1440px) {
-  .aside {
-    padding-left: 96px;
-    width: 320px;
   }
 }
 </style>
