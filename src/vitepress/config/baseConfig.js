@@ -13,7 +13,7 @@ const darkModeFix = require('fs').readFileSync(
 module.exports = {
   vite: {
     optimizeDeps: {
-      exclude: ['@vueuse/core', 'body-scroll-lock']
+      exclude: ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
     }
   },
 
