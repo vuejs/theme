@@ -44,6 +44,7 @@ const features = computed<Feature[]>(() => {
 <style scoped>
 .VPHomeFeatures {
   padding: 10px;
+  margin: 20px;
 }
 
 .VPHomeFeatures .features {
