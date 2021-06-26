@@ -60,6 +60,12 @@ const features = computed<Feature[]>(() => {
   }
 }
 
+.container {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
 .feature {
   background: var(--vt-c-bg-soft);
   padding: 26px;

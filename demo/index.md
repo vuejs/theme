@@ -1,12 +1,14 @@
 ---
 home: true
-heroImage: /logo.png
+# heroImage: /img/logo-vue.svg
 heroText: Vue.js
 tagline: The Progressive<br> JavaScript Framework
+description: Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects.
 actionButtons:
   - text: Why Vue.js?
     link: /
     extraClass: vuemastery-trigger primary
+    extraStyle: 'color: var(--vt-c-brand); font-weight: bold;'
     icon: fa fa-play-circle
   - text: Get Started
     link: /guide/introduction
@@ -38,5 +40,3 @@ socialIcons:
   - type: Medium
     link: https://medium.com/the-vue-point
 ---
-
-# This is a Custom Page
