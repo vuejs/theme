@@ -1,10 +1,13 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
+import { useData } from 'vitepress'
 import { useAppearance, VTBackdrop } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import VPNav from './VPNav.vue'
 import VPLocalNav from './VPLocalNav.vue'
 import VPSidebar from './VPSidebar.vue'
 import VPContent from './VPContent.vue'
+import VPHome from './VPHome.vue'
 
 useAppearance()
 
@@ -13,6 +16,9 @@ const {
   open: openSidebar,
   close: closeSidebar
 } = useSidebar()
+
+const { frontmatter } = useData()
+const enableHome = computed(() => !!frontmatter.value.home)
 </script>
 
 <template>
@@ -28,7 +34,18 @@ const {
         <slot name="sidebar-bottom" />
       </template>
     </VPSidebar>
-    <VPContent>
+    <VPHome v-if="enableHome">
+      <template #hero>
+        <slot name="home-hero" />
+      </template>
+      <template #features>
+        <slot name="home-features" />
+      </template>
+      <template #footer>
+        <slot name="home-footer" />
+      </template>
+    </VPHome>
+    <VPContent v-else>
       <template #content-top>
         <slot name="content-top" />
       </template>
