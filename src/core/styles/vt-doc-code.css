@@ -284,7 +284,7 @@
 .vt-doc .token.tag,
 .vt-doc .token.attr-name,
 .vt-doc .token.namespace {
-  color: var(--vt-code-attr);
+  color: var(--vt-code-attribute);
 }
 
 .vt-doc .token.function-name {
