@@ -4,7 +4,7 @@ import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
 import VPCarbonAds from './VPCarbonAds.vue'
 
-const { page, frontmatter } = useData()
+const { page, frontmatter, theme } = useData()
 </script>
 
 <template>
@@ -24,7 +24,7 @@ const { page, frontmatter } = useData()
             v-if="page.headers && frontmatter.outline !== false"
           />
           <slot name="aside-mid" />
-          <VPCarbonAds v-if="frontmatter.ads !== false" />
+          <VPCarbonAds v-if="theme.carbonAds && frontmatter.ads !== false" />
           <slot name="aside-bottom" />
         </div>
       </div>
