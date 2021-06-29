@@ -2,14 +2,16 @@
   border-radius: 8px;
   padding: 12px 0;
   min-width: 192px;
+  border: 1px solid transparent;
   background: var(--vt-c-bg);
   box-shadow: var(--vt-shadow-3);
   transition: background-color .5s;
 }
 
 .dark .vt-menu {
-  background: var(--vt-c-bg-soft);
+  background: var(--vt-c-bg);
   box-shadow: var(--vt-shadow-1);
+  border: 1px solid var(--vt-c-divider-light);
 }
 
 .vt-menu-items {
