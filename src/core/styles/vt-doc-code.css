@@ -224,6 +224,47 @@
 }
 
 /* Color scheme */
+.vt-doc {
+  --vt-code-comment: #809ebb;
+  --vt-code-punctuation: #a8a9cc;
+  --vt-code-attribute: #d84152;
+  --vt-code-constant: #717c11;
+  --vt-code-keyword: #af4ab1;
+  --vt-code-variable: #2ba46d;
+  
+  --vt-code-string: #2ba46d;
+  --vt-code-boolean: #c25205;
+  --vt-code-number: #c25205;
+  --vt-code-entity: #33a06f;
+  --vt-code-function-name: #6196cc;
+  --vt-code-function: #336ec3;
+
+  --vt-code-inserted: #42b883;
+  --vt-code-deleted: #d84152;
+
+  --vt-code-variable: #2ba46d;
+  --vt-code-variable: #2ba46d;
+}
+
+.dark .vt-doc {
+  --vt-code-comment: rgba(235, 235, 235, 0.3);
+  --vt-code-punctuation: rgba(235, 235, 235, 0.6);
+  --vt-code-attribute: #d84152;
+  --vt-code-constant: #f8c555;
+  --vt-code-keyword: #d9a6ff;
+  --vt-code-variable: #2ba46d;
+  
+  --vt-code-string: #42b883;
+  --vt-code-boolean: #f08d49;
+  --vt-code-number: #f08d49;
+  --vt-code-entity: #42b883;
+  --vt-code-function-name: #6196cc;
+  --vt-code-function: #6ba7de;
+
+  --vt-code-inserted: #42b883;
+  --vt-code-deleted: #d84152;
+}
+
 .vt-doc .token {
   transition: color 0.5s;
 }
@@ -233,38 +274,40 @@
 .vt-doc .token.prolog,
 .vt-doc .token.doctype,
 .vt-doc .token.cdata {
-  color: #809ebb;
+  color: var(--vt-code-comment);
 }
 
 .vt-doc .token.punctuation {
-  color: #a8a9cc;
+  color: var(--vt-code-punctuation);
 }
 
 .vt-doc .token.tag,
 .vt-doc .token.attr-name,
-.vt-doc .token.namespace,
-.vt-doc .token.deleted {
-  color: #d84152;
+.vt-doc .token.namespace {
+  color: var(--vt-code-attribute);
 }
 
 .vt-doc .token.function-name {
-  color: #6196cc;
+  color: var(--vt-code-function-name);
 }
 
-.vt-doc .token.boolean,
+.vt-doc .token.boolean {
+  color: var(--vt-code-boolean);
+}
+
 .vt-doc .token.number {
-  color: #c25205;
+  color: var(--vt-code-number);
 }
 
 .vt-doc .token.function {
-  color: #336ec3;
+  color: var(--vt-code-function);
 }
 
 .vt-doc .token.property,
 .vt-doc .token.class-name,
 .vt-doc .token.constant,
 .vt-doc .token.symbol {
-  color: #717c11;
+  color: var(--vt-code-constant);
 }
 
 .vt-doc .token.selector,
@@ -272,25 +315,32 @@
 .vt-doc .token.atrule,
 .vt-doc .token.keyword,
 .vt-doc .token.builtin {
-  color: #af4ab1;
+  color: var(--vt-code-keyword);
 }
 
 .vt-doc .token.string,
 .vt-doc .token.char,
 .vt-doc .token.attr-value,
-.vt-doc .token.regex,
+.vt-doc .token.regex {
+  color: var(--vt-code-string);
+}
+
 .vt-doc .token.variable {
-  color: #2ba46d;
+  color: var(--vt-code-variable);
 }
 
 .vt-doc .token.operator,
 .vt-doc .token.entity,
 .vt-doc .token.url {
-  color: #33a06f;
+  color: var(--vt-code-entity);
 }
 
 .vt-doc .token.inserted {
-  color: #42b883;
+  color:var(--vt-code-inserted);
+}
+
+.vt-doc .token.deleted {
+  color: var(--vt-code-deleted);
 }
 
 .vt-doc .token.important,
@@ -303,83 +353,5 @@
 }
 
 .vt-doc .token.entity {
-  cursor: help;
-}
-
-.dark .vt-doc .token.comment,
-.dark .vt-doc .token.block-comment,
-.dark .vt-doc .token.prolog,
-.dark .vt-doc .token.doctype,
-.dark .vt-doc .token.cdata {
-  color: rgba(235, 235, 235, 0.3);
-}
-
-.dark .vt-doc .token.punctuation {
-  color: rgba(235, 235, 235, 0.6);
-}
-
-.dark .vt-doc .token.tag,
-.dark .vt-doc .token.attr-name,
-.dark .vt-doc .token.namespace,
-.dark .vt-doc .token.deleted {
-  color: #d84152;
-}
-
-.dark .vt-doc .token.function-name {
-  color: #6196cc;
-}
-
-.dark .vt-doc .token.boolean,
-.dark .vt-doc .token.number {
-  color: #f08d49;
-}
-
-.dark .vt-doc .token.function {
-  color: #6ba7de;
-}
-
-.dark .vt-doc .token.property,
-.dark .vt-doc .token.class-name,
-.dark .vt-doc .token.constant,
-.dark .vt-doc .token.symbol {
-  color: #f8c555;
-}
-
-.dark .vt-doc .token.selector,
-.dark .vt-doc .token.important,
-.dark .vt-doc .token.atrule,
-.dark .vt-doc .token.keyword,
-.dark .vt-doc .token.builtin {
-  color: #d9a6ff;
-}
-
-.dark .vt-doc .token.string,
-.dark .vt-doc .token.char,
-.dark .vt-doc .token.attr-value,
-.dark .vt-doc .token.regex,
-.dark .vt-doc .token.variable {
-  color: #42b883;
-}
-
-.dark .vt-doc .token.operator,
-.dark .vt-doc .token.entity,
-.dark .vt-doc .token.url {
-  color: #42b883;
-}
-
-.dark .vt-doc .token.inserted {
-  color: #42b883;
-}
-
-.dark .vt-doc .token.important,
-.dark .vt-doc .token.bold {
-  font-weight: 600;
-}
-
-.dark .vt-doc .token.italic {
-  font-style: italic;
-}
-
-.dark .vt-doc .token.entity {
   cursor: help;
 }
