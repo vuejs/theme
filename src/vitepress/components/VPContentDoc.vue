@@ -8,9 +8,14 @@ const { page, frontmatter, theme } = useData()
 </script>
 
 <template>
-  <div class="VPContentDoc">
-    <div :class="{ container: true, 'has-aside': frontmatter.aside !== false }">
-      <div class="content">
+  <div :class="{ VPContentDoc: frontmatter.layoutReset !== true }">
+    <div
+      :class="{
+        container: frontmatter.layoutReset !== true,
+        'has-aside': frontmatter.aside !== false
+      }"
+    >
+      <div :class="{ content: frontmatter.layoutReset !== true }">
         <slot name="content-top" />
         <Content class="vt-doc" />
         <slot name="content-bottom" />
