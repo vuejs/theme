@@ -2,10 +2,13 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 import { getSidebar } from '../support/sidebar'
-import type { SidebarGroup } from '../config'
-import type { MenuItemWithLink } from '../../core'
+import { SidebarGroup } from '../config'
 import { isActive, normalizeLink } from '../support/utils'
-import { VTIconChevronLeft, VTIconChevronRight } from '../../core'
+import {
+  VTIconChevronLeft,
+  VTIconChevronRight,
+  MenuItemWithLink
+} from '../../core'
 
 const { page, theme } = useData()
 

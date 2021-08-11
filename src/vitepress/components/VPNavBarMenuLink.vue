@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
 import { VTLink } from '../../core'
 import { useData } from 'vitepress'
 import { isActive } from '../support/utils'
-import type { NavItemWithLink } from '../config'
+import { NavItemWithLink } from '../config'
 
 defineProps<{
   item: NavItemWithLink

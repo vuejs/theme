@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
-import type { MenuItemChild } from '../composables/menu'
+import { MenuItemChild } from '../composables/menu'
 import VTMenuLink from './VTMenuLink.vue'
 
 defineProps<{

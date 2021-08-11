@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
-import type { SocialLinkSize, SocialLinkIcon } from '../composables/socialLink'
+import { SocialLinkSize, SocialLinkIcon } from '../composables/socialLink'
 import VTIconDiscord from './icons/VTIconDiscord.vue'
 import VTIconFacebook from './icons/VTIconFacebook.vue'
 import VTIconGitHub from './icons/VTIconGitHub.vue'

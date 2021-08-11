@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import { defineProps, ref } from 'vue'
-import { VTIconPlus } from '../../core'
-import type { MenuItemChild } from '../../core'
+import { ref } from 'vue'
+import { VTIconPlus, MenuItemChild } from '../../core'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 import VPNavScreenMenuGroupSection from './VPNavScreenMenuGroupSection.vue'
 

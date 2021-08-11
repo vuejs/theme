@@ -1,4 +1,4 @@
-import type {
+import {
   MenuItemChildWithChildren,
   MenuItemWithLink,
   SocialLink

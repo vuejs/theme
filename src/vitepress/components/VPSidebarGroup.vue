@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
-import type { SidebarLink } from '../config'
+import { MenuItemWithLink } from '../../core'
 import VPSidebarLink from './VPSidebarLink.vue'
 
 defineProps<{
   text: string
-  items: SidebarLink[]
+  items: MenuItemWithLink[]
 }>()
 </script>
 

@@ -77,9 +77,13 @@ const { page, frontmatter, theme } = useData()
 }
 
 @media (min-width: 1280px) {
-  .content {
-    margin: 0;
-    min-width: 592px;
+  .container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 592px;
+  }
+  .container.has-aside {
+    max-width: 880px;
   }
 }
 

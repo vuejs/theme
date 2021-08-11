@@ -1,7 +1,7 @@
 import { onMounted, onUnmounted, onUpdated, Ref } from 'vue'
-import type { Header } from 'vitepress'
+import { Header } from 'vitepress'
 import { useMediaQuery } from '@vueuse/core'
-import type { MenuItemWithLink } from '../../core'
+import { MenuItemWithLink } from '../../core'
 
 interface HeaderWithChildren extends Header {
   children?: Header[]

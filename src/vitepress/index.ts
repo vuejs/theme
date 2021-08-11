@@ -1,6 +1,6 @@
 import './styles/variables.css'
 import VPApp from './components/VPApp.vue'
-import type { Theme } from 'vitepress'
+import { Theme } from 'vitepress'
 import { withConfigProvider } from './composables/config'
 
 const VPTheme: Theme = {

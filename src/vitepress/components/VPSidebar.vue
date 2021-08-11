@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
 import { useSidebar } from '../composables/sidebar'
 import VPSidebarGroup from './VPSidebarGroup.vue'
 
@@ -12,7 +11,7 @@ defineProps<{
 
 <template>
   <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
-    <slot name="top"/>
+    <slot name="top" />
     <div v-for="group in sidebar" :key="group.text" class="group">
       <VPSidebarGroup
         :text="group.text"
@@ -20,7 +19,7 @@ defineProps<{
         @jump="$emit('close')"
       />
     </div>
-    <slot name="bottom"/>
+    <slot name="bottom" />
   </aside>
 </template>
 

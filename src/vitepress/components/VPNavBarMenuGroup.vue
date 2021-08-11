@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
 import { VTFlyout } from '../../core'
 import { isActive } from '../support/utils'
 import { useData } from 'vitepress'
-import type { NavItemWithChildren } from '../config'
+import { NavItemWithChildren } from '../config'
 
 defineProps<{
   item: NavItemWithChildren

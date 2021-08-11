@@ -9,13 +9,13 @@ import {
   Ref
 } from 'vue'
 import { useData } from 'vitepress'
-import type {
+import {
   Config,
   MultiSidebarConfig,
   SidebarConfig,
   SidebarGroup
 } from '../config'
-import type { MenuItem, MenuItemChild } from '../../core'
+import { MenuItem, MenuItemChild } from '../../core'
 import { normalizeLink } from '../support/utils'
 
 const configSymbol: InjectionKey<Ref<Config>> = Symbol('config')

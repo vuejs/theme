@@ -4,8 +4,8 @@ import '@docsearch/css'
 import docsearch from '@docsearch/js'
 import { useRoute, useRouter, useData } from 'vitepress'
 import { onMounted } from 'vue'
-import type { DocSearchHit } from '@docsearch/react/dist/esm/types'
-import type { AlgoliaSearchOptions } from '../config'
+import { DocSearchHit } from '@docsearch/react/dist/esm/types'
+import { AlgoliaSearchOptions } from '../config'
 
 const { lang, theme } = useData()
 const route = useRoute()

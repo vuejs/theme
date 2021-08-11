@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
-import type { SocialLinkSize, SocialLink } from '../composables/socialLink'
+import { SocialLinkSize, SocialLink } from '../composables/socialLink'
 import VTSocialLink from './VTSocialLink.vue'
 
 defineProps<{

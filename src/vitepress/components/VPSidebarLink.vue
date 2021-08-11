@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
 import { useData } from 'vitepress'
 import { isActive } from '../support/utils'
 
