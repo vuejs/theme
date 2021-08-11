@@ -9,6 +9,7 @@
   line-height: 1.6;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.55);
+  background-color: var(--vt-c-bg-soft);
 }
 
 .dark .vt-doc .custom-block {
@@ -27,62 +28,39 @@
 .vt-doc .custom-block.warning:before,
 .vt-doc .custom-block.danger:before {
   content: '⚠';
+  font-size: 17px;
+  top: 19px;
+  left: 16ppx;
 }
 
 .vt-doc .custom-block .custom-block-title {
   margin-bottom: 8px;
   font-size: 15px;
-  font-weight: 600;
-}
-
-.vt-doc .custom-block.tip .custom-block-title,
-.vt-doc .custom-block.tip:before {
-  color: var(--vt-c-text-code);
+  font-weight: 500;
+  color: var(--vt-c-text-1);
+  transition: color 0.5s;
 }
 
 .vt-doc .custom-block.tip {
-  background-color: var(--vt-c-bg-soft);
+  border: 1px solid var(--vt-c-brand);
+}
+.vt-doc .custom-block.tip:before {
+  color: var(--vt-c-brand);
 }
 
 .vt-doc .custom-block.warning {
-  background-color: rgba(255, 229, 100, 0.3);
+  border: 1px solid var(--vt-c-yellow);
 }
-
-.vt-doc .custom-block.warning .custom-block-title,
 .vt-doc .custom-block.warning:before {
-  color: #b29400;
+  color: var(--vt-c-yellow);
 }
 
 .vt-doc .custom-block.danger {
-  background-color: #ffe6e6;
+  border: 1px solid var(--vt-c-red);
 }
-
 .vt-doc .custom-block.danger .custom-block-title,
 .vt-doc .custom-block.danger:before {
-  color: #ff3333;
-}
-
-.vt-doc .custom-block.danger a,
-.vt-doc .custom-block.warning a {
-  color: var(--vt-c-text-code);
-}
-
-.dark .vt-doc .custom-block.warning {
-  background-color: rgba(152, 137, 60, 0.15);
-}
-
-.dark .vt-doc .custom-block.warning .custom-block-title,
-.dark .vt-doc .custom-block.warning:before {
-  color: #ffbc00;
-}
-
-.dark .vt-doc .custom-block.danger {
-  background-color: rgba(255, 123, 123, 0.12);
-}
-
-.dark .vt-doc .custom-block.danger .custom-block-title,
-.dark .vt-doc .custom-block.danger:before {
-  color: #ff5656;
+  color: var(--vt-c-red);
 }
 
 .vt-doc .custom-block ul li:before {
@@ -96,4 +74,9 @@
 
 .dark .vt-doc .custom-block :not(pre) > code {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.vt-doc .custom-block.danger a,
+.vt-doc .custom-block.warning a {
+  color: var(--vt-c-text-code);
 }
