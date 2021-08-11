@@ -8,8 +8,11 @@ const { page, frontmatter, theme } = useData()
 </script>
 
 <template>
-  <div class="VPContentDoc">
-    <div :class="{ container: true, 'has-aside': frontmatter.aside !== false }">
+  <div
+    class="VPContentDoc"
+    :class="{ 'has-aside': frontmatter.aside !== false }"
+  >
+    <div class="container">
       <div class="content">
         <slot name="content-top" />
         <Content class="vt-doc" />
@@ -41,57 +44,17 @@ const { page, frontmatter, theme } = useData()
   margin-bottom: 96px;
 }
 
-@media (min-width: 768px) {
-  .VPContentDoc {
-    padding: 48px 32px 96px;
-  }
-}
-
-@media (min-width: 960px) {
-  .VPContentDoc {
-    padding: 64px 64px 96px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .VPContentDoc {
-    padding: 64px 96px 96px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    display: flex;
-    margin: 0 auto;
-    max-width: 592px;
-  }
-  .container.has-aside {
-    max-width: 880px;
-  }
-}
-
 .content {
   margin: 0 auto;
-  max-width: 592px;
+  max-width: 688px;
   position: relative;
-}
-
-@media (min-width: 1280px) {
-  .container {
-    display: flex;
-    margin: 0 auto;
-    max-width: 592px;
-  }
-  .container.has-aside {
-    max-width: 880px;
-  }
 }
 
 .aside {
   position: relative;
   display: none;
   flex-shrink: 0;
-  padding-left: 96px;
+  padding-left: 64px;
   width: 320px;
 }
 
@@ -106,9 +69,46 @@ const { page, frontmatter, theme } = useData()
   display: none;
 }
 
+@media (min-width: 768px) {
+  .VPContentDoc {
+    padding: 48px 32px 96px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPContentDoc {
+    padding: 64px 64px 96px;
+  }
+}
+
 @media (min-width: 1280px) {
+  .VPContentDoc {
+    padding: 64px 0 96px 64px;
+  }
+  .VPContentDoc:not(.has-sidebar) {
+    padding-left: calc((var(--vp-screen-max-width) - 688px) / 2);
+  }
+  .container {
+    display: flex;
+  }
+  .content {
+    min-width: 620px;
+    margin: 0;
+  }
+  .VPContentDoc:not(.has-aside) .content {
+    min-width: 688px;
+  }
   .aside {
     display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .VPContentDoc {
+    padding: 64px 0 96px 96px;
+  }
+  .aside {
+    padding-left: 96px;
   }
 }
 </style>

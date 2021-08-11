@@ -79,7 +79,7 @@ defineProps<{
   .VPSidebar {
     padding: 24px 32px 96px calc((100% - var(--vp-screen-max-width)) / 2);
     width: calc(
-      (100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-large)
+      (100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-medium)
     );
   }
 }
