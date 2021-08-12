@@ -1,16 +1,19 @@
 <script lang="ts" setup>
-import { useData } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 import { useSidebar } from '../composables/sidebar'
 import VPContentPage from './VPContentPage.vue'
 import VPContentDoc from './VPContentDoc.vue'
+import VPNotFound from './VPNotFound.vue'
 
+const route = useRoute()
 const { frontmatter } = useData()
 const { hasSidebar } = useSidebar()
 </script>
 
 <template>
   <div class="VPContent" :class="{ 'has-sidebar': hasSidebar }">
-    <VPContentPage v-if="!!frontmatter.page" />
+    <VPNotFound v-if="route.component === VPNotFound" />
+    <VPContentPage v-else-if="!!frontmatter.page" />
     <VPContentDoc v-else :class="{ 'has-sidebar': hasSidebar }">
       <template #content-top><slot name="content-top" /></template>
       <template #content-bottom><slot name="content-bottom" /></template>
