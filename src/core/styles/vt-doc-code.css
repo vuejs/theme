@@ -25,9 +25,13 @@
 .vt-doc div[class*='language-'] {
   position: relative;
   margin: 28px -24px;
-  background-color: var(--vt-c-bg-soft);
+  background-color: #292d3e;
   overflow-x: auto;
   transition: background-color 0.5s;
+}
+
+.dark .vt-doc div[class*='language-'] {
+  background-color: #282c34;
 }
 
 @media (min-width: 640px) {
@@ -71,12 +75,8 @@
   padding: 0;
   line-height: var(--vt-doc-code-line-height);
   font-size: var(--vt-doc-code-font-size);
-  color: #3a385d;
+  color: #A6ACCD;
   transition: color 0.5s;
-}
-
-.dark .vt-doc [class*='language-'] code {
-  color: #d1d1d1;
 }
 
 .vt-doc .highlight-lines {
@@ -94,12 +94,8 @@
 }
 
 .vt-doc .highlight-lines .highlighted {
-  background-color: var(--vt-c-gray-light-4);
+  background-color: rgba(0, 0, 0, 0.3);
   transition: background-color 0.5s;
-}
-
-.dark .vt-doc .highlight-lines .highlighted {
-  background-color: #1c1c1c;
 }
 
 .vt-doc div[class*='language-'].line-numbers-mode {
@@ -131,12 +127,17 @@
   line-height: 24px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--vt-c-text-3);
+  color: var(--vt-c-text-dark-3);
   padding: 0 8px;
   transition: color 0.5s;
 }
 
+.vt-doc [class~='language-vue']:before {
+  content: 'vue';
+}
+
 .vt-doc [class~='language-html']:before,
+.vt-doc [class~='language-vue-html']:before,
 .vt-doc [class~='language-markup']:before {
   content: 'html';
 }
@@ -221,137 +222,4 @@
 
 .vt-doc [class~='language-dockerfile']:before {
   content: 'dockerfile';
-}
-
-/* Color scheme */
-.vt-doc {
-  --vt-code-comment: #809ebb;
-  --vt-code-punctuation: #a8a9cc;
-  --vt-code-attribute: #d84152;
-  --vt-code-constant: #717c11;
-  --vt-code-keyword: #af4ab1;
-  --vt-code-variable: #2ba46d;
-  
-  --vt-code-string: #2ba46d;
-  --vt-code-boolean: #c25205;
-  --vt-code-number: #c25205;
-  --vt-code-entity: #33a06f;
-  --vt-code-function-name: #6196cc;
-  --vt-code-function: #336ec3;
-
-  --vt-code-inserted: #42b883;
-  --vt-code-deleted: #d84152;
-
-  --vt-code-variable: #2ba46d;
-  --vt-code-variable: #2ba46d;
-}
-
-.dark .vt-doc {
-  --vt-code-comment: rgba(235, 235, 235, 0.3);
-  --vt-code-punctuation: rgba(235, 235, 235, 0.6);
-  --vt-code-attribute: #d84152;
-  --vt-code-constant: #f8c555;
-  --vt-code-keyword: #d9a6ff;
-  --vt-code-variable: #2ba46d;
-  
-  --vt-code-string: #42b883;
-  --vt-code-boolean: #f08d49;
-  --vt-code-number: #f08d49;
-  --vt-code-entity: #42b883;
-  --vt-code-function-name: #6196cc;
-  --vt-code-function: #6ba7de;
-
-  --vt-code-inserted: #42b883;
-  --vt-code-deleted: #d84152;
-}
-
-.vt-doc .token {
-  transition: color 0.5s;
-}
-
-.vt-doc .token.comment,
-.vt-doc .token.block-comment,
-.vt-doc .token.prolog,
-.vt-doc .token.doctype,
-.vt-doc .token.cdata {
-  color: var(--vt-code-comment);
-}
-
-.vt-doc .token.punctuation {
-  color: var(--vt-code-punctuation);
-}
-
-.vt-doc .token.tag,
-.vt-doc .token.attr-name,
-.vt-doc .token.namespace {
-  color: var(--vt-code-attribute);
-}
-
-.vt-doc .token.function-name {
-  color: var(--vt-code-function-name);
-}
-
-.vt-doc .token.boolean {
-  color: var(--vt-code-boolean);
-}
-
-.vt-doc .token.number {
-  color: var(--vt-code-number);
-}
-
-.vt-doc .token.function {
-  color: var(--vt-code-function);
-}
-
-.vt-doc .token.property,
-.vt-doc .token.class-name,
-.vt-doc .token.constant,
-.vt-doc .token.symbol {
-  color: var(--vt-code-constant);
-}
-
-.vt-doc .token.selector,
-.vt-doc .token.important,
-.vt-doc .token.atrule,
-.vt-doc .token.keyword,
-.vt-doc .token.builtin {
-  color: var(--vt-code-keyword);
-}
-
-.vt-doc .token.string,
-.vt-doc .token.char,
-.vt-doc .token.attr-value,
-.vt-doc .token.regex {
-  color: var(--vt-code-string);
-}
-
-.vt-doc .token.variable {
-  color: var(--vt-code-variable);
-}
-
-.vt-doc .token.operator,
-.vt-doc .token.entity,
-.vt-doc .token.url {
-  color: var(--vt-code-entity);
-}
-
-.vt-doc .token.inserted {
-  color:var(--vt-code-inserted);
-}
-
-.vt-doc .token.deleted {
-  color: var(--vt-code-deleted);
-}
-
-.vt-doc .token.important,
-.vt-doc .token.bold {
-  font-weight: 700;
-}
-
-.vt-doc .token.italic {
-  font-style: italic;
-}
-
-.vt-doc .token.entity {
-  cursor: help;
 }

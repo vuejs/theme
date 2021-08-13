@@ -10,7 +10,10 @@ const darkModeFix = require('fs').readFileSync(
   'utf-8'
 )
 
-module.exports = {
+/**
+ * @type {() => Promise<import('vitepress').UserConfig>}
+ */
+module.exports = async () => ({
   vite: {
     optimizeDeps: {
       exclude: ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
@@ -27,5 +30,9 @@ module.exports = {
       }
     ],
     ['script', {}, darkModeFix]
-  ]
-}
+  ],
+
+  markdown: {
+    highlight: await require('./highlight')()
+  }
+})

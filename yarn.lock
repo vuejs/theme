@@ -834,6 +834,13 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
+json5@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
+  integrity sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==
+  dependencies:
+    minimist "^1.2.5"
+
 jsonfile@^6.0.1:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.1.0.tgz#bc55b2634793c679ec6403094eb13698a6ec0aae"
@@ -1024,6 +1031,13 @@ onetime@^5.1.0:
   integrity sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==
   dependencies:
     mimic-fn "^2.1.0"
+
+onigasm@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/onigasm/-/onigasm-2.2.5.tgz#cc4d2a79a0fa0b64caec1f4c7ea367585a676892"
+  integrity sha512-F+th54mPc0l1lp1ZcFMyL/jTs2Tlq4SqIHKIXGZOR/VkHkF9A7Fr5rRr5+ZG/lWeRsyrClLYRq7s/yFQ/XhWCA==
+  dependencies:
+    lru-cache "^5.1.1"
 
 ora@^5.4.0:
   version "5.4.1"
@@ -1225,6 +1239,15 @@ select@^1.1.2:
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
   integrity sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
 
+shiki@^0.9.6:
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.9.6.tgz#057d6d451b9c1124107635fdcb5c752560d6abc6"
+  integrity sha512-h2y5Uq9QEWsEmi97n+BOdPOVxkOUdVunl+jVIzU9EqJ6/QbIX+U6F7TsrWZQ2xqwPgvvQaC9r7/zeegi1b48dQ==
+  dependencies:
+    json5 "^2.2.0"
+    onigasm "^2.2.5"
+    vscode-textmate "5.2.0"
+
 signal-exit@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
@@ -1393,6 +1416,11 @@ vitepress@^0.16.1:
     sirv "^1.0.12"
     vite "^2.4.4"
     vue "^3.2.1"
+
+vscode-textmate@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/vscode-textmate/-/vscode-textmate-5.2.0.tgz#01f01760a391e8222fe4f33fbccbd1ad71aed74e"
+  integrity sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==
 
 vue-demi@*:
   version "0.9.1"
