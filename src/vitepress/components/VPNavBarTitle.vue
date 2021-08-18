@@ -5,7 +5,6 @@ import { useData } from 'vitepress'
 const { site, localePath } = useData()
 
 const logo = computed(() => site.value.themeConfig.logo)
-const logoDark = computed(() => site.value.themeConfig.logoDark)
 
 const title = computed(() => {
   if (site.value.themeConfig.title === null) {
@@ -22,22 +21,8 @@ const hasTitle = computed(() => {
 
 <template>
   <a v-if="hasTitle" class="VPNavBarTitle" :href="localePath">
-    <div v-if="logo" class="logo">
-      <img
-        class="logo-img"
-        :class="{ 'has-dark': logoDark }"
-        :src="logo"
-        alt="Logo"
-      />
-      <img
-        v-if="logoDark"
-        class="logo-img inverse"
-        :src="logoDark"
-        alt="Logo"
-      />
-    </div>
-
-    <p v-if="title" class="text">{{ title }}</p>
+    <img v-if="logo" class="logo" :src="logo" alt="Logo" />
+    <span v-if="title" class="text">{{ title }}</span>
   </a>
 </template>
 
@@ -56,36 +41,12 @@ const hasTitle = computed(() => {
 
 .logo {
   position: relative;
+  width: 24px;
   height: 24px;
 }
 
 .logo + .text {
   padding-left: 8px;
-}
-
-.logo-img {
-  height: 100%;
-  transition: opacity 0.5s, transform 0.5s ease;
-}
-
-.logo-img.inverse {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  transform: translateY(-12px);
-}
-
-.dark .logo-img.has-dark {
-  opacity: 0;
-  transform: translateY(12px);
-}
-
-.dark .logo-img.inverse {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .text {
