@@ -6,6 +6,8 @@ defineProps<{
   text: string
   items: MenuItemWithLink[]
 }>()
+
+defineEmits(['jump'])
 </script>
 
 <template>

@@ -1,17 +1,23 @@
-import { UseDarkOptions, useDark, useToggle } from '@vueuse/core'
+const storageKey = 'vue-theme-appearance'
 
-export type UseAppearanceOptions = UseDarkOptions
-
-export function useAppearance(options: UseAppearanceOptions = {}) {
-  const isDark = useDark({
-    storageKey: 'vue-theme-appearance',
-    ...options
-  })
-
-  const toggle = useToggle(isDark)
-
+export function useAppearance() {
+  if (typeof localStorage === 'undefined') {
+    return
+  }
+  const saved = localStorage.getItem(storageKey)
+  const classList = document.documentElement.classList
+  let isDark =
+    saved === 'auto'
+      ? window.matchMedia(`(prefers-color-scheme: dark)`).matches
+      : saved === 'dark'
   return {
-    isDark,
-    toggle
+    toggle() {
+      if ((isDark = !isDark)) {
+        classList.add('dark')
+      } else {
+        classList.remove('dark')
+      }
+      localStorage.setItem(storageKey, isDark ? 'dark' : 'light')
+    }
   }
 }

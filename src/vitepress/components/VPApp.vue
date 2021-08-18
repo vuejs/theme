@@ -1,12 +1,10 @@
 <script lang="ts" setup>
-import { useAppearance, VTBackdrop } from '../../core'
+import { VTBackdrop } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import VPNav from './VPNav.vue'
 import VPLocalNav from './VPLocalNav.vue'
 import VPSidebar from './VPSidebar.vue'
 import VPContent from './VPContent.vue'
-
-useAppearance()
 
 const {
   isOpen: isSidebarOpen,

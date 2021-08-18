@@ -7,6 +7,8 @@ defineProps<{
   link: string
 }>()
 
+defineEmits(['jump'])
+
 const { page } = useData()
 </script>
 

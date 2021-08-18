@@ -7,6 +7,8 @@ const { sidebar, hasSidebar } = useSidebar()
 defineProps<{
   open: boolean
 }>()
+
+defineEmits(['close'])
 </script>
 
 <template>

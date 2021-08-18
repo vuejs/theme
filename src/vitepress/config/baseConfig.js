@@ -5,8 +5,8 @@
  * It runs in Node.js.
  */
 
-const darkModeFix = require('fs').readFileSync(
-  require('path').resolve(__dirname, './darkModeFix.js'),
+const darkModeScript = require('fs').readFileSync(
+  require('path').resolve(__dirname, './applyDarkMode.js'),
   'utf-8'
 )
 
@@ -29,7 +29,7 @@ module.exports = async () => ({
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'
       }
     ],
-    ['script', {}, darkModeFix]
+    ['script', {}, darkModeScript]
   ],
 
   markdown: {
