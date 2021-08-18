@@ -2,7 +2,7 @@ const storageKey = 'vue-theme-appearance'
 
 export function useAppearance() {
   if (typeof localStorage === 'undefined') {
-    return
+    return () => {}
   }
   const saved = localStorage.getItem(storageKey)
   const classList = document.documentElement.classList
@@ -10,14 +10,12 @@ export function useAppearance() {
     saved === 'auto'
       ? window.matchMedia(`(prefers-color-scheme: dark)`).matches
       : saved === 'dark'
-  return {
-    toggle() {
-      if ((isDark = !isDark)) {
-        classList.add('dark')
-      } else {
-        classList.remove('dark')
-      }
-      localStorage.setItem(storageKey, isDark ? 'dark' : 'light')
+  return () => {
+    if ((isDark = !isDark)) {
+      classList.add('dark')
+    } else {
+      classList.remove('dark')
     }
+    localStorage.setItem(storageKey, isDark ? 'dark' : 'light')
   }
 }
