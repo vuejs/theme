@@ -5,13 +5,13 @@ import { ref } from 'vue'
 
 const { page } = useData()
 const container = ref()
-const bg = ref()
-useActiveAnchor(container, bg)
+const marker = ref()
+useActiveAnchor(container, marker)
 </script>
 
 <template>
   <div class="VPContentDocOutline" ref="container">
-    <div class="outline-bg" ref="bg" />
+    <div class="outline-marker" ref="marker" />
     <div class="outline-title">On this page</div>
     <ul>
       <li v-for="{ text, link } in resolveHeaders(page.headers)">
@@ -33,6 +33,7 @@ useActiveAnchor(container, bg)
   margin-bottom: 4px;
   text-transform: uppercase;
   font-size: 11px;
+  letter-spacing: 0.5px;
 }
 
 .outline-link {
@@ -51,17 +52,15 @@ useActiveAnchor(container, bg)
   transition: color 0.25s;
 }
 
-.outline-bg {
-  --padding: 8px;
-
+.outline-marker {
   opacity: 0;
   position: absolute;
-  background-color: var(--vt-c-bg-soft);
+  background-color: var(--vt-c-green);
   border-radius: 4px;
-  width: calc(100% + var(--padding) * 2);
-  height: 28px;
-  top: 28px;
-  left: calc(0px - var(--padding));
+  width: 4px;
+  height: 20px;
+  top: 32px;
+  left: -12px;
   z-index: 0;
   transition: top 0.25s cubic-bezier(0, 1, 0.5, 1), opacity 0.25s,
     background-color 0.5s;

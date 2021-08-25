@@ -93,10 +93,10 @@ export function useActiveAnchor(
     if (activeLink) {
       activeLink.classList.add('active')
       bg.value.style.opacity = '1'
-      bg.value.style.top = activeLink.offsetTop + 28 + 'px'
+      bg.value.style.top = activeLink.offsetTop + 33 + 'px'
     } else {
       bg.value.style.opacity = '0'
-      bg.value.style.top = '28px'
+      bg.value.style.top = '33px'
     }
   }
 
