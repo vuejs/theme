@@ -7,6 +7,10 @@ interface HeaderWithChildren extends Header {
   children?: Header[]
 }
 
+interface MenuItemWithLinkAndChildren extends MenuItemWithLink {
+  children?: MenuItemWithLinkAndChildren[]
+}
+
 export function resolveHeaders(headers: Header[]) {
   return mapHeaders(groupHeaders(headers))
 }
@@ -24,7 +28,9 @@ function groupHeaders(headers: Header[]): HeaderWithChildren[] {
   return headers.filter((h) => h.level === 2)
 }
 
-function mapHeaders(headers: HeaderWithChildren[]): MenuItemWithLink[] {
+function mapHeaders(
+  headers: HeaderWithChildren[]
+): MenuItemWithLinkAndChildren[] {
   return headers.map((header) => ({
     text: header.title,
     link: `#${header.slug}`,

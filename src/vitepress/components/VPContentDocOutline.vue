@@ -3,7 +3,7 @@ import { useData } from 'vitepress'
 import { resolveHeaders, useActiveAnchor } from '../composables/outline'
 import { ref } from 'vue'
 
-const { page } = useData()
+const { page, frontmatter } = useData()
 const container = ref()
 const marker = ref()
 useActiveAnchor(container, marker)
@@ -13,9 +13,14 @@ useActiveAnchor(container, marker)
   <div class="VPContentDocOutline" ref="container">
     <div class="outline-marker" ref="marker" />
     <div class="outline-title">On this page</div>
-    <ul>
-      <li v-for="{ text, link } in resolveHeaders(page.headers)">
+    <ul class="root">
+      <li v-for="{ text, link, children } in resolveHeaders(page.headers)">
         <a class="outline-link" :href="link">{{ text }}</a>
+        <ul v-if="children && frontmatter.aside === 'deep'">
+          <li v-for="{ text, link } in children">
+            <a class="outline-link nested" :href="link">{{ text }}</a>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
@@ -52,6 +57,10 @@ useActiveAnchor(container, marker)
   transition: color 0.25s;
 }
 
+.outline-link.nested {
+  padding-left: 1em;
+}
+
 .outline-marker {
   opacity: 0;
   position: absolute;
@@ -66,7 +75,7 @@ useActiveAnchor(container, marker)
     background-color 0.5s;
 }
 
-ul {
+.root {
   z-index: 1;
   position: relative;
 }
