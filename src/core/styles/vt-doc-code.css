@@ -31,7 +31,7 @@
 }
 
 .dark .vt-doc div[class*='language-'] {
-  background-color: #232529;
+  background-color: var(--vt-c-bg-soft);
 }
 
 @media (min-width: 640px) {

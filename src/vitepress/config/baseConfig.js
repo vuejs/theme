@@ -21,6 +21,13 @@ module.exports = async () => ({
   },
 
   head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: '/logo.svg'
+      }
+    ],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
     [
       'link',

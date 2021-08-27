@@ -16,19 +16,19 @@
 .vt-doc h5,
 .vt-doc h6 {
   position: relative;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.5;
 }
 
 .vt-doc h1 {
   margin: 0 0 18px;
-  font-size: 32px;
-  letter-spacing: 0.1px;
+  font-size: 36px;
+  letter-spacing: -0.1px;
 }
 
 @media (min-width: 768px) {
   .vt-doc h1 {
-    font-size: 36px;
+    font-size: 42px;
   }
 }
 
@@ -36,13 +36,13 @@
   margin: 64px 0 26px;
   border-top: 1px solid var(--vt-c-divider-light);
   padding-top: 26px;
-  font-size: 23px;
-  letter-spacing: 0;
+  font-size: 24px;
+  letter-spacing: -0.2px;
 }
 
 @media (min-width: 768px) {
   .vt-doc h2 {
-    font-size: 25px;
+    font-size: 24px;
   }
 }
 
@@ -56,7 +56,7 @@
 }
 
 .vt-doc h4 {
-  font-size: 16px;
+  font-size: 17px;
   margin: 24px 0 14px;
 }
 
