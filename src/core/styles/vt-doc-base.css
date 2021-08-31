@@ -1,6 +1,6 @@
 .vt-doc {
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 @media (min-width: 768px) {
@@ -21,34 +21,33 @@
 }
 
 .vt-doc h1 {
-  margin: 0 0 18px;
-  font-size: 36px;
+  margin: 0 0 3rem;
+  font-size: 38px;
   letter-spacing: -0.1px;
-}
-
-@media (min-width: 768px) {
-  .vt-doc h1 {
-    font-size: 42px;
-  }
+  line-height: 1.4;
 }
 
 .vt-doc h2 {
-  margin: 64px 0 26px;
+  margin: 4rem 0 1.8rem;
   border-top: 1px solid var(--vt-c-divider-light);
-  padding-top: 26px;
+  padding-top: 1.8rem;
   font-size: 24px;
   letter-spacing: -0.2px;
 }
 
-@media (min-width: 768px) {
-  .vt-doc h2 {
-    font-size: 24px;
+@media (max-width: 768px) {
+  .vt-doc h1 {
+    font-size: 32px;
+    margin-bottom: 1.8rem;
+  }
+  .vt-doc h1 + h2 {
+    margin-top: 36px;
   }
 }
 
 .vt-doc h3 {
   font-size: 19px;
-  margin: 48px 0 18px;
+  margin: 3rem 0 1.25rem;
 }
 
 .vt-doc h2 + h3 {
@@ -57,7 +56,7 @@
 
 .vt-doc h4 {
   font-size: 17px;
-  margin: 24px 0 14px;
+  margin: 1.8rem 0 1rem;
 }
 
 .vt-doc .header-anchor {
@@ -87,7 +86,7 @@
 .vt-doc p,
 .vt-doc ul,
 .vt-doc ol {
-  margin-bottom: 18px;
+  margin-bottom: 1.2em;
 }
 
 .vt-doc a {

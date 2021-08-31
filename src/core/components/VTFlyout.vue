@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { MenuItem, MenuItemChild } from '../composables/menu'
+import { MenuItem, MenuItemChild } from '../types/menu'
 import VTIconChevronDown from './icons/VTIconChevronDown.vue'
 import VTIconMoreHorizontal from './icons/VTIconMoreHorizontal.vue'
 import VTMenu from './VTMenu.vue'

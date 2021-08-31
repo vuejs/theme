@@ -17,14 +17,14 @@ export function resolveHeaders(headers: Header[]) {
 
 function groupHeaders(headers: Header[]): HeaderWithChildren[] {
   headers = headers.map((h) => Object.assign({}, h))
-  let lastH2: HeaderWithChildren
-  headers.forEach((h) => {
+  let lastH2: HeaderWithChildren | undefined
+  for (const h of headers) {
     if (h.level === 2) {
       lastH2 = h
-    } else if (lastH2) {
+    } else if (lastH2 && h.level <= 3) {
       ;(lastH2.children || (lastH2.children = [])).push(h)
     }
-  })
+  }
   return headers.filter((h) => h.level === 2)
 }
 

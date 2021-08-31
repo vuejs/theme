@@ -66,6 +66,10 @@
 .vt-doc .custom-block ul li:before {
   top: 0.55rem;
 }
+.vt-doc .custom-block ol li:before {
+  top: 1px;
+  font-size: 13px;
+}
 
 .vt-doc .custom-block :not(pre) > code {
   font-size: 13px;

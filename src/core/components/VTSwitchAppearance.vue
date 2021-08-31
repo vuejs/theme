@@ -1,23 +1,37 @@
 <script lang="ts" setup>
-import { useAppearance } from '../composables/appearance'
+import VTSwitch from './VTSwitch.vue'
 import VTIconSun from './icons/VTIconSun.vue'
 import VTIconMoon from './icons/VTIconMoon.vue'
 
-const toggle = useAppearance()
+const storageKey = 'vue-theme-appearance'
+
+const toggle = typeof localStorage !== 'undefined' ? useAppearance() : () => {}
+
+function useAppearance() {
+  const saved = localStorage.getItem(storageKey)
+  const classList = document.documentElement.classList
+  let isDark =
+    saved === 'auto'
+      ? window.matchMedia(`(prefers-color-scheme: dark)`).matches
+      : saved === 'dark'
+  return () => {
+    if ((isDark = !isDark)) {
+      classList.add('dark')
+    } else {
+      classList.remove('dark')
+    }
+    localStorage.setItem(storageKey, isDark ? 'dark' : 'light')
+  }
+}
 </script>
 
 <template>
-  <div
+  <VTSwitch
     class="vt-switch-appearance"
-    role="button"
     aria-label="toggle dark mode"
     @click="toggle"
   >
-    <div class="vt-switch-appearance-check">
-      <div class="vt-switch-appearance-icon">
-        <VTIconSun class="vt-switch-appearance-svg is-sun" />
-        <VTIconMoon class="vt-switch-appearance-svg is-moon" />
-      </div>
-    </div>
-  </div>
+    <VTIconSun class="vt-switch-appearance-sun" />
+    <VTIconMoon class="vt-switch-appearance-moon" />
+  </VTSwitch>
 </template>

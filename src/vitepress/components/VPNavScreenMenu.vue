@@ -8,18 +8,15 @@ const { config } = useConfig()
 
 <template>
   <nav v-if="config.nav" class="VPNavScreenMenu">
-    <template v-for="item in config.nav">
+    <template v-for="item in config.nav" :key="item.text">
       <VPNavScreenMenuLink
         v-if="'link' in item"
-        :key="item.text"
         :text="item.text"
         :link="item.link"
         @jump="$emit('jump')"
       />
-
       <VPNavScreenMenuGroup
         v-else
-        :key="item.text"
         :text="item.text"
         :items="item.items"
         @jump="$emit('jump')"

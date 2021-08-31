@@ -7,8 +7,7 @@ const props = defineProps<{
   noIcon?: boolean
 }>()
 
-const OUTBOUND_REGEX = /^[a-z]+:/i
-const isExternal = computed(() => props.href && OUTBOUND_REGEX.test(props.href))
+const isExternal = computed(() => props.href && /^[a-z]+:/i.test(props.href))
 </script>
 
 <template>

@@ -11,9 +11,9 @@
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
 
-  --vt-c-black: #141414;
+  --vt-c-black: #1d1d1d;
   --vt-c-black-pure: #000000;
-  --vt-c-black-soft: #202020;
+  --vt-c-black-soft: #262626;
   --vt-c-black-mute: #282828;
 
   --vt-c-indigo: #223850;
@@ -43,7 +43,7 @@
   --vt-c-text-light-4: rgba(60, 60, 60, 0.18);
   --vt-c-text-light-code: var(--vt-c-indigo-soft);
 
-  --vt-c-text-dark-1: rgba(255, 255, 255, 0.90);
+  --vt-c-text-dark-1: rgba(255, 255, 255, 0.9);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.60);
   --vt-c-text-dark-3: rgba(235, 235, 235, 0.38);
   --vt-c-text-dark-4: rgba(235, 235, 235, 0.18);

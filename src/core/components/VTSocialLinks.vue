@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { SocialLinkSize, SocialLink } from '../composables/socialLink'
+import { SocialLinkSize, SocialLink } from '../types/socialLink'
 import VTSocialLink from './VTSocialLink.vue'
 
 defineProps<{
