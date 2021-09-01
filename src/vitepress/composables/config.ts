@@ -44,19 +44,25 @@ export function useConfig() {
 }
 
 function resolveConfig(config: Config): Config {
-  return {
-    appearance: true,
-    ...config,
-    nav: config.nav?.map(normalizeMenuItem),
-    sidebar: config.sidebar && normalizeSideBar(config.sidebar)
-  }
+  return Object.assign(
+    {
+      appearance: true
+    },
+    config,
+    {
+      nav: config.nav?.map(normalizeMenuItem),
+      sidebar: config.sidebar && normalizeSideBar(config.sidebar)
+    }
+  )
 }
 
 function normalizeMenuItem<T extends MenuItem | MenuItemChild>(item: T): T {
   if ('link' in item) {
-    return { ...item, link: normalizeLink(item.link) }
+    return Object.assign({}, item, {
+      link: normalizeLink(item.link)
+    })
   } else {
-    return { ...item, items: item.items.map(normalizeMenuItem) }
+    return Object.assign({}, item, { items: item.items.map(normalizeMenuItem) })
   }
 }
 
