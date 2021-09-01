@@ -39,7 +39,7 @@
     "@vueuse/core": "^5.0.2",
     "body-scroll-lock": "^3.1.5",
     "normalize.css": "^8.0.1",
-    "shiki": "^0.9.6"
+    "shiki": "^0.9.9"
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^2.6.1",
