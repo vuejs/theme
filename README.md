@@ -1,18 +1,6 @@
 # Vue Theme
 
-[![Test](https://github.com/vuejs/vue-theme/workflows/test/badge.svg)](https://github.com/vuejs/vue-theme/actions)
-
-Vue Theme is the official design system for Vue.js. It focuses on providing design components for building a user interface for the whole Vue ecosystem.
-
-Not only it contains essential design kits to build product docs, but it covers all surrounding essentials which are necessary for a product of the size of Vue, such as "sponsors" and "ads".
-
-## Current Status
-
-[Major refactoring for Vue docs is in progress](https://github.com/vuejs/team-discussions/discussions/22). This repo is currently the development environment to create this whole ecosystem. See "Development Setup" to learn more about the current directory structure.
-
-## Design Mockups
-
-You can currently find the design mockups at [InVision](https://projects.invisionapp.com/share/3Q107L03E5B4#/screens/444890358_Home-Vue-Light?browse). Planning to move to Figma soon.
+WIP VitePress theme for the new version of Vue documentation.
 
 ## Development Setup
 
