@@ -5,13 +5,19 @@
  * It runs in Node.js.
  */
 
+// for local-linked development
+const deps = ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
+
 /**
  * @type {() => Promise<import('vitepress').UserConfig>}
  */
 module.exports = async () => ({
   vite: {
+    ssr: {
+      noExternal: deps
+    },
     optimizeDeps: {
-      exclude: ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
+      exclude: deps
     }
   },
 
