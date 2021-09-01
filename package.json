@@ -7,6 +7,10 @@
     ".": "./src/index.ts",
     "./config": "./src/vitepress/config/baseConfig.js"
   },
+  "files": [
+    "src",
+    "types"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vuejs/theme.git"
