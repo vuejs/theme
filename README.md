@@ -1,6 +1,6 @@
 # Vue Theme
 
-WIP VitePress theme for the new version of Vue documentation.
+WIP VitePress theme for the new version of Vue documentation. **Currently under heavy development - if you are not a team member working on this project, please do not open issues or PRs until it stabilizes.**
 
 ## Development Setup
 
