@@ -7,7 +7,7 @@
 .vt-box-container .vt-box {
   color: var(--vt-c-text-2);
   background-color: var(--vt-c-bg-soft);
-  transition: all 0.5s;
+  transition: color 0.5s, background-color 0.5s;
   padding: 28px 36px;
   border-radius: 8px;
   flex: 0 32%; /* default 3 column */
