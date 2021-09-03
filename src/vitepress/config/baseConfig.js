@@ -41,7 +41,10 @@ module.exports = async () => ({
       'script',
       {},
       require('fs').readFileSync(
-        require('path').resolve(__dirname, './applyDarkMode.js'),
+        require('path').resolve(
+          __dirname,
+          './inlined-scripts/applyDarkMode.js'
+        ),
         'utf-8'
       )
     ]
