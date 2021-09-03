@@ -40,7 +40,7 @@ defineEmits(['jump'])
 .title-text {
   line-height: 20px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--vt-c-text-1);
   transition: color 0.5s;
 }
