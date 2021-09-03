@@ -200,6 +200,7 @@ function getRelativePath(absoluteUrl: string) {
   justify-content: center;
   align-items: center;
   transition: border-color 0.5s;
+  min-width: 0;
 }
 
 .DocSearch-Button:hover .DocSearch-Button-Keys {
