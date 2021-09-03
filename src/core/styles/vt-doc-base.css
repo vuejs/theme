@@ -1,12 +1,6 @@
 .vt-doc {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
-}
-
-@media (min-width: 768px) {
-  .vt-doc {
-    font-size: 16px;
-  }
 }
 
 .vt-doc h1,
