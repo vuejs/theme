@@ -17,8 +17,9 @@
 .vt-doc h1 {
   margin: 0 0 3rem;
   font-size: 38px;
-  letter-spacing: -0.1px;
+  font-weight: 700;
   line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
 .vt-doc h2 {
@@ -26,7 +27,7 @@
   border-top: 1px solid var(--vt-c-divider-light);
   padding-top: 1.8rem;
   font-size: 24px;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.02em;
 }
 
 @media (max-width: 768px) {
@@ -41,6 +42,7 @@
 
 .vt-doc h3 {
   font-size: 19px;
+  letter-spacing: -0.01em;
   margin: 3rem 0 1.25rem;
 }
 

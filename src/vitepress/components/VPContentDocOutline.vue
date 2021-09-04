@@ -34,11 +34,11 @@ useActiveAnchor(container, marker)
 }
 
 .outline-title {
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 4px;
   text-transform: uppercase;
   font-size: 11px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
 .outline-link {
