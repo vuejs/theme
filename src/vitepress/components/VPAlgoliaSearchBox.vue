@@ -6,7 +6,7 @@ import { onMounted } from 'vue'
 import { DocSearchHit } from '@docsearch/react/dist/esm/types'
 import { AlgoliaSearchOptions } from '../config'
 
-const { lang, theme } = useData()
+const { theme } = useData()
 const route = useRoute()
 const router = useRouter()
 
@@ -15,90 +15,75 @@ onMounted(() => {
 })
 
 function initialize(userOptions: AlgoliaSearchOptions) {
-  // if the user has multiple locales, the search results should be filtered
-  // based on the language
-  const facetFilters = !!theme.value.locales ? ['language:' + lang.value] : []
+  // Note: multi-lang search support is removed since the theme
+  // doesn't support multiple locales as of now
 
-  docsearch(
-    Object.assign({}, userOptions, {
-      container: '#docsearch',
+  const options = Object.assign({}, userOptions, {
+    container: '#docsearch',
 
-      searchParameters: Object.assign({}, userOptions.searchParameters, {
-        // pass a custom lang facetFilter to allow multiple language search
-        // https://github.com/algolia/docsearch-configs/pull/3942
-        facetFilters: facetFilters.concat(
-          userOptions.searchParameters?.facetFilters || []
+    navigator: {
+      navigate: ({ suggestionUrl }: { suggestionUrl: string }) => {
+        const { pathname: hitPathname } = new URL(
+          window.location.origin + suggestionUrl
         )
-      }),
 
-      navigator: {
-        navigate: ({ suggestionUrl }: { suggestionUrl: string }) => {
-          const { pathname: hitPathname } = new URL(
-            window.location.origin + suggestionUrl
-          )
-
-          // Router doesn't handle same-page navigation so we use the native
-          // browser location API for anchor navigation
-          if (route.path === hitPathname) {
-            window.location.assign(window.location.origin + suggestionUrl)
-          } else {
-            router.go(suggestionUrl)
-          }
-        }
-      },
-
-      transformItems: (items: DocSearchHit[]) => {
-        return items.map((item) => {
-          return Object.assign({}, item, {
-            url: getRelativePath(item.url)
-          })
-        })
-      },
-
-      hitComponent: ({
-        hit,
-        children
-      }: {
-        hit: DocSearchHit
-        children: any
-      }) => {
-        const relativeHit = hit.url.startsWith('http')
-          ? getRelativePath(hit.url as string)
-          : hit.url
-
-        return {
-          type: 'a',
-          ref: undefined,
-          constructor: undefined,
-          key: undefined,
-          props: {
-            href: hit.url,
-            onClick: (event: MouseEvent) => {
-              if (isSpecialClick(event)) {
-                return
-              }
-
-              // we rely on the native link scrolling when user is already on
-              // the right anchor because Router doesn't support duplicated
-              // history entries
-              if (route.path === relativeHit) {
-                return
-              }
-
-              // if the hits goes to another page, we prevent the native link
-              // behavior to leverage the Router loading feature
-              if (route.path !== relativeHit) {
-                event.preventDefault()
-              }
-
-              router.go(relativeHit)
-            },
-            children
-          }
+        // Router doesn't handle same-page navigation so we use the native
+        // browser location API for anchor navigation
+        if (route.path === hitPathname) {
+          window.location.assign(window.location.origin + suggestionUrl)
+        } else {
+          router.go(suggestionUrl)
         }
       }
-    })
-  )
+    },
+
+    transformItems: (items: DocSearchHit[]) => {
+      return items.map((item) => {
+        return Object.assign({}, item, {
+          url: getRelativePath(item.url)
+        })
+      })
+    },
+
+    hitComponent: ({ hit, children }: { hit: DocSearchHit; children: any }) => {
+      const relativeHit = hit.url.startsWith('http')
+        ? getRelativePath(hit.url as string)
+        : hit.url
+
+      return {
+        type: 'a',
+        ref: undefined,
+        constructor: undefined,
+        key: undefined,
+        props: {
+          href: hit.url,
+          onClick: (event: MouseEvent) => {
+            if (isSpecialClick(event)) {
+              return
+            }
+
+            // we rely on the native link scrolling when user is already on
+            // the right anchor because Router doesn't support duplicated
+            // history entries
+            if (route.path === relativeHit) {
+              return
+            }
+
+            // if the hits goes to another page, we prevent the native link
+            // behavior to leverage the Router loading feature
+            if (route.path !== relativeHit) {
+              event.preventDefault()
+            }
+
+            router.go(relativeHit)
+          },
+          children
+        }
+      }
+    }
+  })
+
+  docsearch(options)
 }
 
 function isSpecialClick(event: MouseEvent) {
@@ -190,28 +175,34 @@ function getRelativePath(absoluteUrl: string) {
   color: var(--vt-c-text-1);
 }
 
-.DocSearch-Button-Keys {
+.DocSearch-Button .DocSearch-Button-Key {
   border: 1px solid var(--vt-c-divider);
-  border-radius: 4px;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
   display: none;
-  padding: 4px;
-  height: 20px;
-  justify-content: center;
-  align-items: center;
-  transition: border-color 0.5s;
+  padding-left: 6px;
+  height: 22px;
+  line-height: 22px;
+  transition: color 0.5s, border-color 0.5s;
   min-width: 0;
 }
 
-.DocSearch-Button:hover .DocSearch-Button-Keys {
-  border-color: var(--vt-c-brand-light);
+.DocSearch-Button .DocSearch-Button-Key + .DocSearch-Button-Key {
+  border-right: 1px solid var(--vt-c-divider);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  padding-left: 2px;
+  padding-right: 6px;
 }
+
 .DocSearch-Button:hover .DocSearch-Button-Key {
+  border-color: var(--vt-c-brand-light);
   color: var(--vt-c-brand-light);
 }
 
 @media (min-width: 768px) {
-  .DocSearch-Button-Keys {
-    display: flex;
+  .DocSearch-Button .DocSearch-Button-Key {
+    display: inline-block;
   }
 }
 
