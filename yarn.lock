@@ -2,25 +2,6 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.2.2.tgz#c121e70c78fd0175c989a219918124ad7758e48b"
-  integrity sha512-JOQaURze45qVa8OOFDh+ozj2a/ObSRsVyz6Zd0aiBeej+RSTqrr1hDVpGNbbXYLW26G5ujuc9QIdH+rBHn95nw==
-  dependencies:
-    "@algolia/autocomplete-shared" "1.2.2"
-
-"@algolia/autocomplete-preset-algolia@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.2.2.tgz#da734ef9e42a5f64cdad2dfc81c4e9fbf805d976"
-  integrity sha512-AZkh+bAMaJDzMZTelFOXJTJqkp5VPGH8W3n0B+Ggce7DdozlMRsDLguKTCQAkZ0dJ1EbBPyFL5ztL/JImB137Q==
-  dependencies:
-    "@algolia/autocomplete-shared" "1.2.2"
-
-"@algolia/autocomplete-shared@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.2.2.tgz#ff25dc308f2a296b2b9b325f1e3b57498eea3e0c"
-  integrity sha512-mLTl7d2C1xVVazHt/bqh9EE/u2lbp5YOxLDdcjILXmUqOs5HH1D4SuySblXaQG1uf28FhTqMGp35qE5wJQnqAw==
-
 "@algolia/cache-browser-local-storage@4.10.5":
   version "4.10.5"
   resolved "https://registry.yarnpkg.com/@algolia/cache-browser-local-storage/-/cache-browser-local-storage-4.10.5.tgz#961cf07cf59955de17af13bd74f7806bd2119553"
@@ -148,11 +129,6 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@docsearch/css@3.0.0-alpha.40", "@docsearch/css@^3.0.0-alpha.36":
-  version "3.0.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-3.0.0-alpha.40.tgz#c37bd7b03f4c30a6ea7a19b87fe71880d2e8b22a"
-  integrity sha512-PrOTPgJMl+Iji1zOH0+J0PEDMriJ1teGxbgll7o4h8JrvJW6sJGqQw7/bLW7enWiFaxbJMK76w1yyPNLFHV7Qg==
-
 "@docsearch/css@^1.0.0-alpha.28":
   version "1.0.0-alpha.28"
   resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-1.0.0-alpha.28.tgz#c8a2cd8c1bb3a6855c51892e9dbdab5d42fe6e23"
@@ -165,24 +141,6 @@
   dependencies:
     "@docsearch/react" "^1.0.0-alpha.28"
     preact "^10.0.0"
-
-"@docsearch/js@^3.0.0-alpha.36":
-  version "3.0.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@docsearch/js/-/js-3.0.0-alpha.40.tgz#28b48fd23053222e6097ddfa3b515ae388634717"
-  integrity sha512-0ysRM0jk1KAbw/QsHPHIKoa7OeCm2Mwz0JgcPnhWRvvA28dzP+f6OIsL6eGu3VJR043tH9OrvVf/FnvLtTtZtw==
-  dependencies:
-    "@docsearch/react" "3.0.0-alpha.40"
-    preact "^10.0.0"
-
-"@docsearch/react@3.0.0-alpha.40":
-  version "3.0.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@docsearch/react/-/react-3.0.0-alpha.40.tgz#d912b4bb7281cb0faf65590c9cf022aa2a13d823"
-  integrity sha512-aKxnu7sgpP1R7jtgOV/pZdJEHXx6Ts+jnS9U/ejSUS2BMUpwQI5SA3oLs1BA5TA9kIViJ5E+rrjh0VsbcsJ6sQ==
-  dependencies:
-    "@algolia/autocomplete-core" "1.2.2"
-    "@algolia/autocomplete-preset-algolia" "1.2.2"
-    "@docsearch/css" "3.0.0-alpha.40"
-    algoliasearch "^4.0.0"
 
 "@docsearch/react@^1.0.0-alpha.28":
   version "1.0.0-alpha.28"

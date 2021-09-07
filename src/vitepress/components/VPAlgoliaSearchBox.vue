@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import '@docsearch/css'
-// @ts-ignore
 import docsearch from '@docsearch/js'
 import { useRoute, useRouter, useData } from 'vitepress'
 import { onMounted } from 'vue'

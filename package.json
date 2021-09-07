@@ -34,8 +34,8 @@
     "serve": "yarn demo-build && vitepress serve demo"
   },
   "dependencies": {
-    "@docsearch/css": "^3.0.0-alpha.36",
-    "@docsearch/js": "^3.0.0-alpha.36",
+    "@docsearch/css": "^1.0.0-alpha.28",
+    "@docsearch/js": "^1.0.0-alpha.28",
     "@vueuse/core": "^5.0.2",
     "body-scroll-lock": "^3.1.5",
     "normalize.css": "^8.0.1",
