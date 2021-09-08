@@ -117,17 +117,17 @@ function getRelativePath(absoluteUrl: string) {
   --docsearch-searchbox-focus-background: transparent;
   --docsearch-key-gradient: transparent;
   --docsearch-key-shadow: none;
-  --docsearch-hit-shadow: none;
   --docsearch-modal-background: var(--vt-c-bg-soft);
   --docsearch-footer-background: var(--vt-c-bg);
-  --docsearch-hit-background: var(--vt-c-bg-mute);
-  --docsearch-hit-color: var(--vt-c-text-2);
 }
 
 .dark .DocSearch {
   --docsearch-modal-shadow: none;
   --docsearch-footer-shadow: none;
   --docsearch-logo-color: var(--vt-c-text-2);
+  --docsearch-hit-background: var(--vt-c-bg-mute);
+  --docsearch-hit-color: var(--vt-c-text-2);
+  --docsearch-hit-shadow: none;
 }
 
 .dark .DocSearch-Footer {
