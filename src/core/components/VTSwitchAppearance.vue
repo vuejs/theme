@@ -4,24 +4,37 @@ import VTIconSun from './icons/VTIconSun.vue'
 import VTIconMoon from './icons/VTIconMoon.vue'
 
 const storageKey = 'vue-theme-appearance'
-
 const toggle = typeof localStorage !== 'undefined' ? useAppearance() : () => {}
 
 function useAppearance() {
-  const saved = localStorage.getItem(storageKey)
+  let userPreference = localStorage.getItem(storageKey) || 'auto'
+  const query = window.matchMedia(`(prefers-color-scheme: dark)`)
   const classList = document.documentElement.classList
   let isDark =
-    saved === 'auto'
-      ? window.matchMedia(`(prefers-color-scheme: dark)`).matches
-      : saved === 'dark'
-  return () => {
-    if ((isDark = !isDark)) {
-      classList.add('dark')
-    } else {
-      classList.remove('dark')
+    userPreference === 'auto' ? query.matches : userPreference === 'dark'
+  const setClass = (dark: boolean) => classList[dark ? 'add' : 'remove']('dark')
+
+  query.onchange = (e) => {
+    if (userPreference === 'auto') {
+      setClass((isDark = e.matches))
     }
-    localStorage.setItem(storageKey, isDark ? 'dark' : 'light')
   }
+
+  const toggle = () => {
+    setClass((isDark = !isDark))
+    localStorage.setItem(
+      storageKey,
+      (userPreference = isDark
+        ? query.matches
+          ? 'auto'
+          : 'dark'
+        : query.matches
+        ? 'light'
+        : 'auto')
+    )
+  }
+
+  return toggle
 }
 </script>
 
