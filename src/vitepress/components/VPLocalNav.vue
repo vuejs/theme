@@ -23,7 +23,7 @@ function scrollToTop() {
 <style scoped>
 .VPLocalNav {
   position: sticky;
-  top: -1px;
+  top: 0;
   left: 0;
   z-index: var(--vp-z-index-local-nav);
   width: 100%;
