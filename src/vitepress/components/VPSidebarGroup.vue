@@ -17,11 +17,7 @@ defineEmits(['jump'])
     </div>
 
     <template v-for="item in items" :key="item.link">
-      <VPSidebarLink
-        :text="item.text"
-        :link="item.link"
-        @jump="$emit('jump')"
-      />
+      <VPSidebarLink :item="item" @jump="$emit('jump')" />
     </template>
   </section>
 </template>

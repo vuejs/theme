@@ -1,4 +1,5 @@
 import { withBase } from 'vitepress'
+import { ref } from 'vue'
 
 export const hashRE = /#.*$/
 export const extRE = /(index)?\.(md|html)$/
@@ -24,6 +25,14 @@ export function normalizeLink(url: string): string {
   )
 }
 
+const inBrowser = typeof window !== 'undefined'
+const hashRef = ref(inBrowser ? location.hash : '')
+if (inBrowser) {
+  window.addEventListener('hashchange', () => {
+    hashRef.value = location.hash
+  })
+}
+
 export function isActive(
   currentPath: string,
   matchPath?: string,
@@ -36,7 +45,14 @@ export function isActive(
   if (asRegex) {
     return new RegExp(matchPath).test(currentPath)
   } else {
-    return normalize(matchPath) === currentPath
+    if (normalize(matchPath) !== currentPath) {
+      return false
+    }
+    const hashMatch = matchPath.match(hashRE)
+    if (hashMatch) {
+      return hashRef.value === hashMatch[0]
+    }
+    return true
   }
 }
 

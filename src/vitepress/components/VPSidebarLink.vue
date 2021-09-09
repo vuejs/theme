@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { useData } from 'vitepress'
+import { MenuItemWithLink } from '../../core'
 import { isActive } from '../support/utils'
 
 defineProps<{
-  text: string
-  link: string
+  item: MenuItemWithLink
 }>()
 
 defineEmits(['jump'])
@@ -14,11 +14,11 @@ const { page } = useData()
 
 <template>
   <a
-    :class="{ link: true, active: isActive(page.relativePath, link) }"
-    :href="link"
+    :class="{ link: true, active: isActive(page.relativePath, item.link) }"
+    :href="item.link"
     @click="$emit('jump')"
   >
-    <p class="link-text">{{ text }}</p>
+    <p class="link-text">{{ item.text }}</p>
   </a>
 </template>
 
