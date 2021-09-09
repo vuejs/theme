@@ -39,7 +39,7 @@ function unlockBodyScroll() {
 <style scoped>
 .VPNavScreen {
   position: fixed;
-  top: 56px;
+  top: var(--vp-nav-height);
   right: 0;
   bottom: 0;
   left: 0;

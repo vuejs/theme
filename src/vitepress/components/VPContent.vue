@@ -32,6 +32,9 @@ const { hasSidebar } = useSidebar()
 }
 
 @media (min-width: 960px) {
+  .VPContent {
+    padding-top: var(--vp-nav-height);
+  }
   .VPContent.has-sidebar {
     padding-left: var(--vp-sidebar-width-small);
   }

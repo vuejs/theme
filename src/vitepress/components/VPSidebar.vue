@@ -58,7 +58,7 @@ defineEmits(['close'])
 
 @media (min-width: 960px) {
   .VPSidebar {
-    top: 56px;
+    top: var(--vp-nav-height);
     z-index: 1;
     border-right: 1px solid var(--vt-c-divider-light);
     padding: 24px 32px 96px;

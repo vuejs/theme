@@ -11,6 +11,9 @@
 
   /* Screen Size */
   --vp-screen-max-width: 1376px;
+
+  /* Laytou */
+  --vp-nav-height: 56px;
 }
 
 /**

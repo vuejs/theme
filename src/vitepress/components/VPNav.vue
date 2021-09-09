@@ -23,13 +23,10 @@ const { hasSidebar } = useSidebar()
   z-index: var(--vp-z-index-nav);
 }
 
-.VPNav.stick {
-  position: sticky;
-}
-
 @media (min-width: 960px) {
   .VPNav {
-    position: sticky;
+    position: fixed;
+    width: 100%;
   }
 }
 </style>
