@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { VTIconAlignLeft } from '../../core'
 import { useSidebar } from '../composables/sidebar'
+import { useData } from 'vitepress'
 
 const { hasSidebar } = useSidebar()
+const { frontmatter } = useData()
 
 function scrollToTop() {
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
@@ -16,7 +18,13 @@ function scrollToTop() {
       <span class="menu-text">Menu</span>
     </button>
 
-    <a class="top-link" href="#" @click="scrollToTop">Return to top</a>
+    <a
+      v-if="frontmatter.returnToTop !== false"
+      class="top-link"
+      href="#"
+      @click="scrollToTop"
+      >Return to top</a
+    >
   </div>
 </template>
 
