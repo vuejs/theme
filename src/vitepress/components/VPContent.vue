@@ -40,16 +40,10 @@ const { hasSidebar } = useSidebar()
   }
 }
 
-@media (min-width: 1280px) {
-  .VPContent.has-sidebar {
-    padding-left: var(--vp-sidebar-width-medium);
-  }
-}
-
 @media (min-width: 1440px) {
   .VPContent.has-sidebar {
     padding-left: calc(
-      (100vw - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-medium)
+      (100vw - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-small)
     );
   }
 }

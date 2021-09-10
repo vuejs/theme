@@ -71,17 +71,11 @@ defineEmits(['close'])
   }
 }
 
-@media (min-width: 1280px) {
-  .VPSidebar {
-    width: var(--vp-sidebar-width-medium);
-  }
-}
-
 @media (min-width: 1440px) {
   .VPSidebar {
     padding: 24px 32px 96px calc((100% - var(--vp-screen-max-width)) / 2);
     width: calc(
-      (100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-medium)
+      (100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-small)
     );
   }
 }
