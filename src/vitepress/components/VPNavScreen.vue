@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import VPNavScreenMenu from './VPNavScreenMenu.vue'
@@ -28,7 +28,7 @@ function unlockBodyScroll() {
   >
     <div v-if="open" class="VPNavScreen" ref="screen">
       <div class="container">
-        <VPNavScreenMenu class="menu" @jump="$emit('jump')" />
+        <VPNavScreenMenu class="menu" />
         <VPNavScreenAppearance class="appearance" />
         <VPNavScreenSocialLinks class="social-links" />
       </div>

@@ -1,14 +1,17 @@
 <script lang="ts" setup>
 import { VTLink } from '../../core'
+import { inject } from 'vue'
 
 defineProps<{
   text: string
   link: string
 }>()
+
+const closeScreen = inject('close-screen') as () => void
 </script>
 
 <template>
-  <VTLink class="VPNavScreenMenuGroupLink" :href="link" @click="$emit('jump')">
+  <VTLink class="VPNavScreenMenuGroupLink" :href="link" @click="closeScreen">
     {{ text }}
   </VTLink>
 </template>

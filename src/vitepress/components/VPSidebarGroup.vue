@@ -6,8 +6,6 @@ defineProps<{
   text: string
   items: MenuItemWithLink[]
 }>()
-
-defineEmits(['jump'])
 </script>
 
 <template>
@@ -17,7 +15,7 @@ defineEmits(['jump'])
     </div>
 
     <template v-for="item in items" :key="item.link">
-      <VPSidebarLink :item="item" @jump="$emit('jump')" />
+      <VPSidebarLink :item="item" />
     </template>
   </section>
 </template>

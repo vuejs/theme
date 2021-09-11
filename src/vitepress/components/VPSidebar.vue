@@ -7,19 +7,13 @@ const { sidebar, hasSidebar } = useSidebar()
 defineProps<{
   open: boolean
 }>()
-
-defineEmits(['close'])
 </script>
 
 <template>
   <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
     <slot name="top" />
     <div v-for="group in sidebar" :key="group.text" class="group">
-      <VPSidebarGroup
-        :text="group.text"
-        :items="group.items"
-        @jump="$emit('close')"
-      />
+      <VPSidebarGroup :text="group.text" :items="group.items" />
     </div>
     <slot name="bottom" />
   </aside>

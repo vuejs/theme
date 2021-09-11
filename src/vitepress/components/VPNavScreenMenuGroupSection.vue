@@ -11,13 +11,11 @@ defineProps<{
 <template>
   <div class="VPNavScreenMenuGroupSection">
     <p v-if="text" class="title">{{ text }}</p>
-
     <VPNavScreenMenuGroupLink
       v-for="item in items"
       :key="item.text"
       :text="item.text"
       :link="item.link"
-      @jump="$emit('jump')"
     />
   </div>
 </template>

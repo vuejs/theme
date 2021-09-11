@@ -5,12 +5,15 @@ import VPNav from './VPNav.vue'
 import VPLocalNav from './VPLocalNav.vue'
 import VPSidebar from './VPSidebar.vue'
 import VPContent from './VPContent.vue'
+import { provide } from 'vue'
 
 const {
   isOpen: isSidebarOpen,
   open: openSidebar,
   close: closeSidebar
 } = useSidebar()
+
+provide('close-sidebar', closeSidebar)
 </script>
 
 <template>
@@ -18,7 +21,7 @@ const {
     <VTBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
     <VPNav />
     <VPLocalNav @open-menu="openSidebar" />
-    <VPSidebar :open="isSidebarOpen" @close="closeSidebar">
+    <VPSidebar :open="isSidebarOpen">
       <template #top>
         <slot name="sidebar-top" />
       </template>

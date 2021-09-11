@@ -13,13 +13,11 @@ const { config } = useConfig()
         v-if="'link' in item"
         :text="item.text"
         :link="item.link"
-        @jump="$emit('jump')"
       />
       <VPNavScreenMenuGroup
         v-else
-        :text="item.text"
+        :text="item.text || ''"
         :items="item.items"
-        @jump="$emit('jump')"
       />
     </template>
   </nav>
