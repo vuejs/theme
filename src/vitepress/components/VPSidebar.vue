@@ -36,13 +36,13 @@ defineProps<{
   overflow-y: auto;
   transform: translateX(-100%);
   transition: background-color 0.5s, opacity 0.5s, transform 0.75s ease;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* -ms-overflow-style: none; */
+  /* scrollbar-width: none; */
 }
 
-.VPSidebar::-webkit-scrollbar {
+/* .VPSidebar::-webkit-scrollbar {
   display: none;
-}
+} */
 
 @media (min-width: 768px) {
   .VPSidebar {
