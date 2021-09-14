@@ -29,14 +29,19 @@ module.exports = async () => ({
         href: '/logo.svg'
       }
     ],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap'
-      }
-    ],
+    ...(process.env.NODE_ENV === 'production'
+      ? [
+          [
+            'link',
+            {
+              rel: 'preload',
+              href: '/assets/inter-latin.7b37fe23.woff2',
+              as: 'font',
+              type: 'font/woff2'
+            }
+          ]
+        ]
+      : []),
     [
       'script',
       {},

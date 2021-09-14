@@ -1,3 +1,4 @@
+import './styles/fonts.css'
 import './styles/variables.css'
 import VPApp from './components/VPApp.vue'
 import VPNotFound from './components/VPNotFound.vue'
