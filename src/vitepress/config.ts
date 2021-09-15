@@ -44,6 +44,20 @@ export interface Config {
   sidebar?: SidebarConfig
 
   /**
+   * Global footer settings. The footer will only be displayed when a page has
+   * the frontmatter option `page: true`.  You may pass `footer: false` to the
+   * frontmatter to hide the footer.
+   */
+  footer?: {
+    license?: {
+      text: string
+      link: string
+    }
+
+    copyright?: string
+  }
+
+  /**
    * Algolia configuration for the site search.
    */
   algolia?: AlgoliaSearchOptions
