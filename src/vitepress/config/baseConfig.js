@@ -37,7 +37,8 @@ module.exports = async () => ({
               rel: 'preload',
               href: '/assets/inter-latin.7b37fe23.woff2',
               as: 'font',
-              type: 'font/woff2'
+              type: 'font/woff2',
+              crossorigin: 'anonymous'
             }
           ]
         ]
