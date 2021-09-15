@@ -144,12 +144,24 @@ function getRelativePath(absoluteUrl: string) {
 }
 
 .DocSearch-Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+  width: 48px;
+  height: 55px;
   background: transparent;
 }
 
 .DocSearch-Button:hover {
   background: transparent;
+}
+
+@media (min-width: 768px) {
+  .DocSearch-Button {
+    justify-content: flex-start;
+    width: 100%;
+  }
 }
 
 .DocSearch-Button .DocSearch-Search-Icon {
@@ -159,14 +171,14 @@ function getRelativePath(absoluteUrl: string) {
   width: 18px;
   height: 18px;
   position: relative;
-  margin-right: 10px;
 }
 
 @media (min-width: 768px) {
   .DocSearch-Button .DocSearch-Search-Icon {
+    top: 1px;
+    margin-right: 10px;
     width: 15px;
     height: 15px;
-    top: 1px;
   }
 }
 
@@ -194,6 +206,7 @@ function getRelativePath(absoluteUrl: string) {
 }
 
 .DocSearch-Button .DocSearch-Button-Key {
+  margin-top: 2px;
   border: 1px solid var(--vt-c-divider);
   border-right: none;
   border-radius: 4px 0 0 4px;
