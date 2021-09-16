@@ -45,6 +45,12 @@ provide('close-sidebar', closeSidebar)
       <template #aside-bottom>
         <slot name="aside-bottom" />
       </template>
+      <template #footer-before>
+        <slot name="footer-before" />
+      </template>
+      <template #footer-after>
+        <slot name="footer-after" />
+      </template>
     </VPContent>
   </div>
 </template>
