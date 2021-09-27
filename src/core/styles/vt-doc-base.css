@@ -78,6 +78,12 @@
   opacity: 1;
 }
 
+.vt-doc hr {
+  border: none;
+  border-top: 1px solid var(--vt-c-divider-light);
+  margin: 1.8rem 0;
+}
+
 .vt-doc p,
 .vt-doc ul,
 .vt-doc ol {
