@@ -13,13 +13,16 @@ const { hasSidebar } = useSidebar()
 <template>
   <div class="VPContent" :class="{ 'has-sidebar': hasSidebar }">
     <VPNotFound v-if="route.component === VPNotFound" />
-    <VPContentPage v-else-if="!!frontmatter.page" />
+    <VPContentPage v-else-if="!!frontmatter.page">
+      <template #footer-before><slot name="footer-before" /></template>
+      <template #footer-after><slot name="footer-after" /></template>
+    </VPContentPage>
     <VPContentDoc v-else :class="{ 'has-sidebar': hasSidebar }">
       <template #content-top><slot name="content-top" /></template>
       <template #content-bottom><slot name="content-bottom" /></template>
       <template #aside-top><slot name="aside-top" /></template>
       <template #aside-mid><slot name="aside-mid" /></template>
-      <template #aside-bottom><slot name="aside-bottom" /></template>
+      <template #aside-bottom><slot name="aside-bottom" /></template>\
     </VPContentDoc>
   </div>
 </template>
