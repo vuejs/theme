@@ -85,8 +85,11 @@ const { page, frontmatter, theme } = useData()
   .VPContentDoc {
     padding: 64px 0 96px 64px;
   }
-  .VPContentDoc:not(.has-sidebar) {
-    padding-left: calc((var(--vp-screen-max-width) - 688px) / 2);
+  .VPContentDoc:not(.has-sidebar.has-aside) {
+    padding-left: calc((100vw - 688px) / 2);
+  }
+  .VPContentDoc.has-aside:not(.has-sidebar) {
+    padding-left: calc((100vw - 688px - 320px) / 2);
   }
   .container {
     display: flex;
