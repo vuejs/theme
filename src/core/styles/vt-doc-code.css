@@ -45,6 +45,12 @@
   }
 }
 
+@media (max-width: 639px) {
+  .vt-doc li > div[class*='language-'] {
+    border-radius: 8px 0 0 8px;
+  }  
+}
+
 .vt-doc div[class*='language-'] + div[class*='language-'] {
   margin-top: -16px;
 }
@@ -141,9 +147,12 @@
 }
 
 .vt-doc [class~='language-html']:before,
-.vt-doc [class~='language-vue-html']:before,
 .vt-doc [class~='language-markup']:before {
   content: 'html';
+}
+
+.vt-doc [class~='language-vue-html']:before {
+  content: 'template'
 }
 
 .vt-doc [class~='language-md']:before,
