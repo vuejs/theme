@@ -12,6 +12,10 @@
   transition: color 0.5s, background-color 0.5s;
 }
 
+.vt-doc a > code {
+  color: var(--vt-c-brand-dark);
+}
+
 .vt-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
   font-size: var(--vt-doc-code-font-size);
 }
@@ -75,7 +79,7 @@
   padding: 0;
   line-height: var(--vt-doc-code-line-height);
   font-size: var(--vt-doc-code-font-size);
-  color: #A6ACCD;
+  color: #a6accd;
   transition: color 0.5s;
 }
 
