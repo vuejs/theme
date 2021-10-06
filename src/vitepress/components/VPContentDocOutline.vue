@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { resolveHeaders, useActiveAnchor } from '../composables/outline'
-import { ref } from 'vue'
+import { computed, inject, ref } from 'vue'
 
 const { page, frontmatter } = useData()
 const container = ref()
 const marker = ref()
 useActiveAnchor(container, marker)
+
+const filterHeaders = inject('filter-headers') as any
+const filteredHeaders = computed(() => {
+  return filterHeaders ? filterHeaders(page.value.headers) : page.value.headers
+})
 </script>
 
 <template>
@@ -14,7 +19,7 @@ useActiveAnchor(container, marker)
     <div class="outline-marker" ref="marker" />
     <div class="outline-title">On this page</div>
     <ul class="root">
-      <li v-for="{ text, link, children } in resolveHeaders(page.headers)">
+      <li v-for="{ text, link, children } in resolveHeaders(filteredHeaders)">
         <a class="outline-link" :href="link">{{ text }}</a>
         <ul v-if="children && frontmatter.aside === 'deep'">
           <li v-for="{ text, link } in children">
