@@ -4,11 +4,11 @@ WIP VitePress theme for the new version of Vue documentation. **Currently under 
 
 ## Development Setup
 
-This repo can be developed on its own since it is a self-contained VitePress theme. A demo app is available in `/demo` and can be run with `yarn dev`. Just install NPM packages and boot the server with `yarn dev`.
+This repo can be developed on its own since it is a self-contained VitePress theme. Make sure to use [pnpm](https://pnpm.io/) as the package manager when installing deps. A demo app is available in `/demo` and can be run with `npm run dev`:
 
 ```bash
-$ yarn install
-$ yarn dev
+$ pnpm install
+$ npm run dev
 ```
 
 To work on this theme in the context of the `vuejs.org` website, see [vuejs/docs#next](https://github.com/vuejs/docs/tree/next) for instructions.
@@ -19,17 +19,17 @@ Here is the list of available scripts that can be used during the development.
 
 ```bash
 # Boot local dev server.
-$ yarn dev
+$ npm run dev
 
 # Build demo, then serve locally. This is for testing
 # production build in the local environment.
-$ yarn serve
+$ npm run serve
 
 # Run lint via Prettier.
-$ yarn lint
+$ npm run lint
 
 # Run type check via tsc.
-$ yarn type
+$ npm run type
 ```
 
 ## License
