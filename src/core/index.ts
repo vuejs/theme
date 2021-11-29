@@ -16,6 +16,7 @@ export { default as VTIconExternalLink } from './components/icons/VTIconExternal
 export { default as VTIconFacebook } from './components/icons/VTIconFacebook.vue'
 export { default as VTIconGitHub } from './components/icons/VTIconGitHub.vue'
 export { default as VTIconGlobe } from './components/icons/VTIconGlobe.vue'
+export { default as VTIconHeart } from './components/icons/VTIconHeart.vue'
 export { default as VTIconInstagram } from './components/icons/VTIconInstagram.vue'
 export { default as VTIconLanguages } from './components/icons/VTIconLanguages.vue'
 export { default as VTIconLink } from './components/icons/VTIconLink.vue'
