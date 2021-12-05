@@ -30,6 +30,7 @@ defineProps<{
   width: calc(100vw - 64px);
   max-width: var(--vp-sidebar-width-mobile);
   opacity: 0;
+  visibility: hidden;
   background-color: var(--vt-c-bg);
   box-shadow: var(--vt-c-shadow-3);
   overflow-x: hidden;
@@ -46,12 +47,14 @@ defineProps<{
 
 @media (min-width: 768px) {
   .VPSidebar {
+    visibility: visible;
     padding: 40px 32px 96px;
   }
 }
 
 @media (min-width: 960px) {
   .VPSidebar {
+    visibility: visible;
     top: var(--vp-nav-height);
     z-index: 1;
     border-right: 1px solid var(--vt-c-divider-light);
