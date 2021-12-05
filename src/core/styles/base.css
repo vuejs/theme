@@ -135,12 +135,12 @@ button,
   cursor: pointer;
 }
 
-button:focus {
+button:focus, button:focus-visible {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-button:focus,
+/* button:focus, */
 input:focus,
 textarea:focus,
 select:focus {
