@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { onKeyUp } from '@vueuse/core'
 import { VTBackdrop } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import VPNav from './VPNav.vue'
@@ -12,6 +13,12 @@ const {
   open: openSidebar,
   close: closeSidebar
 } = useSidebar()
+
+onKeyUp('Escape', () => {
+  if (isSidebarOpen.value) {
+    closeSidebar()
+  }
+})
 
 provide('close-sidebar', closeSidebar)
 </script>
