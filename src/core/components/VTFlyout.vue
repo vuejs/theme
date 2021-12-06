@@ -24,6 +24,8 @@ useFocusContainer({
   <div
     class="vt-flyout"
     ref="elRef"
+    @mouseenter="open = true"
+    @mouseleave="open=false"
   >
     <button
       type="button"
