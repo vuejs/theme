@@ -7,15 +7,15 @@ interface FocusContainerOptions {
   onBlur?: () => void
 }
 
-const focusedElement = ref<HTMLElement>()
+export const focusedElement = ref<HTMLElement>()
 let active = false
 let listeners = 0
 
 export function useFocusContainer(options: FocusContainerOptions) {
+  const containsFocus = ref(false)
   if (typeof window !== 'undefined') {
     !active && activateFocusTracking()
     listeners++
-    const containsFocus = ref(false)
 
     const unwatch = watch(focusedElement, (el) => {
       if (
@@ -37,9 +37,9 @@ export function useFocusContainer(options: FocusContainerOptions) {
         deactivateFocusTracking()
       }
     })
-
-    return readonly(containsFocus)
   }
+
+  return readonly(containsFocus)
 }
 
 function activateFocusTracking() {
