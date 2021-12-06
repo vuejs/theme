@@ -140,7 +140,6 @@ button:focus, button:focus-visible {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-/* button:focus, */
 input:focus,
 textarea:focus,
 select:focus {
