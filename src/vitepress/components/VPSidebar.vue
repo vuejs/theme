@@ -12,9 +12,12 @@ defineProps<{
 <template>
   <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
     <slot name="top" />
-    <div v-for="group in sidebar" :key="group.text" class="group">
-      <VPSidebarGroup :text="group.text" :items="group.items" />
-    </div>
+    <nav aria-labelledby="sidebar-aria-label">
+      <span id="sidebar-aria-label" class="visually-hidden">Sidebar Navigation</span>
+      <div v-for="group in sidebar" :key="group.text" class="group">
+        <VPSidebarGroup :text="group.text" :items="group.items" />
+      </div>
+    </nav>
     <slot name="bottom" />
   </aside>
 </template>

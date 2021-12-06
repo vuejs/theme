@@ -18,16 +18,19 @@ const filteredHeaders = computed(() => {
   <div class="VPContentDocOutline" ref="container">
     <div class="outline-marker" ref="marker" />
     <div class="outline-title">On this page</div>
-    <ul class="root">
-      <li v-for="{ text, link, children } in resolveHeaders(filteredHeaders)">
-        <a class="outline-link" :href="link">{{ text }}</a>
-        <ul v-if="children && frontmatter.aside === 'deep'">
-          <li v-for="{ text, link } in children">
-            <a class="outline-link nested" :href="link">{{ text }}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    <nav aria-labelledby="doc-outline-aria-label">
+      <span id="doc-outline-aria-label" class="visually-hidden">Table of Contents for current page</span>
+      <ul class="root">
+        <li v-for="{ text, link, children } in resolveHeaders(filteredHeaders)">
+          <a class="outline-link" :href="link">{{ text }}</a>
+          <ul v-if="children && frontmatter.aside === 'deep'">
+            <li v-for="{ text, link } in children">
+              <a class="outline-link nested" :href="link">{{ text }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
