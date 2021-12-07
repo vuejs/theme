@@ -6,7 +6,7 @@ import VPNav from './VPNav.vue'
 import VPLocalNav from './VPLocalNav.vue'
 import VPSidebar from './VPSidebar.vue'
 import VPContent from './VPContent.vue'
-import { provide } from 'vue'
+import { provide, watchEffect } from 'vue'
 
 const {
   isOpen: isSidebarOpen,
@@ -14,9 +14,18 @@ const {
   close: closeSidebar
 } = useSidebar()
 
+// A11y: cache the element that opened the Sidebar (the menu button)
+//   then focus that button again when Menu is closed with Escape key
+let triggerElement: HTMLButtonElement | undefined
+watchEffect(() => {
+  triggerElement = isSidebarOpen.value 
+    ? document.activeElement as HTMLButtonElement
+    : undefined
+})
 onKeyUp('Escape', () => {
   if (isSidebarOpen.value) {
     closeSidebar()
+    triggerElement?.focus()
   }
 })
 
