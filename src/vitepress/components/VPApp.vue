@@ -36,7 +36,7 @@ provide('close-sidebar', closeSidebar)
   <div class="VPApp">
     <VTBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
     <VPNav />
-    <VPLocalNav @open-menu="openSidebar" />
+    <VPLocalNav :open="isSidebarOpen" @open-menu="openSidebar" />
     <VPSidebar :open="isSidebarOpen">
       <template #top>
         <slot name="sidebar-top" />
