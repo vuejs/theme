@@ -50,14 +50,13 @@ defineProps<{
 
 @media (min-width: 768px) {
   .VPSidebar {
-    visibility: visible;
     padding: 40px 32px 96px;
+    visibility: hidden;
   }
 }
 
 @media (min-width: 960px) {
   .VPSidebar {
-    visibility: visible;
     top: var(--vp-nav-height);
     z-index: 1;
     border-right: 1px solid var(--vt-c-divider-light);
@@ -65,6 +64,7 @@ defineProps<{
     width: var(--vp-sidebar-width-small);
     max-width: 100%;
     opacity: 1;
+    visibility: visible;
     box-shadow: none;
     transform: translateX(0);
     transition: border-color 0.5s, background-color 0.5s;
@@ -82,6 +82,7 @@ defineProps<{
 
 .VPSidebar.open {
   opacity: 1;
+  visibility: visible;
   transform: translateX(0);
   transition: background-color 0.5s, opacity 0.25s,
     transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
