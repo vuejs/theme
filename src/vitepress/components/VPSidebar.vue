@@ -1,18 +1,29 @@
 <script lang="ts" setup>
+import { nextTick, ref, watchEffect } from 'vue'
 import { useSidebar } from '../composables/sidebar'
 import VPSidebarGroup from './VPSidebarGroup.vue'
 
 const { sidebar, hasSidebar } = useSidebar()
 
-defineProps<{
+const props = defineProps<{
   open: boolean
 }>()
+
+// A11y: Focus Nav element when menu has opened
+// Should we focus the first link instead?
+const navEl = ref<HTMLElement & { focus: () => void }>()
+watchEffect(async () => {
+  if (props.open) {
+    await nextTick()
+    navEl.value?.focus()
+  }
+}, { flush: 'post'})
 </script>
 
 <template>
   <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
     <slot name="top" />
-    <nav aria-labelledby="sidebar-aria-label">
+    <nav id="VPSidebarNav" ref="navEl" aria-labelledby="sidebar-aria-label" tabindex="-1">
       <span id="sidebar-aria-label" class="visually-hidden">Sidebar Navigation</span>
       <div v-for="group in sidebar" :key="group.text" class="group">
         <VPSidebarGroup :text="group.text" :items="group.items" />
