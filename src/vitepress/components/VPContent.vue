@@ -21,7 +21,7 @@ async function addAriaLabelsToHeaderAnchors() {
 </script>
 
 <template>
-  <main class="VPContent" :class="{ 'has-sidebar': hasSidebar }">
+  <div class="VPContent" :class="{ 'has-sidebar': hasSidebar }">
     <VPNotFound v-if="route.component === VPNotFound" />
     <VPContentPage v-else-if="!!frontmatter.page">
       <template #footer-before><slot name="footer-before" /></template>
@@ -39,7 +39,7 @@ async function addAriaLabelsToHeaderAnchors() {
       <template #aside-mid><slot name="aside-mid" /></template>
       <template #aside-bottom><slot name="aside-bottom" /></template>\
     </VPContentDoc>
-  </main>
+  </div>
 </template>
 
 <style scoped>

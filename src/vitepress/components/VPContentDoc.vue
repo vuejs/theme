@@ -15,7 +15,9 @@ const { page, frontmatter, theme } = useData()
     <div class="container">
       <div class="content">
         <slot name="content-top" />
-        <Content class="vt-doc" />
+        <main>
+          <Content class="vt-doc" />
+        </main>
         <slot name="content-bottom" />
         <VPContentDocFooter v-if="frontmatter.footer !== false" />
       </div>

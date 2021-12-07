@@ -7,7 +7,9 @@ const { frontmatter } = useData()
 
 <template>
   <div class="VPContentPage">
-    <Content />
+    <main>
+      <Content />
+    </main>
 
     <slot name="footer-before" />
     <VPFooter v-if="frontmatter.footer !== false" />
