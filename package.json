@@ -26,7 +26,8 @@
     "url": "https://github.com/vuejs/theme/issues"
   },
   "scripts": {
-    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src-theme,src-vp,src-web,types}/**/*.ts\"",
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "type": "tsc --noEmit",
     "test": "yarn lint && yarn type",
     "dev": "vitepress dev demo",
