@@ -14,9 +14,10 @@ const props = defineProps<{
 const open = ref(false)
 const elRef = ref<HTMLElement>()
 const onBlur = () => { open.value = false }
+
 useFocusContainer({
   elRef,
-  onBlur,
+  onBlur
 })
 </script>
 
@@ -25,7 +26,7 @@ useFocusContainer({
     class="vt-flyout"
     ref="elRef"
     @mouseenter="open = true"
-    @mouseleave="open=false"
+    @mouseleave="open = false"
   >
     <button
       type="button"
