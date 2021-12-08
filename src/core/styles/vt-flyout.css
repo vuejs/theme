@@ -15,7 +15,8 @@
   fill: var(--vt-c-text-2);
 }
 
-.vt-flyout:hover .vt-flyout-menu {
+.vt-flyout:hover .vt-flyout-menu,
+.vt-flyout-button[aria-expanded="true"] + .vt-flyout-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
