@@ -1,10 +1,37 @@
 <script lang="ts" setup>
+import { nextTick, onMounted, onUpdated } from 'vue'
 import { useData } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
 import VPCarbonAds from './VPCarbonAds.vue'
 
 const { page, frontmatter, theme } = useData()
+
+
+// TODO:  solve this challenge in Vitepress's markdown processing so this hack can be removed.
+async function addAriaLabelsToHeaderAnchors() {
+  await nextTick()
+  const els = document?.querySelectorAll<HTMLAnchorElement>('.vt-doc a.header-anchor')
+  els.forEach((el) => {
+    el.addEventListener('focus',() => el.removeAttribute('aria-hidden'))
+    el.addEventListener('blur',() => el.setAttribute('aria-hidden', 'true'))
+    const text  = el.textContent
+    el.textContent = ''
+    const span = document.createElement('span')
+    span.textContent = text
+    span.setAttribute('aria-hidden', 'true')
+    el.appendChild(span)
+    el.setAttribute('aria-labelledby', el.getAttribute!('href')?.slice(1) ?? '')
+  })
+}
+
+onMounted(() => {
+  addAriaLabelsToHeaderAnchors()
+})
+onUpdated(() => {
+  addAriaLabelsToHeaderAnchors()
+})
+
 </script>
 
 <template>

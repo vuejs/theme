@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { nextTick } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import { useSidebar } from '../composables/sidebar'
 import VPContentPage from './VPContentPage.vue'
@@ -10,14 +9,6 @@ const route = useRoute()
 const { frontmatter } = useData()
 const { hasSidebar } = useSidebar()
 
-async function addAriaLabelsToHeaderAnchors() {
-  await nextTick()
-  const els = document?.querySelectorAll<HTMLAnchorElement>('.vt-doc a.header-anchor')
-  els.forEach((el) => {
-    el.setAttribute('aria-labelledby', el.getAttribute!('href')?.slice(1) ?? '')
-  })
-}
-
 </script>
 
 <template>
@@ -27,12 +18,7 @@ async function addAriaLabelsToHeaderAnchors() {
       <template #footer-before><slot name="footer-before" /></template>
       <template #footer-after><slot name="footer-after" /></template>
     </VPContentPage>
-    <VPContentDoc 
-      v-else 
-      :class="{ 'has-sidebar': hasSidebar }"
-      @vnodeMounted="addAriaLabelsToHeaderAnchors" 
-      @vnodeUpdated="addAriaLabelsToHeaderAnchors"
-    >
+    <VPContentDoc v-else :class="{ 'has-sidebar': hasSidebar }">
       <template #content-top><slot name="content-top" /></template>
       <template #content-bottom><slot name="content-bottom" /></template>
       <template #aside-top><slot name="aside-top" /></template>
