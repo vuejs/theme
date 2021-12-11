@@ -13,15 +13,6 @@ const { page, frontmatter, theme } = useData()
     :class="{ 'has-aside': frontmatter.aside !== false }"
   >
     <div class="container">
-      <div class="content">
-        <slot name="content-top" />
-        <main>
-          <Content class="vt-doc" />
-        </main>
-        <slot name="content-bottom" />
-        <VPContentDocFooter v-if="frontmatter.footer !== false" />
-      </div>
-
       <div class="aside" v-if="frontmatter.aside !== false">
         <div class="aside-container">
           <slot name="aside-top" />
@@ -33,6 +24,15 @@ const { page, frontmatter, theme } = useData()
           <slot name="aside-bottom" />
         </div>
       </div>
+      <div class="content">
+        <slot name="content-top" />
+        <main>
+          <Content class="vt-doc" />
+        </main>
+        <slot name="content-bottom" />
+        <VPContentDocFooter v-if="frontmatter.footer !== false" />
+      </div>
+
     </div>
   </div>
 </template>
@@ -99,12 +99,14 @@ const { page, frontmatter, theme } = useData()
   .content {
     min-width: 620px;
     margin: 0;
+    order: 1;
   }
   .VPContentDoc:not(.has-aside) .content {
     min-width: 688px;
   }
   .aside {
     display: block;
+    order: 2;
   }
 }
 
