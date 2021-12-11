@@ -16,7 +16,6 @@ const filteredHeaders = computed(() => {
 const handleClick = ({ target: el }: Event) => {
   const id = '#' + (el as HTMLAnchorElement).href!.split('#')[1]
   const heading = document.querySelector(id) as HTMLAnchorElement
-  console.log(heading)
   heading?.focus()
 }
 </script>
