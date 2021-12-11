@@ -13,14 +13,19 @@ async function addAriaLabelsToHeaderAnchors() {
   await nextTick()
   const els = document?.querySelectorAll<HTMLAnchorElement>('.vt-doc a.header-anchor')
   els.forEach((el) => {
+    // dynamically hide this element from assistive technology unless it's focussed.
+    // keeps heading text from doubling "you are on heading, Introduction Introduction"
     el.addEventListener('focus',() => el.removeAttribute('aria-hidden'))
     el.addEventListener('blur',() => el.setAttribute('aria-hidden', 'true'))
+    
+    // move the '#' into an always aria-hidden span
     const text  = el.textContent
     el.textContent = ''
     const span = document.createElement('span')
     span.textContent = text
     span.setAttribute('aria-hidden', 'true')
     el.appendChild(span)
+    // properly label the link with the heading text
     el.setAttribute('aria-labelledby', el.getAttribute!('href')?.slice(1) ?? '')
   })
 }
