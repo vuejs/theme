@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./config": "./src/vitepress/config/baseConfig.js"
+    "./config": "./src/vitepress/config/baseConfig.js",
+    "./highlight": "./src/vitepress/config/highlight.js"
   },
   "files": [
     "src",
