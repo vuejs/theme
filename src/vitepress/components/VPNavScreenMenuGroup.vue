@@ -1,15 +1,19 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { VTIconPlus, MenuItemChild } from '../../core'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 import VPNavScreenMenuGroupSection from './VPNavScreenMenuGroupSection.vue'
 
-defineProps<{
+const props = defineProps<{
   text: string
   items: MenuItemChild[]
 }>()
 
 const isOpen = ref(false)
+
+const groupId = computed(() =>
+  `NavScreenGroup-${props.text.replace(' ', '-').toLowerCase()}`
+)
 
 function toggle() {
   isOpen.value = !isOpen.value
@@ -18,12 +22,17 @@ function toggle() {
 
 <template>
   <div class="VPNavScreenMenuGroup" :class="{ open: isOpen }">
-    <button class="button" @click="toggle">
+    <button 
+      class="button"
+      :aria-controls="groupId"
+      :aria-expanded="isOpen"
+      @click="toggle"
+    >
       <span class="button-text">{{ text }}</span>
       <VTIconPlus class="button-icon" />
     </button>
 
-    <div class="items">
+    <div :id="groupId" class="items">
       <template v-for="item in items" :key="item.text">
         <div v-if="'link' in item" :key="item.text" class="item">
           <VPNavScreenMenuGroupLink
@@ -49,6 +58,12 @@ function toggle() {
   height: 48px;
   overflow: hidden;
   transition: border-color 0.5s;
+}
+.VPNavScreenMenuGroup .items {
+  visibility: hidden;
+}
+.VPNavScreenMenuGroup.open .items {
+  visibility: visible;
 }
 
 .VPNavScreenMenuGroup.open {

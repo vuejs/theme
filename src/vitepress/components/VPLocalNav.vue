@@ -3,6 +3,8 @@ import { VTIconAlignLeft } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import { useData } from 'vitepress'
 
+defineProps<{ open: boolean }>()
+
 const { hasSidebar } = useSidebar()
 const { frontmatter } = useData()
 
@@ -13,7 +15,12 @@ function scrollToTop() {
 
 <template>
   <div v-if="hasSidebar" class="VPLocalNav">
-    <button class="menu" @click="$emit('open-menu')">
+    <button
+      class="menu"
+      :aria-expanded="open"
+      aria-controls="VPSidebarNav"
+      @click="$emit('open-menu')"
+      >
       <VTIconAlignLeft class="menu-icon" />
       <span class="menu-text">Menu</span>
     </button>

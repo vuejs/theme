@@ -1,20 +1,34 @@
 <script lang="ts" setup>
+import { nextTick, ref, watchEffect } from 'vue'
 import { useSidebar } from '../composables/sidebar'
 import VPSidebarGroup from './VPSidebarGroup.vue'
 
 const { sidebar, hasSidebar } = useSidebar()
 
-defineProps<{
+const props = defineProps<{
   open: boolean
 }>()
+
+// A11y: Focus Nav element when menu has opened
+// Should we focus the first link instead?
+const navEl = ref<HTMLElement & { focus: () => void }>()
+watchEffect(async () => {
+  if (props.open) {
+    await nextTick()
+    navEl.value?.focus()
+  }
+}, { flush: 'post'})
 </script>
 
 <template>
   <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
     <slot name="top" />
-    <div v-for="group in sidebar" :key="group.text" class="group">
-      <VPSidebarGroup :text="group.text" :items="group.items" />
-    </div>
+    <nav id="VPSidebarNav" ref="navEl" aria-labelledby="sidebar-aria-label" tabindex="-1">
+      <span id="sidebar-aria-label" class="visually-hidden">Sidebar Navigation</span>
+      <div v-for="group in sidebar" :key="group.text" class="group">
+        <VPSidebarGroup :text="group.text" :items="group.items" />
+      </div>
+    </nav>
     <slot name="bottom" />
   </aside>
 </template>
@@ -30,6 +44,7 @@ defineProps<{
   width: calc(100vw - 64px);
   max-width: var(--vp-sidebar-width-mobile);
   opacity: 0;
+  visibility: hidden;
   background-color: var(--vt-c-bg);
   box-shadow: var(--vt-c-shadow-3);
   overflow-x: hidden;
@@ -47,6 +62,7 @@ defineProps<{
 @media (min-width: 768px) {
   .VPSidebar {
     padding: 40px 32px 96px;
+    visibility: hidden;
   }
 }
 
@@ -59,6 +75,7 @@ defineProps<{
     width: var(--vp-sidebar-width-small);
     max-width: 100%;
     opacity: 1;
+    visibility: visible;
     box-shadow: none;
     transform: translateX(0);
     transition: border-color 0.5s, background-color 0.5s;
@@ -76,6 +93,7 @@ defineProps<{
 
 .VPSidebar.open {
   opacity: 1;
+  visibility: visible;
   transform: translateX(0);
   transition: background-color 0.5s, opacity 0.25s,
     transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);

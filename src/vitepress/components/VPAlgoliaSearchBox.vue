@@ -157,6 +157,13 @@ function getRelativePath(absoluteUrl: string) {
 .DocSearch-Button:hover {
   background: transparent;
 }
+.DocSearch-Button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+.DocSearch-Button:focus:not(:focus-visible) {
+  outline: none !important;
+}
 
 @media (min-width: 768px) {
   .DocSearch-Button {

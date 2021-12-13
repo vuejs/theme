@@ -64,17 +64,17 @@
 }
 
 .vt-doc h1:hover .header-anchor,
-.vt-doc h1:focus .header-anchor,
+.vt-doc h1 .header-anchor:focus,
 .vt-doc h2:hover .header-anchor,
-.vt-doc h2:focus .header-anchor,
+.vt-doc h2 .header-anchor:focus,
 .vt-doc h3:hover .header-anchor,
-.vt-doc h3:focus .header-anchor,
+.vt-doc h3 .header-anchor:focus,
 .vt-doc h4:hover .header-anchor,
-.vt-doc h4:focus .header-anchor,
+.vt-doc h4 .header-anchor:focus,
 .vt-doc h5:hover .header-anchor,
-.vt-doc h5:focus .header-anchor,
+.vt-doc h5 .header-anchor:focus,
 .vt-doc h6:hover .header-anchor,
-.vt-doc h6:focus .header-anchor {
+.vt-doc h6 .header-anchor:focus {
   opacity: 1;
 }
 

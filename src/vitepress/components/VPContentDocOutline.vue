@@ -12,22 +12,31 @@ const filterHeaders = inject('filter-headers') as any
 const filteredHeaders = computed(() => {
   return filterHeaders ? filterHeaders(page.value.headers) : page.value.headers
 })
+
+const handleClick = ({ target: el }: Event) => {
+  const id = '#' + (el as HTMLAnchorElement).href!.split('#')[1]
+  const heading = document.querySelector(id) as HTMLAnchorElement
+  heading?.focus()
+}
 </script>
 
 <template>
   <div class="VPContentDocOutline" ref="container">
     <div class="outline-marker" ref="marker" />
     <div class="outline-title">On this page</div>
-    <ul class="root">
-      <li v-for="{ text, link, children } in resolveHeaders(filteredHeaders)">
-        <a class="outline-link" :href="link">{{ text }}</a>
-        <ul v-if="children && frontmatter.aside === 'deep'">
-          <li v-for="{ text, link } in children">
-            <a class="outline-link nested" :href="link">{{ text }}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    <nav aria-labelledby="doc-outline-aria-label">
+      <span id="doc-outline-aria-label" class="visually-hidden">Table of Contents for current page</span>
+      <ul class="root">
+        <li v-for="{ text, link, children } in resolveHeaders(filteredHeaders)">
+          <a class="outline-link" :href="link" @click="handleClick">{{ text }}</a>
+          <ul v-if="children && frontmatter.aside === 'deep'">
+            <li v-for="{ text, link } in children">
+              <a class="outline-link nested" :href="link" @click="handleClick">{{ text }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 

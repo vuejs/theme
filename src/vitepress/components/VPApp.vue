@@ -1,17 +1,33 @@
 <script lang="ts" setup>
+import { onKeyUp } from '@vueuse/core'
 import { VTBackdrop } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import VPNav from './VPNav.vue'
 import VPLocalNav from './VPLocalNav.vue'
 import VPSidebar from './VPSidebar.vue'
 import VPContent from './VPContent.vue'
-import { provide } from 'vue'
+import { provide, watchEffect } from 'vue'
 
 const {
   isOpen: isSidebarOpen,
   open: openSidebar,
   close: closeSidebar
 } = useSidebar()
+
+// A11y: cache the element that opened the Sidebar (the menu button)
+//   then focus that button again when Menu is closed with Escape key
+let triggerElement: HTMLButtonElement | undefined
+watchEffect(() => {
+  triggerElement = isSidebarOpen.value 
+    ? document.activeElement as HTMLButtonElement
+    : undefined
+})
+onKeyUp('Escape', () => {
+  if (isSidebarOpen.value) {
+    closeSidebar()
+    triggerElement?.focus()
+  }
+})
 
 provide('close-sidebar', closeSidebar)
 </script>
@@ -20,7 +36,7 @@ provide('close-sidebar', closeSidebar)
   <div class="VPApp">
     <VTBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
     <VPNav />
-    <VPLocalNav @open-menu="openSidebar" />
+    <VPLocalNav :open="isSidebarOpen" @open-menu="openSidebar" />
     <VPSidebar :open="isSidebarOpen">
       <template #top>
         <slot name="sidebar-top" />

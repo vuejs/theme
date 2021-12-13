@@ -139,6 +139,9 @@ button:focus, button:focus-visible {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
+button:focus:not(:focus-visible) {
+  outline: none !important;
+}
 
 input:focus,
 textarea:focus,
@@ -190,4 +193,14 @@ select {
 fieldset {
   margin: 0;
   padding: 0;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
