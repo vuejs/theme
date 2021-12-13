@@ -5,11 +5,17 @@ defineProps<{
 </script>
 
 <template>
-  <div class="vt-hamburger" :class="{ 'is-active': active }" role="button">
-    <div class="vt-hamburger-container">
-      <div class="vt-hamburger-top" />
-      <div class="vt-hamburger-middle" />
-      <div class="vt-hamburger-bottom" />
-    </div>
-  </div>
+  <button
+    type="button"
+    class="vt-hamburger"
+    :class="{ 'is-active': active }"
+    :aria-expanded="active"
+    aria-controls="VPNavScreen"
+  >
+    <span class="vt-hamburger-container">
+      <span class="vt-hamburger-top" />
+      <span class="vt-hamburger-middle" />
+      <span class="vt-hamburger-bottom" />
+    </span>
+  </button>
 </template>
