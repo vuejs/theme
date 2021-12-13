@@ -12,7 +12,11 @@ const { hasSidebar } = useSidebar()
 </script>
 
 <template>
-  <div class="VPContent" :class="{ 'has-sidebar': hasSidebar }">
+  <div
+    id="VPContent"
+    class="VPContent"
+    :class="{ 'has-sidebar': hasSidebar }"
+  >
     <VPNotFound v-if="route.component === VPNotFound" />
     <VPContentPage v-else-if="!!frontmatter.page">
       <template #footer-before><slot name="footer-before" /></template>
