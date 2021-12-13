@@ -8,7 +8,7 @@ const container = ref()
 const marker = ref()
 useActiveAnchor(container, marker)
 
-const filterHeaders = inject('filter-headers') as any
+const filterHeaders = inject('filter-headers', null) as any
 const filteredHeaders = computed(() => {
   return filterHeaders ? filterHeaders(page.value.headers) : page.value.headers
 })
