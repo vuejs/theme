@@ -6,11 +6,33 @@ const route = useRoute()
 const backToTop = ref()
 
 watch(() => route.path, () => backToTop.value.focus())
+
+const focusOnTargetAnchor = ({ target }: Event) => {
+  const id = '#' + (target as HTMLAnchorElement).href!.split('#')[1]
+  const el = document.querySelector(id) as HTMLAnchorElement
+
+  const removeTabIndex = () => {
+    el.removeAttribute('tabindex')
+    el.removeEventListener('blur', removeTabIndex)
+  }
+
+  if (el) {
+    el.setAttribute('tabindex',  '-1')
+    el.addEventListener('blur', removeTabIndex)
+    el.focus()
+  }
+}
 </script>
 
 <template>
   <span ref="backToTop" tabindex="-1" />
-  <a href="#VPContent" class="VPSkipLink visually-hidden">Skip to content</a>
+  <a
+    href="#VPContent"
+    class="VPSkipLink visually-hidden"
+    @click="focusOnTargetAnchor"
+  >
+    Skip to content
+  </a>
 </template>
 
 
