@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import '@docsearch/css'
 import docsearch from '@docsearch/js'
 import { useRoute, useRouter, useData } from 'vitepress'
 import { onMounted } from 'vue'
@@ -12,7 +11,21 @@ const router = useRouter()
 
 onMounted(() => {
   initialize(theme.value.algolia)
+  setTimeout(poll, 16)
 })
+
+function poll() {
+  // programmatically open the search box after initialize
+  const e = new Event('keydown') as any
+  e.key = 'k'
+  e.metaKey = true
+  window.dispatchEvent(e)
+  setTimeout(() => {
+    if (!document.querySelector('.DocSearch-Modal')) {
+      poll()
+    }
+  }, 16)
+}
 
 function initialize(userOptions: AlgoliaSearchOptions) {
   // Note: multi-lang search support is removed since the theme
@@ -105,155 +118,5 @@ function getRelativePath(absoluteUrl: string) {
 </script>
 
 <template>
-  <div id="docsearch" />
+  <div id="docsearch"></div>
 </template>
-
-<style>
-.DocSearch {
-  --docsearch-primary-color: var(--vt-c-brand);
-  --docsearch-highlight-color: var(--docsearch-primary-color);
-  --docsearch-text-color: var(--vt-c-text-1);
-  --docsearch-muted-color: var(--vt-c-text-2);
-  --docsearch-searchbox-shadow: none;
-  --docsearch-searchbox-focus-background: transparent;
-  --docsearch-key-gradient: transparent;
-  --docsearch-key-shadow: none;
-  --docsearch-modal-background: var(--vt-c-bg-soft);
-  --docsearch-footer-background: var(--vt-c-bg);
-}
-
-.dark .DocSearch {
-  --docsearch-modal-shadow: none;
-  --docsearch-footer-shadow: none;
-  --docsearch-logo-color: var(--vt-c-text-2);
-  --docsearch-hit-background: var(--vt-c-bg-mute);
-  --docsearch-hit-color: var(--vt-c-text-2);
-  --docsearch-hit-shadow: none;
-}
-
-.dark .DocSearch-Footer {
-  border-top: 1px solid var(--vt-c-divider);
-}
-
-.dark .DocSearch-Form {
-  background-color: var(--vt-c-bg-mute);
-}
-
-.DocSearch-Form {
-  background-color: white;
-  border: 1px solid var(--vt-c-brand);
-}
-
-.DocSearch-Button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  width: 48px;
-  height: 55px;
-  background: transparent;
-}
-
-.DocSearch-Button:hover {
-  background: transparent;
-}
-.DocSearch-Button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-.DocSearch-Button:focus:not(:focus-visible) {
-  outline: none !important;
-}
-
-@media (min-width: 768px) {
-  .DocSearch-Button {
-    justify-content: flex-start;
-    width: 100%;
-  }
-}
-
-.DocSearch-Button .DocSearch-Search-Icon {
-  color: var(--vt-c-text-2);
-  transition: color 0.5s;
-  fill: currentColor;
-  width: 18px;
-  height: 18px;
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  .DocSearch-Button .DocSearch-Search-Icon {
-    top: 1px;
-    margin-right: 10px;
-    width: 15px;
-    height: 15px;
-  }
-}
-
-.DocSearch-Button:hover .DocSearch-Search-Icon {
-  color: var(--vt-c-text-1);
-}
-
-.DocSearch-Button-Placeholder {
-  transition: color 0.5s;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--vt-c-text-2);
-  display: none;
-  padding: 0 10px 0 0;
-}
-
-@media (min-width: 960px) {
-  .DocSearch-Button-Placeholder {
-    display: inline-block;
-  }
-}
-
-.DocSearch-Button:hover .DocSearch-Button-Placeholder {
-  color: var(--vt-c-text-1);
-}
-
-.DocSearch-Button .DocSearch-Button-Key {
-  margin-top: 2px;
-  border: 1px solid var(--vt-c-divider);
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-  display: none;
-  padding-left: 6px;
-  height: 22px;
-  line-height: 22px;
-  transition: color 0.5s, border-color 0.5s;
-  min-width: 0;
-}
-
-.DocSearch-Button .DocSearch-Button-Key + .DocSearch-Button-Key {
-  border-right: 1px solid var(--vt-c-divider);
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-  padding-left: 2px;
-  padding-right: 6px;
-}
-
-.DocSearch-Button:hover .DocSearch-Button-Key {
-  border-color: var(--vt-c-brand-light);
-  color: var(--vt-c-brand-light);
-}
-
-@media (min-width: 768px) {
-  .DocSearch-Button .DocSearch-Button-Key {
-    display: inline-block;
-  }
-}
-
-.DocSearch-Button-Key {
-  font-size: 12px;
-  font-weight: 500;
-  height: 20px;
-  margin: 0;
-  width: auto;
-  color: var(--vt-c-text-3);
-  transition: color 0.5s;
-  display: inline-block;
-  padding: 0 1px;
-}
-</style>
