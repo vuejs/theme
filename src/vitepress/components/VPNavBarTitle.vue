@@ -21,7 +21,14 @@ const hasTitle = computed(() => {
 
 <template>
   <a v-if="hasTitle" class="VPNavBarTitle" :href="localePath">
-    <img v-if="logo" class="logo" :src="logo" alt="Logo" />
+    <img
+      v-if="logo"
+      class="logo"
+      width="24"
+      height="24"
+      :src="logo"
+      alt="Logo"
+    />
     <span v-if="title" class="text">{{ title }}</span>
   </a>
 </template>
@@ -41,8 +48,6 @@ const hasTitle = computed(() => {
 
 .logo {
   position: relative;
-  width: 24px;
-  height: 24px;
 }
 
 .logo + .text {
