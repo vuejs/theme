@@ -58,5 +58,10 @@ module.exports = async () => ({
 
   markdown: {
     highlight: await require('./highlight')()
+  },
+
+  shouldPreload: (_page, link) => {
+    // make algolia chunk prefetch instead of preload
+    return !link.includes('Algolia')
   }
 })
