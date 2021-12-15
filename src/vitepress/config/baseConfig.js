@@ -60,7 +60,7 @@ module.exports = async () => ({
     highlight: await require('./highlight')()
   },
 
-  shouldPreload: (_page, link) => {
+  shouldPreload: (link) => {
     // make algolia chunk prefetch instead of preload
     return !link.includes('Algolia')
   }
