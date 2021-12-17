@@ -20,6 +20,7 @@ const focusOnTargetAnchor = ({ target }: Event) => {
     el.setAttribute('tabindex',  '-1')
     el.addEventListener('blur', removeTabIndex)
     el.focus()
+    window.scrollTo(0, 0)
   }
 }
 </script>
