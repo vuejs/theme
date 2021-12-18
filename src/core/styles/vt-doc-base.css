@@ -149,6 +149,10 @@
   max-width: 100%;
 }
 
+.vt-doc p > img {
+  margin: 28px auto;
+}
+
 .vt-doc ol {
   counter-reset: item;
 }
