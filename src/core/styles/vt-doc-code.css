@@ -51,7 +51,9 @@
   }
 }
 
-.vt-doc div[class*='language-'] + div[class*='language-'] {
+.vt-doc div[class*='language-'] + div[class*='language-'],
+.vt-doc div[class$='-api'] + div[class*='language-'],
+.vt-doc div[class*='language-'] + div[class$='-api'] > div[class*='language-'] {
   margin-top: -16px;
 }
 
