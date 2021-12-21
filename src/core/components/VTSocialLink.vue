@@ -40,5 +40,6 @@ const icons = {
     rel="noopener noreferrer"
   >
     <component :is="icons[icon]" class="vt-social-link-icon" />
+    <span class="visually-hidden">{{ icon }}</span>
   </a>
 </template>

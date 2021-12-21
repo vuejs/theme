@@ -4,6 +4,8 @@ import { VTBackdrop } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import VPNav from './VPNav.vue'
 import VPLocalNav from './VPLocalNav.vue'
+import VPSkipLink from './VPSkipLink.vue'
+import VPAnnouncer from './VPAnnouncer.vue'
 import VPSidebar from './VPSidebar.vue'
 import VPContent from './VPContent.vue'
 import { provide, watchEffect } from 'vue'
@@ -34,6 +36,7 @@ provide('close-sidebar', closeSidebar)
 
 <template>
   <div class="VPApp">
+    <VPSkipLink />
     <VTBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
     <VPNav />
     <VPLocalNav :open="isSidebarOpen" @open-menu="openSidebar" />
@@ -68,6 +71,7 @@ provide('close-sidebar', closeSidebar)
         <slot name="footer-after" />
       </template>
     </VPContent>
+    <VPAnnouncer />
   </div>
 </template>
 
