@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { nextTick, ref, watchEffect } from 'vue'
+import { nextTick, ref, watchPostEffect } from 'vue'
 import { useSidebar } from '../composables/sidebar'
 import VPSidebarGroup from './VPSidebarGroup.vue'
 
@@ -10,26 +10,32 @@ const props = defineProps<{
 }>()
 
 // A11y: Focus Nav element when menu has opened
-// Should we focus the first link instead?
 const navEl = ref<HTMLElement & { focus: () => void }>()
-watchEffect(async () => {
+watchPostEffect(async () => {
   if (props.open) {
     await nextTick()
     navEl.value?.focus()
   }
-}, { flush: 'post'})
+})
 </script>
 
 <template>
   <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
-    <slot name="top" />
-    <nav id="VPSidebarNav" ref="navEl" aria-labelledby="sidebar-aria-label" tabindex="-1">
-      <span id="sidebar-aria-label" class="visually-hidden">Sidebar Navigation</span>
+    <nav
+      id="VPSidebarNav"
+      ref="navEl"
+      aria-labelledby="sidebar-aria-label"
+      tabindex="-1"
+    >
+      <slot name="top" />
+      <span id="sidebar-aria-label" class="visually-hidden"
+        >Sidebar Navigation</span
+      >
       <div v-for="group in sidebar" :key="group.text" class="group">
         <VPSidebarGroup :text="group.text" :items="group.items" />
       </div>
+      <slot name="bottom" />
     </nav>
-    <slot name="bottom" />
   </aside>
 </template>
 
@@ -40,38 +46,34 @@ watchEffect(async () => {
   bottom: 0;
   left: 0;
   z-index: var(--vp-z-index-sidebar);
-  padding: 40px 24px 96px;
+  padding: 0 32px 96px;
   width: calc(100vw - 64px);
   max-width: var(--vp-sidebar-width-mobile);
   opacity: 0;
-  visibility: hidden;
   background-color: var(--vt-c-bg);
   box-shadow: var(--vt-c-shadow-3);
   overflow-x: hidden;
   overflow-y: auto;
   transform: translateX(-100%);
-  transition: background-color 0.5s, opacity 0.5s, transform 0.75s ease;
+  transition: background-color 0.5s, opacity 0.5s, transform 0.3s ease;
   /* -ms-overflow-style: none; */
   /* scrollbar-width: none; */
+}
+
+#VPSidebarNav {
+  padding-top: 24px;
+  outline: 0;
 }
 
 /* .VPSidebar::-webkit-scrollbar {
   display: none;
 } */
 
-@media (min-width: 768px) {
-  .VPSidebar {
-    padding: 40px 32px 96px;
-    visibility: hidden;
-  }
-}
-
 @media (min-width: 960px) {
   .VPSidebar {
     top: var(--vp-nav-height);
     z-index: 1;
     border-right: 1px solid var(--vt-c-divider-light);
-    padding: 24px 32px 96px;
     width: var(--vp-sidebar-width-small);
     max-width: 100%;
     opacity: 1;
@@ -84,7 +86,7 @@ watchEffect(async () => {
 
 @media (min-width: 1440px) {
   .VPSidebar {
-    padding: 24px 32px 96px calc((100% - var(--vp-screen-max-width)) / 2);
+    padding: 0 32px 96px calc((100% - var(--vp-screen-max-width)) / 2);
     width: calc(
       (100% - var(--vp-screen-max-width)) / 2 + var(--vp-sidebar-width-small)
     );

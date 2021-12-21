@@ -12,3 +12,7 @@
 .vt-backdrop.fade-leave-to {
   opacity: 0;
 }
+
+.vt-backdrop.fade-leave-active {
+  transition-duration: .3s;
+}
