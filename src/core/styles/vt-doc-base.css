@@ -12,6 +12,7 @@
   position: relative;
   font-weight: 600;
   line-height: 1.5;
+  outline: none;
 }
 
 .vt-doc h1 {

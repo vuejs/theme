@@ -5,19 +5,22 @@ import { useRoute } from 'vitepress'
 const route = useRoute()
 const backToTop = ref()
 
-watch(() => route.path, () => backToTop.value.focus())
+watch(
+  () => route.path,
+  () => backToTop.value.focus()
+)
 
 const focusOnTargetAnchor = ({ target }: Event) => {
-  const id = '#' + (target as HTMLAnchorElement).href!.split('#')[1]
-  const el = document.querySelector(id) as HTMLAnchorElement
-
-  const removeTabIndex = () => {
-    el.removeAttribute('tabindex')
-    el.removeEventListener('blur', removeTabIndex)
-  }
+  const el = document.querySelector(
+    (target as HTMLAnchorElement).href!
+  ) as HTMLAnchorElement
 
   if (el) {
-    el.setAttribute('tabindex',  '-1')
+    const removeTabIndex = () => {
+      el.removeAttribute('tabindex')
+      el.removeEventListener('blur', removeTabIndex)
+    }
+    el.setAttribute('tabindex', '-1')
     el.addEventListener('blur', removeTabIndex)
     el.focus()
     window.scrollTo(0, 0)
@@ -36,18 +39,19 @@ const focusOnTargetAnchor = ({ target }: Event) => {
   </a>
 </template>
 
-
 <style scoped>
 .VPSkipLink {
-  top: .25rem;
-  left: .25rem;
-  padding: .650rem 1.5rem;
+  top: 0.25rem;
+  left: 0.25rem;
+  padding: 0.65rem 1.5rem;
   z-index: 999;
+  font-size: 0.9em;
   font-weight: bold;
   text-decoration: none;
-  color: var(--vt-c-green-darker);
+  color: var(--vt-c-green);
   box-shadow: var(--vt-shadow-3);
   background-color: var(--vt-c-bg);
+  border-radius: 8px;
 }
 .dark .VPSkipLink {
   color: var(--vt-c-green);
