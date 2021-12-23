@@ -11,7 +11,7 @@ const { config } = useConfig()
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 .VPNavBarAppearance {
   display: none;
 }

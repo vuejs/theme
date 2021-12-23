@@ -1,9 +1,9 @@
 <template>
-<button class="vt-switch" type="button">
-  <span class="vt-switch-check">
-    <span class="vt-switch-icon" v-if="$slots.default">
-      <slot />
+  <button class="vt-switch" type="button">
+    <span class="vt-switch-check">
+      <span class="vt-switch-icon" v-if="$slots.default">
+        <slot />
+      </span>
     </span>
-  </span>
-</button>
+  </button>
 </template>

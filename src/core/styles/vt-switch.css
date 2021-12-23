@@ -1,6 +1,7 @@
 .vt-switch {
   position: relative;
   border-radius: 11px;
+  display: block;
   width: 40px;
   height: 22px;
   flex-shrink: 0;
