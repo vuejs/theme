@@ -83,7 +83,7 @@ provide('close-sidebar', closeSidebar)
   min-height: 100vh;
   background-color: var(--vt-c-bg);
   transition: background-color 0.5s;
-  margin-top: var(--vt-banner-height);
+  padding-top: var(--vt-banner-height);
 }
 
 .backdrop {
