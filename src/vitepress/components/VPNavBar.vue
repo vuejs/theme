@@ -69,12 +69,6 @@ defineProps<{
   flex-grow: 1;
 }
 
-@media (min-width: 768px) {
-  .content {
-    padding-top: 1px;
-  }
-}
-
 .menu + .appearance {
   margin-left: 8px;
 }
