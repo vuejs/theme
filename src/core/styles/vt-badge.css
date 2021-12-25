@@ -8,7 +8,7 @@
   position: relative;
   top: -0.65em;
   margin-left: 0.5em;
-  color: var(--vt-c-text-inverse-1);
+  color: var(--vt-c-bg);
   transition: color 0.5s;
 }
 
