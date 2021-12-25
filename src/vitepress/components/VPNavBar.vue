@@ -38,7 +38,7 @@ defineProps<{
   position: relative;
   border-bottom: 1px solid var(--vt-c-divider-light);
   padding: 0 12px 0 24px;
-  height: var(--vp-nav-height);
+  height: var(--vt-nav-height);
   background-color: var(--vt-c-bg);
   transition: border-color 0.5s, background-color 0.5s;
 }

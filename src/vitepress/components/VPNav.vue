@@ -29,6 +29,7 @@ provide('close-screen', closeScreen)
 @media (min-width: 960px) {
   .VPNav {
     position: fixed;
+    top: var(--vt-banner-height, 0px);
     width: 100%;
   }
 }

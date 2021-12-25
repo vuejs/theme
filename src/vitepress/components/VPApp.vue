@@ -20,8 +20,8 @@ const {
 //   then focus that button again when Menu is closed with Escape key
 let triggerElement: HTMLButtonElement | undefined
 watchEffect(() => {
-  triggerElement = isSidebarOpen.value 
-    ? document.activeElement as HTMLButtonElement
+  triggerElement = isSidebarOpen.value
+    ? (document.activeElement as HTMLButtonElement)
     : undefined
 })
 onKeyUp('Escape', () => {
@@ -38,6 +38,7 @@ provide('close-sidebar', closeSidebar)
   <div class="VPApp">
     <VPSkipLink />
     <VTBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
+    <slot name="banner" />
     <VPNav />
     <VPLocalNav :open="isSidebarOpen" @open-menu="openSidebar" />
     <VPSidebar :open="isSidebarOpen">
@@ -82,6 +83,7 @@ provide('close-sidebar', closeSidebar)
   min-height: 100vh;
   background-color: var(--vt-c-bg);
   transition: background-color 0.5s;
+  margin-top: var(--vt-banner-height);
 }
 
 .backdrop {

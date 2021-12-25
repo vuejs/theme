@@ -63,7 +63,7 @@ const { page, frontmatter, theme } = useData()
 .aside-container {
   position: sticky;
   width: 224px;
-  top: calc(var(--vt-nav-height) + 24px);
+  top: calc(var(--vt-nav-height) + var(--vt-banner-height, 0px) + 24px);
   bottom: 0;
 }
 

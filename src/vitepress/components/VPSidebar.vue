@@ -71,7 +71,7 @@ watchPostEffect(async () => {
 
 @media (min-width: 960px) {
   .VPSidebar {
-    top: var(--vp-nav-height);
+    top: calc(var(--vt-nav-height) + var(--vt-banner-height, 0px));
     z-index: 1;
     border-right: 1px solid var(--vt-c-divider-light);
     width: var(--vp-sidebar-width-small);
