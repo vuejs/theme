@@ -16,6 +16,7 @@ const loaded = ref(false)
 onMounted(() => {
   const handleSearchHotKey = (e: KeyboardEvent) => {
     if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault()
       load()
       remove()
     }
