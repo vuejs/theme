@@ -16,3 +16,9 @@
 .vt-backdrop.fade-leave-active {
   transition-duration: .3s;
 }
+
+@media (min-width: 960px) {
+  .vt-backdrop {
+    display: none;
+  }
+}
