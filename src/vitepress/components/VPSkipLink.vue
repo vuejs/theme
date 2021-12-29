@@ -12,7 +12,7 @@ watch(
 
 const focusOnTargetAnchor = ({ target }: Event) => {
   const el = document.querySelector(
-    (target as HTMLAnchorElement).href!
+    (target as HTMLAnchorElement).hash!
   ) as HTMLAnchorElement
 
   if (el) {
