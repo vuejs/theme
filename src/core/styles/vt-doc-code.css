@@ -138,14 +138,23 @@
 .vt-doc [class*='language-']:before {
   position: absolute;
   top: 4px;
-  right: 4px;
+  right: 10px;
   z-index: 2;
-  line-height: 24px;
   font-size: 12px;
   font-weight: 500;
   color: var(--vt-c-text-dark-3);
-  padding: 0 8px;
   transition: color 0.5s;
+}
+
+@media (max-width: 480px) {
+  .vt-doc [class*='language-']:before {
+    top: 1px;
+    right: 5px;
+    font-size: 11px;
+  }
+  .vt-doc [class*='language-'] pre {
+    padding: 18px 20px 12px;
+  }
 }
 
 .vt-doc [class~='language-vue']:before {
