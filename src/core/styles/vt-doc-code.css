@@ -155,6 +155,9 @@
   .vt-doc [class*='language-'] pre {
     padding: 18px 20px 12px;
   }
+  .vt-doc .highlight-lines {
+    padding-top: 17px;
+  }
 }
 
 .vt-doc [class~='language-vue']:before {
