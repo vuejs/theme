@@ -10,7 +10,7 @@ const props = defineProps<{
 }>()
 
 // A11y: Focus Nav element when menu has opened
-const navEl = ref<HTMLElement & { focus: () => void }>()
+let navEl = ref<(Element & { focus(): void }) | null>(null)
 watchPostEffect(async () => {
   if (props.open) {
     await nextTick()
@@ -20,13 +20,14 @@ watchPostEffect(async () => {
 </script>
 
 <template>
-  <aside v-if="hasSidebar" class="VPSidebar" :class="{ open }" @click.stop>
-    <nav
-      id="VPSidebarNav"
-      ref="navEl"
-      aria-labelledby="sidebar-aria-label"
-      tabindex="-1"
-    >
+  <aside
+    v-if="hasSidebar"
+    ref="navEl"
+    class="VPSidebar"
+    :class="{ open }"
+    @click.stop
+  >
+    <nav id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1">
       <slot name="top" />
       <span id="sidebar-aria-label" class="visually-hidden"
         >Sidebar Navigation</span
