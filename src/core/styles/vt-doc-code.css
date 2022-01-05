@@ -164,8 +164,7 @@
   content: 'vue';
 }
 
-.vt-doc [class~='language-html']:before,
-.vt-doc [class~='language-markup']:before {
+.vt-doc [class~='language-html']:before {
   content: 'html';
 }
 
@@ -173,84 +172,31 @@
   content: 'template';
 }
 
-.vt-doc [class~='language-md']:before,
-.vt-doc [class~='language-markdown']:before {
-  content: 'md';
-}
-
 .vt-doc [class~='language-css']:before {
   content: 'css';
 }
 
-.vt-doc [class~='language-sass']:before {
-  content: 'sass';
-}
-
-.vt-doc [class~='language-scss']:before {
-  content: 'scss';
-}
-
-.vt-doc [class~='language-less']:before {
-  content: 'less';
-}
-
-.vt-doc [class~='language-stylus']:before {
-  content: 'styl';
-}
-
-.vt-doc [class~='language-js']:before,
-.vt-doc [class~='language-typescript']:before {
+.vt-doc [class~='language-js']:before {
   content: 'js';
 }
 
-.vt-doc [class~='language-ts']:before,
-.vt-doc [class~='language-typescript']:before {
+.vt-doc [class~='language-jsx']:before {
+  content: 'jsx';
+}
+
+.vt-doc [class~='language-ts']:before {
   content: 'ts';
+}
+
+.vt-doc [class~='language-tsx']:before {
+  content: 'tsx';
 }
 
 .vt-doc [class~='language-json']:before {
   content: 'json';
 }
 
-.vt-doc [class~='language-rb']:before,
-.vt-doc [class~='language-ruby']:before {
-  content: 'rb';
-}
-
-.vt-doc [class~='language-py']:before,
-.vt-doc [class~='language-python']:before {
-  content: 'py';
-}
-
 .vt-doc [class~='language-sh']:before,
 .vt-doc [class~='language-bash']:before {
   content: 'sh';
-}
-
-.vt-doc [class~='language-php']:before {
-  content: 'php';
-}
-
-.vt-doc [class~='language-go']:before {
-  content: 'go';
-}
-
-.vt-doc [class~='language-rust']:before {
-  content: 'rust';
-}
-
-.vt-doc [class~='language-java']:before {
-  content: 'java';
-}
-
-.vt-doc [class~='language-c']:before {
-  content: 'c';
-}
-
-.vt-doc [class~='language-yaml']:before {
-  content: 'yaml';
-}
-
-.vt-doc [class~='language-dockerfile']:before {
-  content: 'dockerfile';
 }
