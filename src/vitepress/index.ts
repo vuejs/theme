@@ -10,3 +10,5 @@ const VPTheme: Theme = {
 }
 
 export { VPTheme }
+
+export type { Config } from './config'

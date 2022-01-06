@@ -95,8 +95,10 @@ export type NavItemWithLink = MenuItemWithLink & {
   activeMatch?: string
 }
 
-export type NavItemWithChildren = MenuItemChildWithChildren & {
+export interface NavItemWithChildren {
+  text?: string
   activeMatch?: string
+  items: (NavItemWithLink | MenuItemChildWithChildren)[]
 }
 
 export type SidebarConfig = SidebarGroup[] | MultiSidebarConfig
