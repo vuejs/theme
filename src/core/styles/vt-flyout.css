@@ -57,7 +57,7 @@
 
 .vt-flyout-menu {
   position: absolute;
-  top: 42px;
+  top: calc(var(--vt-nav-height) / 2 + 15px);
   right: 0;
   opacity: 0;
   visibility: hidden;
