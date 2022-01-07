@@ -1,6 +1,6 @@
 {
   "name": "@vue/theme",
-  "version": "0.1.34",
+  "version": "0.1.35",
   "description": "The design system for Vue.js.",
   "main": "src/index.ts",
   "exports": {
