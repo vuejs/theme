@@ -1,26 +1,5 @@
-<script lang="ts" setup>
-import { computed } from 'vue'
-import { useData } from 'vitepress'
-
-const { site, localePath } = useData()
-
-const logo = computed(() => site.value.themeConfig.logo)
-
-const title = computed(() => {
-  if (site.value.themeConfig.title === null) {
-    return null
-  }
-
-  return site.value.themeConfig.title || site.value.title
-})
-
-const hasTitle = computed(() => {
-  return !!logo.value || !!title.value
-})
-</script>
-
 <template>
-  <a v-if="hasTitle" class="VPNavBarTitle" :href="localePath">
+  <a class="VPNavBarTitle" href="/">
     <svg class="logo" viewBox="0 0 128 128" width="24" height="24">
       <path
         fill="#42b883"
@@ -31,7 +10,7 @@ const hasTitle = computed(() => {
         d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z"
       />
     </svg>
-    <span v-if="title" class="text">{{ title }}</span>
+    <span class="text">Vue.js</span>
   </a>
 </template>
 

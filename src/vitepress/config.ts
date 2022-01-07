@@ -13,21 +13,6 @@ export interface Config {
   appearance?: boolean
 
   /**
-   * The path to the logo file.
-   *
-   * @example `'/img/logo.svg'`
-   */
-  logo?: string
-
-  /**
-   * The title text to be displayed on the navbar. If `logo` is set, the title
-   * will be displayed right next to the logo. Set `null` to disable.
-   *
-   * @default 'VitePress Site'
-   */
-  title?: string | null
-
-  /**
    * The social links to be displayed at the end of the nav bar. Perfect for
    * placing links to social services such as GitHub, Twitter, Facebook, etc.
    */
