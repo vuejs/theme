@@ -1,10 +1,20 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
 import { useData } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
 import VPCarbonAds from './VPCarbonAds.vue'
+import type { Config } from '../config'
+import { VTLink } from '../../core'
 
-const { page, frontmatter, theme } = useData()
+const { page, frontmatter, theme } = useData<Config>()
+
+const hashMatch = /#(\w+)$/
+const repoUrl = computed(() => {
+  const repo = theme.value.editLink?.repo || 'vuejs/docs'
+  const branch = repo.match(hashMatch)?.[1] || 'main'
+  return `https://github.com/vuejs/docs/edit/${branch}/src/${page.value.relativePath}`
+})
 </script>
 
 <template>
@@ -28,11 +38,16 @@ const { page, frontmatter, theme } = useData()
         <slot name="content-top" />
         <main>
           <Content class="vt-doc" />
+          <p
+            class="edit-link"
+            v-if="theme.editLink && frontmatter.editLink !== false"
+          >
+            <VTLink :href="repoUrl">{{ theme.editLink.text }}</VTLink>
+          </p>
         </main>
         <slot name="content-bottom" />
         <VPContentDocFooter v-if="frontmatter.footer !== false" />
       </div>
-
     </div>
   </div>
 </template>
@@ -43,7 +58,7 @@ const { page, frontmatter, theme } = useData()
 }
 
 .vt-doc {
-  margin-bottom: 96px;
+  margin-bottom: 54px;
 }
 
 .content {
@@ -69,6 +84,17 @@ const { page, frontmatter, theme } = useData()
 
 .aside-container::-webkit-scrollbar {
   display: none;
+}
+
+.edit-link {
+  margin: 0 0 32px;
+  /* text-align: center; */
+}
+
+.edit-link .vt-link {
+  font-size: 14px;
+  color: var(--vt-c-brand);
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {

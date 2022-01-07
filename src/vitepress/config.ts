@@ -29,6 +29,20 @@ export interface Config {
   sidebar?: SidebarConfig
 
   /**
+   * Info for the edit link
+   */
+  editLink?: {
+    /**
+     * Repo of the site.
+     * e.g. `vuejs/docs#next`
+     *
+     * If a branch isn't specified, it defaults to `main`.
+     */
+    repo?: string
+    text?: string
+  }
+
+  /**
    * Global footer settings. The footer will only be displayed when a page has
    * the frontmatter option `page: true`.  You may pass `footer: false` to the
    * frontmatter to hide the footer.
