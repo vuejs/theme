@@ -1,17 +1,27 @@
 <script lang="ts" setup>
 import { MenuItemWithLink } from '../../core'
 import VPSidebarLink from './VPSidebarLink.vue'
+import { isActive } from '../support/utils'
+import { useData } from 'vitepress'
 
-defineProps<{
+const props = defineProps<{
   text: string
   items: MenuItemWithLink[]
 }>()
+
+const { page } = useData()
+function hasActiveLink() {
+  const { relativePath } = page.value
+  return props.items.some((item) => isActive(relativePath, item.link))
+}
 </script>
 
 <template>
   <section class="VPSidebarGroup">
     <div class="title">
-      <h2 class="title-text">{{ text }}</h2>
+      <h2 class="title-text" :class="{ active: hasActiveLink() }">
+        {{ text }}
+      </h2>
     </div>
 
     <template v-for="item in items" :key="item.link">
