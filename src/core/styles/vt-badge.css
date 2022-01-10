@@ -17,5 +17,6 @@
 }
 
 .vt-badge.warning {
+  color: var(--vt-c-text-light-1);
   background-color: var(--vt-c-yellow);
 }
