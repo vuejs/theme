@@ -46,7 +46,7 @@
 }
 
 @media (max-width: 639px) {
-  .vt-doc li > div[class*='language-'] {
+  .vt-doc li div[class*='language-'] {
     border-radius: 8px 0 0 8px;
   }
 }
