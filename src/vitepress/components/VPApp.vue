@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { onKeyUp } from '@vueuse/core'
 import { VTBackdrop } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import VPNav from './VPNav.vue'
@@ -8,7 +7,7 @@ import VPSkipLink from './VPSkipLink.vue'
 import VPAnnouncer from './VPAnnouncer.vue'
 import VPSidebar from './VPSidebar.vue'
 import VPContent from './VPContent.vue'
-import { provide, watchEffect } from 'vue'
+import { onMounted, onUnmounted, provide, watchEffect } from 'vue'
 
 const {
   isOpen: isSidebarOpen,
@@ -24,11 +23,19 @@ watchEffect(() => {
     ? (document.activeElement as HTMLButtonElement)
     : undefined
 })
-onKeyUp('Escape', () => {
-  if (isSidebarOpen.value) {
+
+const onEsacpe = (e: KeyboardEvent) => {
+  if (e.key === 'Escape' && isSidebarOpen.value) {
     closeSidebar()
     triggerElement?.focus()
   }
+}
+
+onMounted(() => {
+  window.addEventListener('keyup', onEsacpe)
+})
+onUnmounted(() => {
+  window.removeEventListener('keyup', onEsacpe)
 })
 
 provide('close-sidebar', closeSidebar)

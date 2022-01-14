@@ -1,5 +1,4 @@
-import { Ref, ref, watch, readonly } from 'vue'
-import { tryOnUnmounted } from '@vueuse/core'
+import { Ref, ref, watch, readonly, onUnmounted } from 'vue'
 
 interface FocusContainerOptions {
   elRef: Ref<HTMLElement | undefined>
@@ -30,7 +29,7 @@ export function useFocusContainer(options: FocusContainerOptions) {
       }
     })
 
-    tryOnUnmounted(() => {
+    onUnmounted(() => {
       unwatch()
       listeners--
       if (!listeners) {
