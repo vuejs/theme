@@ -9,6 +9,7 @@ import VTMenu from './VTMenu.vue'
 const props = defineProps<{
   button?: string
   items?: (MenuItem | MenuItemChild)[]
+  label?: string
 }>()
 
 const open = ref(false)
@@ -33,6 +34,7 @@ useFocusContainer({
       class="vt-flyout-button"
       aria-haspopup="true"
       :aria-expanded="open"
+      :aria-label="label"
       @click="open = !open"
     >
       <span v-if="props.button" class="vt-flyout-button-text">

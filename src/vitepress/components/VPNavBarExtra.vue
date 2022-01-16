@@ -11,7 +11,7 @@ const hasContent = computed(() => {
 </script>
 
 <template>
-  <VTFlyout v-if="hasContent" class="VPNavBarExtra">
+  <VTFlyout v-if="hasContent" class="VPNavBarExtra" label="extra navigation">
     <div v-if="config.appearance" class="vt-menu-group">
       <div class="vt-menu-item item">
         <p class="vt-menu-label">Appearance</p>
