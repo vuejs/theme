@@ -10,10 +10,16 @@ import { VTLink } from '../../core'
 const { page, frontmatter, theme } = useData<Config>()
 
 const hashMatch = /#(\w+)$/
+
 const repoUrl = computed(() => {
   const repo = theme.value.editLink?.repo || 'vuejs/docs'
   const branch = repo.match(hashMatch)?.[1] || 'main'
   return `https://github.com/vuejs/docs/edit/${branch}/src/${page.value.relativePath}`
+})
+
+const pageClass = computed(() => {
+  const { relativePath } = page.value
+  return relativePath.slice(0, relativePath.indexOf('/'))
 })
 </script>
 
@@ -37,7 +43,7 @@ const repoUrl = computed(() => {
       <div class="content">
         <slot name="content-top" />
         <main>
-          <Content class="vt-doc" />
+          <Content class="vt-doc" :class="pageClass" />
           <p
             class="edit-link"
             v-if="theme.editLink && frontmatter.editLink !== false"

@@ -5,7 +5,7 @@
 
 /* inline code */
 .vt-doc :not(pre) > code {
-  background-color: var(--vt-c-bg-soft);
+  background-color: var(--vt-c-bg-mute);
   padding: 0.15em 0.5em;
   border-radius: 4px;
   color: var(--vt-c-text-code);

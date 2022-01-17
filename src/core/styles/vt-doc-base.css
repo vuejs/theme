@@ -87,7 +87,8 @@
 
 .vt-doc p,
 .vt-doc ul,
-.vt-doc ol {
+.vt-doc ol,
+.vt-doc summary {
   margin-bottom: 1.2em;
 }
 

@@ -10,9 +10,6 @@
   margin-left: 0.5em;
   color: var(--vt-c-bg);
   transition: color 0.5s;
-}
-
-.vt-badge.tip {
   background-color: var(--vt-c-brand);
 }
 
