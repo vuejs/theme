@@ -29,7 +29,7 @@ const handleClick = ({ target: el }: Event) => {
       <ul class="root">
         <li v-for="{ text, link, children } in resolveHeaders(filteredHeaders)">
           <a class="outline-link" :href="link" @click="handleClick">{{ text }}</a>
-          <ul v-if="children && frontmatter.aside === 'deep'">
+          <ul v-if="children && frontmatter.outline === 'deep'">
             <li v-for="{ text, link } in children">
               <a class="outline-link nested" :href="link" @click="handleClick">{{ text }}</a>
             </li>
