@@ -27,9 +27,10 @@ defineProps<{
 
 .title {
   line-height: 32px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--vt-c-text-2);
+  text-transform: uppercase;
   transition: color 0.25s;
 }
 </style>

@@ -22,7 +22,7 @@ function toggle() {
 
 <template>
   <div class="VPNavScreenMenuGroup" :class="{ open: isOpen }">
-    <button 
+    <button
       class="button"
       :aria-controls="groupId"
       :aria-expanded="isOpen"
@@ -73,6 +73,7 @@ function toggle() {
 
 .VPNavScreenMenuGroup.open .button {
   padding-bottom: 6px;
+  color: var(--vt-c-brand);
 }
 
 .VPNavScreenMenuGroup.open .button-icon {
@@ -93,7 +94,7 @@ function toggle() {
 }
 
 .button:hover {
-  color: var(--vt-c-text-2);
+  color: var(--vt-c-brand);
 }
 
 .button-icon {
