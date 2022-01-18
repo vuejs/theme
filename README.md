@@ -1,6 +1,8 @@
 # Vue Theme
 
-WIP VitePress theme for the new version of Vue documentation. **Currently under heavy development - if you are not a team member working on this project, please do not open issues or PRs until it stabilizes.**
+This is the [VitePress](https://vitepress.vuejs.org/) theme for the official Vue documentation at `vuejs.org`.
+
+Please note this theme is solely dedicated for `vuejs.org` and isn't meant to be used as a content-neutral theme. It does **not** follow semver and may contain hard-coded logic specific to the Vue documentation.
 
 ## Development Setup
 
@@ -11,7 +13,37 @@ $ pnpm install
 $ npm run dev
 ```
 
-To work on this theme in the context of the `vuejs.org` website, see [vuejs/docs#next](https://github.com/vuejs/docs/tree/next) for instructions.
+## Developing with Real Content
+
+To work on this theme in the context of the `vuejs.org` website requires cloning both repos and linking the theme into the docs repo:
+
+1. Clone repositories:
+
+   ```bash
+   git clone git@github.com:vuejs/docs.git
+   git clone git@github.com:vuejs/theme.git
+   ```
+
+2. Link theme into docs repo:
+
+   ```bash
+   # In ./theme
+   pnpm install
+   # Make @vue/theme available for global linking
+   pnpm link --global
+
+   # in ./docs
+   pnpm install
+   # Link teme
+   pnpm link --global @vue/theme
+   ```
+
+3. Start VitePress server:
+
+   ```bash
+   # in ./docs
+   pnpm run dev
+   ```
 
 ### Available Scripts
 
