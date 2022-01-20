@@ -31,6 +31,7 @@ export { default as VTIconSlack } from './components/icons/VTIconSlack.vue'
 export { default as VTIconSun } from './components/icons/VTIconSun.vue'
 export { default as VTIconTwitter } from './components/icons/VTIconTwitter.vue'
 export { default as VTIconYouTube } from './components/icons/VTIconYouTube.vue'
+export { default as VTIconEdit } from './components/icons/VTIconEdit.vue'
 
 export { default as VTBackdrop } from './components/VTBackdrop.vue'
 export { default as VTFlyout } from './components/VTFlyout.vue'

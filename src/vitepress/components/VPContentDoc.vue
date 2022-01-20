@@ -5,7 +5,7 @@ import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
 import VPCarbonAds from './VPCarbonAds.vue'
 import type { Config } from '../config'
-import { VTLink } from '../../core'
+import { VTLink, VTIconEdit } from '../../core'
 
 const { page, frontmatter, theme } = useData<Config>()
 
@@ -48,7 +48,8 @@ const pageClass = computed(() => {
             class="edit-link"
             v-if="theme.editLink && frontmatter.editLink !== false"
           >
-            <VTLink :href="repoUrl">{{ theme.editLink.text }}</VTLink>
+            <VTIconEdit class="vt-icon" />
+            <VTLink :href="repoUrl" :no-icon="true">{{ theme.editLink.text }}</VTLink>
           </p>
         </main>
         <slot name="content-bottom" />
@@ -101,6 +102,16 @@ const pageClass = computed(() => {
   font-size: 14px;
   color: var(--vt-c-brand);
   font-weight: 500;
+}
+
+.vt-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--vt-c-brand);
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+  top: -1px;
 }
 
 @media (min-width: 768px) {
