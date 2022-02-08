@@ -5,13 +5,15 @@ import { MenuItemWithLink } from '../../core'
 
 interface HeaderWithChildren extends Header {
   children?: Header[]
+  hidden?: boolean
 }
 
 interface MenuItemWithLinkAndChildren extends MenuItemWithLink {
   children?: MenuItemWithLinkAndChildren[]
+  hidden?: boolean
 }
 
-export function resolveHeaders(headers: Header[]) {
+export function resolveHeaders(headers: HeaderWithChildren[]) {
   return mapHeaders(groupHeaders(headers))
 }
 
@@ -34,7 +36,8 @@ function mapHeaders(
   return headers.map((header) => ({
     text: header.title,
     link: `#${header.slug}`,
-    children: header.children ? mapHeaders(header.children) : undefined
+    children: header.children ? mapHeaders(header.children) : undefined,
+    hidden: header.hidden
   }))
 }
 
