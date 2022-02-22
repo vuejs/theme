@@ -15,8 +15,11 @@ defineProps<{
 <template>
   <div class="VPNavBar">
     <div class="container">
-      <VPNavBarTitle />
-
+      <VPNavBarTitle>
+        <template #navbar-title>
+          <slot name="navbar-title" />
+        </template>
+      </VPNavBarTitle>
       <div class="content">
         <VPNavBarSearch class="search" />
         <VPNavBarMenu class="menu" />

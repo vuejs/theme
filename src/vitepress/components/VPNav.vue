@@ -13,7 +13,11 @@ provide('close-screen', closeScreen)
 
 <template>
   <header class="VPNav nav-bar" :class="{ stick: !hasSidebar }">
-    <VPNavBar :is-screen-open="isScreenOpen" @toggle-screen="toggleScreen" />
+    <VPNavBar :is-screen-open="isScreenOpen" @toggle-screen="toggleScreen">
+      <template #navbar-title>
+        <slot name="navbar-title" />
+      </template>
+    </VPNavBar>
     <VPNavScreen :open="isScreenOpen" />
   </header>
 </template>
