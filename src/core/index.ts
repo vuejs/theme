@@ -34,6 +34,8 @@ export { default as VTIconYouTube } from './components/icons/VTIconYouTube.vue'
 export { default as VTIconEdit } from './components/icons/VTIconEdit.vue'
 
 export { default as VTBackdrop } from './components/VTBackdrop.vue'
+export { default as VTCodeGroup } from './components/VTCodeGroup.vue'
+export { default as VTCodeGroupTab } from './components/VTCodeGroupTab.vue'
 export { default as VTFlyout } from './components/VTFlyout.vue'
 export { default as VTHamburger } from './components/VTHamburger.vue'
 export { default as VTLink } from './components/VTLink.vue'
