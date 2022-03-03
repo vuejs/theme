@@ -9,7 +9,7 @@ import { VTLink, VTIconEdit } from '../../core'
 
 const { page, frontmatter, theme } = useData<Config>()
 
-const hashMatch = /#(\w+)$/
+const hashMatch = /#([\w\.\-\/]+)$/
 
 const repoUrl = computed(() => {
   const repo = theme.value.editLink?.repo || 'vuejs/docs'
