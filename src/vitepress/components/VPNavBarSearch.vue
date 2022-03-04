@@ -15,6 +15,10 @@ const loaded = ref(false)
 const metaKey = ref()
 
 onMounted(() => {
+  if (!metaKey.value) {
+    return
+  }
+
   // meta key detect (same logic as in @docsearch/js)
   metaKey.value.textContent = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
     ? '⌘'
