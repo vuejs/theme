@@ -79,8 +79,3 @@
 .dark .vt-doc .custom-block :not(pre) > code {
   background-color: rgba(0, 0, 0, 0.2);
 }
-
-.vt-doc .custom-block.danger a,
-.vt-doc .custom-block.warning a {
-  color: var(--vt-c-text-code);
-}
