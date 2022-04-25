@@ -60,7 +60,9 @@ export function useActiveAnchor(
     const anchors = [].slice
       .call(document.querySelectorAll('.content .header-anchor'))
       .filter((anchor: HTMLAnchorElement) =>
-        links.some((link) => link.hash === anchor.hash)
+        links.some(
+          (link) => link.hash === anchor.hash && anchor.offsetParent !== null
+        )
       ) as HTMLAnchorElement[]
 
     // page bottom - highlight last one
