@@ -10,7 +10,11 @@ useActiveAnchor(container, marker)
 
 const filterHeaders = inject('filter-headers', null) as any
 const filteredHeaders = computed(() => {
-  return filterHeaders ? filterHeaders(page.value.headers) : page.value.headers
+  return filterHeaders
+    ? page.value.headers.map((h) => {
+        return filterHeaders(h) ? h : Object.assign({}, h, { hidden: true })
+      })
+    : page.value.headers
 })
 
 const handleClick = ({ target: el }: Event) => {
@@ -25,13 +29,27 @@ const handleClick = ({ target: el }: Event) => {
     <div class="outline-marker" ref="marker" />
     <div class="outline-title">On this page</div>
     <nav aria-labelledby="doc-outline-aria-label">
-      <span id="doc-outline-aria-label" class="visually-hidden">Table of Contents for current page</span>
+      <span id="doc-outline-aria-label" class="visually-hidden"
+        >Table of Contents for current page</span
+      >
       <ul class="root">
-        <li v-for="{ text, link, children } in resolveHeaders(filteredHeaders)">
-          <a class="outline-link" :href="link" @click="handleClick">{{ text }}</a>
+        <li
+          v-for="{ text, link, children, hidden } in resolveHeaders(
+            filteredHeaders
+          )"
+          v-show="!hidden"
+        >
+          <a class="outline-link" :href="link" @click="handleClick">{{
+            text
+          }}</a>
           <ul v-if="children && frontmatter.outline === 'deep'">
-            <li v-for="{ text, link } in children">
-              <a class="outline-link nested" :href="link" @click="handleClick">{{ text }}</a>
+            <li v-for="{ text, link, hidden } in children" v-show="!hidden">
+              <a
+                class="outline-link nested"
+                :href="link"
+                @click="handleClick"
+                >{{ text }}</a
+              >
             </li>
           </ul>
         </li>

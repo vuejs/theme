@@ -12,8 +12,13 @@ const VPAlgoliaSearchBox = defineAsyncComponent(
 // payload), we delay initializing it until the user has actually clicked or
 // hit the hotkey to invoke it
 const loaded = ref(false)
+const metaKey = ref()
 
 onMounted(() => {
+  // meta key detect (same logic as in @docsearch/js)
+  metaKey.value.textContent = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
+    ? '⌘'
+    : 'Ctrl'
   const handleSearchHotKey = (e: KeyboardEvent) => {
     if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault()
@@ -63,7 +68,7 @@ function load() {
           <span class="DocSearch-Button-Placeholder">Search</span>
         </span>
         <span class="DocSearch-Button-Keys">
-          <span class="DocSearch-Button-Key">⌘</span>
+          <span class="DocSearch-Button-Key" ref="metaKey">Meta</span>
           <span class="DocSearch-Button-Key">K</span>
         </span>
       </button>
