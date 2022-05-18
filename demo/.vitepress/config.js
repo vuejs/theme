@@ -50,7 +50,7 @@ module.exports = (async () => {
             {
               items: [
                 { text: 'Guide', link: '/guide/introduction' },
-                { text: 'Installtion', link: '/guide/installation' }
+                { text: 'Installation', link: '/guide/installation' }
               ]
             }
           ]
