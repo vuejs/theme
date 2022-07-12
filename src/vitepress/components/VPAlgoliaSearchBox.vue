@@ -30,9 +30,12 @@ function poll() {
 function initialize(userOptions: AlgoliaSearchOptions) {
   // Note: multi-lang search support is removed since the theme
   // doesn't support multiple locales as of now
-
   const options = Object.assign({}, userOptions, {
     container: '#docsearch',
+
+    getMissingResultsUrl({ query }: { query: string }) {
+      return `https://github.com/vuejs/docs/issues/new?title=Missing%20search%20result%20for%20${query}`
+    },
 
     navigator: {
       navigate: ({ itemUrl }: { itemUrl: string }) => {
