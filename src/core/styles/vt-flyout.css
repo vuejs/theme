@@ -39,6 +39,7 @@
   font-weight: 500;
   color: var(--vt-c-text-1);
   transition: color .25s;
+  white-space: nowrap;
 }
 
 .vt-flyout-button-text-icon {

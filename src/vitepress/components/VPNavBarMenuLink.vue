@@ -37,6 +37,7 @@ const { page } = useData()
   font-weight: 500;
   color: var(--vt-c-text-1);
   transition: color 0.25s;
+  white-space: nowrap;
 }
 
 .VPNavBarMenuLink.active {
