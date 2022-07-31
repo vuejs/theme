@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
+import { useData } from 'vitepress'
 import { VTFlyout, VTSwitchAppearance, VTSocialLinks } from '../../core'
 import { useConfig } from '../composables/config'
 
+const { theme } = useData()
 const { config } = useConfig()
 
 const hasContent = computed(() => {
@@ -14,7 +16,7 @@ const hasContent = computed(() => {
   <VTFlyout v-if="hasContent" class="VPNavBarExtra" label="extra navigation">
     <div v-if="config.appearance" class="vt-menu-group">
       <div class="vt-menu-item item">
-        <p class="vt-menu-label">Appearance</p>
+        <p class="vt-menu-label">{{ theme.messages.appearance }}</p>
         <div class="vt-menu-action action">
           <VTSwitchAppearance />
         </div>

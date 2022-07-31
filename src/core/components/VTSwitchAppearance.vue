@@ -1,7 +1,10 @@
 <script lang="ts" setup>
+import { useData } from 'vitepress'
 import VTSwitch from './VTSwitch.vue'
 import VTIconSun from './icons/VTIconSun.vue'
 import VTIconMoon from './icons/VTIconMoon.vue'
+
+const { theme } = useData()
 
 const storageKey = 'vue-theme-appearance'
 const toggle = typeof localStorage !== 'undefined' ? useAppearance() : () => {}
@@ -41,7 +44,7 @@ function useAppearance() {
 <template>
   <VTSwitch
     class="vt-switch-appearance"
-    aria-label="toggle dark mode"
+    :aria-label="theme.messages.toggleDarkMode"
     @click="toggle"
   >
     <VTIconSun class="vt-switch-appearance-sun" />

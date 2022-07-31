@@ -6,7 +6,7 @@ import { useData } from 'vitepress'
 defineProps<{ open: boolean }>()
 
 const { hasSidebar } = useSidebar()
-const { frontmatter } = useData()
+const { frontmatter, theme } = useData()
 
 function scrollToTop() {
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
@@ -22,7 +22,7 @@ function scrollToTop() {
       @click="$emit('open-menu')"
       >
       <VTIconAlignLeft class="menu-icon" />
-      <span class="menu-text">Menu</span>
+      <span class="menu-text">{{ theme.messages.menu }}</span>
     </button>
 
     <a
@@ -30,7 +30,7 @@ function scrollToTop() {
       class="top-link"
       href="#"
       @click="scrollToTop"
-      >Return to top</a
+      >{{ theme.messages.returnToTop }}</a
     >
   </div>
 </template>

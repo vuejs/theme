@@ -1,9 +1,13 @@
 <script lang="ts" setup>
 import { useData } from 'vitepress'
 
-const { page } = useData()
+const { page, theme } = useData()
 </script>
 
 <template>
-  <div class="visually-hidden" aria-live="polite">{{ page.title }} has loaded</div>
+  <div class="visually-hidden" aria-live="polite">{{
+    theme.messages.announcer.before
+  }}{{ page.title }}{{
+    theme.messages.announcer.after
+  }}</div>
 </template>

@@ -3,7 +3,7 @@ import { useData } from 'vitepress'
 import { resolveHeaders, useActiveAnchor } from '../composables/outline'
 import { computed, inject, ref } from 'vue'
 
-const { page, frontmatter } = useData()
+const { page, frontmatter, theme } = useData()
 const container = ref()
 const marker = ref()
 useActiveAnchor(container, marker)
@@ -30,7 +30,7 @@ const handleClick = ({ target: el }: Event) => {
     <div class="outline-title">On this page</div>
     <nav aria-labelledby="doc-outline-aria-label">
       <span id="doc-outline-aria-label" class="visually-hidden"
-        >Table of Contents for current page</span
+        >{{ theme.messages.tableOfContents }}</span
       >
       <ul class="root">
         <li

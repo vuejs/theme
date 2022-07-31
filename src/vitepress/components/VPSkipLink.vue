@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, useData } from 'vitepress'
 
 const route = useRoute()
 const backToTop = ref()
+const { theme } = useData()
 
 watch(
   () => route.path,
@@ -35,7 +36,7 @@ const focusOnTargetAnchor = ({ target }: Event) => {
     class="VPSkipLink visually-hidden"
     @click="focusOnTargetAnchor"
   >
-    Skip to content
+    {{ theme.messages.skipToContent }}
   </a>
 </template>
 

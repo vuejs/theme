@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { nextTick, ref, watchPostEffect } from 'vue'
+import { useData } from 'vitepress'
 import { useSidebar } from '../composables/sidebar'
 import VPSidebarGroup from './VPSidebarGroup.vue'
 
+const { theme } = useData()
 const { sidebar, hasSidebar } = useSidebar()
 
 const props = defineProps<{
@@ -30,7 +32,7 @@ watchPostEffect(async () => {
     <nav id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1">
       <slot name="top" />
       <span id="sidebar-aria-label" class="visually-hidden"
-        >Sidebar Navigation</span
+        >{{ theme.messages.sidebarNavigation }}</span
       >
       <div v-for="group in sidebar" :key="group.text" class="group">
         <VPSidebarGroup :text="group.text" :items="group.items" />

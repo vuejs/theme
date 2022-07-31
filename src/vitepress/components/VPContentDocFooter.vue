@@ -37,22 +37,18 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
 
 <template>
   <footer v-if="links.prev || links.next" class="VPContentDocFooter">
-    <a
-      v-if="links.prev"
-      class="prev-link"
-      :href="normalizeLink(links.prev.link)"
-    >
-      <span class="desc"
-        ><VTIconChevronLeft class="vt-link-icon" /> Previous</span
-      >
+    <a v-if="links.prev" class="prev-link" :href="normalizeLink(links.prev.link)">
+      <span class="desc">
+        <VTIconChevronLeft class="vt-link-icon" />
+        {{ theme.messages.previous }}
+      </span>
       <span class="title">{{ links.prev.text }} </span>
     </a>
-    <a
-      v-if="links.next"
-      class="next-link"
-      :href="normalizeLink(links.next.link)"
-    >
-      <span class="desc">Next <VTIconChevronRight class="vt-link-icon" /></span>
+    <a v-if="links.next" class="next-link" :href="normalizeLink(links.next.link)">
+      <span class="desc">
+        {{ theme.messages.next }}
+        <VTIconChevronRight class="vt-link-icon" />
+      </span>
       <span class="title">{{ links.next.text }}</span>
     </a>
   </footer>
