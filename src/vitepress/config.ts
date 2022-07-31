@@ -29,6 +29,11 @@ export interface Config {
   sidebar?: SidebarConfig
 
   /**
+   * The i18n messages.
+   */
+  messages?: MessagesConfig
+
+  /**
    * Info for the edit link
    */
   editLink?: {
@@ -109,4 +114,14 @@ export interface MultiSidebarConfig {
 export interface SidebarGroup {
   text: string
   items: MenuItemWithLink[]
+}
+
+export interface MessagesConfig {
+  [key: string]: string | SentenceMessage
+}
+
+export interface SentenceMessage {
+  before?: string
+  content?: string
+  after?: string
 }

@@ -44,7 +44,10 @@ function useAppearance() {
 <template>
   <VTSwitch
     class="vt-switch-appearance"
-    :aria-label="theme.messages.toggleDarkMode"
+    :aria-label="
+      theme?.messages?.toggleDarkMode ??
+      'Toggle dark mode'
+    "
     @click="toggle"
   >
     <VTIconSun class="vt-switch-appearance-sun" />

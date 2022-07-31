@@ -35,9 +35,10 @@ const focusOnTargetAnchor = ({ target }: Event) => {
     href="#VPContent"
     class="VPSkipLink visually-hidden"
     @click="focusOnTargetAnchor"
-  >
-    {{ theme.messages.skipToContent }}
-  </a>
+  >{{
+    theme?.messages?.skipToContent ??
+    'Skip to content'
+  }}</a>
 </template>
 
 <style scoped>

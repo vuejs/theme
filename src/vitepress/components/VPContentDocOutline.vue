@@ -29,9 +29,10 @@ const handleClick = ({ target: el }: Event) => {
     <div class="outline-marker" ref="marker" />
     <div class="outline-title">On this page</div>
     <nav aria-labelledby="doc-outline-aria-label">
-      <span id="doc-outline-aria-label" class="visually-hidden"
-        >{{ theme.messages.tableOfContents }}</span
-      >
+      <span id="doc-outline-aria-label" class="visually-hidden">{{
+        theme?.messages?.tableOfContents ??
+        'Table of Contents for current page'
+      }}</span>
       <ul class="root">
         <li
           v-for="{ text, link, children, hidden } in resolveHeaders(

@@ -8,11 +8,13 @@ const { theme } = useData()
 <template>
   <div class="VPFooter">
     <p v-if="theme.footer?.license" class="license">{{
-      theme.messages.footerLicense.before
+      theme?.messages?.footerLicense?.before ??
+      'Released under the '
     }}<VTLink class="link" :href="theme.footer.license.link" no-icon>{{
       theme.footer.license.text
     }}</VTLink>{{
-      theme.messages.footerLicense.after
+      theme?.messages?.footerLicense?.after ??
+      '.'
     }}</p>
 
     <p v-if="theme.footer?.copyright" class="copyright">

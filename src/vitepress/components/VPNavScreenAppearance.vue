@@ -9,7 +9,9 @@ const { config } = useConfig()
 
 <template>
   <div v-if="config.appearance" class="VPNavScreenAppearance">
-    <p class="text">{{ theme.messages.appearance }}</p>
+    <p class="text">{{
+      theme?.messages?.appearance ?? 'Appearance'
+    }}</p>
     <VTSwitchAppearance />
   </div>
 </template>

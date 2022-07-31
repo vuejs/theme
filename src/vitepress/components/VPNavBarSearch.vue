@@ -49,7 +49,10 @@ function load() {
       <button
         type="button"
         class="DocSearch DocSearch-Button"
-        :aria-label="theme.messages.search"
+        :aria-label="
+          theme?.messages?.search ??
+          'Search'
+        "
       >
         <span class="DocSearch-Button-Container">
           <svg
@@ -67,10 +70,14 @@ function load() {
               stroke-linejoin="round"
             ></path>
           </svg>
-          <span class="DocSearch-Button-Placeholder">{{ theme.messages.search }}</span>
+          <span class="DocSearch-Button-Placeholder">{{
+            theme?.messages?.search ?? 'Search'
+          }}</span>
         </span>
         <span class="DocSearch-Button-Keys">
-          <span class="DocSearch-Button-Key" ref="metaKey">{{ theme.messages.meta }}</span>
+          <span class="DocSearch-Button-Key" ref="metaKey">{{
+            theme?.messages?.meta ?? 'Meta'
+          }}</span>
           <span class="DocSearch-Button-Key">K</span>
         </span>
       </button>

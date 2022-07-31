@@ -31,9 +31,10 @@ watchPostEffect(async () => {
   >
     <nav id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1">
       <slot name="top" />
-      <span id="sidebar-aria-label" class="visually-hidden"
-        >{{ theme.messages.sidebarNavigation }}</span
-      >
+      <span id="sidebar-aria-label" class="visually-hidden">{{
+        theme?.messages?.sidebarNavigation ??
+        'Sidebar Navigation'
+      }}</span>
       <div v-for="group in sidebar" :key="group.text" class="group">
         <VPSidebarGroup :text="group.text" :items="group.items" />
       </div>

@@ -22,7 +22,9 @@ function scrollToTop() {
       @click="$emit('open-menu')"
       >
       <VTIconAlignLeft class="menu-icon" />
-      <span class="menu-text">{{ theme.messages.menu }}</span>
+      <span class="menu-text">{{
+        theme?.messages?.menu || 'Menu'
+      }}</span>
     </button>
 
     <a
@@ -30,8 +32,10 @@ function scrollToTop() {
       class="top-link"
       href="#"
       @click="scrollToTop"
-      >{{ theme.messages.returnToTop }}</a
-    >
+    >{{
+      theme?.messages?.returnToTop ??
+      'Return to top'
+    }}</a>
   </div>
 </template>
 

@@ -6,8 +6,10 @@ const { page, theme } = useData()
 
 <template>
   <div class="visually-hidden" aria-live="polite">{{
-    theme.messages.announcer.before
+    theme?.messages?.announcer?.before ??
+    ''
   }}{{ page.title }}{{
-    theme.messages.announcer.after
+    theme?.messages?.announcer?.after ??
+    ' has loaded'
   }}</div>
 </template>

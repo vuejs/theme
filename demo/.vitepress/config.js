@@ -349,48 +349,49 @@ module.exports = (async () => {
             ]
           }
         ]
-      },
-
-      messages: {
-        // basic-level
-        search: 'Search',
-        previous: 'Previous',
-        next: 'Next',
-        menu: 'Menu',
-        appearance: 'Appearance',
-        meta: 'Meta',
-
-        // block-level
-        pageNotFound: 'Page Not Found',
-        tableOfContents: 'Table of Contents for current page',
-        mainNavigation: 'Main Navigation',
-        mobileNavigation: 'Mobile Navigation',
-        sidebarNavigation: 'Sidebar Navigation',
-
-        // sentence-level
-        announcer: {
-          before: '',
-          after: ' has loaded'
-        },
-        footerLicense: {
-          before: 'Released under the ',
-          after: '.'
-        },
-        deadLinkFound: {
-          before: 'You found a dead link: ',
-          after: ''
-        },
-        deadLinkReport: {
-          before: 'Please ',
-          content: 'let us know',
-          after: ' so we can fix it.'
-        },
-
-        // action-level
-        toggleDarkMode: 'Toggle Dark Mode',
-        returnToTop: 'Return to top',
-        skipToContent: 'Skip to content'
       }
+
+      // // For i18n translation messages
+      // messages: {
+      //   // basic-level
+      //   search: 'Search',
+      //   previous: 'Previous',
+      //   next: 'Next',
+      //   menu: 'Menu',
+      //   appearance: 'Appearance',
+      //   meta: 'Meta',
+      //
+      //   // block-level
+      //   pageNotFound: 'Page Not Found',
+      //   tableOfContents: 'Table of Contents for current page',
+      //   mainNavigation: 'Main Navigation',
+      //   mobileNavigation: 'Mobile Navigation',
+      //   sidebarNavigation: 'Sidebar Navigation',
+      //
+      //   // sentence-level
+      //   announcer: {
+      //     before: '',
+      //     after: ' has loaded'
+      //   },
+      //   footerLicense: {
+      //     before: 'Released under the ',
+      //     after: '.'
+      //   },
+      //   deadLinkFound: {
+      //     before: 'You found a dead link: ',
+      //     after: ''
+      //   },
+      //   deadLinkReport: {
+      //     before: 'Please ',
+      //     content: 'let us know',
+      //     after: ' so we can fix it.'
+      //   },
+      //
+      //   // action-level
+      //   toggleDarkMode: 'Toggle Dark Mode',
+      //   returnToTop: 'Return to top',
+      //   skipToContent: 'Skip to content'
+      // }
     }
   }
 })()

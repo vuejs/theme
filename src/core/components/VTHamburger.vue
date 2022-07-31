@@ -11,7 +11,10 @@ defineProps<{
     type="button"
     class="vt-hamburger"
     :class="{ 'is-active': active }"
-    :aria-label="theme.messages.mobileNavigation"
+    :aria-label="
+      theme?.messages?.mobileNavigation ??
+      'Mobile navigation'
+    "
     :aria-expanded="active"
     aria-controls="VPNavScreen"
   >

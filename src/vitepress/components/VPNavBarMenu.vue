@@ -11,7 +11,8 @@ const { config } = useConfig()
 <template>
   <nav v-if="config.nav" aria-labelledby="main-nav-aria-label" class="VPNavBarMenu">
     <span id="main-nav-aria-label" class="visually-hidden">{{
-      theme.messages.mainNavigation
+      theme?.messages?.mainNavigation ??
+      'Main Navigation'
     }}</span>
     <template v-for="item in config.nav" :key="item.text">
       <VPNavBarMenuLink v-if="'link' in item" :item="item" />

@@ -7,17 +7,25 @@ const route = useRoute()
 
 <template>
   <div class="vt-doc">
-    <h1>{{ theme.messages.pageNotFound }}</h1>
+    <h1>{{
+      theme?.messages?.pageNotFound ??
+      'Page Not Found'
+    }}</h1>
     <p>{{
-      theme.messages.deadLinkFound.before
+      theme?.messages?.deadLinkFound?.before ??
+      'You found a dead link: '
     }}<span class="not-found-path">{{ route.path }}</span>{{
-      theme.messages.deadLinkFound.after
+      theme?.messages?.deadLinkFound?.after ??
+      ''
     }}<br /><span v-if="theme.repo">{{
-      theme.messages.deadLinkReport.before
+      theme?.messages?.deadLinkReport?.before ??
+      'Please '
     }}<a :href="`https://github.com/${theme.repo}`" target="_blank">{{
-      theme.messages.deadLinkReport.content
+      theme?.messages?.deadLinkReport?.content ??
+      'let us know'
     }}</a>{{
-      theme.messages.deadLinkReport.after
+      theme?.messages?.deadLinkReport?.after ??
+      ' so we can fix it.'
     }}</span>
     </p>
   </div>
