@@ -34,7 +34,7 @@ To work on this theme in the context of the `vuejs.org` website requires cloning
 
    # in ./docs
    pnpm install
-   # Link teme
+   # Link theme
    pnpm link --global @vue/theme
    ```
 
