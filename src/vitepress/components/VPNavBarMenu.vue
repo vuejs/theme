@@ -7,8 +7,14 @@ const { config } = useConfig()
 </script>
 
 <template>
-  <nav v-if="config.nav" aria-labelledby="main-nav-aria-label" class="VPNavBarMenu">
-    <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
+  <nav
+    v-if="config.nav"
+    aria-labelledby="main-nav-aria-label"
+    class="VPNavBarMenu"
+  >
+    <span id="main-nav-aria-label" class="visually-hidden">{{
+      config.i18n?.ariaMainNav ?? 'Main Navigation'
+    }}</span>
     <template v-for="item in config.nav" :key="item.text">
       <VPNavBarMenuLink v-if="'link' in item" :item="item" />
       <VPNavBarMenuGroup v-else :item="item" />

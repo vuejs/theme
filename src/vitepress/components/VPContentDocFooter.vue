@@ -9,11 +9,13 @@ import {
   VTIconChevronRight,
   MenuItemWithLink
 } from '../../core'
+import { useConfig } from '../composables/config'
 
-const { page, theme } = useData()
+const { page } = useData()
+const { config } = useConfig()
 
 const links = computed(() => {
-  const sidebar = getSidebar(theme.value.sidebar, page.value.relativePath)
+  const sidebar = getSidebar(config.value.sidebar, page.value.relativePath)
   const candidates = getFlatSideBarLinks(sidebar)
   const index = candidates.findIndex((link) =>
     isActive(page.value.relativePath, link.link)
@@ -42,9 +44,10 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
       class="prev-link"
       :href="normalizeLink(links.prev.link)"
     >
-      <span class="desc"
-        ><VTIconChevronLeft class="vt-link-icon" /> Previous</span
-      >
+      <span class="desc">
+        <VTIconChevronLeft class="vt-link-icon" />
+        {{ config.i18n?.previous ?? 'Previous' }}
+      </span>
       <span class="title">{{ links.prev.text }} </span>
     </a>
     <a
@@ -52,7 +55,10 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
       class="next-link"
       :href="normalizeLink(links.next.link)"
     >
-      <span class="desc">Next <VTIconChevronRight class="vt-link-icon" /></span>
+      <span class="desc">
+        {{ config.i18n?.next ?? 'Next' }}
+        <VTIconChevronRight class="vt-link-icon" />
+      </span>
       <span class="title">{{ links.next.text }}</span>
     </a>
   </footer>

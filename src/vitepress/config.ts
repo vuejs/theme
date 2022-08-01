@@ -29,6 +29,11 @@ export interface Config {
   sidebar?: SidebarConfig
 
   /**
+   * The i18n messages.
+   */
+  i18n?: i18nConfig
+
+  /**
    * Info for the edit link
    */
   editLink?: {
@@ -109,4 +114,31 @@ export interface MultiSidebarConfig {
 export interface SidebarGroup {
   text: string
   items: MenuItemWithLink[]
+}
+
+export interface i18nConfig {
+  search?: string
+  menu?: string
+  returnToTop?: string
+  appearance?: string
+  previous?: string
+  next?: string
+  pageNotFound?: string
+  deadLink?: MessageWithLink
+  deadLinkReport?: MessageWithLink
+  footerLicense?: MessageWithLink
+
+  ariaAnnouner?: MessageWithLink
+  ariaDarkMode?: string
+  ariaSkipToContent?: string
+  ariaToC?: string
+  ariaMainNav?: string
+  ariaMobileNav?: string
+  ariaSidebarNav?: string
+}
+
+export interface MessageWithLink {
+  before?: string
+  link?: string
+  after?: string
 }

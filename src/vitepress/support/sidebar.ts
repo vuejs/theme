@@ -8,7 +8,7 @@ import { ensureStartingSlash } from './utils'
  * was found, it will return empty array.
  */
 export function getSidebar(
-  sidebar: SidebarConfig,
+  sidebar: SidebarConfig | undefined,
   path: string
 ): SidebarGroup[] {
   if (Array.isArray(sidebar)) {

@@ -2,11 +2,13 @@
 import { VTIconAlignLeft } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import { useData } from 'vitepress'
+import { useConfig } from '../composables/config'
 
 defineProps<{ open: boolean }>()
 
 const { hasSidebar } = useSidebar()
 const { frontmatter } = useData()
+const { config } = useConfig()
 
 function scrollToTop() {
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
@@ -20,9 +22,9 @@ function scrollToTop() {
       :aria-expanded="open"
       aria-controls="VPSidebarNav"
       @click="$emit('open-menu')"
-      >
+    >
       <VTIconAlignLeft class="menu-icon" />
-      <span class="menu-text">Menu</span>
+      <span class="menu-text">{{ config.i18n?.menu || 'Menu' }}</span>
     </button>
 
     <a
@@ -30,7 +32,7 @@ function scrollToTop() {
       class="top-link"
       href="#"
       @click="scrollToTop"
-      >Return to top</a
+      >{{ config.i18n?.returnToTop ?? 'Return to top' }}</a
     >
   </div>
 </template>

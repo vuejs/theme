@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
 import { useRoute } from 'vitepress'
+import { useConfig } from '../composables/config'
 
+const { config } = useConfig()
 const route = useRoute()
 const backToTop = ref()
 
@@ -34,9 +36,8 @@ const focusOnTargetAnchor = ({ target }: Event) => {
     href="#VPContent"
     class="VPSkipLink visually-hidden"
     @click="focusOnTargetAnchor"
+    >{{ config.i18n?.ariaSkipToContent ?? 'Skip to content' }}</a
   >
-    Skip to content
-  </a>
 </template>
 
 <style scoped>

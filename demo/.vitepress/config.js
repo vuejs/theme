@@ -1,6 +1,9 @@
 const getBase = require('../../src/vitepress/config/baseConfig')
 const path = require('path')
 
+/**
+ * @type {() => Promise<import('vitepress').UserConfig>}
+ */
 module.exports = (async () => {
   const base = await getBase()
   return {
@@ -347,6 +350,42 @@ module.exports = (async () => {
           }
         ]
       }
+
+      // // For i18n translation messages
+      // i18n: {
+      //   search: 'Search',
+      //   menu: 'Menu',
+      //   returnToTop: 'Return to top',
+      //   appearance: 'Appearance',
+      //   previous: 'Previous',
+      //   next: 'Next',
+      //   pageNotFound: 'Page Not Found',
+      //   deadLinkFound: {
+      //     before: 'You found a dead link: ',
+      //     after: ''
+      //   },
+      //   deadLinkReport: {
+      //     before: 'Please ',
+      //     content: 'let us know',
+      //     after: ' so we can fix it.'
+      //   },
+      //   footerLicense: {
+      //     before: 'Released under the ',
+      //     after: '.'
+      //   }
+
+      //   // aria labels
+      //   ariaAnnouncer: {
+      //     before: '',
+      //     after: ' has loaded'
+      //   },
+      //   ariaDarkMode: 'Toggle Dark Mode',
+      //   ariaSkip: 'Skip to content',
+      //   ariaTOC: 'Table of Contents for current page',
+      //   ariaMainNav: 'Main Navigation',
+      //   ariaMobileNav: 'Mobile Navigation',
+      //   ariaSidebarNav: 'Sidebar Navigation',
+      // }
     }
   }
 })()
