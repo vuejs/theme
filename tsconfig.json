@@ -4,6 +4,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
+    "jsx": "preserve",
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "lib": ["ESNext", "DOM"],
