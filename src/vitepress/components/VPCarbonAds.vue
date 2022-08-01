@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useMediaQuery } from '@vueuse/core'
-import { useData } from 'vitepress'
 import { ref, onMounted, watch } from 'vue'
+import { useConfig } from '../composables/config'
 
-const { theme } = useData()
-const carbonOptions = theme.value.carbonAds
+const { config } = useConfig()
+// this component only loads when user has configured carbonAds
+const carbonOptions = config.value.carbonAds!
 const container = ref()
 const isWide = useMediaQuery('(min-width: 1280px)')
 

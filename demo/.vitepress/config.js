@@ -352,31 +352,14 @@ module.exports = (async () => {
       }
 
       // // For i18n translation messages
-      // messages: {
-      //   // basic-level
+      // i18n: {
       //   search: 'Search',
+      //   menu: 'Menu',
+      //   returnToTop: 'Return to top',
+      //   appearance: 'Appearance',
       //   previous: 'Previous',
       //   next: 'Next',
-      //   menu: 'Menu',
-      //   appearance: 'Appearance',
-      //   meta: 'Meta',
-      //
-      //   // block-level
       //   pageNotFound: 'Page Not Found',
-      //   tableOfContents: 'Table of Contents for current page',
-      //   mainNavigation: 'Main Navigation',
-      //   mobileNavigation: 'Mobile Navigation',
-      //   sidebarNavigation: 'Sidebar Navigation',
-      //
-      //   // sentence-level
-      //   announcer: {
-      //     before: '',
-      //     after: ' has loaded'
-      //   },
-      //   footerLicense: {
-      //     before: 'Released under the ',
-      //     after: '.'
-      //   },
       //   deadLinkFound: {
       //     before: 'You found a dead link: ',
       //     after: ''
@@ -386,11 +369,22 @@ module.exports = (async () => {
       //     content: 'let us know',
       //     after: ' so we can fix it.'
       //   },
-      //
-      //   // action-level
-      //   toggleDarkMode: 'Toggle Dark Mode',
-      //   returnToTop: 'Return to top',
-      //   skipToContent: 'Skip to content'
+      //   footerLicense: {
+      //     before: 'Released under the ',
+      //     after: '.'
+      //   }
+
+      //   // aria labels
+      //   ariaAnnouncer: {
+      //     before: '',
+      //     after: ' has loaded'
+      //   },
+      //   ariaDarkMode: 'Toggle Dark Mode',
+      //   ariaSkip: 'Skip to content',
+      //   ariaTOC: 'Table of Contents for current page',
+      //   ariaMainNav: 'Main Navigation',
+      //   ariaMobileNav: 'Mobile Navigation',
+      //   ariaSidebarNav: 'Sidebar Navigation',
       // }
     }
   }

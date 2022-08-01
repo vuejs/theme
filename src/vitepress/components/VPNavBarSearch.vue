@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import '@docsearch/css'
-import { useData } from 'vitepress'
 import { ref, defineAsyncComponent, onMounted, onUnmounted } from 'vue'
+import { useConfig } from '../composables/config'
 
-const { theme } = useData()
+const { config } = useConfig()
+
 const VPAlgoliaSearchBox = defineAsyncComponent(
   () => import('./VPAlgoliaSearchBox.vue')
 )
@@ -15,7 +16,7 @@ const loaded = ref(false)
 const metaKey = ref()
 
 onMounted(() => {
-  if (!theme.value.algolia) return
+  if (!config.value.algolia) return
 
   // meta key detect (same logic as in @docsearch/js)
   metaKey.value.textContent = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
@@ -43,16 +44,13 @@ function load() {
 </script>
 
 <template>
-  <div v-if="theme.algolia" class="VPNavBarSearch">
+  <div v-if="config.algolia" class="VPNavBarSearch">
     <VPAlgoliaSearchBox v-if="loaded" />
     <div v-else id="docsearch" @click="load">
       <button
         type="button"
         class="DocSearch DocSearch-Button"
-        :aria-label="
-          theme?.messages?.search ??
-          'Search'
-        "
+        :aria-label="config.i18n?.search ?? 'Search'"
       >
         <span class="DocSearch-Button-Container">
           <svg
@@ -71,13 +69,11 @@ function load() {
             ></path>
           </svg>
           <span class="DocSearch-Button-Placeholder">{{
-            theme?.messages?.search ?? 'Search'
+            config.i18n?.search ?? 'Search'
           }}</span>
         </span>
         <span class="DocSearch-Button-Keys">
-          <span class="DocSearch-Button-Key" ref="metaKey">{{
-            theme?.messages?.meta ?? 'Meta'
-          }}</span>
+          <span class="DocSearch-Button-Key" ref="metaKey">Meta</span>
           <span class="DocSearch-Button-Key">K</span>
         </span>
       </button>

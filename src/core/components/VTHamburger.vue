@@ -1,6 +1,8 @@
 <script lang="ts" setup>
-import { useData } from 'vitepress'
-const { theme } = useData()
+import { useConfig } from '../../vitepress/composables/config'
+
+const { config } = useConfig()
+
 defineProps<{
   active: boolean
 }>()
@@ -11,10 +13,7 @@ defineProps<{
     type="button"
     class="vt-hamburger"
     :class="{ 'is-active': active }"
-    :aria-label="
-      theme?.messages?.mobileNavigation ??
-      'Mobile navigation'
-    "
+    :aria-label="config.i18n?.ariaMobileNav ?? 'Mobile navigation'"
     :aria-expanded="active"
     aria-controls="VPNavScreen"
   >

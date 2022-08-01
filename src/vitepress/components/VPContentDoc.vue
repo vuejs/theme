@@ -4,17 +4,20 @@ import { useData } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
 import VPCarbonAds from './VPCarbonAds.vue'
-import type { Config } from '../config'
 import { VTLink, VTIconEdit } from '../../core'
+import { useConfig } from '../composables/config'
 
-const { page, frontmatter, theme } = useData<Config>()
+const { page, frontmatter } = useData()
+const { config } = useConfig()
 
 const hashMatch = /#(\w+)$/
 
 const repoUrl = computed(() => {
-  const repo = theme.value.editLink?.repo || 'vuejs/docs'
+  const repo = config.value.editLink?.repo || 'vuejs/docs'
   const branch = repo.match(hashMatch)?.[1] || 'main'
-  return `https://github.com/${repo.split('#')[0]}/edit/${branch}/src/${page.value.relativePath}`
+  return `https://github.com/${repo.split('#')[0]}/edit/${branch}/src/${
+    page.value.relativePath
+  }`
 })
 
 const pageClass = computed(() => {
@@ -36,7 +39,7 @@ const pageClass = computed(() => {
             v-if="page.headers && frontmatter.outline !== false"
           />
           <slot name="aside-mid" />
-          <VPCarbonAds v-if="theme.carbonAds && frontmatter.ads !== false" />
+          <VPCarbonAds v-if="config.carbonAds && frontmatter.ads !== false" />
           <slot name="aside-bottom" />
         </div>
       </div>
@@ -46,10 +49,12 @@ const pageClass = computed(() => {
           <Content class="vt-doc" :class="pageClass" />
           <p
             class="edit-link"
-            v-if="theme.editLink && frontmatter.editLink !== false"
+            v-if="config.editLink && frontmatter.editLink !== false"
           >
             <VTIconEdit class="vt-icon" />
-            <VTLink :href="repoUrl" :no-icon="true">{{ theme.editLink.text }}</VTLink>
+            <VTLink :href="repoUrl" :no-icon="true">{{
+              config.editLink.text
+            }}</VTLink>
           </p>
         </main>
         <slot name="content-bottom" />

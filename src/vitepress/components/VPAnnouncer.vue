@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { useData } from 'vitepress'
+import { useConfig } from '../composables/config'
+import type { Config } from '../config'
 
-const { page, theme } = useData()
+const { page } = useData<Config>()
+const { config } = useConfig()
 </script>
 
 <template>
-  <div class="visually-hidden" aria-live="polite">{{
-    theme?.messages?.announcer?.before ??
-    ''
-  }}{{ page.title }}{{
-    theme?.messages?.announcer?.after ??
-    ' has loaded'
-  }}</div>
+  <div class="visually-hidden" aria-live="polite">
+    {{ config.i18n?.ariaAnnouner?.before ?? '' }}{{ page.title
+    }}{{ config.i18n?.ariaAnnouner?.after ?? ' has loaded' }}
+  </div>
 </template>

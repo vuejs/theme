@@ -31,7 +31,7 @@ export interface Config {
   /**
    * The i18n messages.
    */
-  messages?: MessagesConfig
+  i18n?: i18nConfig
 
   /**
    * Info for the edit link
@@ -116,12 +116,29 @@ export interface SidebarGroup {
   items: MenuItemWithLink[]
 }
 
-export interface MessagesConfig {
-  [key: string]: string | SentenceMessage
+export interface i18nConfig {
+  search?: string
+  menu?: string
+  returnToTop?: string
+  appearance?: string
+  previous?: string
+  next?: string
+  pageNotFound?: string
+  deadLink?: MessageWithLink
+  deadLinkReport?: MessageWithLink
+  footerLicense?: MessageWithLink
+
+  ariaAnnouner?: MessageWithLink
+  ariaDarkMode?: string
+  ariaSkipToContent?: string
+  ariaToC?: string
+  ariaMainNav?: string
+  ariaMobileNav?: string
+  ariaSidebarNav?: string
 }
 
-export interface SentenceMessage {
+export interface MessageWithLink {
   before?: string
-  content?: string
+  link?: string
   after?: string
 }

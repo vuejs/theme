@@ -6,7 +6,7 @@ export interface MenuItemWithLink {
 }
 
 export interface MenuItemWithChildren {
-  text: string
+  text?: string
   items: MenuItemChild[]
 }
 

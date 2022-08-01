@@ -1,32 +1,26 @@
 <script setup lang="ts">
-import { useData, useRoute } from 'vitepress'
+import { useRoute } from 'vitepress'
+import { useConfig } from '../composables/config'
 
-const { theme } = useData()
 const route = useRoute()
+const { config } = useConfig()
 </script>
 
 <template>
   <div class="vt-doc">
-    <h1>{{
-      theme?.messages?.pageNotFound ??
-      'Page Not Found'
-    }}</h1>
-    <p>{{
-      theme?.messages?.deadLinkFound?.before ??
-      'You found a dead link: '
-    }}<span class="not-found-path">{{ route.path }}</span>{{
-      theme?.messages?.deadLinkFound?.after ??
-      ''
-    }}<br /><span v-if="theme.repo">{{
-      theme?.messages?.deadLinkReport?.before ??
-      'Please '
-    }}<a :href="`https://github.com/${theme.repo}`" target="_blank">{{
-      theme?.messages?.deadLinkReport?.content ??
-      'let us know'
-    }}</a>{{
-      theme?.messages?.deadLinkReport?.after ??
-      ' so we can fix it.'
-    }}</span>
+    <h1>{{ config.i18n?.pageNotFound ?? 'Page Not Found' }}</h1>
+    <p>
+      {{ config.i18n?.deadLink?.before ?? 'You found a dead link: '
+      }}<span class="not-found-path">{{ route.path }}</span
+      >{{ config.i18n?.deadLink?.after ?? '' }}<br /><span
+        v-if="config.editLink?.repo"
+        >{{ config.i18n?.deadLinkReport?.before ?? 'Please '
+        }}<a
+          :href="`https://github.com/${config.editLink?.repo}`"
+          target="_blank"
+          >{{ config.i18n?.deadLinkReport?.link ?? 'let us know' }}</a
+        >{{ config.i18n?.deadLinkReport?.after ?? ' so we can fix it.' }}</span
+      >
     </p>
   </div>
 </template>

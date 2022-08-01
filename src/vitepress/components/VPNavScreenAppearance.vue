@@ -1,17 +1,13 @@
 <script lang="ts" setup>
-import { useData } from 'vitepress'
 import { VTSwitchAppearance } from '../../core'
 import { useConfig } from '../composables/config'
 
-const { theme } = useData()
 const { config } = useConfig()
 </script>
 
 <template>
   <div v-if="config.appearance" class="VPNavScreenAppearance">
-    <p class="text">{{
-      theme?.messages?.appearance ?? 'Appearance'
-    }}</p>
+    <p class="text">{{ config.i18n?.appearance ?? 'Appearance' }}</p>
     <VTSwitchAppearance />
   </div>
 </template>
