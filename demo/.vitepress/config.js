@@ -93,7 +93,7 @@ module.exports = (async () => {
           items: [
             {
               items: [
-                { text: 'Team', link: '/community/team' },
+                { text: 'Team', link: '/community/team/' },
                 {
                   text: 'Contribution Guide',
                   link: '/community/contribution-guide'
@@ -355,6 +355,7 @@ module.exports = (async () => {
       // i18n: {
       //   search: 'Search',
       //   menu: 'Menu',
+      //   toc: 'On this page',
       //   returnToTop: 'Return to top',
       //   appearance: 'Appearance',
       //   previous: 'Previous',
