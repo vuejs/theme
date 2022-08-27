@@ -73,8 +73,8 @@ function load() {
           }}</span>
         </span>
         <span class="DocSearch-Button-Keys">
-          <span class="DocSearch-Button-Key" ref="metaKey">Meta</span>
-          <span class="DocSearch-Button-Key">K</span>
+          <kbd class="DocSearch-Button-Key" ref="metaKey">Meta</kbd>
+          <kbd class="DocSearch-Button-Key">K</kbd>
         </span>
       </button>
     </div>
@@ -236,6 +236,7 @@ function load() {
 }
 
 .DocSearch-Button-Key {
+  font-family: inherit;
   font-size: 12px;
   font-weight: 500;
   height: 20px;
