@@ -34,8 +34,8 @@ function mapHeaders(
 ): MenuItemWithLinkAndChildren[] {
   return headers.map((header) => ({
     text: header.title,
-    link: `#${header.slug}`,
-    children: header.children ? mapHeaders(header.children) : undefined,
+    link: header.link,
+    children: header.children?.length ? mapHeaders(header.children) : undefined,
     hidden: header.hidden
   }))
 }
