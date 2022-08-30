@@ -42,23 +42,8 @@ module.exports = async () => ({
             }
           ]
         ]
-      : []),
-    [
-      'script',
-      {},
-      require('fs').readFileSync(
-        require('path').resolve(
-          __dirname,
-          './inlined-scripts/applyDarkMode.js'
-        ),
-        'utf-8'
-      )
-    ]
+      : [])
   ],
-
-  markdown: {
-    highlight: await require('./highlight')()
-  },
 
   shouldPreload: (link) => {
     // make algolia chunk prefetch instead of preload

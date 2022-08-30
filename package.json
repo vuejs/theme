@@ -5,8 +5,7 @@
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./config": "./src/vitepress/config/baseConfig.js",
-    "./highlight": "./src/vitepress/config/highlight.js"
+    "./config": "./src/vitepress/config/baseConfig.js"
   },
   "files": [
     "src",
@@ -36,19 +35,26 @@
     "serve": "npm run demo-build && vitepress serve demo"
   },
   "dependencies": {
-    "@docsearch/css": "^3.1.1",
-    "@docsearch/js": "^3.1.1",
-    "@vueuse/core": "^7.3.0",
+    "@docsearch/css": "^3.2.1",
+    "@docsearch/js": "^3.2.1",
+    "@vueuse/core": "^9.1.1",
     "body-scroll-lock": "^3.1.5",
-    "normalize.css": "^8.0.1",
-    "shiki": "^0.9.15"
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@types/body-scroll-lock": "^2.6.1",
-    "@types/estree": "^0.0.48",
-    "prettier": "^2.4.1",
-    "typescript": "~4.3.5",
-    "vitepress": "^0.20.9",
-    "vue": "^3.2.26"
+    "@mdit-vue/types": "^0.11.0",
+    "@types/body-scroll-lock": "^3.1.0",
+    "@types/estree": "^1.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2",
+    "vitepress": "^1.0.0-alpha.12",
+    "vue": "^3.2.37"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
   }
 }
