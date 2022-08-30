@@ -3,14 +3,15 @@ lockfileVersion: 5.4
 specifiers:
   '@docsearch/css': ^3.2.1
   '@docsearch/js': ^3.2.1
+  '@mdit-vue/types': ^0.11.0
   '@types/body-scroll-lock': ^3.1.0
   '@types/estree': ^1.0.0
   '@vueuse/core': ^9.1.1
   body-scroll-lock: ^3.1.5
   normalize.css: ^8.0.1
   prettier: ^2.7.1
-  typescript: ^4.7.4
-  vitepress: ^1.0.0-alpha.10
+  typescript: ^4.8.2
+  vitepress: ^1.0.0-alpha.12
   vue: ^3.2.37
 
 dependencies:
@@ -21,11 +22,12 @@ dependencies:
   normalize.css: 8.0.1
 
 devDependencies:
+  '@mdit-vue/types': 0.11.0
   '@types/body-scroll-lock': 3.1.0
   '@types/estree': 1.0.0
   prettier: 2.7.1
-  typescript: 4.7.4
-  vitepress: 1.0.0-alpha.10
+  typescript: 4.8.2
+  vitepress: 1.0.0-alpha.12
   vue: 3.2.37
 
 packages:
@@ -187,6 +189,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@mdit-vue/types/0.11.0:
+    resolution: {integrity: sha512-ygCGP7vFpqS02hpZwEe1uz8cfImWX06+zRs08J+tCZRKb6k+easIaIHFtY9ZSxt7j9L/gAPLDo/5RmOT6z0DPQ==}
+    dev: true
 
   /@types/body-scroll-lock/3.1.0:
     resolution: {integrity: sha512-3owAC4iJub5WPqRhxd8INarF2bWeQq1yQHBgYhN0XLBJMpd5ED10RrJ3aKiAwlTyL5wK7RkBD4SZUQz2AAAMdA==}
@@ -662,8 +668,8 @@ packages:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
 
-  /typescript/4.7.4:
-    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+  /typescript/4.8.2:
+    resolution: {integrity: sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
@@ -695,8 +701,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.10:
-    resolution: {integrity: sha512-RGPU+YApj2jaYplAIJUe+2qlDks9FzPX1QGK+7NdGByeCCVZg6z9eYWjjvfvA/sgCtG3yeJE/4/jCwlv4Y8bVw==}
+  /vitepress/1.0.0-alpha.12:
+    resolution: {integrity: sha512-++e7p9oxqk7RKz2fMNtrOAWmZSWVPozDuOG1owwntPRincC8/pIhPkJ9ojNHcHCHBylszJBsjkRqbseurZ7vCg==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.2.1

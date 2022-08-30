@@ -6,7 +6,7 @@ import { useConfig } from '../../vitepress/composables/config'
 
 const { config } = useConfig()
 
-const storageKey = 'vue-theme-appearance'
+const storageKey = 'vitepress-theme-appearance'
 const toggle = typeof localStorage !== 'undefined' ? useAppearance() : () => {}
 
 function useAppearance() {

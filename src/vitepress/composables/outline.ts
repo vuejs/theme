@@ -4,7 +4,6 @@ import { useMediaQuery } from '@vueuse/core'
 import { MenuItemWithLink } from '../../core'
 
 interface HeaderWithChildren extends Header {
-  children?: Header[]
   hidden?: boolean
 }
 
