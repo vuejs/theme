@@ -226,7 +226,8 @@ function load() {
   content: v-bind(metaKey);
   font-size: 12px;
   letter-spacing: normal;
-  color: var(--docsearch-muted-color);
+  color: var(--vt-c-text-3);
+  transition: color 0.5s;
 }
 
 .DocSearch-Button .DocSearch-Button-Key:first-child > * {
@@ -241,7 +242,8 @@ function load() {
   padding-right: 6px;
 }
 
-.DocSearch-Button:hover .DocSearch-Button-Key {
+.DocSearch-Button:hover .DocSearch-Button-Key,
+.DocSearch-Button:hover .DocSearch-Button-Key:first-child:after {
   border-color: var(--vt-c-brand-light);
   color: var(--vt-c-brand-light);
 }
