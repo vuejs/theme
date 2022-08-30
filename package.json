@@ -47,7 +47,7 @@
     "@types/estree": "^1.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.8.2",
-    "vitepress": "^1.0.0-alpha.12",
+    "vitepress": "^1.0.0-alpha.13",
     "vue": "^3.2.37"
   },
   "pnpm": {

@@ -4,13 +4,10 @@ import { useSidebar } from '../composables/sidebar'
 import VPContentPage from './VPContentPage.vue'
 import VPContentDoc from './VPContentDoc.vue'
 import VPNotFound from './VPNotFound.vue'
-import { useCopyCode } from '../composables/copy-code'
 
 const route = useRoute()
 const { frontmatter } = useData()
 const { hasSidebar } = useSidebar()
-
-useCopyCode()
 </script>
 
 <template>
