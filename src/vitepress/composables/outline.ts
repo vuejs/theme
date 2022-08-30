@@ -14,7 +14,7 @@ interface MenuItemWithLinkAndChildren extends MenuItemWithLink {
 
 export function resolveHeaders(
   headers: HeaderWithChildren[],
-  filter: (h: HeaderWithChildren) => boolean
+  filter?: (h: HeaderWithChildren) => boolean
 ): MenuItemWithLinkAndChildren[] {
   return headers.map((header) => ({
     text: header.title,
@@ -22,7 +22,7 @@ export function resolveHeaders(
     children: header.children?.length
       ? resolveHeaders(header.children, filter)
       : undefined,
-    hidden: !filter(header)
+    hidden: filter ? !filter(header) : false
   }))
 }
 
