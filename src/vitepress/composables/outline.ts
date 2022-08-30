@@ -12,31 +12,17 @@ interface MenuItemWithLinkAndChildren extends MenuItemWithLink {
   hidden?: boolean
 }
 
-export function resolveHeaders(headers: HeaderWithChildren[]) {
-  return mapHeaders(groupHeaders(headers))
-}
-
-function groupHeaders(headers: Header[]): HeaderWithChildren[] {
-  headers = headers.map((h) => Object.assign({}, h))
-  let lastH2: HeaderWithChildren | undefined
-  for (const h of headers) {
-    if (h.level === 2) {
-      lastH2 = h
-    } else if (lastH2 && h.level <= 3) {
-      ;(lastH2.children || (lastH2.children = [])).push(h)
-    }
-  }
-  return headers.filter((h) => h.level === 2)
-}
-
-function mapHeaders(
-  headers: HeaderWithChildren[]
+export function resolveHeaders(
+  headers: HeaderWithChildren[],
+  filter: (h: HeaderWithChildren) => boolean
 ): MenuItemWithLinkAndChildren[] {
   return headers.map((header) => ({
     text: header.title,
     link: header.link,
-    children: header.children?.length ? mapHeaders(header.children) : undefined,
-    hidden: header.hidden
+    children: header.children?.length
+      ? resolveHeaders(header.children, filter)
+      : undefined,
+    hidden: !filter(header)
   }))
 }
 
