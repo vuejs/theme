@@ -29,7 +29,9 @@ const handleClick = ({ target: el }: Event) => {
 <template>
   <div class="VPContentDocOutline" ref="container">
     <div class="outline-marker" ref="marker" />
-    <div class="outline-title">On this page</div>
+    <div class="outline-title">{{
+      config.i18n?.toc ?? 'On this page'
+    }}</div>
     <nav aria-labelledby="doc-outline-aria-label">
       <span id="doc-outline-aria-label" class="visually-hidden">{{
         config.i18n?.ariaToC ?? 'Table of Contents for current page'
