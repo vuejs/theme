@@ -13,15 +13,15 @@ const VPAlgoliaSearchBox = defineAsyncComponent(
 // payload), we delay initializing it until the user has actually clicked or
 // hit the hotkey to invoke it
 const loaded = ref(false)
-const metaKey = ref()
+const metaKey = ref(`'Meta'`)
 
 onMounted(() => {
   if (!config.value.algolia) return
 
   // meta key detect (same logic as in @docsearch/js)
-  metaKey.value.textContent = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
-    ? '⌘'
-    : 'Ctrl'
+  metaKey.value = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
+    ? `'⌘'`
+    : `'Ctrl'`
   const handleSearchHotKey = (e: KeyboardEvent) => {
     if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault()
@@ -73,8 +73,8 @@ function load() {
           }}</span>
         </span>
         <span class="DocSearch-Button-Keys">
-          <span class="DocSearch-Button-Key" ref="metaKey">Meta</span>
-          <span class="DocSearch-Button-Key">K</span>
+          <kbd class="DocSearch-Button-Key"></kbd>
+          <kbd class="DocSearch-Button-Key">K</kbd>
         </span>
       </button>
     </div>
@@ -216,6 +216,24 @@ function load() {
   min-width: 0;
 }
 
+.DocSearch-Button .DocSearch-Button-Key:first-child {
+  font-size: 1px;
+  letter-spacing: -1px;
+  color: transparent;
+}
+
+.DocSearch-Button .DocSearch-Button-Key:first-child:after {
+  content: v-bind(metaKey);
+  font-size: 12px;
+  letter-spacing: normal;
+  color: var(--vt-c-text-3);
+  transition: color 0.5s;
+}
+
+.DocSearch-Button .DocSearch-Button-Key:first-child > * {
+  display: none;
+}
+
 .DocSearch-Button .DocSearch-Button-Key + .DocSearch-Button-Key {
   border-right: 1px solid var(--vt-c-divider);
   border-left: none;
@@ -224,7 +242,8 @@ function load() {
   padding-right: 6px;
 }
 
-.DocSearch-Button:hover .DocSearch-Button-Key {
+.DocSearch-Button:hover .DocSearch-Button-Key,
+.DocSearch-Button:hover .DocSearch-Button-Key:first-child:after {
   border-color: var(--vt-c-brand-light);
   color: var(--vt-c-brand-light);
 }
@@ -236,6 +255,7 @@ function load() {
 }
 
 .DocSearch-Button-Key {
+  font-family: inherit;
   font-size: 12px;
   font-weight: 500;
   height: 20px;
