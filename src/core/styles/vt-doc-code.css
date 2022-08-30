@@ -151,8 +151,8 @@
 
 .vt-doc [class*='language-'] > button.copy {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 4px;
+  right: 4px;
   z-index: 3;
   display: block;
   justify-content: center;
@@ -207,7 +207,7 @@
   left: -65px;
   display: block;
   border-radius: 4px 0 0 4px;
-  padding-top: 8px;
+  padding-top: 10px;
   width: 64px;
   height: 40px;
   text-align: center;
