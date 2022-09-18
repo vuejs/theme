@@ -53,6 +53,7 @@ export function useActiveAnchor(
     // page bottom - highlight last one
     if (
       anchors.length &&
+      // https://github.com/vuejs/theme/pull/74
       window.scrollY + window.innerHeight >= document.body.offsetHeight - 1
     ) {
       activateLink(anchors[anchors.length - 1].hash)
