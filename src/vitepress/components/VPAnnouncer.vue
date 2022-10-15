@@ -9,7 +9,7 @@ const { config } = useConfig()
 
 <template>
   <div class="visually-hidden" aria-live="polite">
-    {{ config.i18n?.ariaAnnouner?.before ?? '' }}{{ page.title
-    }}{{ config.i18n?.ariaAnnouner?.after ?? ' has loaded' }}
+    {{ config.i18n?.ariaAnnouncer?.before ?? '' }}{{ page.title
+    }}{{ config.i18n?.ariaAnnouncer?.after ?? ' has loaded' }}
   </div>
 </template>

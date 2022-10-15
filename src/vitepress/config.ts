@@ -129,7 +129,7 @@ export interface i18nConfig {
   deadLinkReport?: MessageWithLink
   footerLicense?: MessageWithLink
 
-  ariaAnnouner?: MessageWithLink
+  ariaAnnouncer?: MessageWithLink
   ariaDarkMode?: string
   ariaSkipToContent?: string
   ariaToC?: string
