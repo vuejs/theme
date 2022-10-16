@@ -2,7 +2,7 @@ const getBase = require('../../src/vitepress/config/baseConfig')
 const path = require('path')
 
 /**
- * @type {() => Promise<import('vitepress').UserConfig}
+ * @type {() => Promise<import('vitepress').UserConfig>}
  */
 module.exports = (async () => {
   const base = await getBase()
