@@ -2,10 +2,11 @@ const getBase = require('../../src/vitepress/config/baseConfig')
 const path = require('path')
 
 /**
- * @type {() => Promise<import('vitepress').UserConfig>}
+ * @type {() => Promise<import('vitepress').UserConfig}
  */
 module.exports = (async () => {
   const base = await getBase()
+
   return {
     ...base,
 
@@ -25,13 +26,28 @@ module.exports = (async () => {
     title: 'Vue.js',
     description: 'Vue.js - The Progressive JavaScript Framework',
 
+    /**
+     * @type {import('../../src/vitepress/config').Config}
+     */
     themeConfig: {
       logo: '/img/logo-vue.svg',
 
       algolia: {
         indexName: 'vuejs-v3',
         appId: 'BH4D9OD16A',
-        apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
+        apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f',
+        placeholder: 'Search on Vue theme',
+        translations: {
+          modal: {
+            searchBox: {
+              cancelButtonText: 'Abort',
+              resetButtonTitle: 'Clear search term'
+            },
+            footer: {
+              searchByText: 'Search gracefully done by '
+            }
+          }
+        }
       },
 
       carbonAds: {
