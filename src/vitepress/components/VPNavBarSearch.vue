@@ -218,7 +218,7 @@ function load() {
 
 .DocSearch-Button .DocSearch-Button-Key:first-child {
   font-size: 1px;
-  letter-spacing: -1px;
+  letter-spacing: -12px;
   color: transparent;
 }
 
@@ -242,10 +242,13 @@ function load() {
   padding-right: 6px;
 }
 
-.DocSearch-Button:hover .DocSearch-Button-Key,
+.DocSearch-Button:hover .DocSearch-Button-Key:last-child,
 .DocSearch-Button:hover .DocSearch-Button-Key:first-child:after {
-  border-color: var(--vt-c-brand-light);
   color: var(--vt-c-brand-light);
+}
+
+.DocSearch-Button:hover .DocSearch-Button-Key {
+  border-color: var(--vt-c-brand-light);
 }
 
 @media (min-width: 768px) {
