@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import docsearch from '@docsearch/js'
 import { useRoute, useRouter } from 'vitepress'
-import { onMounted, toRaw } from 'vue'
+import { onMounted } from 'vue'
 import { useConfig } from '../composables/config'
 import type { AlgoliaSearchOptions } from '../config'
 
@@ -16,7 +16,7 @@ const router = useRouter()
 
 onMounted(() => {
   // this component will only render if user has configured algolia
-  initialize(toRaw(config.value.algolia!))
+  initialize(config.value.algolia!)
   setTimeout(poll, 16)
 })
 
