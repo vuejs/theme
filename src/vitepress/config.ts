@@ -87,6 +87,55 @@ export interface AlgoliaSearchOptions {
   searchParameters?: any
   disableUserPersonalization?: boolean
   initialQuery?: string
+  translations?: Partial<DocSearchTranslations>
+}
+
+export interface DocSearchTranslations {
+  button?: ButtonTranslations
+  modal?: ModalTranslations
+}
+
+export interface ButtonTranslations {
+  buttonText?: string
+  buttonAriaLabel?: string
+}
+export interface ModalTranslations extends ScreenStateTranslations {
+  searchBox?: {
+    resetButtonTitle?: string
+    resetButtonAriaLabel?: string
+    cancelButtonText?: string
+    cancelButtonAriaLabel?: string
+  }
+  footer?: {
+    selectText?: string
+    selectKeyAriaLabel?: string
+    navigateText?: string
+    navigateUpKeyAriaLabel?: string
+    navigateDownKeyAriaLabel?: string
+    closeText?: string
+    closeKeyAriaLabel?: string
+    searchByText?: string
+  }
+}
+export interface ScreenStateTranslations {
+  errorScreen?: {
+    titleText?: string
+    helpText?: string
+  }
+  startScreen?: {
+    recentSearchesTitle?: string
+    noRecentSearchesText?: string
+    saveRecentSearchButtonTitle?: string
+    removeRecentSearchButtonTitle?: string
+    favoriteSearchesTitle?: string
+    removeFavoriteSearchButtonTitle?: string
+  }
+  noResultsScreen?: {
+    noResultsText?: string
+    suggestedQueryText?: string
+    reportMissingResultsText?: string
+    reportMissingResultsLinkText?: string
+  }
 }
 
 export type NavItem = NavItemWithLink | NavItemWithChildren
