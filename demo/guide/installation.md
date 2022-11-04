@@ -4,6 +4,8 @@
 
 ## Ordered List
 
+https://github.com/VSCodeVim/Vim#viminsertmodekeybindingsvimnormalmodekeybindingsvimvisualmodekeybindingsvimoperatorpendingmodekeybindings
+
 1. Automatically apply classes for CSS transitions and animations
 2. Integrate 3rd-party CSS animation libraries, such as Animate.css(opens new window)
 3. Use JavaScript to directly manipulate the DOM during transition hooks
