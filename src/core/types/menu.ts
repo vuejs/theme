@@ -16,3 +16,8 @@ export interface MenuItemChildWithChildren {
   text?: string
   items: MenuItemWithLink[]
 }
+
+export type LocaleLinkItem = MenuItemWithLink & {
+  repo?: string
+  isTranslationsDesc?: boolean
+}

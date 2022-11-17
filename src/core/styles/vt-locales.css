@@ -1,0 +1,41 @@
+.vt-locales-btn-icon {
+  margin: 0 0.5rem;
+}
+.vt-locales-btn-icon-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.vt-locales-btn-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--vt-c-text-1);
+}
+.vt-locales-menu-hr-divider {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--vt-c-divider-light);
+}
+.vt-locales-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  font-size: .875rem;
+  position: relative;
+}
+.vt-locales-menu-item-text {
+  cursor: pointer;
+}
+.vt-locales-menu-item-text:hover {
+  color: var(--vt-c-brand);
+}
+.vt-locales-menu-item.join-translations {
+  margin-top: 8px;
+  padding: 0 14px;
+}
+.VPNavBarLocaleScreen .vt-locales-menu-item.join-translations {
+  padding: 0;
+}

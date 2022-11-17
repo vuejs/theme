@@ -1,4 +1,5 @@
 import {
+  LocaleLinkItem,
   MenuItemChildWithChildren,
   MenuItemWithLink,
   SocialLink
@@ -73,6 +74,11 @@ export interface Config {
     code: string
     placement: string
   }
+
+  /**
+   * Translation/Locales links
+   */
+  localeLinks?: LocaleLinkItem[]
 }
 
 /**
@@ -174,6 +180,8 @@ export interface i18nConfig {
   previous?: string
   next?: string
   pageNotFound?: string
+  locales?: string
+  joinTranslation?: string
   deadLink?: MessageWithLink
   deadLinkReport?: MessageWithLink
   footerLicense?: MessageWithLink

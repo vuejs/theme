@@ -4,6 +4,7 @@ import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import VPNavScreenMenu from './VPNavScreenMenu.vue'
 import VPNavScreenAppearance from './VPNavScreenAppearance.vue'
 import VPNavScreenSocialLinks from './VPNavScreenSocialLinks.vue'
+import VPNavBarScreenLocale from './VPNavBarScreenLocale.vue'
 
 defineProps<{
   open: boolean
@@ -29,6 +30,7 @@ function unlockBodyScroll() {
     <div v-if="open" class="VPNavScreen" ref="screen">
       <div class="container">
         <VPNavScreenMenu class="menu" />
+        <VPNavBarScreenLocale />
         <VPNavScreenAppearance class="appearance" />
         <VPNavScreenSocialLinks class="social-links" />
       </div>
