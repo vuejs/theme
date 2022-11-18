@@ -10,9 +10,7 @@ const localeLinks = config.value.localeLinks
 </script>
 
 <template>
-  <VTFlyout 
-    class="VPNavBarMenuGroup active VPNavBarLocale" 
-  >
+  <VTFlyout class="VPNavBarMenuGroup active VPNavBarLocale">
     <template #btn-slot>
       <div class="vt-locales-btn-icon-container">
         <VTIconLanguagesVue class="vt-locales-btn-icon" />
@@ -20,7 +18,7 @@ const localeLinks = config.value.localeLinks
     </template>
 
     <template v-if="localeLinks">
-      <div  class="vt-menu-items x-padding">
+      <div class="vt-menu-items x-padding">
         <VPNavBarLocaleItems />
       </div>
       <VPNavBarLocaleJoin />
@@ -36,12 +34,15 @@ const localeLinks = config.value.localeLinks
   background-color: var(--vt-c-divider-light);
   content: "";
 }
+
 .vt-locales-btn-icon-container::before {
   margin-right: 4px;
 }
+
 .vt-locales-btn-icon-container::after {
   margin-left: 4px;
 }
+
 .vt-menu-items {
   padding: 0 14px;
 }

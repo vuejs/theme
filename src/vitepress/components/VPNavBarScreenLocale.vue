@@ -24,6 +24,7 @@ const { config } = useConfig()
   transition: background-color 0.5s;
   margin: 16px 0;
 }
+
 .title {
   line-height: 24px;
   font-size: 12px;

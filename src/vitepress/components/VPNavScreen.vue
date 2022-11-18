@@ -84,15 +84,15 @@ function unlockBodyScroll() {
   max-width: 288px;
 }
 
-.menu + .appearance {
+.menu+.appearance {
   margin-top: 24px;
 }
 
-.menu + .social-links {
+.menu+.social-links {
   margin-top: 16px;
 }
 
-.appearance + .social-links {
+.appearance+.social-links {
   margin-top: 12px;
 }
 </style>

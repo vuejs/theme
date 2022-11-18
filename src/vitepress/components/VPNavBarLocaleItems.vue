@@ -12,7 +12,7 @@ const localeLinks = config.value.localeLinks?.filter(
 const autoAppendSlash = (url: string) => url.endsWith('/') ? url : url + '/'
 const onLocaleSelect = (item: LocaleLinkItem) => {
   const { href: currentHref, origin: currentOrigin } = window.location
-    ,startOfOrigin = currentHref.indexOf(currentOrigin)
+    , startOfOrigin = currentHref.indexOf(currentOrigin)
   window.location.href = autoAppendSlash(item.link) + currentHref.slice(startOfOrigin + currentOrigin.length)
 }
 </script>
