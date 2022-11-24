@@ -37,12 +37,14 @@ useFocusContainer({
       :aria-label="label"
       @click="open = !open"
     >
-      <span v-if="props.button" class="vt-flyout-button-text">
-        {{ props.button }}
-        <VTIconChevronDown class="vt-flyout-button-text-icon" />
-      </span>
+      <slot name="btn-slot">
+        <span v-if="props.button" class="vt-flyout-button-text">
+          {{ props.button }}
+          <VTIconChevronDown class="vt-flyout-button-text-icon" />
+        </span>
 
-      <VTIconMoreHorizontal v-else class="vt-flyout-button-icon" />
+        <VTIconMoreHorizontal v-else class="vt-flyout-button-icon" />
+      </slot>
     </button>
 
     <div class="vt-flyout-menu">

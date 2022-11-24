@@ -2,6 +2,7 @@
 import { useConfig } from '../composables/config'
 import VPNavBarMenuLink from './VPNavBarMenuLink.vue'
 import VPNavBarMenuGroup from './VPNavBarMenuGroup.vue'
+import VPNavBarLocale from './VPNavBarLocale.vue';
 
 const { config } = useConfig()
 </script>
@@ -19,6 +20,7 @@ const { config } = useConfig()
       <VPNavBarMenuLink v-if="'link' in item" :item="item" />
       <VPNavBarMenuGroup v-else :item="item" />
     </template>
+    <VPNavBarLocale v-if="config.localeLinks" />
   </nav>
 </template>
 
