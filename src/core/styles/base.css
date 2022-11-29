@@ -21,6 +21,7 @@ body {
   transition: color .5s, background-color .5s;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
 }
 
 blockquote,
