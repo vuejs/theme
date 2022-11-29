@@ -21,6 +21,7 @@ body {
   transition: color .5s, background-color .5s;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
 }
 
 blockquote,
@@ -203,14 +204,4 @@ fieldset {
   position: absolute;
   white-space: nowrap;
   width: 1px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  overflow-wrap: break-word;
 }
