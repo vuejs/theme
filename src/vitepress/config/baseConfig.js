@@ -35,6 +35,7 @@ module.exports = async () => ({
             'link',
             {
               rel: 'preload',
+              // comes from vite, update this if the font file is changed
               href: '/assets/inter-latin.4fe6132f.woff2',
               as: 'font',
               type: 'font/woff2',
