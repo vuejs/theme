@@ -50,6 +50,7 @@ function load() {
       <button
         type="button"
         class="DocSearch DocSearch-Button"
+        preload
         :aria-label="config.i18n?.search ?? 'Search'"
       >
         <span class="DocSearch-Button-Container">
@@ -227,26 +228,14 @@ function load() {
   height: 22px;
   padding: 0;
   margin: 0;
-}
-
-.DocSearch-Button .DocSearch-Button-Key:first-child {
-  font-size: 1px;
-  letter-spacing: -12px;
-  color: transparent;
-}
-.DocSearch-Button .DocSearch-Button-Key:first-child::after {
-  content: v-bind(metaKey);
-}
-
-.DocSearch-Button .DocSearch-Button-Key:first-child::after,
-.DocSearch-Button .DocSearch-Button-Key:last-child {
-  font-size: 12px;
-  letter-spacing: normal;
   color: var(--vt-c-text-3);
   transition: color 0.5s;
 }
-.DocSearch-Button:hover .DocSearch-Button-Key:first-child::after,
-.DocSearch-Button:hover .DocSearch-Button-Key:last-child {
+.DocSearch-Button:hover .DocSearch-Button-Key {
   color: var(--vt-c-brand-light);
+}
+
+.DocSearch-Button[preload] .DocSearch-Button-Key:first-child::after {
+  content: v-bind(metaKey);
 }
 </style>
