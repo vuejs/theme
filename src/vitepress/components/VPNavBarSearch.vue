@@ -13,15 +13,15 @@ const VPAlgoliaSearchBox = defineAsyncComponent(
 // payload), we delay initializing it until the user has actually clicked or
 // hit the hotkey to invoke it
 const loaded = ref(false)
-const metaKey = ref(`'Meta'`)
+const metaKey = ref(`Meta`)
 
 onMounted(() => {
   if (!config.value.algolia) return
 
   // meta key detect (same logic as in @docsearch/js)
   metaKey.value = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
-    ? `'⌘'`
-    : `'Ctrl'`
+    ? `⌘`
+    : `Ctrl`
   const handleSearchHotKey = (e: KeyboardEvent) => {
     if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault()
@@ -50,7 +50,6 @@ function load() {
       <button
         type="button"
         class="DocSearch DocSearch-Button"
-        preload
         :aria-label="config.i18n?.search ?? 'Search'"
       >
         <span class="DocSearch-Button-Container">
@@ -74,7 +73,7 @@ function load() {
           }}</span>
         </span>
         <span class="DocSearch-Button-Keys">
-          <kbd class="DocSearch-Button-Key"></kbd>
+          <kbd class="DocSearch-Button-Key">{{ metaKey }}</kbd>
           <kbd class="DocSearch-Button-Key">K</kbd>
         </span>
       </button>
@@ -233,9 +232,5 @@ function load() {
 }
 .DocSearch-Button:hover .DocSearch-Button-Key {
   color: var(--vt-c-brand-light);
-}
-
-.DocSearch-Button[preload] .DocSearch-Button-Key:first-child::after {
-  content: v-bind(metaKey);
 }
 </style>
