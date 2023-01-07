@@ -72,10 +72,12 @@ function load() {
             config.i18n?.search ?? 'Search'
           }}</span>
         </span>
-        <span class="DocSearch-Button-Keys">
-          <kbd class="DocSearch-Button-Key">{{ metaKey }}</kbd>
-          <kbd class="DocSearch-Button-Key">K</kbd>
-        </span>
+        <ClientOnly>
+          <span class="DocSearch-Button-Keys">
+            <kbd class="DocSearch-Button-Key">{{ metaKey }}</kbd>
+            <kbd class="DocSearch-Button-Key">K</kbd>
+          </span>
+        </ClientOnly>
       </button>
     </div>
   </div>
