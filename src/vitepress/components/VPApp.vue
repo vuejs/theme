@@ -24,7 +24,7 @@ watchEffect(() => {
     : undefined
 })
 
-const onEsacpe = (e: KeyboardEvent) => {
+const onEscape = (e: KeyboardEvent) => {
   if (e.key === 'Escape' && isSidebarOpen.value) {
     closeSidebar()
     triggerElement?.focus()
@@ -32,10 +32,10 @@ const onEsacpe = (e: KeyboardEvent) => {
 }
 
 onMounted(() => {
-  window.addEventListener('keyup', onEsacpe)
+  window.addEventListener('keyup', onEscape)
 })
 onUnmounted(() => {
-  window.removeEventListener('keyup', onEsacpe)
+  window.removeEventListener('keyup', onEscape)
 })
 
 provide('close-sidebar', closeSidebar)
