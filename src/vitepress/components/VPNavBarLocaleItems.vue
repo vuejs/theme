@@ -9,11 +9,11 @@ const localeLinks = config.value.localeLinks?.filter(
   item => !item.isTranslationsDesc
 )
 
-const autoAppendSlash = (url: string) => url.endsWith('/') ? url : url + '/'
+const removeEndSlash = (url: string) => url.endsWith('/') ? url.substring(0, url.length -1) : url
 const onLocaleSelect = (item: LocaleLinkItem) => {
   const { href: currentHref, origin: currentOrigin } = window.location
     , startOfOrigin = currentHref.indexOf(currentOrigin)
-  window.location.href = autoAppendSlash(item.link) + currentHref.slice(startOfOrigin + currentOrigin.length)
+  window.location.href = removeEndSlash(item.link) + currentHref.slice(startOfOrigin + currentOrigin.length)
 }
 </script>
 
