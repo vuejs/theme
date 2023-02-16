@@ -365,7 +365,7 @@ module.exports = (async () => {
             ]
           }
         ]
-      }
+      },
 
       // // For i18n translation messages
       // i18n: {
@@ -403,6 +403,25 @@ module.exports = (async () => {
       //   ariaMobileNav: 'Mobile Navigation',
       //   ariaSidebarNav: 'Sidebar Navigation',
       // }
+
+      // For locale links
+      localeLinks: [
+        {
+          link: 'https://vuejs.org',
+          text: 'English',
+          repo: 'https://github.com/vuejs/docs'
+        },
+        {
+          link: 'https://ja.vuejs.org',
+          text: '日本語',
+          repo: 'https://github.com/vuejs-translations/docs-ja'
+        },
+        {
+          link: '/guide/introduction',
+          text: 'Help Us Translate!',
+          isTranslationsDesc: true
+        }
+      ],
     }
   }
 })()
