@@ -5,8 +5,7 @@ import VPContentPage from './VPContentPage.vue'
 import VPContentDoc from './VPContentDoc.vue'
 import VPNotFound from './VPNotFound.vue'
 
-const route = useRoute()
-const { frontmatter } = useData()
+const { page, frontmatter } = useData()
 const { hasSidebar } = useSidebar()
 </script>
 
@@ -16,7 +15,7 @@ const { hasSidebar } = useSidebar()
     class="VPContent"
     :class="{ 'has-sidebar': hasSidebar }"
   >
-    <VPNotFound v-if="route.component === VPNotFound" />
+    <VPNotFound v-if="page.isNotFound" />
     <VPContentPage v-else-if="!!frontmatter.page">
       <template #footer-before><slot name="footer-before" /></template>
       <template #footer-after><slot name="footer-after" /></template>
