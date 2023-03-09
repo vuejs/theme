@@ -35,6 +35,7 @@ const localeLinks = computed(() => {
     <a
       v-if="item.repo"
       :href="item.repo"
+      :title="`${item.text} ${config.i18n?.ariaRepo ?? 'Repository'}`"
       target="_blank"
       class="vt-locales-btn-icon-container"
     >

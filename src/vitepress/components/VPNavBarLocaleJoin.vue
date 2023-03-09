@@ -22,7 +22,12 @@ const navigateToJoinTranslation = () => {
   <template v-if="translationsDesc">
     <div class="vt-locales-menu-hr-divider" />
     <div class="vt-locales-menu-item join-translations">
-      <div class="vt-locales-menu-item-text" @click="navigateToJoinTranslation">
+      <div 
+        role="link" 
+        tabindex="0" 
+        class="vt-locales-menu-item-text" 
+        @click="navigateToJoinTranslation"
+      >
         {{ translationsDesc.text }}
       </div>
     </div>

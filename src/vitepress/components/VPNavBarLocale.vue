@@ -10,7 +10,10 @@ const localeLinks = config.value.localeLinks
 </script>
 
 <template>
-  <VTFlyout class="VPNavBarMenuGroup active VPNavBarLocale">
+  <VTFlyout
+    :label="config.i18n?.ariaLanguage ?? 'Select Language'"
+    class="VPNavBarMenuGroup active VPNavBarLocale"
+  >
     <template #btn-slot>
       <div class="vt-locales-btn-icon-container">
         <VTIconLanguagesVue class="vt-locales-btn-icon" />

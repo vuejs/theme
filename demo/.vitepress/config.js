@@ -402,6 +402,8 @@ module.exports = (async () => {
       //   ariaMainNav: 'Main Navigation',
       //   ariaMobileNav: 'Mobile Navigation',
       //   ariaSidebarNav: 'Sidebar Navigation',
+      //   ariaLanguage: 'Select Language',
+      //   ariaRepo: 'Repository',
       // }
 
       // For locale links
