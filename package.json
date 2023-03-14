@@ -1,6 +1,6 @@
 {
   "name": "@vue/theme",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "The VitePress theme for vuejs.org.",
   "main": "src/index.ts",
   "exports": {
