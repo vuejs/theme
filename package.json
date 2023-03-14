@@ -5,7 +5,10 @@
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./config": "./src/vitepress/config/baseConfig.js"
+    "./config": {
+      "types": "./src/vitepress/config/baseConfig.d.ts",
+      "default": "./src/vitepress/config/baseConfig.js"
+    }
   },
   "files": [
     "src",
@@ -45,10 +48,14 @@
     "@mdit-vue/types": "^0.11.0",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/estree": "^1.0.0",
+    "@types/node": "^18.15.3",
     "prettier": "^2.7.1",
-    "typescript": "^4.8.2",
-    "vitepress": "^1.0.0-alpha.13",
-    "vue": "^3.2.37"
+    "typescript": "^4.9.5",
+    "vitepress": "^1.0.0-alpha.58",
+    "vue": "^3.2.47"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.0.0-alpha.58"
   },
   "pnpm": {
     "peerDependencyRules": {

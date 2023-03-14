@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useData, useRoute } from 'vitepress'
+import { useData } from 'vitepress'
 import { useSidebar } from '../composables/sidebar'
 import VPContentPage from './VPContentPage.vue'
 import VPContentDoc from './VPContentDoc.vue'

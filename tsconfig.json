@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "dist",
+    "allowJs": true,
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
