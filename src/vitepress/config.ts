@@ -193,6 +193,8 @@ export interface i18nConfig {
   ariaMainNav?: string
   ariaMobileNav?: string
   ariaSidebarNav?: string
+  ariaLanguage?: string
+  ariaRepo?: MessageWithLink
 }
 
 export interface MessageWithLink {
