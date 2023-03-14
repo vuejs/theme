@@ -403,7 +403,10 @@ module.exports = (async () => {
       //   ariaMobileNav: 'Mobile Navigation',
       //   ariaSidebarNav: 'Sidebar Navigation',
       //   ariaLanguage: 'Select Language',
-      //   ariaRepo: 'Repository',
+      //   ariaRepo: {
+      //     before: '',
+      //     after: ' Repository',
+      //   }
       // }
 
       // For locale links
