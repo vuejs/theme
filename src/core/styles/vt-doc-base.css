@@ -64,6 +64,10 @@
   transition: color 0.25s, opacity 0.25s;
 }
 
+.vt-doc .header-anchor:before {
+  content: '#';
+}
+
 .vt-doc h1:hover .header-anchor,
 .vt-doc h1 .header-anchor:focus,
 .vt-doc h2:hover .header-anchor,
