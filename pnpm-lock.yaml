@@ -12,7 +12,7 @@ specifiers:
   normalize.css: ^8.0.1
   prettier: ^2.7.1
   typescript: ^4.9.5
-  vitepress: ^1.0.0-alpha.58
+  vitepress: ^1.0.0-alpha.60
   vue: ^3.2.47
 
 dependencies:
@@ -29,7 +29,7 @@ devDependencies:
   '@types/node': 18.15.3
   prettier: 2.7.1
   typescript: 4.9.5
-  vitepress: 1.0.0-alpha.58_@types+node@18.15.3
+  vitepress: 1.0.0-alpha.60_@types+node@18.15.3
   vue: 3.2.47
 
 packages:
@@ -830,8 +830,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.58_@types+node@18.15.3:
-    resolution: {integrity: sha512-aENSAiE2uKMoQPwBTELY8Nig5qSWrmAl+MgsO3l/TE8At6kXii+2rseEId/bVfT700JeucYdqtCgWxu+LwpYIw==}
+  /vitepress/1.0.0-alpha.60_@types+node@18.15.3:
+    resolution: {integrity: sha512-GI5iLDkZRqGEPixbSloT+p6pbKcMh9ykRRxt8vf9AjV1gaPit6Stg/t9WNxTdIhKVCuQMexGs1605DNApSRK2A==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3

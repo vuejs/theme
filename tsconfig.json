@@ -15,6 +15,6 @@
       "@vue/theme": ["src/index.ts"]
     }
   },
-  "include": ["src", "types", "demo/.vitepress/theme"],
+  "include": ["src", "demo/.vitepress/theme"],
   "exclude": ["node_modules"]
 }

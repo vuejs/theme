@@ -1,18 +1,26 @@
-import { onMounted, onUnmounted, onUpdated, Ref } from 'vue'
-import { Header } from 'vitepress'
+import { computed, inject, onMounted, onUnmounted, onUpdated, Ref } from 'vue'
+import { Header, useData } from 'vitepress'
 import { useMediaQuery } from '@vueuse/core'
 import { MenuItemWithLink } from '../../core'
 
-interface HeaderWithChildren extends Header {
+export interface HeaderWithChildren extends Header {
   hidden?: boolean
 }
 
-interface MenuItemWithLinkAndChildren extends MenuItemWithLink {
+export interface MenuItemWithLinkAndChildren extends MenuItemWithLink {
   children?: MenuItemWithLinkAndChildren[]
   hidden?: boolean
 }
 
-export function resolveHeaders(
+export function useOutlineHeaders() {
+  const { page } = useData()
+  const filterHeaders = inject('filter-headers', null) as any
+  return computed(() => {
+    return resolveHeaders(page.value.headers, filterHeaders)
+  })
+}
+
+function resolveHeaders(
   headers: HeaderWithChildren[],
   filter?: (h: HeaderWithChildren) => boolean
 ): MenuItemWithLinkAndChildren[] {
@@ -142,7 +150,7 @@ function isAnchorActive(
 }
 
 function throttleAndDebounce(fn: () => void, delay: number): () => void {
-  let timeout: number
+  let timeout: any
   let called = false
 
   return () => {

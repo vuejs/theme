@@ -1,25 +1,15 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
-import { resolveHeaders, useActiveAnchor } from '../composables/outline'
-import { computed, inject, ref } from 'vue'
+import { useActiveAnchor, useOutlineHeaders } from '../composables/outline'
+import { ref } from 'vue'
 import { useConfig } from '../composables/config'
+import VPDocOutlineItem from './VPDocOutlineItem.vue'
 
-const { page, frontmatter } = useData()
 const { config } = useConfig()
 const container = ref()
 const marker = ref()
+const headers = useOutlineHeaders()
+
 useActiveAnchor(container, marker)
-
-const filterHeaders = inject('filter-headers', null) as any
-const filteredHeaders = computed(() => {
-  return resolveHeaders(page.value.headers, filterHeaders)
-})
-
-const handleClick = ({ target: el }: Event) => {
-  const id = '#' + (el as HTMLAnchorElement).href!.split('#')[1]
-  const heading = document.querySelector(id) as HTMLAnchorElement
-  heading?.focus()
-}
 </script>
 
 <template>
@@ -30,26 +20,7 @@ const handleClick = ({ target: el }: Event) => {
       <span id="doc-outline-aria-label" class="visually-hidden">{{
         config.i18n?.ariaToC ?? 'Table of Contents for current page'
       }}</span>
-      <ul class="root">
-        <li
-          v-for="{ text, link, children, hidden } in filteredHeaders"
-          v-show="!hidden"
-        >
-          <a class="outline-link" :href="link" @click="handleClick">{{
-            text
-          }}</a>
-          <ul v-if="children && frontmatter.outline === 'deep'">
-            <li v-for="{ text, link, hidden } in children" v-show="!hidden">
-              <a
-                class="outline-link nested"
-                :href="link"
-                @click="handleClick"
-                >{{ text }}</a
-              >
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <VPDocOutlineItem :headers="headers" />
     </nav>
   </div>
 </template>
@@ -69,26 +40,6 @@ const handleClick = ({ target: el }: Event) => {
   letter-spacing: 0.4px;
 }
 
-.outline-link {
-  color: var(--vt-c-text-2);
-  transition: color 0.5s;
-  line-height: 28px;
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.outline-link:hover,
-.outline-link.active {
-  color: var(--vt-c-text-1);
-  transition: color 0.25s;
-}
-
-.outline-link.nested {
-  padding-left: 1em;
-}
-
 .outline-marker {
   opacity: 0;
   position: absolute;
@@ -101,10 +52,5 @@ const handleClick = ({ target: el }: Event) => {
   z-index: 0;
   transition: top 0.25s cubic-bezier(0, 1, 0.5, 1), opacity 0.25s,
     background-color 0.5s;
-}
-
-.root {
-  z-index: 1;
-  position: relative;
 }
 </style>

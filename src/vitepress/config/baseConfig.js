@@ -14,6 +14,8 @@ const deps = ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
  * @type {import('vitepress').UserConfig}
  */
 const config = {
+  scrollOffset: ['header', '.VPLocalNav'],
+
   vite: {
     ssr: {
       noExternal: deps

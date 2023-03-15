@@ -1,18 +1,13 @@
 <script lang="ts" setup>
 import { VTIconAlignLeft } from '../../core'
 import { useSidebar } from '../composables/sidebar'
-import { useData } from 'vitepress'
 import { useConfig } from '../composables/config'
+import VPLocalNavOutlineDropdown from './VPLocalNavOutlineDropdown.vue';
 
 defineProps<{ open: boolean }>()
 
 const { hasSidebar } = useSidebar()
-const { frontmatter } = useData()
 const { config } = useConfig()
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-}
 </script>
 
 <template>
@@ -27,13 +22,7 @@ function scrollToTop() {
       <span class="menu-text">{{ config.i18n?.menu || 'Menu' }}</span>
     </button>
 
-    <a
-      v-if="frontmatter.returnToTop !== false"
-      class="top-link"
-      href="#"
-      @click="scrollToTop"
-      >{{ config.i18n?.returnToTop ?? 'Return to top' }}</a
-    >
+    <VPLocalNavOutlineDropdown />
   </div>
 </template>
 
