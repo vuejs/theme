@@ -2,12 +2,14 @@
 import { VTIconAlignLeft } from '../../core'
 import { useSidebar } from '../composables/sidebar'
 import { useConfig } from '../composables/config'
-import VPLocalNavOutlineDropdown from './VPLocalNavOutlineDropdown.vue';
+import { useData } from 'vitepress'
+import VPLocalNavOutlineDropdown from './VPLocalNavOutlineDropdown.vue'
 
 defineProps<{ open: boolean }>()
 
 const { hasSidebar } = useSidebar()
 const { config } = useConfig()
+const { frontmatter } = useData()
 </script>
 
 <template>
@@ -22,7 +24,7 @@ const { config } = useConfig()
       <span class="menu-text">{{ config.i18n?.menu || 'Menu' }}</span>
     </button>
 
-    <VPLocalNavOutlineDropdown />
+    <VPLocalNavOutlineDropdown v-if="frontmatter.outline !== false" />
   </div>
 </template>
 
