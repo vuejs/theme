@@ -64,4 +64,5 @@
   visibility: hidden;
   transform: translateY(-4px);
   transition: opacity .25s, visibility .25s, transform .25s;
+  max-height: calc(100vh - var(--vt-nav-height));
 }

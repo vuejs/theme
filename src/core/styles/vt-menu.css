@@ -6,6 +6,7 @@
   background: var(--vt-c-bg);
   box-shadow: var(--vt-shadow-3);
   transition: background-color .5s;
+  overflow: auto;
 }
 
 .dark .vt-menu {
