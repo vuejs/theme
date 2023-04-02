@@ -57,6 +57,7 @@
 }
 
 .vt-flyout-menu {
+  display: flex;
   position: absolute;
   top: calc(var(--vt-nav-height) / 2 + 15px);
   right: 0;
