@@ -57,6 +57,7 @@
 }
 
 .vt-flyout-menu {
+  display: flex;
   position: absolute;
   top: calc(var(--vt-nav-height) / 2 + 15px);
   right: 0;
@@ -64,4 +65,5 @@
   visibility: hidden;
   transform: translateY(-4px);
   transition: opacity .25s, visibility .25s, transform .25s;
+  max-height: calc(100vh - var(--vt-nav-height));
 }
