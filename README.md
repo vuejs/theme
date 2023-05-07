@@ -6,11 +6,11 @@ Please note this theme is solely dedicated for `vuejs.org` and isn't meant to be
 
 ## Development Setup
 
-This repo can be developed on its own since it is a self-contained VitePress theme. Make sure to use [pnpm](https://pnpm.io/) as the package manager when installing deps. A demo app is available in `/demo` and can be run with `npm run dev`:
+This repo can be developed on its own since it is a self-contained VitePress theme. Make sure to use [pnpm](https://pnpm.io/) as the package manager when installing deps. A demo app is available in `/demo` and can be run with `pnpm dev`:
 
 ```bash
-$ pnpm install
-$ npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Developing with Real Content
@@ -42,7 +42,7 @@ To work on this theme in the context of the `vuejs.org` website requires cloning
 
    ```bash
    # in ./docs
-   pnpm run dev
+   pnpm dev
    ```
 
 ### Available Scripts
@@ -51,17 +51,17 @@ Here is the list of available scripts that can be used during the development.
 
 ```bash
 # Boot local dev server.
-$ npm run dev
+$ pnpm dev
 
 # Build demo, then serve locally. This is for testing
 # production build in the local environment.
-$ npm run serve
+$ pnpm serve
 
 # Run lint via Prettier.
-$ npm run lint
+$ pnpm lint
 
 # Run type check via tsc.
-$ npm run type
+$ pnpm type
 ```
 
 ## License
