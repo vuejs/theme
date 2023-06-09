@@ -20,8 +20,10 @@ function onClick({ target: el }: Event) {
 
 <template>
   <ul :class="nested ? 'nested' : 'root'">
-    <li v-for="{ children, link, text, hidden } in headers" v-show="!hidden">
-      <a class="outline-link" :href="link" @click="onClick">{{ text }}</a>
+    <li v-for="{ children, link, text, hidden } in headers">
+      <a class="outline-link" :href="link" @click="onClick" v-show="!hidden">{{
+        text
+      }}</a>
       <template v-if="children?.length && frontmatter.outline === 'deep'">
         <VPDocOutlineItem :headers="children" :nested="true" />
       </template>
