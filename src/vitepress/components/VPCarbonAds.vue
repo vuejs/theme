@@ -47,7 +47,7 @@ if (carbonOptions) {
   padding: 20px 24px;
   background-color: var(--vt-c-bg-soft);
   border-radius: 4px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 1.4;
   color: var(--vt-c-text-2);
