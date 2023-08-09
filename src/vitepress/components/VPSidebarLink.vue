@@ -1,20 +1,28 @@
 <script lang="ts" setup>
 import { useData } from 'vitepress'
-import { inject } from 'vue'
+import { ref, inject, onMounted, watchPostEffect } from 'vue'
 import { MenuItemWithLink } from '../../core'
 import { isActive } from '../support/utils'
 
-defineProps<{
+const props = defineProps<{
   item: MenuItemWithLink
 }>()
 
 const { page } = useData()
 const closeSideBar = inject('close-sidebar') as () => void
+
+// https://github.com/vuejs/theme/issues/97#issuecomment-1666562964
+const active = ref(false)
+const updateActive = () => {
+  active.value = isActive(page.value.relativePath, props.item.link)
+}
+onMounted(updateActive)
+watchPostEffect(updateActive)
 </script>
 
 <template>
   <a
-    :class="{ link: true, active: isActive(page.relativePath, item.link) }"
+    :class="{ link: true, active }"
     :href="item.link"
     @click="closeSideBar"
   >

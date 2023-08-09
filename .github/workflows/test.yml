@@ -6,8 +6,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 8.6.10
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
       - name: install and test
         run: |
-          yarn install
-          yarn demo-build
+          pnpm install
+          pnpm demo-build
