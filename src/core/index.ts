@@ -30,6 +30,7 @@ export { default as VTIconSearch } from './components/icons/VTIconSearch.vue'
 export { default as VTIconSlack } from './components/icons/VTIconSlack.vue'
 export { default as VTIconSun } from './components/icons/VTIconSun.vue'
 export { default as VTIconTwitter } from './components/icons/VTIconTwitter.vue'
+export { default as VTIconX } from './components/icons/VTIconX.vue'
 export { default as VTIconYouTube } from './components/icons/VTIconYouTube.vue'
 export { default as VTIconEdit } from './components/icons/VTIconEdit.vue'
 

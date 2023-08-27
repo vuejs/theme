@@ -10,6 +10,7 @@ export type SocialLinkIcon =
   | 'linkedin'
   | 'slack'
   | 'twitter'
+  | 'x'
   | 'languages'
 
 export type SocialLinkSize = 'small' | 'medium'
