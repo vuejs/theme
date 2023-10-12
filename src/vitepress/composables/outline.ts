@@ -75,7 +75,6 @@ export function useActiveAnchor(
       const [isActive, hash] = isAnchorActive(i, anchor, nextAnchor)
 
       if (isActive) {
-        history.replaceState(null, document.title, hash ? hash : ' ')
         activateLink(hash)
         return
       }
