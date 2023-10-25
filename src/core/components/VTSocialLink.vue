@@ -23,7 +23,7 @@ const icons = {
   github: VTIconGitHub,
   linkedin: VTIconLinkedIn,
   slack: VTIconSlack,
-  twitter: VTIconTwitter,
+  twitter: VTIconX,
   x: VTIconX,
   languages: VTIconLanguages
 }
