@@ -42,7 +42,7 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
     <a
       v-if="links.prev"
       class="prev-link"
-      :href="normalizeLink(links.prev.link)"
+      :href="links.prev.link"
     >
       <span class="desc">
         <VTIconChevronLeft class="vt-link-icon" />
@@ -53,7 +53,7 @@ function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
     <a
       v-if="links.next"
       class="next-link"
-      :href="normalizeLink(links.next.link)"
+      :href="links.next.link"
     >
       <span class="desc">
         {{ config.i18n?.next ?? 'Next' }}
