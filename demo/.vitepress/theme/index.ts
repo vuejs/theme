@@ -7,7 +7,7 @@ import { h } from 'vue'
 export default {
   ...VPTheme,
   Layout() {
-    return h(VPTheme.Layout, null, {
+    return h(VPTheme.Layout!, null, {
       // uncomment to test layout slots
 
       // 'sidebar-top': () => h('div', 'hello top'),

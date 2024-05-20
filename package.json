@@ -3,6 +3,7 @@
   "version": "2.2.5",
   "description": "The VitePress theme for vuejs.org.",
   "main": "src/index.ts",
+  "type": "module",
   "exports": {
     ".": "./src/index.ts",
     "./config": {
@@ -31,31 +32,32 @@
   "scripts": {
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
-    "type": "tsc --noEmit",
+    "type": "vue-tsc --noEmit",
     "test": "npm run lint && npm run type",
     "dev": "vitepress dev demo",
     "demo-build": "vitepress build demo",
     "serve": "npm run demo-build && vitepress serve demo"
   },
   "dependencies": {
-    "@docsearch/css": "^3.2.1",
-    "@docsearch/js": "^3.2.1",
-    "@vueuse/core": "^9.1.1",
-    "body-scroll-lock": "^3.1.5",
+    "@docsearch/css": "^3.6.0",
+    "@docsearch/js": "^3.6.0",
+    "@vueuse/core": "^10.9.0",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@mdit-vue/types": "^0.11.0",
-    "@types/body-scroll-lock": "^3.1.0",
-    "@types/estree": "^1.0.0",
-    "@types/node": "^18.15.3",
-    "prettier": "^2.7.1",
-    "typescript": "^4.9.5",
-    "vitepress": "^1.0.0-alpha.60",
-    "vue": "^3.2.47"
+    "@mdit-vue/types": "^2.1.0",
+    "@types/body-scroll-lock": "^3.1.2",
+    "@types/estree": "^1.0.5",
+    "@types/node": "^20.12.12",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "vitepress": "^1.2.0",
+    "vue": "^3.4.27",
+    "vue-tsc": "^2.0.19"
   },
   "peerDependencies": {
-    "vitepress": "^1.0.0-alpha.60"
+    "vitepress": "^1.2.0"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -63,5 +65,6 @@
         "@algolia/client-search"
       ]
     }
-  }
+  },
+  "packageManager": "pnpm@9.1.1"
 }

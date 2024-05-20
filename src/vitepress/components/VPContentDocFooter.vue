@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 import { getSidebar } from '../support/sidebar'
 import { SidebarGroup } from '../config'
-import { isActive, normalizeLink } from '../support/utils'
+import { isActive } from '../support/utils'
 import {
   VTIconChevronLeft,
   VTIconChevronRight,
