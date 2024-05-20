@@ -5,7 +5,6 @@ import VTIconFacebook from './icons/VTIconFacebook.vue'
 import VTIconGitHub from './icons/VTIconGitHub.vue'
 import VTIconLinkedIn from './icons/VTIconLinkedIn.vue'
 import VTIconSlack from './icons/VTIconSlack.vue'
-import VTIconTwitter from './icons/VTIconTwitter.vue'
 import VTIconX from './icons/VTIconX.vue'
 import VTIconLanguages from './icons/VTIconLanguages.vue'
 
