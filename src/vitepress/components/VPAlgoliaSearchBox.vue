@@ -63,7 +63,7 @@ function initialize(userOptions: AlgoliaSearchOptions) {
       return items.map((item) => {
         return Object.assign({}, item, {
           url: getRelativePath(item.url)
-        })
+        }) as any
       })
     },
 
