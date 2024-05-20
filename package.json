@@ -9,7 +9,8 @@
     "./config": {
       "types": "./src/vitepress/config/baseConfig.d.ts",
       "default": "./src/vitepress/config/baseConfig.js"
-    }
+    },
+    "./src/*": "./src/*"
   },
   "files": [
     "src",
