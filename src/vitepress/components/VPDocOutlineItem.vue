@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { useData, _escapeHtml } from 'vitepress'
 import type { MenuItemWithLinkAndChildren } from '../composables/outline.js'
 
 defineProps<{
@@ -16,11 +16,6 @@ function onClick({ target: el }: Event) {
   )
   heading?.focus()
 }
-
-function escape(str: string): string {
-  // & will be already escaped
-  return str.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-}
 </script>
 
 <template>
@@ -31,7 +26,7 @@ function escape(str: string): string {
         :href="link"
         @click="onClick"
         v-show="!hidden"
-        v-html="escape(text)"
+        v-html="_escapeHtml(text)"
       />
       <template v-if="children?.length && frontmatter.outline === 'deep'">
         <VPDocOutlineItem :headers="children" :nested="true" />

@@ -53,7 +53,7 @@
     "@types/node": "^20.12.12",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5",
-    "vitepress": "^1.2.0",
+    "vitepress": "^1.2.2",
     "vue": "^3.4.27",
     "vue-tsc": "^2.0.19"
   },
