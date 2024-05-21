@@ -16,14 +16,23 @@ function onClick({ target: el }: Event) {
   )
   heading?.focus()
 }
+
+function escape(str: string): string {
+  // & will be already escaped
+  return str.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+}
 </script>
 
 <template>
   <ul :class="nested ? 'nested' : 'root'">
     <li v-for="{ children, link, text, hidden } in headers">
-      <a class="outline-link" :href="link" @click="onClick" v-show="!hidden">{{
-        text
-      }}</a>
+      <a
+        class="outline-link"
+        :href="link"
+        @click="onClick"
+        v-show="!hidden"
+        v-html="escape(text)"
+      />
       <template v-if="children?.length && frontmatter.outline === 'deep'">
         <VPDocOutlineItem :headers="children" :nested="true" />
       </template>
