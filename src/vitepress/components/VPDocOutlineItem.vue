@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useData, _escapeHtml } from 'vitepress'
+import { decode } from 'tiny-decode'
+import { useData } from 'vitepress'
 import type { MenuItemWithLinkAndChildren } from '../composables/outline.js'
 
 defineProps<{
@@ -21,13 +22,9 @@ function onClick({ target: el }: Event) {
 <template>
   <ul :class="nested ? 'nested' : 'root'">
     <li v-for="{ children, link, text, hidden } in headers">
-      <a
-        class="outline-link"
-        :href="link"
-        @click="onClick"
-        v-show="!hidden"
-        v-html="_escapeHtml(text)"
-      />
+      <a class="outline-link" :href="link" @click="onClick" v-show="!hidden">
+        {{ decode(text) }}
+      </a>
       <template v-if="children?.length && frontmatter.outline === 'deep'">
         <VPDocOutlineItem :headers="children" :nested="true" />
       </template>
