@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { VTIconPlus, MenuItemChild } from '../../core'
+import { VTIconPlus, MenuItemChild, MenuBadgeItem } from '../../core'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 import VPNavScreenMenuGroupSection from './VPNavScreenMenuGroupSection.vue'
+import VTMenuBadge from '../../core/components/VTMenuBadge.vue'
 
 const props = defineProps<{
   text: string
+  badge?: MenuBadgeItem
   items: MenuItemChild[]
 }>()
 
@@ -28,7 +30,10 @@ function toggle() {
       :aria-expanded="isOpen"
       @click="toggle"
     >
-      <span class="button-text">{{ text }}</span>
+      <div>
+        <span class="button-text">{{ text }}</span>
+        <VTMenuBadge v-if="badge" :item="badge" />
+      </div>
       <VTIconPlus class="button-icon" />
     </button>
 
@@ -38,6 +43,7 @@ function toggle() {
           <VPNavScreenMenuGroupLink
             :text="item.text"
             :link="item.link"
+            :badge="item.badge"
           />
         </div>
 

@@ -6,7 +6,7 @@ defineProps<{ item: MenuItemWithLink }>()
 </script>
 
 <template>
-  <VTLink class="vt-menu-link" :href="item.link">
+  <VTLink class="vt-menu-link" :href="item.link" :badge="item.badge">
     {{ item.text }}
   </VTLink>
 </template>

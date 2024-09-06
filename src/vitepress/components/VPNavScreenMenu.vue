@@ -12,11 +12,13 @@ const { config } = useConfig()
       <VPNavScreenMenuLink
         v-if="'link' in item"
         :text="item.text"
+        :badge="item.badge"
         :link="item.link"
       />
       <VPNavScreenMenuGroup
         v-else
         :text="item.text || ''"
+        :badge="item.badge"
         :items="item.items"
       />
     </template>

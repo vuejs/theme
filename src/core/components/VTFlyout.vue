@@ -1,15 +1,17 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { MenuItem, MenuItemChild } from '../types/menu'
+import { MenuBadgeItem, MenuItem, MenuItemChild } from '../types/menu'
 import { useFocusContainer } from '../composables/FocusContainer'
 import VTIconChevronDown from './icons/VTIconChevronDown.vue'
 import VTIconMoreHorizontal from './icons/VTIconMoreHorizontal.vue'
 import VTMenu from './VTMenu.vue'
+import VTMenuBadge from './VTMenuBadge.vue'
 
 const props = defineProps<{
   button?: string
   items?: (MenuItem | MenuItemChild)[]
   label?: string
+  badge?: MenuBadgeItem
 }>()
 
 const open = ref(false)
@@ -40,6 +42,7 @@ useFocusContainer({
       <slot name="btn-slot">
         <span v-if="props.button" class="vt-flyout-button-text">
           {{ props.button }}
+          <VTMenuBadge v-if="badge" :item="badge" />
           <VTIconChevronDown class="vt-flyout-button-text-icon" />
         </span>
 

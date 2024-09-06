@@ -1,11 +1,13 @@
 <script lang="ts" setup>
-import { MenuItemWithLink } from '../../core'
+import { MenuItemWithLink, MenuBadgeItem } from '../../core'
 import VPSidebarLink from './VPSidebarLink.vue'
+import VTMenuBadge from '../../core/components/VTMenuBadge.vue'
 import { isActive } from '../support/utils'
 import { useData } from 'vitepress'
 
 const props = defineProps<{
   text: string
+  badge?: MenuBadgeItem
   items: MenuItemWithLink[]
 }>()
 
@@ -20,7 +22,7 @@ function hasActiveLink() {
   <section class="VPSidebarGroup">
     <div class="title">
       <h2 class="title-text" :class="{ active: hasActiveLink() }">
-        {{ text }}
+        {{ text }}<VTMenuBadge v-if="badge" :item="badge" />
       </h2>
     </div>
 
