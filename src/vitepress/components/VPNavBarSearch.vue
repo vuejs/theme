@@ -235,4 +235,9 @@ function load() {
 .DocSearch-Button:hover .DocSearch-Button-Key {
   color: var(--vt-c-brand-light);
 }
+
+.DocSearch-Button .DocSearch-Button-Key--pressed {
+  box-shadow: none;
+  transform: none;
+}
 </style>
