@@ -12,6 +12,7 @@ const VPAlgoliaSearchBox = defineAsyncComponent(
 // to avoid loading the docsearch js upfront (which is more than 1/3 of the
 // payload), we delay initializing it until the user has actually clicked or
 // hit the hotkey to invoke it
+const started = ref(false)
 const loaded = ref(false)
 const metaKey = ref('Meta')
 
@@ -37,16 +38,16 @@ onMounted(() => {
 })
 
 function load() {
-  if (!loaded.value) {
-    loaded.value = true
+  if (!started.value) {
+    started.value = true
   }
 }
 </script>
 
 <template>
   <div v-if="config.algolia" class="VPNavBarSearch">
-    <VPAlgoliaSearchBox v-if="loaded" />
-    <div v-else id="docsearch" @click="load">
+    <VPAlgoliaSearchBox v-if="started" @vue:mounted="loaded = true" />
+    <div v-if="!loaded" id="docsearch" @click="load">
       <button
         type="button"
         class="DocSearch DocSearch-Button"
