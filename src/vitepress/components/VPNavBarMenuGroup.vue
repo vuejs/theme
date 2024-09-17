@@ -18,6 +18,7 @@ const { page } = useData()
       active: isActive(page.relativePath, item.activeMatch, true)
     }"
     :button="item.text"
+    :badge="item.badge"
     :items="item.items"
   />
 </template>

@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import { ref, inject, onMounted, watchPostEffect } from 'vue'
 import { MenuItemWithLink } from '../../core'
+import VTMenuBadge from '../../core/components/VTMenuBadge.vue'
 import { isActive } from '../support/utils'
 
 const props = defineProps<{
@@ -26,7 +27,9 @@ watchPostEffect(updateActive)
     :href="item.link"
     @click="closeSideBar"
   >
-    <p class="link-text">{{ item.text }}</p>
+    <p class="link-text">
+      {{ item.text }}<VTMenuBadge v-if="item.badge" :item="item.badge" />
+    </p>
   </a>
 </template>
 

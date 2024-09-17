@@ -22,6 +22,7 @@ const { page } = useData()
       )
     }"
     :href="item.link"
+    :badge="item.badge"
     :noIcon="true"
   >
     {{ item.text }}

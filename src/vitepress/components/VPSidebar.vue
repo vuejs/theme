@@ -35,7 +35,7 @@ watchPostEffect(async () => {
         config.i18n?.ariaSidebarNav ?? 'Sidebar Navigation'
       }}</span>
       <div v-for="group in sidebar" :key="group.text" class="group">
-        <VPSidebarGroup :text="group.text" :items="group.items" />
+        <VPSidebarGroup :text="group.text" :badge="group.badge" :items="group.items"/>
       </div>
       <slot name="bottom" />
     </nav>

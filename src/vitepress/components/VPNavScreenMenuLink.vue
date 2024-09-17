@@ -1,17 +1,18 @@
 <script lang="ts" setup>
-import { VTLink } from '../../core'
+import { MenuBadgeItem, VTLink } from '../../core'
 import { inject } from 'vue'
 
 defineProps<{
   text: string
   link: string
+  badge?: MenuBadgeItem
 }>()
 
 const closeScreen = inject('close-screen') as () => void
 </script>
 
 <template>
-  <VTLink class="VPNavScreenMenuLink" :href="link" @click="closeScreen">
+  <VTLink class="VPNavScreenMenuLink" :href="link" :badge="badge" @click="closeScreen">
     {{ text }}
   </VTLink>
 </template>

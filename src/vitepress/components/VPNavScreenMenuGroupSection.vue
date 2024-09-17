@@ -16,6 +16,7 @@ defineProps<{
       :key="item.text"
       :text="item.text"
       :link="item.link"
+      :badge="item.badge"
     />
   </div>
 </template>

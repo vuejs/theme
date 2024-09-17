@@ -1,0 +1,35 @@
+.vt-menu-badge {
+  display: inline-block;
+  padding: 3.5px 4px;
+  margin-left: 6px;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .2px;
+  border-radius: 6px;
+  background: var(--vt-c-blue);
+  color: var(--vt-c-white-soft);
+}
+
+.vt-menu-badge.secondary {
+  background: var(--vt-c-gray-light-5);
+  color: var(--vt-c-blue-dark);
+}
+
+.vt-menu-badge.success {
+  background: var(--vt-c-green);
+}
+
+.vt-menu-badge.info {
+  background: var(--vt-c-indigo-soft);
+}
+
+.vt-menu-badge.warning {
+  background: var(--vt-c-yellow-light);
+  color: var(--vt-c-black-soft);
+}
+
+.vt-menu-badge.danger {
+  background: var(--vt-c-red);
+}
