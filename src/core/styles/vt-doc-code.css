@@ -38,6 +38,10 @@
   background-color: var(--vt-c-bg-soft);
 }
 
+.dark .vt-doc .custom-block div[class*='language-'] {
+  background-color: var(--vt-c-black);
+}
+
 @media (min-width: 640px) {
   .vt-doc div[class*='language-'] {
     margin: 28px 0;
