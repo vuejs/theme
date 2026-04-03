@@ -67,56 +67,9 @@ function initialize(userOptions: AlgoliaSearchOptions) {
       })
     },
 
-    hitComponent: ({ hit, children }: { hit: DocSearchHit; children: any }) => {
-      const relativeHit = hit.url.startsWith('http')
-        ? getRelativePath(hit.url as string)
-        : hit.url
-
-      return {
-        type: 'a',
-        ref: undefined,
-        constructor: undefined,
-        key: undefined,
-        props: {
-          href: hit.url,
-          onClick: (event: MouseEvent) => {
-            if (isSpecialClick(event)) {
-              return
-            }
-
-            // we rely on the native link scrolling when user is already on
-            // the right anchor because Router doesn't support duplicated
-            // history entries
-            if (route.path === relativeHit) {
-              return
-            }
-
-            // if the hits goes to another page, we prevent the native link
-            // behavior to leverage the Router loading feature
-            if (route.path !== relativeHit) {
-              event.preventDefault()
-            }
-
-            router.go(relativeHit)
-          },
-          children
-        },
-        __v: null
-      }
-    }
   })
 
   docsearch(options)
-}
-
-function isSpecialClick(event: MouseEvent) {
-  return (
-    event.button === 1 ||
-    event.altKey ||
-    event.ctrlKey ||
-    event.metaKey ||
-    event.shiftKey
-  )
 }
 
 function getRelativePath(absoluteUrl: string) {
