@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useRoute } from 'vitepress'
+import { useRoute, useData } from 'vitepress'
 import { useConfig } from '../composables/config'
 import { VTIconExternalLink } from '../../core';
 import VTIconGitHub from '../../core/components/icons/VTIconGitHub.vue';
 
+const data = useData()
 const route = useRoute()
 const { config } = useConfig()
 const localeLinks = computed(() => {
@@ -15,7 +16,7 @@ const localeLinks = computed(() => {
     .map(({ text, link, repo }) => {
       return {
         text,
-        link: new URL(pathname, link).toString(),
+        link: new URL(pathname, link).toString() + data.hash.value,
         repo,
       }
     })
@@ -24,7 +25,7 @@ const localeLinks = computed(() => {
 
 <template>
   <div v-for="item in localeLinks" :key="item.text" class="vt-locales-menu-item">
-    <a 
+    <a
       :href="item.link"
       target="_blank"
       class="vt-locales-menu-item-text"
