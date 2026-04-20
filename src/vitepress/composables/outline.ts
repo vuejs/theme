@@ -1,4 +1,4 @@
-import { computed, inject, onMounted, onUnmounted, onUpdated, Ref } from 'vue'
+import { computed, inject, onMounted, onUnmounted, onUpdated, ref, Ref } from 'vue'
 import { Header, useData } from 'vitepress'
 import { useMediaQuery } from '@vueuse/core'
 import { MenuItemWithLink } from '../../core'
@@ -39,9 +39,31 @@ export function useActiveAnchor(
   bg: Ref<HTMLElement>
 ) {
   const isOutlineEnabled = useMediaQuery('(min-width: 1280px)')
-  const onScroll = throttleAndDebounce(setActiveLink, 100)
+  const clickedHash = ref<string | null>(null)
+  const scrollTimer = ref<any>(null)
 
-  function setActiveLink(): void {
+  const onScroll = throttleAndDebounce(() => {
+    scrollTimer.value && clearTimeout(scrollTimer.value)
+
+    scrollTimer.value = setTimeout(() => setActiveLink('scroll'), 150)
+  }, 100)
+
+  const handleAnchorLinkClick = (event: Event) => {
+    const { target } = event as MouseEvent
+    const anchor = target as HTMLAnchorElement
+
+    if (!anchor.classList.contains('outline-link')) return
+
+    clickedHash.value = anchor.hash
+    setActiveLink('click')
+
+    if (scrollTimer.value) {
+      clearTimeout(scrollTimer.value)
+      scrollTimer.value = null
+    }
+  }
+
+  function setActiveLink(actionType: 'scroll' | 'click'): void {
     if (!isOutlineEnabled.value) {
       return
     }
@@ -58,16 +80,26 @@ export function useActiveAnchor(
         )
       ) as HTMLAnchorElement[]
 
+    if (actionType === 'click' && clickedHash.value) {
+      activateLink(clickedHash.value)
+      return
+    }
+
     // page bottom - highlight last one
     if (
+      actionType === 'scroll' &&
       anchors.length &&
       // https://github.com/vuejs/theme/pull/74
       window.scrollY + window.innerHeight >= document.body.offsetHeight - 1
     ) {
-      activateLink(anchors[anchors.length - 1].hash)
+      // if there was a click, and there was no scroll after that, keep the clicked element active
+      const targetHash = clickedHash.value || anchors[anchors.length - 1].hash
+      activateLink(targetHash)
+
       return
     }
 
+    // regular behavior during scroll
     for (let i = 0; i < anchors.length; i++) {
       const anchor = anchors[i]
       const nextAnchor = anchors[i + 1]
@@ -75,6 +107,7 @@ export function useActiveAnchor(
       const [isActive, hash] = isAnchorActive(i, anchor, nextAnchor)
 
       if (isActive) {
+        clickedHash.value = null
         activateLink(hash)
         return
       }
@@ -105,8 +138,10 @@ export function useActiveAnchor(
   }
 
   onMounted(() => {
-    requestAnimationFrame(setActiveLink)
+    requestAnimationFrame(() => setActiveLink('scroll'))
+
     window.addEventListener('scroll', onScroll)
+    container.value.addEventListener('click', handleAnchorLinkClick)
   })
 
   onUpdated(() => {
@@ -116,6 +151,9 @@ export function useActiveAnchor(
 
   onUnmounted(() => {
     window.removeEventListener('scroll', onScroll)
+    container.value.removeEventListener('click', handleAnchorLinkClick)
+
+    scrollTimer.value && clearTimeout(scrollTimer.value)
   })
 }
 
