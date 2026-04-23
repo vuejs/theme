@@ -48,7 +48,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vue' },
       { icon: 'x', link: 'https://twitter.com/vuejs' },
-      { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
+      { icon: 'discord', link: 'https://discord.com/invite/HBherRA' },
+      { icon: 'bluesky', link: 'https://bsky.app/profile/vuejs.org' }
     ],
 
     nav: [

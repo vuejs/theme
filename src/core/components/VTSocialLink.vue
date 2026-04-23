@@ -6,6 +6,7 @@ import VTIconGitHub from './icons/VTIconGitHub.vue'
 import VTIconLinkedIn from './icons/VTIconLinkedIn.vue'
 import VTIconSlack from './icons/VTIconSlack.vue'
 import VTIconX from './icons/VTIconX.vue'
+import VTIconBluesky from './icons/VTIconBluesky.vue'
 import VTIconLanguages from './icons/VTIconLanguages.vue'
 
 const props = defineProps<{
@@ -24,6 +25,7 @@ const icons = {
   slack: VTIconSlack,
   twitter: VTIconX,
   x: VTIconX,
+  bluesky: VTIconBluesky,
   languages: VTIconLanguages
 }
 </script>
